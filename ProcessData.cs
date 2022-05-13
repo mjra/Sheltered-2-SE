@@ -43,7 +43,7 @@ namespace Sheltered_2_SE
                        Convert.ToBoolean(p.Element("interacting").Value),
                        Convert.ToBoolean(p.Element("interactingWithObj").Value),
                        Convert.ToInt32(p.Element("animHash").Value),
-                       float.Parse(p.Element("animTime").Value, CultureInfo.InvariantCulture.NumberFormat),
+                       float.Parse(p.Element("animTime").Value),
                        Convert.ToBoolean(p.Element("hasBeenDefibbed").Value)
                                               )
                            ).ToList();

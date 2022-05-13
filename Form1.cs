@@ -189,7 +189,8 @@ namespace Sheltered_2_SE
                     cBInteractingWithObj.Checked = member.InteractingWithObj;
                     cBHasBeenDefibbed.Checked = member.HasBeenDefibbed;
                     lblAnimHashValue.Text = Convert.ToString(member.AnimHash);
-                    lblAnimTimeValue.Text = Convert.ToString(member.AnimTime);
+                    lblAnimTimeValue.Text = member.AnimTime.ToString();
+
                 }
             }
 

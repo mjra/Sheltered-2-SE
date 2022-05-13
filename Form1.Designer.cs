@@ -79,19 +79,19 @@ namespace Sheltered_2_SE
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblAnimTimeValue = new System.Windows.Forms.Label();
+            this.lblAnimTime = new System.Windows.Forms.Label();
+            this.lblAnimHashValue = new System.Windows.Forms.Label();
+            this.lblAnimHash = new System.Windows.Forms.Label();
+            this.cBHasBeenDefibbed = new System.Windows.Forms.CheckBox();
+            this.cBInteractingWithObj = new System.Windows.Forms.CheckBox();
+            this.cBInteracting = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.cBInteracting = new System.Windows.Forms.CheckBox();
-            this.cBInteractingWithObj = new System.Windows.Forms.CheckBox();
-            this.cBHasBeenDefibbed = new System.Windows.Forms.CheckBox();
-            this.lblAnimHash = new System.Windows.Forms.Label();
-            this.lblAnimHashValue = new System.Windows.Forms.Label();
-            this.lblAnimTimeValue = new System.Windows.Forms.Label();
-            this.lblAnimTime = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWarning)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -122,14 +122,14 @@ namespace Sheltered_2_SE
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -145,14 +145,14 @@ namespace Sheltered_2_SE
             // decryptSaveOnlyToolStripMenuItem
             // 
             this.decryptSaveOnlyToolStripMenuItem.Name = "decryptSaveOnlyToolStripMenuItem";
-            this.decryptSaveOnlyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.decryptSaveOnlyToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.decryptSaveOnlyToolStripMenuItem.Text = "Decrypt Save only";
             this.decryptSaveOnlyToolStripMenuItem.Click += new System.EventHandler(this.decryptSaveOnlyToolStripMenuItem_Click);
             // 
             // encryptSaveOnlyToolStripMenuItem
             // 
             this.encryptSaveOnlyToolStripMenuItem.Name = "encryptSaveOnlyToolStripMenuItem";
-            this.encryptSaveOnlyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.encryptSaveOnlyToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.encryptSaveOnlyToolStripMenuItem.Text = "Encrypt Save only";
             this.encryptSaveOnlyToolStripMenuItem.Click += new System.EventHandler(this.encryptSaveOnlyToolStripMenuItem_Click);
             // 
@@ -561,12 +561,77 @@ namespace Sheltered_2_SE
             this.tabPage1.Text = "Characters Stats";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // lblAnimTimeValue
+            // 
+            this.lblAnimTimeValue.AutoSize = true;
+            this.lblAnimTimeValue.Location = new System.Drawing.Point(67, 496);
+            this.lblAnimTimeValue.Name = "lblAnimTimeValue";
+            this.lblAnimTimeValue.Size = new System.Drawing.Size(0, 13);
+            this.lblAnimTimeValue.TabIndex = 41;
+            // 
+            // lblAnimTime
+            // 
+            this.lblAnimTime.AutoSize = true;
+            this.lblAnimTime.Location = new System.Drawing.Point(6, 496);
+            this.lblAnimTime.Name = "lblAnimTime";
+            this.lblAnimTime.Size = new System.Drawing.Size(56, 13);
+            this.lblAnimTime.TabIndex = 40;
+            this.lblAnimTime.Text = "AnimTime:";
+            // 
+            // lblAnimHashValue
+            // 
+            this.lblAnimHashValue.AutoSize = true;
+            this.lblAnimHashValue.Location = new System.Drawing.Point(67, 483);
+            this.lblAnimHashValue.Name = "lblAnimHashValue";
+            this.lblAnimHashValue.Size = new System.Drawing.Size(19, 13);
+            this.lblAnimHashValue.TabIndex = 39;
+            this.lblAnimHashValue.Text = "    ";
+            // 
+            // lblAnimHash
+            // 
+            this.lblAnimHash.AutoSize = true;
+            this.lblAnimHash.Location = new System.Drawing.Point(6, 483);
+            this.lblAnimHash.Name = "lblAnimHash";
+            this.lblAnimHash.Size = new System.Drawing.Size(58, 13);
+            this.lblAnimHash.TabIndex = 38;
+            this.lblAnimHash.Text = "AnimHash:";
+            // 
+            // cBHasBeenDefibbed
+            // 
+            this.cBHasBeenDefibbed.AutoSize = true;
+            this.cBHasBeenDefibbed.Location = new System.Drawing.Point(255, 268);
+            this.cBHasBeenDefibbed.Name = "cBHasBeenDefibbed";
+            this.cBHasBeenDefibbed.Size = new System.Drawing.Size(126, 17);
+            this.cBHasBeenDefibbed.TabIndex = 37;
+            this.cBHasBeenDefibbed.Text = "Has been defibrilated";
+            this.cBHasBeenDefibbed.UseVisualStyleBackColor = true;
+            // 
+            // cBInteractingWithObj
+            // 
+            this.cBInteractingWithObj.AutoSize = true;
+            this.cBInteractingWithObj.Location = new System.Drawing.Point(117, 268);
+            this.cBInteractingWithObj.Name = "cBInteractingWithObj";
+            this.cBInteractingWithObj.Size = new System.Drawing.Size(132, 17);
+            this.cBInteractingWithObj.TabIndex = 36;
+            this.cBInteractingWithObj.Text = "Interacting with Object";
+            this.cBInteractingWithObj.UseVisualStyleBackColor = true;
+            // 
+            // cBInteracting
+            // 
+            this.cBInteracting.AutoSize = true;
+            this.cBInteracting.Location = new System.Drawing.Point(23, 268);
+            this.cBInteracting.Name = "cBInteracting";
+            this.cBInteracting.Size = new System.Drawing.Size(76, 17);
+            this.cBInteracting.TabIndex = 35;
+            this.cBInteracting.Text = "Interacting";
+            this.cBInteracting.UseVisualStyleBackColor = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(440, 556);
+            this.tabPage2.Size = new System.Drawing.Size(532, 556);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Character Traits";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -575,7 +640,7 @@ namespace Sheltered_2_SE
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(440, 556);
+            this.tabPage3.Size = new System.Drawing.Size(532, 556);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Pets";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -584,7 +649,7 @@ namespace Sheltered_2_SE
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(440, 556);
+            this.tabPage4.Size = new System.Drawing.Size(532, 556);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Deseases/Infestations";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -593,7 +658,7 @@ namespace Sheltered_2_SE
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(440, 556);
+            this.tabPage5.Size = new System.Drawing.Size(532, 556);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Unlocking";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -602,7 +667,7 @@ namespace Sheltered_2_SE
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(440, 556);
+            this.tabPage6.Size = new System.Drawing.Size(532, 556);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Debug";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -616,72 +681,6 @@ namespace Sheltered_2_SE
             this.button2.Text = "Load XML Tree";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // cBInteracting
-            // 
-            this.cBInteracting.AutoSize = true;
-            this.cBInteracting.Location = new System.Drawing.Point(23, 268);
-            this.cBInteracting.Name = "cBInteracting";
-            this.cBInteracting.Size = new System.Drawing.Size(76, 17);
-            this.cBInteracting.TabIndex = 35;
-            this.cBInteracting.Text = "Interacting";
-            this.cBInteracting.UseVisualStyleBackColor = true;
-            // 
-            // cBInteractingWithObj
-            // 
-            this.cBInteractingWithObj.AutoSize = true;
-            this.cBInteractingWithObj.Location = new System.Drawing.Point(117, 268);
-            this.cBInteractingWithObj.Name = "cBInteractingWithObj";
-            this.cBInteractingWithObj.Size = new System.Drawing.Size(132, 17);
-            this.cBInteractingWithObj.TabIndex = 36;
-            this.cBInteractingWithObj.Text = "Interacting with Object";
-            this.cBInteractingWithObj.UseVisualStyleBackColor = true;
-            // 
-            // cBHasBeenDefibbed
-            // 
-            this.cBHasBeenDefibbed.AutoSize = true;
-            this.cBHasBeenDefibbed.Location = new System.Drawing.Point(255, 268);
-            this.cBHasBeenDefibbed.Name = "cBHasBeenDefibbed";
-            this.cBHasBeenDefibbed.Size = new System.Drawing.Size(126, 17);
-            this.cBHasBeenDefibbed.TabIndex = 37;
-            this.cBHasBeenDefibbed.Text = "Has been defibrilated";
-            this.cBHasBeenDefibbed.UseVisualStyleBackColor = true;
-            // 
-            // lblAnimHash
-            // 
-            this.lblAnimHash.AutoSize = true;
-            this.lblAnimHash.Location = new System.Drawing.Point(6, 483);
-            this.lblAnimHash.Name = "lblAnimHash";
-            this.lblAnimHash.Size = new System.Drawing.Size(58, 13);
-            this.lblAnimHash.TabIndex = 38;
-            this.lblAnimHash.Text = "AnimHash:";
-            // 
-            // lblAnimHashValue
-            // 
-            this.lblAnimHashValue.AutoSize = true;
-            this.lblAnimHashValue.Location = new System.Drawing.Point(67, 483);
-            this.lblAnimHashValue.Name = "lblAnimHashValue";
-            this.lblAnimHashValue.Size = new System.Drawing.Size(19, 13);
-            this.lblAnimHashValue.TabIndex = 39;
-            this.lblAnimHashValue.Text = "    ";
-            // 
-            // lblAnimTimeValue
-            // 
-            this.lblAnimTimeValue.AutoSize = true;
-            this.lblAnimTimeValue.Location = new System.Drawing.Point(67, 496);
-            this.lblAnimTimeValue.Name = "lblAnimTimeValue";
-            this.lblAnimTimeValue.Size = new System.Drawing.Size(31, 13);
-            this.lblAnimTimeValue.TabIndex = 41;
-            this.lblAnimTimeValue.Text = "        ";
-            // 
-            // lblAnimTime
-            // 
-            this.lblAnimTime.AutoSize = true;
-            this.lblAnimTime.Location = new System.Drawing.Point(6, 496);
-            this.lblAnimTime.Name = "lblAnimTime";
-            this.lblAnimTime.Size = new System.Drawing.Size(56, 13);
-            this.lblAnimTime.TabIndex = 40;
-            this.lblAnimTime.Text = "AnimTime:";
             // 
             // Form1
             // 
