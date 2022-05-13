@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Sheltered_2_SE
 {
 
+
     class FamilyMembers
     {
         public string FirstName { get; set; }
@@ -18,6 +19,7 @@ namespace Sheltered_2_SE
         public int AnimHash { get; set; }
         public float AnimTime   { get; set; }
         public bool HasBeenDefibbed { get; set; }
+
 
         public override string ToString()
         {
@@ -59,35 +61,12 @@ namespace Sheltered_2_SE
 
         public override string ToString()
         {
-             return $@"Strength: {StrengthLevel}/{StrengthCap}
+            return $@"Strength: {StrengthLevel}/{StrengthCap}
 Dexterity: {DexterityLevel}/{DexterityCap}
 Intelligence : {IntelligenceLevel}/{IntelligenceCap}
 Charisma: {CharismaLevel}/{CharismaCap}
 Perception: {PerceptionLevel}/{PerceptionCap}
 Fortitude: {FortitudeLevel}/{FortitudeCap}";
         }
-
-        //public override string ToString()
-        //{
-        //    return StrengthCap + "\n" + StrengthLevel + "\n" + DexterityCap  + "\n" + DexterityLevel + "\n" + IntelligenceCap + "\n" + IntelligenceLevel + "\n" + CharismaCap + "\n" + ;
-        //}
-
-
-        //public BaseStats(
-        //    int cap, int level)
-        //{
-        //    StrengthCap = cap;
-        //    StrengthLevel = level;
-        //    DexterityCap = cap;
-        //    DexterityLevel = level;
-        //    IntelligenceCap = cap;
-        //    IntelligenceLevel = level;    
-        //    CharismaCap = cap;
-        //    CharismaLevel = level;
-        //    PerceptionCap = cap;
-        //    PerceptionLevel = level;
-        //    FortitudeCap = cap;
-        //    FortitudeLevel = level;
-        //}
     }
 }

@@ -24,14 +24,22 @@ namespace Sheltered_2_SE
         }
         ProcessFile processFile = new ProcessFile();
         ProcessData processData = new ProcessData();
-        
+        OpenFileDialog openSaveFile = new OpenFileDialog();
+        //SaveFileDialog saveFileDialog = new SaveFileDialog();
 
         public string decodedData = string.Empty;
+        public string savePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile))+"\\AppData\\LocalLow\\Unicube\\Sheltered2\\";
 
         public void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openSaveFile = new OpenFileDialog();
+            cbxCharacterSelect.Items.Clear();
+            cbxCharacterSelect.Text = "Select Character";
+            Utilities.ResetAllControls(tabPage1);
+
             openSaveFile.Filter = "Sheltered 2 Savegame|*.dat";
+            openSaveFile.InitialDirectory = savePath;
+            openSaveFile.RestoreDirectory = true;
+
             String Filename = "";
 
             if (openSaveFile.ShowDialog() == DialogResult.OK)
@@ -76,7 +84,6 @@ namespace Sheltered_2_SE
 
         public void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.FileName = ProcessFile.fileName;
             String Filename = "";
             DialogResult saveResult = saveFileDialog.ShowDialog();
@@ -98,10 +105,6 @@ namespace Sheltered_2_SE
                 {
                     MessageBox.Show("Error saving File: " + ioe.Message);
                 }
-                {
-
-                }
-
             }
         }
 
@@ -140,7 +143,7 @@ namespace Sheltered_2_SE
             //Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
             //Output.Text = "";
 
-            //List<FamilyMembers> familyMembers = ProcessData.FamilyMembersList();
+            List<FamilyMembers> familyMembers = ProcessData.FamilyMembersList();
 
             //foreach (FamilyMembers member in familyMembers)
             //{
@@ -150,88 +153,204 @@ namespace Sheltered_2_SE
 
             List<BaseStats> baseStats = ProcessData.BaseStatsList();
             
-            foreach (BaseStats stat in baseStats)
-            {
-                    Output.AppendText(stat.ToString()+"\n");
-            }
+            //foreach (BaseStats stat in baseStats)
+            //{
+            //    Output.AppendText(stat.ToString()+"\n");
+            //}
+
+           
+            var firstItem = baseStats.ElementAt(0);
+            Output.AppendText(firstItem.ToString() + "\n");
+
+
         }
 
-        
+
 
 
         private void cbxCharacterSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedItem = cbxCharacterSelect.Items[cbxCharacterSelect.SelectedIndex];
+            ProcessData.memberNr = cbxCharacterSelect.SelectedIndex;
 
             txbFirstname.Text = selectedItem.ToString();
-            ProcessData.memberFN = selectedItem.ToString();
-
-            //List<string>MemberList = FamilyMembers.concat(BaseStats) //////////////
-
             List<FamilyMembers> familyMembers = ProcessData.FamilyMembersList();
+            List<BaseStats> baseStats = ProcessData.BaseStatsList();
+
+
             foreach (FamilyMembers member in familyMembers)
             {
-                if (member.FirstName == txbFirstname.Text) 
+                if (member.FirstName == txbFirstname.Text)
                 {
                     txbLastname.Text = member.LastName;
-                    txbHealth.Text = Convert.ToString (member.Health);
-                    txbMaxHealth.Text = Convert.ToString (member.MaxHealth);
-
-                } 
-            }
-            
-            //List<BaseStats> baseStats = ProcessData.BaseStatsList();
-            
-            //int i = 0;
-
-            //foreach (BaseStats stat in baseStats)
-            //{
-                
-
-            //    if (ProcessData.memberFN == txbFirstname.Text)
-            //    {
-                    
-            //        string strCap = Convert.ToString(stat.StrengthCap);
-            //        string strLvl = Convert.ToString(stat.StrengthCap);
-                    
-            //        string dexCap = Convert.ToString(stat.DexterityCap );
-            //        string dexLvl = Convert.ToString(stat.DexterityLevel);
-
-            //        string intCap = Convert.ToString(stat.IntelligenceCap);
-            //        string intLvl = Convert.ToString(stat.IntelligenceLevel);
-
-            //        string chaCap = Convert.ToString(stat.CharismaCap);
-            //        string chaLvl = Convert.ToString(stat.CharismaLevel);
-
-            //        string perCap = Convert.ToString(stat.PerceptionCap);
-            //        string perLvl = Convert.ToString(stat.PerceptionLevel);
-
-            //        string forCap = Convert.ToString(stat.FortitudeCap);
-            //        string forLvl = Convert.ToString(stat.FortitudeLevel);
-
-            //    }
-
-            //    txbCapStrenght.Text = "";
-            //    txbCapStrenght.Text = "";
-            //    txbCapDexterity.Text = "";
-            //    txbLevelDexterity.Text = "";
-            //    txbCapIntelligence.Text = "";
-            //    txbLevelIntelligence.Text=  "";
-            //    txbCapCharisma.Text = "";
-            //    txbLevelCharisma.Text = "";
-            //    txbCapPerception.Text = "";
-            //    txbLevelPerception.Text=  "";
-            //    txbCapFortitude.Text=  "";
-            //    txbLevelFortitude.Text = "";
-
-
+                    txbHealth.Text = Convert.ToString(member.Health);
+                    txbMaxHealth.Text = Convert.ToString(member.MaxHealth);
+                    cBInteracting.Checked = member.Interacting;
+                    cBInteractingWithObj.Checked = member.InteractingWithObj;
+                    cBHasBeenDefibbed.Checked = member.HasBeenDefibbed;
+                    lblAnimHashValue.Text = Convert.ToString(member.AnimHash);
+                    lblAnimTimeValue.Text = Convert.ToString(member.AnimTime);
                 }
+            }
+
+            txbCapStrenght.Text = baseStats.ElementAt(ProcessData.memberNr).StrengthCap.ToString();
+            txbLevelStrenght.Text = baseStats.ElementAt(ProcessData.memberNr).StrengthLevel.ToString();
+
+            txbCapDexterity.Text = baseStats.ElementAt(ProcessData.memberNr).DexterityCap.ToString();
+            txbLevelDexterity.Text = baseStats.ElementAt(ProcessData.memberNr).DexterityLevel.ToString();
+
+            txbCapIntelligence.Text = baseStats.ElementAt(ProcessData.memberNr).IntelligenceCap.ToString();
+            txbLevelIntelligence.Text = baseStats.ElementAt(ProcessData.memberNr).IntelligenceLevel.ToString();
+
+            txbCapCharisma.Text = baseStats.ElementAt(ProcessData.memberNr).CharismaCap.ToString();
+            txbLevelCharisma.Text = baseStats.ElementAt(ProcessData.memberNr).CharismaLevel.ToString();
+
+            txbCapPerception.Text = baseStats.ElementAt(ProcessData.memberNr).PerceptionCap.ToString();
+            txbLevelPerception.Text = baseStats.ElementAt(ProcessData.memberNr).PerceptionLevel.ToString();
+
+            txbCapFortitude.Text = baseStats.ElementAt(ProcessData.memberNr).FortitudeCap.ToString();
+            txbLevelFortitude.Text = baseStats.ElementAt(ProcessData.memberNr).FortitudeLevel.ToString();
+
+            //do
+            //{
+            //    pbxWarning.Visible = true;
+            //    lblWarning.Visible = true;
+            //}
+            //while (Convert.ToInt32(txbCapStrenght.Text) <= 20
+            //    || (Convert.ToInt32(txbCapDexterity.Text) <= 20)
+            //    || (Convert.ToInt32(txbCapIntelligence.Text) <= 20)
+            //    || (Convert.ToInt32(txbCapCharisma.Text) <= 20)
+            //    || (Convert.ToInt32(txbCapPerception.Text) <= 20)
+            //    || (Convert.ToInt32(txbCapFortitude.Text) <= 20));
+
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
+            if (ProcessFile.tempFilePath != "")
+            {
+                Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
+            }
+            else
+            {  
+                MessageBox.Show ("ERROR - No Savegame loaded");
+            }
+                
+
+        }
+
+        private void decryptSaveOnlyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //open encrypted file and decrypting it using ProcessFile Class
+            
+            openSaveFile.Filter = "Sheltered 2 Savegame|*.dat";
+            String Filename = "";
+
+            if (openSaveFile.ShowDialog() == DialogResult.OK)
+            {
+                decodedData = processFile.LoadFile(openSaveFile.FileName);
+                if (decodedData != string.Empty)
+                {
+                    // Open Save and output to Textbox
+                    Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
+
+                }
+                else
+                {   // Retry
+                    MessageBox.Show("This file is not a valid Sheltered 2 save file.", "Error");
+                }
+                Filename = openSaveFile.FileName;
+
+
+                // Save decrypted File
+               
+                saveFileDialog.Filter = "Sheltered 2 Savegame|*.dat";
+
+                DialogResult saveResult = saveFileDialog.ShowDialog();
+                if (saveResult == DialogResult.OK)
+                {
+
+                    Filename = saveFileDialog.FileName;
+
+                    try
+                    {
+                        var data = File.ReadAllBytes(ProcessFile.tempFilePath);
+                        using (FileStream fileStream = File.Create(saveFileDialog.FileName))
+                        {
+                            if (fileStream != null)
+                            {
+                                fileStream.Write(data, 0, data.Length);
+                                fileStream.Flush();
+
+                                MessageBox.Show("File decrypted succesfully!", "File decrypted");
+                            }
+                        }
+                    }
+                    catch (IOException ioe)
+                    {
+                        MessageBox.Show("Error decrypting File: " + ioe.Message);
+                    }
+                }
+
+            }
+        }
+
+        private void encryptSaveOnlyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            //open encrypted file and encrypting it using ProcessFile Class
+            
+            openSaveFile.Filter = "Sheltered 2 Savegame|*.dat";
+            String Filename = "";
+
+            if (openSaveFile.ShowDialog() == DialogResult.OK)
+            {
+                decodedData = processFile.LoadFile(openSaveFile.FileName);
+                if (decodedData != string.Empty)
+                {
+                    Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
+                }
+                else
+                {   // Retry
+                    MessageBox.Show("This file is not a valid Sheltered 2 save file.", "Error");
+                }
+                Filename = openSaveFile.FileName;
+
+
+                // Save encrypted File
+                
+                saveFileDialog.Filter = "Sheltered 2 Savegame|*.dat";
+
+                DialogResult saveResult = saveFileDialog.ShowDialog();
+                if (saveResult == DialogResult.OK)
+                {
+
+                    Filename = saveFileDialog.FileName;
+
+                    try
+                    {
+                        var data = File.ReadAllBytes(ProcessFile.tempFilePath);
+                        using (FileStream fileStream = File.Create(saveFileDialog.FileName))
+                        {
+                            if (fileStream != null)
+                            {
+                                fileStream.Write(data, 0, data.Length);
+                                fileStream.Flush();
+
+                                MessageBox.Show("File encrypted succesfully!", "File encrypted");
+                            }
+                        }
+                    }
+                    catch (IOException ioe)
+                    {
+                        MessageBox.Show("Error encrypting File: " + ioe.Message);
+                    }
+                }
+
+            }
+
         }
     }
-    }
+}
 
 
