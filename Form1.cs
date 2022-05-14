@@ -48,7 +48,7 @@ namespace Sheltered_2_SE
                 if (decodedData != string.Empty)
                 {
                     // Open Save and output to Textbox
-                    //Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
+                    Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
                     
                 }
                 else
@@ -375,6 +375,20 @@ namespace Sheltered_2_SE
         {
             lblAnimHashValue.Text = "-541223289";
             lblAnimTimeValue.Text = "0,05509559";
+        }
+
+        static void gotoSite(string url)
+        {
+            System.Diagnostics.Process.Start(url);
+        }
+
+
+        private void buyMeACoffeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            string url = "https://ko-fi.com/mjra83";
+            gotoSite(url);//open url in default browser
+
         }
     }
 }
