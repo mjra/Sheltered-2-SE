@@ -57,18 +57,6 @@ namespace Sheltered_2_SE
                 }
                 Filename = openSaveFile.FileName;
 
-                //Initialize Data
-                //Characters
-
-                //string selectableCharacters = "";
-
-                //XElement xElement = XElement.Load(ProcessFile.tempFilePath);
-
-                //foreach (XElement member in xElement.Elements("FamilyMembers"))
-                //{
-                //    //Console.WriteLine(member);
-                //    Output.AppendText(Convert.ToString(member));
-                //}
                 ProcessData.familyMemberCount = 0;
                 XElement members = XElement.Load(ProcessFile.tempFilePath);
                 IEnumerable<XElement> fN =
@@ -78,7 +66,6 @@ namespace Sheltered_2_SE
                     cbxCharacterSelect.Items.Add(member.Value);
                     ProcessData.familyMemberCount++;
                 }
-
             }
         }
 
@@ -104,122 +91,80 @@ namespace Sheltered_2_SE
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void removeFogOfWarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
-            //Output.Text = "";
+            XDocument xDoc = XDocument.Load(ProcessFile.tempFilePath);
 
-            List<FamilyMembers> familyMembers = ProcessData.FamilyMembersList();
+            var getMemberNr = xDoc
+                .Element("root")
+                .Element("FamilyMembers")
+                .Elements().Where(x => x.Name.LocalName.StartsWith("Member_"))
+                .Elements("firstName");
+            var memberName = getMemberNr.Ancestors().First().Name;
 
-            //foreach (FamilyMembers member in familyMembers)
-            //{
-            //    Output.AppendText(member.ToString() + "\n");
+            var getBaseStat = xDoc
+                .Element("root")
+                .Element("FamilyMembers")
+                .Elements(memberName)
+                .Elements("BaseStats");
+            var getStrengthLvl = getBaseStat.Elements("Strength").Elements("level").First().Value;
+            var getStrengthCap = getBaseStat.Elements("Strength").Elements("cap").First().Value;
+            var getDexterityLvl = getBaseStat.Elements("Dexterity").Elements("level").First().Value;
 
-            //}
-
-            List<BaseStats> baseStats = ProcessData.BaseStatsList();
-            
-            //foreach (BaseStats stat in baseStats)
-            //{
-            //    Output.AppendText(stat.ToString()+"\n");
-            //}
-
-           
-            var firstItem = baseStats.ElementAt(0);
-            Output.AppendText(firstItem.ToString() + "\n");
-
+            MessageBox.Show(getStrengthLvl + "\n" + getStrengthCap);
 
         }
 
-
-
-
         public void cbxCharacterSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedItem = cbxCharacterSelect.Items[cbxCharacterSelect.SelectedIndex];
-            ProcessData.memberNr = cbxCharacterSelect.SelectedIndex;
 
-            txbFirstname.Text = selectedItem.ToString();
-            List<FamilyMembers> familyMembers = ProcessData.FamilyMembersList();
-            List<BaseStats> baseStats = ProcessData.BaseStatsList();
-
-
-            foreach (FamilyMembers member in familyMembers)
+            if (ProcessData.saved == 0)
             {
-                if (member.FirstName == txbFirstname.Text)
+                var selectedItem = cbxCharacterSelect.Items[cbxCharacterSelect.SelectedIndex];
+                ProcessData.memberNr = cbxCharacterSelect.SelectedIndex;
+
+                txbFirstname.Text = selectedItem.ToString();
+                List<FamilyMembers> familyMembers = ProcessData.FamilyMembersList();
+                List<BaseStats> baseStats = ProcessData.BaseStatsList();
+
+
+                foreach (FamilyMembers member in familyMembers)
                 {
-                    txbLastname.Text = member.LastName;
-                    txbHealth.Text = Convert.ToString(member.Health);
-                    txbMaxHealth.Text = Convert.ToString(member.MaxHealth);
-                    cBInteracting.Checked = member.Interacting;
-                    cBInteractingWithObj.Checked = member.InteractingWithObj;
-                    cBHasBeenDefibbed.Checked = member.HasBeenDefibbed;
-                    lblAnimHashValue.Text = Convert.ToString(member.AnimHash);
-                    lblAnimTimeValue.Text = member.AnimTime.ToString();
-
+                    if (member.FirstName == txbFirstname.Text)
+                    {
+                        txbLastname.Text = member.LastName;
+                        txbHealth.Text = Convert.ToString(member.Health);
+                        txbMaxHealth.Text = Convert.ToString(member.MaxHealth);
+                        cBInteracting.Checked = member.Interacting;
+                        cBInteractingWithObj.Checked = member.InteractingWithObj;
+                        cBHasBeenDefibbed.Checked = member.HasBeenDefibbed;
+                        lblAnimHashValue.Text = Convert.ToString(member.AnimHash);
+                        lblAnimTimeValue.Text = member.AnimTime.ToString();
+                    }
                 }
+                txbCapStrenght.Text = baseStats.ElementAt(ProcessData.memberNr).StrengthCap.ToString();
+                txbLevelStrenght.Text = baseStats.ElementAt(ProcessData.memberNr).StrengthLevel.ToString();
+
+                txbCapDexterity.Text = baseStats.ElementAt(ProcessData.memberNr).DexterityCap.ToString();
+                txbLevelDexterity.Text = baseStats.ElementAt(ProcessData.memberNr).DexterityLevel.ToString();
+
+                txbCapIntelligence.Text = baseStats.ElementAt(ProcessData.memberNr).IntelligenceCap.ToString();
+                txbLevelIntelligence.Text = baseStats.ElementAt(ProcessData.memberNr).IntelligenceLevel.ToString();
+
+                txbCapCharisma.Text = baseStats.ElementAt(ProcessData.memberNr).CharismaCap.ToString();
+                txbLevelCharisma.Text = baseStats.ElementAt(ProcessData.memberNr).CharismaLevel.ToString();
+
+                txbCapPerception.Text = baseStats.ElementAt(ProcessData.memberNr).PerceptionCap.ToString();
+                txbLevelPerception.Text = baseStats.ElementAt(ProcessData.memberNr).PerceptionLevel.ToString();
+
+                txbCapFortitude.Text = baseStats.ElementAt(ProcessData.memberNr).FortitudeCap.ToString();
+                txbLevelFortitude.Text = baseStats.ElementAt(ProcessData.memberNr).FortitudeLevel.ToString();
             }
-
-            txbCapStrenght.Text = baseStats.ElementAt(ProcessData.memberNr).StrengthCap.ToString();
-            txbLevelStrenght.Text = baseStats.ElementAt(ProcessData.memberNr).StrengthLevel.ToString();
-
-            txbCapDexterity.Text = baseStats.ElementAt(ProcessData.memberNr).DexterityCap.ToString();
-            txbLevelDexterity.Text = baseStats.ElementAt(ProcessData.memberNr).DexterityLevel.ToString();
-
-            txbCapIntelligence.Text = baseStats.ElementAt(ProcessData.memberNr).IntelligenceCap.ToString();
-            txbLevelIntelligence.Text = baseStats.ElementAt(ProcessData.memberNr).IntelligenceLevel.ToString();
-
-            txbCapCharisma.Text = baseStats.ElementAt(ProcessData.memberNr).CharismaCap.ToString();
-            txbLevelCharisma.Text = baseStats.ElementAt(ProcessData.memberNr).CharismaLevel.ToString();
-
-            txbCapPerception.Text = baseStats.ElementAt(ProcessData.memberNr).PerceptionCap.ToString();
-            txbLevelPerception.Text = baseStats.ElementAt(ProcessData.memberNr).PerceptionLevel.ToString();
-
-            txbCapFortitude.Text = baseStats.ElementAt(ProcessData.memberNr).FortitudeCap.ToString();
-            txbLevelFortitude.Text = baseStats.ElementAt(ProcessData.memberNr).FortitudeLevel.ToString();
-
-            //do
-            //{
-            //    pbxWarning.Visible = true;
-            //    lblWarning.Visible = true;
-            //}
-            //while (Convert.ToInt32(txbCapStrenght.Text) <= 20
-            //    || (Convert.ToInt32(txbCapDexterity.Text) <= 20)
-            //    || (Convert.ToInt32(txbCapIntelligence.Text) <= 20)
-            //    || (Convert.ToInt32(txbCapCharisma.Text) <= 20)
-            //    || (Convert.ToInt32(txbCapPerception.Text) <= 20)
-            //    || (Convert.ToInt32(txbCapFortitude.Text) <= 20));
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -232,8 +177,6 @@ namespace Sheltered_2_SE
             {  
                 MessageBox.Show ("ERROR - No Savegame loaded");
             }
-                
-
         }
 
         private void decryptSaveOnlyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -288,15 +231,11 @@ namespace Sheltered_2_SE
                         MessageBox.Show("Error decrypting File: " + ioe.Message);
                     }
                 }
-
             }
         }
-
         private void encryptSaveOnlyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             //open encrypted file and encrypting it using ProcessFile Class
-            
             openSaveFile.Filter = "Sheltered 2 Savegame|*.dat";
             String Filename = "";
 
@@ -313,17 +252,13 @@ namespace Sheltered_2_SE
                 }
                 Filename = openSaveFile.FileName;
 
-
                 // Save encrypted File
-                
                 saveFileDialog.Filter = "Sheltered 2 Savegame|*.dat";
 
                 DialogResult saveResult = saveFileDialog.ShowDialog();
                 if (saveResult == DialogResult.OK)
                 {
-
                     Filename = saveFileDialog.FileName;
-
                     try
                     {
                         var data = File.ReadAllBytes(ProcessFile.tempFilePath);
@@ -343,33 +278,103 @@ namespace Sheltered_2_SE
                         MessageBox.Show("Error encrypting File: " + ioe.Message);
                     }
                 }
-
             }
-
         }
 
         private void btnSaveCharacter_Click(object sender, EventArgs e)
         {
+            XDocument xDoc = XDocument.Load(ProcessFile.tempFilePath);
 
-            XDocument xdoc = XDocument.Load(ProcessFile.tempFilePath);
+            //Read in the nr of the Member (Member_x) into variable
 
-            var firstNameRead = xdoc
+            var getMemberNr = xDoc
+                .Element("root")
+                .Element("FamilyMembers")
+                .Elements().Where(x => x.Name.LocalName.StartsWith("Member_"))
+                .Elements("firstName");
+            var memberName = getMemberNr.Ancestors().First().Name;
+
+
+            var getBaseStat = xDoc
+                .Element("root")
+                .Element("FamilyMembers")
+                .Elements(memberName)
+                .Elements("BaseStats");
+            var getStrengthLvl = getBaseStat.Elements("Strength").Elements("level").First();
+            var getStrengthCap = getBaseStat.Elements("Strength").Elements("cap").First();
+            var getDexterityLvl = getBaseStat.Elements("Dexterity").Elements("level").First();
+            var getDexterityCap = getBaseStat.Elements("Dexterity").Elements("cap").First();
+            var getIntelligenceLvl = getBaseStat.Elements("Intelligence").Elements("level").First();
+            var getIntelligenceCap = getBaseStat.Elements("Intelligence").Elements("cap").First();
+            var getCharismaLvl = getBaseStat.Elements("Charisma").Elements("level").First();
+            var getCharismaCap = getBaseStat.Elements("Charisma").Elements("cap").First();
+            var getPerceptionLvl = getBaseStat.Elements("Perception").Elements("level").First();
+            var getPerceptionCap = getBaseStat.Elements("Perception").Elements("cap").First();
+            var getFortitudeLvl = getBaseStat.Elements("Fortitude").Elements("level").First();
+            var getFortitudeCap = getBaseStat.Elements("Fortitude").Elements("cap").First();
+
+            var readXML = xDoc
                    .Element("root")
                    .Element("FamilyMembers")
-                   .Elements().Where(x => x.Name.LocalName.StartsWith("Member_"));
-            var firstNameSave = firstNameRead.Elements("firstName").FirstOrDefault();
+                   .Elements(memberName);
+            var firstNameSave = readXML.Elements("firstName").FirstOrDefault();
+            var lastNameSave = readXML.Elements("lastName").FirstOrDefault();
+            var healthSave = readXML.Elements("health").FirstOrDefault();
+            var maxHealthSave = readXML.Elements("maxHealth").FirstOrDefault();
+            var interactingSave = readXML.Elements("interacting").FirstOrDefault();
+            var interactingWithObjSave = readXML.Elements("interactingWithObj").FirstOrDefault();
+            var hasBeenDefibbedSave = readXML.Elements("hasBeenDefibbed").FirstOrDefault();
+            var animHashSave = readXML.Elements("animHash").FirstOrDefault();
+            var animTimeSave = readXML.Elements("animTime").FirstOrDefault();
 
-            if (firstNameSave != null)
+            if (firstNameSave != null && lastNameSave != null && healthSave != null && maxHealthSave != null && interactingSave != null 
+                && interactingWithObjSave != null && hasBeenDefibbedSave != null && animHashSave != null && animTimeSave != null
+                && getStrengthLvl != null && getStrengthCap != null && getDexterityLvl != null && getDexterityCap != null
+                && getIntelligenceLvl != null && getIntelligenceCap != null && getCharismaLvl != null && getCharismaCap != null
+                && getPerceptionLvl != null && getPerceptionCap != null && getFortitudeLvl != null && getFortitudeCap != null)
+
             {
                 firstNameSave.Value = txbFirstname.Text;
+                lastNameSave.Value = txbLastname.Text;
+                healthSave.Value = txbHealth.Text;
+                maxHealthSave.Value = txbMaxHealth.Text;
+                interactingSave.Value = cBInteracting.Checked.ToString();
+                interactingWithObjSave.Value = cBInteractingWithObj.Checked.ToString();
+                hasBeenDefibbedSave.Value = cBHasBeenDefibbed.Checked.ToString();
+                animHashSave.Value = lblAnimHashValue.Text;
+                animTimeSave.Value = lblAnimTimeValue.Text;
+
+                getStrengthLvl.Value = txbLevelStrenght.Text;
+                getStrengthCap.Value = txbCapStrenght.Text;
+                getDexterityLvl.Value = txbLevelDexterity.Text;
+                getDexterityCap.Value = txbCapDexterity.Text;
+                getIntelligenceLvl.Value = txbLevelIntelligence.Text;
+                getIntelligenceCap.Value = txbCapIntelligence.Text;
+                getCharismaLvl.Value = txbLevelCharisma.Text;
+                getCharismaCap.Value = txbCapCharisma.Text;
+                getPerceptionLvl.Value = txbLevelPerception.Text;
+                getPerceptionCap.Value = txbCapPerception.Text;
+                getFortitudeLvl.Value = txbLevelFortitude.Text;
+                getFortitudeCap.Value = txbCapFortitude.Text;
+
+                cbxCharacterSelect.Items.RemoveAt(ProcessData.memberNr);
+                cbxCharacterSelect.Items.Insert(ProcessData.memberNr, txbFirstname.Text);
+                cbxCharacterSelect.SelectedItem = txbFirstname;
+                cbxCharacterSelect.Text = "Select Character";
+
                 MessageBox.Show("Character Saved successfully");
-                xdoc.Save(ProcessFile.tempFilePath);
+                xDoc.Save(ProcessFile.tempFilePath);
             }
             else
             {
                 MessageBox.Show("Something went wrong...");
-            }          
-            
+            }  
+        }
+
+        private void btnUnstuckCharacter_Click(object sender, EventArgs e)
+        {
+            lblAnimHashValue.Text = "-541223289";
+            lblAnimTimeValue.Text = "0,05509559";
         }
     }
 }

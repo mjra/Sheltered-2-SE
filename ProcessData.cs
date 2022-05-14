@@ -16,6 +16,11 @@ namespace Sheltered_2_SE
     {
         public static int familyMemberCount;
         public static int memberNr = 0;
+        public static int changed = 0;
+        public static int saved = 0;
+
+        
+
 
         //Load in FamilyMembers
         public static List<FamilyMembers> FamilyMembersList()

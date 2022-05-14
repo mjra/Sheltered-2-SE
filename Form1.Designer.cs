@@ -122,14 +122,14 @@ namespace Sheltered_2_SE
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -183,7 +183,6 @@ namespace Sheltered_2_SE
             this.lblFirstname.Size = new System.Drawing.Size(74, 17);
             this.lblFirstname.TabIndex = 0;
             this.lblFirstname.Text = "Firstname:";
-            this.lblFirstname.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblLastname
             // 
@@ -194,7 +193,6 @@ namespace Sheltered_2_SE
             this.lblLastname.Size = new System.Drawing.Size(74, 17);
             this.lblLastname.TabIndex = 1;
             this.lblLastname.Text = "Lastname:";
-            this.lblLastname.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // lblHealth
             // 
@@ -453,6 +451,7 @@ namespace Sheltered_2_SE
             this.btnUnstuckCharacter.TabIndex = 31;
             this.btnUnstuckCharacter.Text = "Unstuck Character";
             this.btnUnstuckCharacter.UseVisualStyleBackColor = true;
+            this.btnUnstuckCharacter.Click += new System.EventHandler(this.btnUnstuckCharacter_Click);
             // 
             // pbxWarning
             // 
@@ -474,11 +473,10 @@ namespace Sheltered_2_SE
             this.lblWarning.TabIndex = 33;
             this.lblWarning.Text = "WARNING\r\nThe \"Save Character\" doesn\'t save the XML, it just saves\r\n the changes. " +
     "When done you still have to save using the \r\nmenu \"File\" then save\r\n";
-            this.lblWarning.Click += new System.EventHandler(this.label14_Click);
             // 
             // btnSaveCharacter
             // 
-            this.btnSaveCharacter.Location = new System.Drawing.Point(143, 528);
+            this.btnSaveCharacter.Location = new System.Drawing.Point(185, 528);
             this.btnSaveCharacter.Name = "btnSaveCharacter";
             this.btnSaveCharacter.Size = new System.Drawing.Size(121, 22);
             this.btnSaveCharacter.TabIndex = 34;
@@ -696,7 +694,6 @@ namespace Sheltered_2_SE
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Sheltered 2 Savegame Editor by mJrA";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWarning)).EndInit();
