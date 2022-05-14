@@ -99,6 +99,9 @@ namespace Sheltered_2_SE
             this.label5 = new System.Windows.Forms.Label();
             this.buyMeACoffeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.version01ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblCopyright = new System.Windows.Forms.Label();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWarning)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -172,7 +175,8 @@ namespace Sheltered_2_SE
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.buyMeACoffeeToolStripMenuItem});
+            this.buyMeACoffeeToolStripMenuItem,
+            this.version01ToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.editToolStripMenuItem.Text = "Info";
@@ -501,7 +505,7 @@ namespace Sheltered_2_SE
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(660, 0);
+            this.button1.Location = new System.Drawing.Point(620, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 23);
             this.button1.TabIndex = 36;
@@ -694,7 +698,7 @@ namespace Sheltered_2_SE
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(506, 0);
+            this.button2.Location = new System.Drawing.Point(466, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(143, 23);
             this.button2.TabIndex = 38;
@@ -763,7 +767,7 @@ namespace Sheltered_2_SE
             this.buyMeACoffeeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline);
             this.buyMeACoffeeToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
             this.buyMeACoffeeToolStripMenuItem.Name = "buyMeACoffeeToolStripMenuItem";
-            this.buyMeACoffeeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.buyMeACoffeeToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.buyMeACoffeeToolStripMenuItem.Text = "Buy me a Coffee";
             this.buyMeACoffeeToolStripMenuItem.Click += new System.EventHandler(this.buyMeACoffeeToolStripMenuItem_Click);
             // 
@@ -773,11 +777,39 @@ namespace Sheltered_2_SE
             this.helpStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpStripMenuItem.Text = "Help";
             // 
+            // version01ToolStripMenuItem
+            // 
+            this.version01ToolStripMenuItem.Enabled = false;
+            this.version01ToolStripMenuItem.Name = "version01ToolStripMenuItem";
+            this.version01ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.version01ToolStripMenuItem.Text = "Sheltered 2 SE Version 0.1";
+            // 
+            // lblCopyright
+            // 
+            this.lblCopyright.AutoSize = true;
+            this.lblCopyright.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopyright.Location = new System.Drawing.Point(581, 633);
+            this.lblCopyright.Name = "lblCopyright";
+            this.lblCopyright.Size = new System.Drawing.Size(269, 16);
+            this.lblCopyright.TabIndex = 39;
+            this.lblCopyright.Text = "Sheltered 2 SE   -   Copyright © 2022 by mJrA";
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Location = new System.Drawing.Point(791, 24);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(63, 13);
+            this.lblVersion.TabIndex = 40;
+            this.lblVersion.Text = "Version: 0.1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 644);
+            this.ClientSize = new System.Drawing.Size(869, 651);
+            this.Controls.Add(this.lblVersion);
+            this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl);
@@ -878,6 +910,9 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem buyMeACoffeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem version01ToolStripMenuItem;
+        private System.Windows.Forms.Label lblCopyright;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
 
