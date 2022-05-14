@@ -122,14 +122,14 @@ namespace Sheltered_2_SE
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -458,22 +458,22 @@ namespace Sheltered_2_SE
             // 
             this.pbxWarning.BackColor = System.Drawing.SystemColors.Control;
             this.pbxWarning.Image = ((System.Drawing.Image)(resources.GetObject("pbxWarning.Image")));
-            this.pbxWarning.Location = new System.Drawing.Point(276, 453);
+            this.pbxWarning.Location = new System.Drawing.Point(145, 445);
             this.pbxWarning.Name = "pbxWarning";
             this.pbxWarning.Size = new System.Drawing.Size(31, 27);
             this.pbxWarning.TabIndex = 32;
             this.pbxWarning.TabStop = false;
-            this.pbxWarning.Visible = false;
             // 
             // lblWarning
             // 
             this.lblWarning.AutoSize = true;
-            this.lblWarning.Location = new System.Drawing.Point(313, 453);
+            this.lblWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarning.Location = new System.Drawing.Point(182, 445);
             this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(155, 39);
+            this.lblWarning.Size = new System.Drawing.Size(344, 64);
             this.lblWarning.TabIndex = 33;
-            this.lblWarning.Text = "WARNING\r\nRaising the Cap above 20 may \r\ncause Savegame corruption";
-            this.lblWarning.Visible = false;
+            this.lblWarning.Text = "WARNING\r\nThe \"Save Character\" doesn\'t save the XML, it just saves\r\n the changes. " +
+    "When done you still have to save using the \r\nmenu \"File\" then save\r\n";
             this.lblWarning.Click += new System.EventHandler(this.label14_Click);
             // 
             // btnSaveCharacter
@@ -484,6 +484,7 @@ namespace Sheltered_2_SE
             this.btnSaveCharacter.TabIndex = 34;
             this.btnSaveCharacter.Text = "Save Character";
             this.btnSaveCharacter.UseVisualStyleBackColor = true;
+            this.btnSaveCharacter.Click += new System.EventHandler(this.btnSaveCharacter_Click);
             // 
             // button1
             // 

@@ -38,7 +38,7 @@ namespace Sheltered_2_SE
 
             openSaveFile.Filter = "Sheltered 2 Savegame|*.dat";
             openSaveFile.InitialDirectory = savePath;
-            openSaveFile.RestoreDirectory = true;
+            openSaveFile.RestoreDirectory = false;
 
             String Filename = "";
 
@@ -94,12 +94,8 @@ namespace Sheltered_2_SE
 
                 try
                 {
-                    StreamWriter sw = new StreamWriter(ProcessFile.tempFilePath);
-                    sw.Write(Output.Text);
-                    sw.Close();
                     processFile.SaveFile(saveFileDialog.FileName);
                     MessageBox.Show("File saved succesfully!", "File Saved");
-
                 }
                 catch (IOException ioe)
                 {
@@ -168,7 +164,7 @@ namespace Sheltered_2_SE
 
 
 
-        private void cbxCharacterSelect_SelectedIndexChanged(object sender, EventArgs e)
+        public void cbxCharacterSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedItem = cbxCharacterSelect.Items[cbxCharacterSelect.SelectedIndex];
             ProcessData.memberNr = cbxCharacterSelect.SelectedIndex;
@@ -350,6 +346,30 @@ namespace Sheltered_2_SE
 
             }
 
+        }
+
+        private void btnSaveCharacter_Click(object sender, EventArgs e)
+        {
+
+            XDocument xdoc = XDocument.Load(ProcessFile.tempFilePath);
+
+            var firstNameRead = xdoc
+                   .Element("root")
+                   .Element("FamilyMembers")
+                   .Elements().Where(x => x.Name.LocalName.StartsWith("Member_"));
+            var firstNameSave = firstNameRead.Elements("firstName").FirstOrDefault();
+
+            if (firstNameSave != null)
+            {
+                firstNameSave.Value = txbFirstname.Text;
+                MessageBox.Show("Character Saved successfully");
+                xdoc.Save(ProcessFile.tempFilePath);
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong...");
+            }          
+            
         }
     }
 }

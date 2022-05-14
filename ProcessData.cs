@@ -14,17 +14,8 @@ namespace Sheltered_2_SE
 
     class ProcessData
     {
-
         public static int familyMemberCount;
         public static int memberNr = 0;
-
-        //public void GetStats()
-        //{
-            
-         
-        //}
-
-
 
         //Load in FamilyMembers
         public static List<FamilyMembers> FamilyMembersList()
@@ -83,7 +74,7 @@ namespace Sheltered_2_SE
 
             var perc = GetStats(stats, "Perception");
             baseStats.PerceptionCap = perc.cap;
-            baseStats.PerceptionLevel  = perc.level;
+            baseStats.PerceptionLevel = perc.level;
 
             var fort = GetStats(stats, "Fortitude");
             baseStats.FortitudeCap = fort.cap;
@@ -102,8 +93,9 @@ namespace Sheltered_2_SE
 
             return (cap, level);
         }
-    }
 
+
+    }
     public class Utilities
     {
         public static void ResetAllControls(Control form)
