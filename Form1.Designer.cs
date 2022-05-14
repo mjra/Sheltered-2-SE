@@ -700,7 +700,7 @@ namespace Sheltered_2_SE
             // 
             this.button2.Location = new System.Drawing.Point(466, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 23);
+            this.button2.Size = new System.Drawing.Size(140, 23);
             this.button2.TabIndex = 38;
             this.button2.Text = "Load XML Tree";
             this.button2.UseVisualStyleBackColor = true;
