@@ -37,7 +37,10 @@ namespace Sheltered_2_SE
             this.decryptionEncryptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.decryptSaveOnlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.encryptSaveOnlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buyMeACoffeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.version01ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Output = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -79,6 +82,7 @@ namespace Sheltered_2_SE
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnMaxStats = new System.Windows.Forms.Button();
             this.lblAnimTimeValue = new System.Windows.Forms.Label();
             this.lblAnimTime = new System.Windows.Forms.Label();
             this.lblAnimHashValue = new System.Windows.Forms.Label();
@@ -87,21 +91,19 @@ namespace Sheltered_2_SE
             this.cBInteractingWithObj = new System.Windows.Forms.CheckBox();
             this.cBInteracting = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
-            this.buyMeACoffeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.version01ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.lblVersion = new System.Windows.Forms.Label();
+            this.lblDebugCharacter = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxWarning)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -122,7 +124,7 @@ namespace Sheltered_2_SE
             this.editToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(869, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(866, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -138,14 +140,14 @@ namespace Sheltered_2_SE
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -161,16 +163,22 @@ namespace Sheltered_2_SE
             // decryptSaveOnlyToolStripMenuItem
             // 
             this.decryptSaveOnlyToolStripMenuItem.Name = "decryptSaveOnlyToolStripMenuItem";
-            this.decryptSaveOnlyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.decryptSaveOnlyToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.decryptSaveOnlyToolStripMenuItem.Text = "Decrypt Save only";
             this.decryptSaveOnlyToolStripMenuItem.Click += new System.EventHandler(this.decryptSaveOnlyToolStripMenuItem_Click);
             // 
             // encryptSaveOnlyToolStripMenuItem
             // 
             this.encryptSaveOnlyToolStripMenuItem.Name = "encryptSaveOnlyToolStripMenuItem";
-            this.encryptSaveOnlyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.encryptSaveOnlyToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.encryptSaveOnlyToolStripMenuItem.Text = "Encrypt Save only";
             this.encryptSaveOnlyToolStripMenuItem.Click += new System.EventHandler(this.encryptSaveOnlyToolStripMenuItem_Click);
+            // 
+            // helpStripMenuItem
+            // 
+            this.helpStripMenuItem.Name = "helpStripMenuItem";
+            this.helpStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpStripMenuItem.Text = "Help";
             // 
             // editToolStripMenuItem
             // 
@@ -180,6 +188,22 @@ namespace Sheltered_2_SE
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.editToolStripMenuItem.Text = "Info";
+            // 
+            // buyMeACoffeeToolStripMenuItem
+            // 
+            this.buyMeACoffeeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline);
+            this.buyMeACoffeeToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
+            this.buyMeACoffeeToolStripMenuItem.Name = "buyMeACoffeeToolStripMenuItem";
+            this.buyMeACoffeeToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.buyMeACoffeeToolStripMenuItem.Text = "Buy me a Coffee";
+            this.buyMeACoffeeToolStripMenuItem.Click += new System.EventHandler(this.buyMeACoffeeToolStripMenuItem_Click);
+            // 
+            // version01ToolStripMenuItem
+            // 
+            this.version01ToolStripMenuItem.Enabled = false;
+            this.version01ToolStripMenuItem.Name = "version01ToolStripMenuItem";
+            this.version01ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.version01ToolStripMenuItem.Text = "Sheltered 2 SE Version 0.1";
             // 
             // Output
             // 
@@ -505,7 +529,7 @@ namespace Sheltered_2_SE
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(620, 0);
+            this.button1.Location = new System.Drawing.Point(482, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 23);
             this.button1.TabIndex = 36;
@@ -530,6 +554,7 @@ namespace Sheltered_2_SE
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnMaxStats);
             this.tabPage1.Controls.Add(this.lblAnimTimeValue);
             this.tabPage1.Controls.Add(this.lblAnimTime);
             this.tabPage1.Controls.Add(this.lblAnimHashValue);
@@ -579,6 +604,16 @@ namespace Sheltered_2_SE
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Characters Stats";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnMaxStats
+            // 
+            this.btnMaxStats.Location = new System.Drawing.Point(131, 303);
+            this.btnMaxStats.Name = "btnMaxStats";
+            this.btnMaxStats.Size = new System.Drawing.Size(72, 22);
+            this.btnMaxStats.TabIndex = 42;
+            this.btnMaxStats.Text = "Max Stats";
+            this.btnMaxStats.UseVisualStyleBackColor = true;
+            this.btnMaxStats.Click += new System.EventHandler(this.btnMaxStats_Click);
             // 
             // lblAnimTimeValue
             // 
@@ -656,57 +691,6 @@ namespace Sheltered_2_SE
             this.tabPage2.Text = "Character Traits";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.label2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(532, 556);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Pets";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.label3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(532, 556);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Deseases/Infestations";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.label4);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(532, 556);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Unlocking";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.label5);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(532, 556);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Debug";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(466, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 23);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Load XML Tree";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -717,6 +701,16 @@ namespace Sheltered_2_SE
             this.label1.TabIndex = 0;
             this.label1.Text = "To be added";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(532, 556);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Pets";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -729,6 +723,16 @@ namespace Sheltered_2_SE
             this.label2.Text = "To be added";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label3);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(532, 556);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Deseases/Infestations";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -739,6 +743,16 @@ namespace Sheltered_2_SE
             this.label3.TabIndex = 1;
             this.label3.Text = "To be added";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.label4);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(532, 556);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Unlocking";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -751,6 +765,16 @@ namespace Sheltered_2_SE
             this.label4.Text = "To be added";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.label5);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(532, 556);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Debug";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -762,27 +786,16 @@ namespace Sheltered_2_SE
             this.label5.Text = "To be added";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // buyMeACoffeeToolStripMenuItem
+            // button2
             // 
-            this.buyMeACoffeeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline);
-            this.buyMeACoffeeToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
-            this.buyMeACoffeeToolStripMenuItem.Name = "buyMeACoffeeToolStripMenuItem";
-            this.buyMeACoffeeToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.buyMeACoffeeToolStripMenuItem.Text = "Buy me a Coffee";
-            this.buyMeACoffeeToolStripMenuItem.Click += new System.EventHandler(this.buyMeACoffeeToolStripMenuItem_Click);
-            // 
-            // helpStripMenuItem
-            // 
-            this.helpStripMenuItem.Name = "helpStripMenuItem";
-            this.helpStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpStripMenuItem.Text = "Help";
-            // 
-            // version01ToolStripMenuItem
-            // 
-            this.version01ToolStripMenuItem.Enabled = false;
-            this.version01ToolStripMenuItem.Name = "version01ToolStripMenuItem";
-            this.version01ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.version01ToolStripMenuItem.Text = "Sheltered 2 SE Version 0.1";
+            this.button2.Location = new System.Drawing.Point(328, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(140, 23);
+            this.button2.TabIndex = 38;
+            this.button2.Text = "Load XML Tree";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // lblCopyright
             // 
@@ -797,17 +810,28 @@ namespace Sheltered_2_SE
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
-            this.lblVersion.Location = new System.Drawing.Point(791, 24);
+            this.lblVersion.Location = new System.Drawing.Point(790, 27);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(63, 13);
+            this.lblVersion.Size = new System.Drawing.Size(69, 13);
             this.lblVersion.TabIndex = 40;
-            this.lblVersion.Text = "Version: 0.1";
+            this.lblVersion.Text = "Version: 0.11";
+            // 
+            // lblDebugCharacter
+            // 
+            this.lblDebugCharacter.AutoSize = true;
+            this.lblDebugCharacter.Location = new System.Drawing.Point(597, 5);
+            this.lblDebugCharacter.Name = "lblDebugCharacter";
+            this.lblDebugCharacter.Size = new System.Drawing.Size(69, 13);
+            this.lblDebugCharacter.TabIndex = 43;
+            this.lblDebugCharacter.Text = "Member_022";
+            this.lblDebugCharacter.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 651);
+            this.ClientSize = new System.Drawing.Size(866, 657);
+            this.Controls.Add(this.lblDebugCharacter);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.button2);
@@ -913,6 +937,8 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.ToolStripMenuItem version01ToolStripMenuItem;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.Label lblVersion;
+        private System.Windows.Forms.Button btnMaxStats;
+        private System.Windows.Forms.Label lblDebugCharacter;
     }
 }
 
