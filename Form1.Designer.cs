@@ -1283,7 +1283,7 @@ namespace Sheltered_2_SE
             // 
             // pbxAvailablePointsStr
             // 
-            this.pbxAvailablePointsStr.Location = new System.Drawing.Point(0, 0);
+            this.pbxAvailablePointsStr.Location = new System.Drawing.Point(548, 171);
             this.pbxAvailablePointsStr.Name = "pbxAvailablePointsStr";
             this.pbxAvailablePointsStr.Size = new System.Drawing.Size(100, 50);
             this.pbxAvailablePointsStr.TabIndex = 72;
@@ -1708,7 +1708,7 @@ namespace Sheltered_2_SE
             // 
             // pbxAvailablePointsDex
             // 
-            this.pbxAvailablePointsDex.Location = new System.Drawing.Point(0, 0);
+            this.pbxAvailablePointsDex.Location = new System.Drawing.Point(548, 171);
             this.pbxAvailablePointsDex.Name = "pbxAvailablePointsDex";
             this.pbxAvailablePointsDex.Size = new System.Drawing.Size(100, 50);
             this.pbxAvailablePointsDex.TabIndex = 129;
@@ -2071,7 +2071,7 @@ namespace Sheltered_2_SE
             // 
             // pbxAvailablePointsInt
             // 
-            this.pbxAvailablePointsInt.Location = new System.Drawing.Point(0, 0);
+            this.pbxAvailablePointsInt.Location = new System.Drawing.Point(548, 171);
             this.pbxAvailablePointsInt.Name = "pbxAvailablePointsInt";
             this.pbxAvailablePointsInt.Size = new System.Drawing.Size(100, 50);
             this.pbxAvailablePointsInt.TabIndex = 130;
@@ -2530,7 +2530,7 @@ namespace Sheltered_2_SE
             // 
             // pbxAvailablePointsCha
             // 
-            this.pbxAvailablePointsCha.Location = new System.Drawing.Point(0, 0);
+            this.pbxAvailablePointsCha.Location = new System.Drawing.Point(548, 171);
             this.pbxAvailablePointsCha.Name = "pbxAvailablePointsCha";
             this.pbxAvailablePointsCha.Size = new System.Drawing.Size(100, 50);
             this.pbxAvailablePointsCha.TabIndex = 128;
@@ -2913,7 +2913,7 @@ namespace Sheltered_2_SE
             // 
             // pbxAvailablePointsPer
             // 
-            this.pbxAvailablePointsPer.Location = new System.Drawing.Point(0, 0);
+            this.pbxAvailablePointsPer.Location = new System.Drawing.Point(548, 171);
             this.pbxAvailablePointsPer.Name = "pbxAvailablePointsPer";
             this.pbxAvailablePointsPer.Size = new System.Drawing.Size(100, 50);
             this.pbxAvailablePointsPer.TabIndex = 131;
@@ -3386,7 +3386,7 @@ namespace Sheltered_2_SE
             // 
             // pbxAvailablePointsFor
             // 
-            this.pbxAvailablePointsFor.Location = new System.Drawing.Point(0, 0);
+            this.pbxAvailablePointsFor.Location = new System.Drawing.Point(548, 171);
             this.pbxAvailablePointsFor.Name = "pbxAvailablePointsFor";
             this.pbxAvailablePointsFor.Size = new System.Drawing.Size(100, 50);
             this.pbxAvailablePointsFor.TabIndex = 131;
@@ -3893,6 +3893,7 @@ namespace Sheltered_2_SE
             // 
             // unlockingTab
             // 
+            this.unlockingTab.BackColor = System.Drawing.Color.Transparent;
             this.unlockingTab.Controls.Add(this.checkBox29);
             this.unlockingTab.Controls.Add(this.checkBox30);
             this.unlockingTab.Controls.Add(this.checkBox40);
@@ -3955,8 +3956,7 @@ namespace Sheltered_2_SE
             this.unlockingTab.Name = "unlockingTab";
             this.unlockingTab.Size = new System.Drawing.Size(659, 548);
             this.unlockingTab.TabIndex = 4;
-            this.unlockingTab.Text = "Unlocking";
-            this.unlockingTab.UseVisualStyleBackColor = true;
+            this.unlockingTab.Text = " Unlock";
             // 
             // checkBox29
             // 
@@ -4454,7 +4454,7 @@ namespace Sheltered_2_SE
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Black;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.label24.Location = new System.Drawing.Point(464, 16);
             this.label24.Name = "label24";
