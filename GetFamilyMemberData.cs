@@ -41,18 +41,18 @@ namespace Sheltered_2_SE
                 AnimTime + "\n" + HasBeenDefibbed + "\n" + StrengthCap + "\n" + StrengthLevel + "\n" + DexterityCap + "\n" + DexterityLevel + "\n" + IntelligenceCap + "\n" +
                 IntelligenceLevel + "\n" + CharismaCap + "\n" + CharismaLevel + "\n" + PerceptionCap + "\n" + PerceptionLevel + "\n" + FortitudeCap + "\n" + FortitudeLevel;
         }
+    }
 
-        //public FamilyMembers()
-        //{
-
-        //}
-
-        ////public FamilyMembers(
-        ////    string memberNr, string firstName, string lastName, int health, int maxHealth, bool interacting, bool interactingWithObj, int animHash, float animTime,
-        ////    bool hasBeenDefibbed, int strCap, int strLvl, int dexCap, int dexLvl, int intCap, int intLvl, int charCap, int charLvl, int perCap, int perLvl, int forCap,
-        ////    int forLvl)
-        ////{
+    class GetSkills
+    {
+        public int SkillKey { get; set; }
+        public int SkillLevel { get; set; }
+        public int AccuracyLevel { get; set; }
+        public int DamageLevel { get; set; }
+        public int StaminaLevel { get; set; }
+        public int ChanceLevel { get; set; }
+        public string MemberNumber { get; set; }
         
-        ////}
+
     }
 }

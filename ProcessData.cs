@@ -17,6 +17,8 @@ namespace Sheltered_2_SE
         public static int memberNr = 0;
         public static int changed = 0;
         public static int saved = 0;
+        public static int skillLevel = 2;
+        
 
         //Load in FamilyMemberData
         public static List<GetFamilyMemberData> FamilyMembersList()
@@ -82,7 +84,124 @@ namespace Sheltered_2_SE
             return (cap, level);
         }
 
-        //get something else
+        //Load in Skills
+        //public static List<GetSkills> SkillsList()
+        //{
+        //    return XDocument.Load(ProcessFile.tempFilePath)
+        //       .Element("root")
+        //       .Element("FamilyMembers")
+        //       .Elements().Where(e => e.Name.LocalName.StartsWith("Member_"))
+        //       .Select(p => GetSkillsForMember(p))
+        //       .ToList(); 
+        //}
+
+        //public static List<GetSkills> SkillsList()
+        //{
+        //    return XDocument.Load(ProcessFile.tempFilePath)
+        //       .Element("root")
+        //       .Element("FamilyMembers")
+        //       .Elements().Where(e => e.Name.LocalName.StartsWith("Member_"))
+        //       .Elements("Profession")
+        //       .Elements("StrengthSkills")
+        //       .Elements("strengthSkills")
+        //       .Elements().Where(e=> e.Name.LocalName.StartsWith("i"))
+        //       .Select.Element("skillKey").Value
+        //       .ToList();
+        //}
+
+
+        //private static GetSkills GetSkillsForMember(XElement p)
+        //{
+        //    var f = new GetSkills
+            
+        //    {
+        //        MemberNumber = Convert.ToString(p.AncestorsAndSelf().First().Name)  
+        //    };
+
+
+        //    //var skillIndex = p.Element("i" + indexNr);
+
+
+        //    var prof = p.Element("Profession");
+
+        //    var size = p.Attribute("size").Value;
+        //    var indexNr = size;
+        //    var skillsAttribute = p.Element("strengthSkills");
+        //    var attribute = p.Attributes(size);
+        //    var gI = p.Elements().Where(i => i.Name.LocalName.StartsWith("i"));
+
+           
+
+        //    var str = GetSkills(prof, "StrengthSkills", skillsAttribute, attribute);
+            
+        //    f.Strength = str.getStr;
+
+        //    var dex = GetSkills(prof, "DexteritySkills", skillsAttribute, attribute);
+
+        //    f.Dexterity = dex.aSkillKey;
+
+
+        //    var intel = GetSkills(prof, "IntelligenceSkills", skillsAttribute, attribute);
+
+        //    f.Intelligence = intel.aSkillKey;
+
+
+        //    var cha = GetSkills(prof, "CharismaSkills", skillsAttribute, attribute);
+
+        //    f.Charisma = cha.aSkillKey;
+
+
+        //    var perc = GetSkills(prof, "PerceptionSkills", skillsAttribute, attribute);
+
+        //    f.Perception = perc.aSkillKey;
+
+
+        //    var fort = GetSkills(prof, "FortitudeSkills", skillsAttribute, attribute);
+
+        //    f.Fortitude = fort.aSkillKey;
+
+        //    var v = new GetSkills
+        //    {
+
+        //    };
+
+
+        //    var getV = GetValues((XElement)gI);
+        //    f.SkillKey = gI.aSkillKey;
+        //    f.SkillLevel = gI.aSkillLevel;
+        //    f.AccuracyLevel = gI.aAccuracyLevel;
+        //    f.DamageLevel = gI.aDamageLevel;
+        //    f.StaminaLevel = gI.aStaminaLevel;
+        //    f.ChanceLevel = gI.aChanceLevel;
+
+
+        //    return f;
+        //}
+
+        //private static object GetSkills(XElement prof, string statName, XElement skillsAttribute, XElement attribute)
+        //{
+
+        //    var getStr = Convert.ToInt32(gI.Element("skillKey").Value);
+
+
+
+
+        //    return (getStr, getDex, getInt, getCha, getPer, getFor);
+        //}
+
+        private static (int aSkillKey, int aSkillLevel, int aAccuracyLevel, int aDamageLevel, int aStaminaLevel, int aChanceLevel) GetValues(XElement gI)
+        {
+
+            var aSkillKey = Convert.ToInt32(gI.Element("skillKey").Value);
+            var aSkillLevel = Convert.ToInt32(gI.Element("skillLevel").Value);
+            var aAccuracyLevel = Convert.ToInt32(gI.Element("accuracyLevel").Value);
+            var aDamageLevel = Convert.ToInt32(gI.Element("damageLevel").Value);
+            var aStaminaLevel = Convert.ToInt32(gI.Element("staminaLevel").Value);
+            var aChanceLevel = Convert.ToInt32(gI.Element("chanceLevel").Value);
+
+
+            return (aSkillKey, aSkillLevel, aAccuracyLevel, aDamageLevel, aStaminaLevel, aChanceLevel);
+        }
 
     }
 

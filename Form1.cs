@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -18,9 +19,76 @@ namespace Sheltered_2_SE
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
+
             InitializeComponent();
+
+
+            //Load in Images
+            string skillName = "";
+            int numberSkills = 0;
+
+            var skillList = new[]
+
+
+            {
+                new { Number =  14, Name = "Str"},
+                new { Number =  12, Name = "Dex"},
+                new { Number =  17, Name = "Int"},
+                new { Number =  13, Name = "Cha"},
+                new { Number =  17, Name = "Per"},
+                new { Number =  20, Name = "For"}
+
+            }.ToList();
+            int indexAdd = 0;
+            int selectedTab = 0;
+            foreach (dynamic skill in skillList)
+            {
+
+                numberSkills = skill.Number;
+                skillName = skill.Name;
+
+                for (int i = 0; i < numberSkills; i++)
+
+                {
+                    tabControlSkills.SelectTab(selectedTab);
+                    var imageBox = tabControlSkills.SelectedTab.Controls.OfType<PictureBox>().FirstOrDefault(p => p.Name == "pbx" + skillName + "Skill" + (i + 1).ToString());
+                    imageBox.Image = skillIcons.Images[i + indexAdd];
+                }
+                indexAdd += numberSkills;
+                selectedTab++;
+            }
+            tabControlSkills.SelectTab(0);
+
+            var tabSelect = new[]
+            {
+                new { Name = "Str"},
+                new { Name = "Dex"},
+                new { Name = "Int"},
+                new { Name = "Cha"},
+                new { Name = "Per"},
+                new { Name = "For"}
+
+            }.ToList(); foreach (var skill in tabSelect)
+            {
+                var getSkill = tabControlSkills.TabPages["skillPage" + skill.Name].Controls;
+
+                foreach (Control container in getSkill)
+                {
+                    if (container is PictureBox changeImage)
+                    {
+                        if (changeImage.Name.StartsWith("pbx" + skill.Name + "SkillLevel"))
+                        {
+                            changeImage.Image = skillLevelIcons.Images[Convert.ToInt32(changeImage.Tag)];
+                        }
+                    }
+                }
+            }
+
+
+
         }
         ProcessFile processFile = new ProcessFile();
         ProcessData processData = new ProcessData();
@@ -34,7 +102,7 @@ namespace Sheltered_2_SE
         {
             cbxCharacterSelect.Items.Clear();
             cbxCharacterSelect.Text = "Select Character";
-            Utilities.ResetAllControls(tabPage1);
+            Utilities.ResetAllControls(characterStatsTab);
 
             openSaveFile.Filter = "Sheltered 2 Savegame|*.dat";
             openSaveFile.InitialDirectory = savePath;
@@ -149,7 +217,7 @@ namespace Sheltered_2_SE
                         cBInteractingWithObj.Checked = member.InteractingWithObj;
                         cBHasBeenDefibbed.Checked = member.HasBeenDefibbed;
                         lblAnimHashValue.Text = Convert.ToString(member.AnimHash);
-                        lblAnimTimeValue.Text = member.AnimTime.ToString();
+                        lblAnimTimeValue.Text = Convert.ToString(member.AnimTime);
                     }
                 }
                 txbCapStrenght.Text = f.ElementAt(ProcessData.memberNr).StrengthCap.ToString();
@@ -301,10 +369,10 @@ namespace Sheltered_2_SE
             cbxCharacterSelect.Text = "Select Character";
 
             MessageBox.Show("Character Saved successfully");
-         
+
             xDoc.Save(ProcessFile.tempFilePath);
 
-        } 
+        }
 
 
         private void btnUnstuckCharacter_Click(object sender, EventArgs e)
@@ -444,7 +512,102 @@ namespace Sheltered_2_SE
                 }
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            //SkillPage.SkillLevelImage skill1 = new SkillPage.SkillLevelImage();
+            //skill1.name = "pbx" + "SkillLevel" + "1";
+
+            //var test = pbxStrSkill1 as PictureBox;
+
+            //SkillPage.GetClick((PictureBox)test);
+
+
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxForSkill1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void pbxStrSkill1_MouseClick(object sender, MouseEventArgs e)
+        {
+
+
+            //switch (e.Button)
+            //{
+            //    case MouseButtons.Right:
+            //        {
+            //            if (ProcessData.skillLevel == 5)
+            //            {
+            //                pbxStrSkillLevel1.Image = skillLevelIcons.Images[2];
+            //                ProcessData.skillLevel = 2;
+            //            }
+            //            else if (ProcessData.skillLevel == 7)
+            //            {
+            //                pbxStrSkillLevel1.Image = skillLevelIcons.Images[5];
+            //                ProcessData.skillLevel = 5;
+            //            }
+            //            else if (ProcessData.skillLevel == 8)
+            //            {
+            //                pbxStrSkillLevel1.Image = skillLevelIcons.Images[7];
+            //                ProcessData.skillLevel = 7;
+            //            }
+            //        }
+            //        break;
+            //}
+            //switch (e.Button)
+            //{
+            //    case MouseButtons.Left:
+            //        {
+            //            if (ProcessData.skillLevel == 2)
+            //            {
+            //                pbxStrSkillLevel1.Image = skillLevelIcons.Images[5];
+            //                ProcessData.skillLevel = 5;
+            //            }
+            //            else if (ProcessData.skillLevel == 5)
+            //            {
+            //                pbxStrSkillLevel1.Image = skillLevelIcons.Images[7];
+            //                ProcessData.skillLevel = 7;
+            //            }
+            //            else if (ProcessData.skillLevel == 7)
+            //            {
+            //                pbxStrSkillLevel1.Image = skillLevelIcons.Images[8];
+            //                ProcessData.skillLevel = 8;
+            //            }
+            //        }
+            //        break;
+            //}
+        }
+
+        private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControlMain.SelectedIndex != 1)
+            {
+                cbxSkillsCharacterSelect.Items.Clear();
+            }
+            if (tabControlMain.SelectedIndex == 1)
+            {
+                cbxSkillsCharacterSelect.Items.AddRange(cbxCharacterSelect.Items.Cast<Object>().ToArray());
+                lblSkillsCharacterName.Text = cbxSkillsCharacterSelect.Text;
+            }
+        }
+
+        private void cbxSkillsCharacterSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            lblSkillsCharacterName.Text = cbxSkillsCharacterSelect.Text;
+
+        }
     }
 }
+
 
 
