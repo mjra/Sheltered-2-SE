@@ -515,6 +515,7 @@ namespace Sheltered_2_SE
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Output.Text = "";
 
             //SkillPage.SkillLevelImage skill1 = new SkillPage.SkillLevelImage();
             //skill1.name = "pbx" + "SkillLevel" + "1";
@@ -523,8 +524,27 @@ namespace Sheltered_2_SE
 
             //SkillPage.GetClick((PictureBox)test);
 
+            var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+            for (int i = 0; i <= 80; i++)
+            {
+                List<ShelterRoom> roomList = xDoc.Descendants("ShelterCellList").Descendants("i" + i)
+                             .Select(q => new ShelterRoom()
+                             {
+                                 RoomType = q.Element("type").Value,
+                                 RoomMaterial = q.Element("roomType").Value,
+                                 PercentExcavated = q.Element("percentageExcavated").Value
+                             }).ToList<ShelterRoom>();
+                foreach (var item in roomList)
+                {
+                    Output.AppendText("i" + i + "\n"
+                        + item.RoomType + "\n"
+                        + item.RoomMaterial + "\n"
+                        + item.PercentExcavated + "\n"
+                        + "___________________________________________" + "\n");
 
 
+                }
+            }
         }
 
         private void label27_Click(object sender, EventArgs e)
@@ -534,7 +554,7 @@ namespace Sheltered_2_SE
 
         private void pbxForSkill1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void pbxStrSkill1_MouseClick(object sender, MouseEventArgs e)
@@ -604,6 +624,22 @@ namespace Sheltered_2_SE
         {
 
             lblSkillsCharacterName.Text = cbxSkillsCharacterSelect.Text;
+
+        }
+
+        private void unlockingTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpenDesigner_Click(object sender, EventArgs e)
+        {
+
+            // Create a new instance of the Form2 class
+            ShelterDesigner shelterDesignerForm = new ShelterDesigner();
+
+            // Show the settings form
+            shelterDesignerForm.Show();
 
         }
     }

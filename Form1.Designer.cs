@@ -329,6 +329,11 @@ namespace Sheltered_2_SE
             this.deseasesTab = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.unlockingTab = new System.Windows.Forms.TabPage();
+            this.checkBox46 = new System.Windows.Forms.CheckBox();
+            this.checkBox47 = new System.Windows.Forms.CheckBox();
+            this.checkBox48 = new System.Windows.Forms.CheckBox();
+            this.checkBox49 = new System.Windows.Forms.CheckBox();
+            this.checkBox45 = new System.Windows.Forms.CheckBox();
             this.checkBox29 = new System.Windows.Forms.CheckBox();
             this.checkBox30 = new System.Windows.Forms.CheckBox();
             this.checkBox40 = new System.Windows.Forms.CheckBox();
@@ -336,36 +341,26 @@ namespace Sheltered_2_SE
             this.checkBox42 = new System.Windows.Forms.CheckBox();
             this.checkBox43 = new System.Windows.Forms.CheckBox();
             this.checkBox44 = new System.Windows.Forms.CheckBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.checkBox28 = new System.Windows.Forms.CheckBox();
-            this.checkBox27 = new System.Windows.Forms.CheckBox();
-            this.label31 = new System.Windows.Forms.Label();
             this.checkBox26 = new System.Windows.Forms.CheckBox();
             this.checkBox25 = new System.Windows.Forms.CheckBox();
-            this.checkBox23 = new System.Windows.Forms.CheckBox();
             this.checkBox24 = new System.Windows.Forms.CheckBox();
             this.checkBox20 = new System.Windows.Forms.CheckBox();
             this.checkBox21 = new System.Windows.Forms.CheckBox();
             this.checkBox22 = new System.Windows.Forms.CheckBox();
-            this.label27 = new System.Windows.Forms.Label();
             this.checkBox17 = new System.Windows.Forms.CheckBox();
             this.checkBox18 = new System.Windows.Forms.CheckBox();
             this.checkBox19 = new System.Windows.Forms.CheckBox();
-            this.label26 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.checkBox37 = new System.Windows.Forms.CheckBox();
             this.checkBox38 = new System.Windows.Forms.CheckBox();
             this.checkBox39 = new System.Windows.Forms.CheckBox();
-            this.label30 = new System.Windows.Forms.Label();
             this.checkBox34 = new System.Windows.Forms.CheckBox();
             this.checkBox35 = new System.Windows.Forms.CheckBox();
             this.checkBox36 = new System.Windows.Forms.CheckBox();
-            this.label29 = new System.Windows.Forms.Label();
             this.checkBox31 = new System.Windows.Forms.CheckBox();
             this.checkBox32 = new System.Windows.Forms.CheckBox();
             this.checkBox33 = new System.Windows.Forms.CheckBox();
-            this.label28 = new System.Windows.Forms.Label();
             this.checkBox16 = new System.Windows.Forms.CheckBox();
             this.checkBox13 = new System.Windows.Forms.CheckBox();
             this.checkBox14 = new System.Windows.Forms.CheckBox();
@@ -373,23 +368,32 @@ namespace Sheltered_2_SE
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.checkBox11 = new System.Windows.Forms.CheckBox();
             this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.debugTab = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.shelterDesignerTab = new System.Windows.Forms.TabPage();
+            this.label33 = new System.Windows.Forms.Label();
+            this.btnOpenDesigner = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lblCopyright = new System.Windows.Forms.Label();
@@ -607,6 +611,7 @@ namespace Sheltered_2_SE
             this.deseasesTab.SuspendLayout();
             this.unlockingTab.SuspendLayout();
             this.debugTab.SuspendLayout();
+            this.shelterDesignerTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1042,6 +1047,7 @@ namespace Sheltered_2_SE
             // 
             // characterStatsTab
             // 
+            this.characterStatsTab.BackColor = System.Drawing.Color.LightGray;
             this.characterStatsTab.Controls.Add(this.btnMaxStats);
             this.characterStatsTab.Controls.Add(this.lblAnimTimeValue);
             this.characterStatsTab.Controls.Add(this.lblAnimTime);
@@ -1092,7 +1098,6 @@ namespace Sheltered_2_SE
             this.characterStatsTab.Size = new System.Drawing.Size(659, 548);
             this.characterStatsTab.TabIndex = 0;
             this.characterStatsTab.Text = "Characters Stats";
-            this.characterStatsTab.UseVisualStyleBackColor = true;
             // 
             // btnMaxStats
             // 
@@ -1183,6 +1188,7 @@ namespace Sheltered_2_SE
             // 
             // characterSkillsTab
             // 
+            this.characterSkillsTab.BackColor = System.Drawing.Color.LightGray;
             this.characterSkillsTab.Controls.Add(this.tabControlSkills);
             this.characterSkillsTab.Controls.Add(this.lblSkillsCharacterName);
             this.characterSkillsTab.Controls.Add(this.cbxSkillsCharacterSelect);
@@ -1193,7 +1199,6 @@ namespace Sheltered_2_SE
             this.characterSkillsTab.Size = new System.Drawing.Size(659, 548);
             this.characterSkillsTab.TabIndex = 1;
             this.characterSkillsTab.Text = "Character Skills";
-            this.characterSkillsTab.UseVisualStyleBackColor = true;
             // 
             // tabControlSkills
             // 
@@ -3886,14 +3891,19 @@ namespace Sheltered_2_SE
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(69, 241);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(394, 74);
+            this.label3.Size = new System.Drawing.Size(411, 74);
             this.label3.TabIndex = 1;
-            this.label3.Text = "To be added";
+            this.label3.Text = "To be added ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // unlockingTab
             // 
-            this.unlockingTab.BackColor = System.Drawing.Color.Transparent;
+            this.unlockingTab.BackColor = System.Drawing.Color.LightGray;
+            this.unlockingTab.Controls.Add(this.checkBox46);
+            this.unlockingTab.Controls.Add(this.checkBox47);
+            this.unlockingTab.Controls.Add(this.checkBox48);
+            this.unlockingTab.Controls.Add(this.checkBox49);
+            this.unlockingTab.Controls.Add(this.checkBox45);
             this.unlockingTab.Controls.Add(this.checkBox29);
             this.unlockingTab.Controls.Add(this.checkBox30);
             this.unlockingTab.Controls.Add(this.checkBox40);
@@ -3901,36 +3911,26 @@ namespace Sheltered_2_SE
             this.unlockingTab.Controls.Add(this.checkBox42);
             this.unlockingTab.Controls.Add(this.checkBox43);
             this.unlockingTab.Controls.Add(this.checkBox44);
-            this.unlockingTab.Controls.Add(this.label32);
-            this.unlockingTab.Controls.Add(this.checkBox28);
-            this.unlockingTab.Controls.Add(this.checkBox27);
-            this.unlockingTab.Controls.Add(this.label31);
             this.unlockingTab.Controls.Add(this.checkBox26);
             this.unlockingTab.Controls.Add(this.checkBox25);
-            this.unlockingTab.Controls.Add(this.checkBox23);
             this.unlockingTab.Controls.Add(this.checkBox24);
             this.unlockingTab.Controls.Add(this.checkBox20);
             this.unlockingTab.Controls.Add(this.checkBox21);
             this.unlockingTab.Controls.Add(this.checkBox22);
-            this.unlockingTab.Controls.Add(this.label27);
             this.unlockingTab.Controls.Add(this.checkBox17);
             this.unlockingTab.Controls.Add(this.checkBox18);
             this.unlockingTab.Controls.Add(this.checkBox19);
-            this.unlockingTab.Controls.Add(this.label26);
             this.unlockingTab.Controls.Add(this.button6);
             this.unlockingTab.Controls.Add(this.button5);
             this.unlockingTab.Controls.Add(this.checkBox37);
             this.unlockingTab.Controls.Add(this.checkBox38);
             this.unlockingTab.Controls.Add(this.checkBox39);
-            this.unlockingTab.Controls.Add(this.label30);
             this.unlockingTab.Controls.Add(this.checkBox34);
             this.unlockingTab.Controls.Add(this.checkBox35);
             this.unlockingTab.Controls.Add(this.checkBox36);
-            this.unlockingTab.Controls.Add(this.label29);
             this.unlockingTab.Controls.Add(this.checkBox31);
             this.unlockingTab.Controls.Add(this.checkBox32);
             this.unlockingTab.Controls.Add(this.checkBox33);
-            this.unlockingTab.Controls.Add(this.label28);
             this.unlockingTab.Controls.Add(this.checkBox16);
             this.unlockingTab.Controls.Add(this.checkBox13);
             this.unlockingTab.Controls.Add(this.checkBox14);
@@ -3938,140 +3938,173 @@ namespace Sheltered_2_SE
             this.unlockingTab.Controls.Add(this.checkBox10);
             this.unlockingTab.Controls.Add(this.checkBox11);
             this.unlockingTab.Controls.Add(this.checkBox12);
-            this.unlockingTab.Controls.Add(this.label25);
             this.unlockingTab.Controls.Add(this.checkBox7);
             this.unlockingTab.Controls.Add(this.checkBox8);
             this.unlockingTab.Controls.Add(this.checkBox9);
-            this.unlockingTab.Controls.Add(this.label24);
             this.unlockingTab.Controls.Add(this.button4);
             this.unlockingTab.Controls.Add(this.checkBox4);
             this.unlockingTab.Controls.Add(this.checkBox5);
             this.unlockingTab.Controls.Add(this.checkBox6);
-            this.unlockingTab.Controls.Add(this.label4);
             this.unlockingTab.Controls.Add(this.checkBox3);
             this.unlockingTab.Controls.Add(this.checkBox2);
             this.unlockingTab.Controls.Add(this.checkBox1);
+            this.unlockingTab.Controls.Add(this.label32);
+            this.unlockingTab.Controls.Add(this.label31);
+            this.unlockingTab.Controls.Add(this.label27);
+            this.unlockingTab.Controls.Add(this.label26);
+            this.unlockingTab.Controls.Add(this.label30);
+            this.unlockingTab.Controls.Add(this.label29);
+            this.unlockingTab.Controls.Add(this.label28);
+            this.unlockingTab.Controls.Add(this.label25);
+            this.unlockingTab.Controls.Add(this.label24);
+            this.unlockingTab.Controls.Add(this.label4);
             this.unlockingTab.Controls.Add(this.label1);
             this.unlockingTab.Location = new System.Drawing.Point(4, 30);
             this.unlockingTab.Name = "unlockingTab";
             this.unlockingTab.Size = new System.Drawing.Size(659, 548);
             this.unlockingTab.TabIndex = 4;
             this.unlockingTab.Text = " Unlock";
+            this.unlockingTab.Click += new System.EventHandler(this.unlockingTab_Click);
+            // 
+            // checkBox46
+            // 
+            this.checkBox46.AutoSize = true;
+            this.checkBox46.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox46.Location = new System.Drawing.Point(256, 211);
+            this.checkBox46.Name = "checkBox46";
+            this.checkBox46.Size = new System.Drawing.Size(84, 22);
+            this.checkBox46.TabIndex = 80;
+            this.checkBox46.Text = "Solar Panel";
+            this.checkBox46.UseVisualStyleBackColor = true;
+            // 
+            // checkBox47
+            // 
+            this.checkBox47.AutoSize = true;
+            this.checkBox47.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox47.Location = new System.Drawing.Point(256, 192);
+            this.checkBox47.Name = "checkBox47";
+            this.checkBox47.Size = new System.Drawing.Size(70, 22);
+            this.checkBox47.TabIndex = 79;
+            this.checkBox47.Text = "Recycler";
+            this.checkBox47.UseVisualStyleBackColor = true;
+            // 
+            // checkBox48
+            // 
+            this.checkBox48.AutoSize = true;
+            this.checkBox48.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox48.Location = new System.Drawing.Point(146, 193);
+            this.checkBox48.Name = "checkBox48";
+            this.checkBox48.Size = new System.Drawing.Size(110, 22);
+            this.checkBox48.TabIndex = 78;
+            this.checkBox48.Text = "Quantum Battery";
+            this.checkBox48.UseVisualStyleBackColor = true;
+            // 
+            // checkBox49
+            // 
+            this.checkBox49.AutoSize = true;
+            this.checkBox49.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox49.Location = new System.Drawing.Point(12, 193);
+            this.checkBox49.Name = "checkBox49";
+            this.checkBox49.Size = new System.Drawing.Size(129, 22);
+            this.checkBox49.TabIndex = 77;
+            this.checkBox49.Text = "Industrial Generator";
+            this.checkBox49.UseVisualStyleBackColor = true;
+            // 
+            // checkBox45
+            // 
+            this.checkBox45.AutoSize = true;
+            this.checkBox45.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox45.Location = new System.Drawing.Point(146, 211);
+            this.checkBox45.Name = "checkBox45";
+            this.checkBox45.Size = new System.Drawing.Size(88, 22);
+            this.checkBox45.TabIndex = 75;
+            this.checkBox45.Text = "Defibrilator";
+            this.checkBox45.UseVisualStyleBackColor = true;
             // 
             // checkBox29
             // 
             this.checkBox29.AutoSize = true;
-            this.checkBox29.Location = new System.Drawing.Point(127, 471);
+            this.checkBox29.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox29.Location = new System.Drawing.Point(256, 175);
             this.checkBox29.Name = "checkBox29";
-            this.checkBox29.Size = new System.Drawing.Size(85, 25);
+            this.checkBox29.Size = new System.Drawing.Size(84, 22);
             this.checkBox29.TabIndex = 74;
-            this.checkBox29.Text = "Trankwill";
+            this.checkBox29.Text = "Laboratory";
             this.checkBox29.UseVisualStyleBackColor = true;
             // 
             // checkBox30
             // 
             this.checkBox30.AutoSize = true;
-            this.checkBox30.Location = new System.Drawing.Point(127, 440);
+            this.checkBox30.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox30.Location = new System.Drawing.Point(146, 176);
             this.checkBox30.Name = "checkBox30";
-            this.checkBox30.Size = new System.Drawing.Size(67, 25);
+            this.checkBox30.Size = new System.Drawing.Size(109, 22);
             this.checkBox30.TabIndex = 73;
-            this.checkBox30.Text = "Snodge";
+            this.checkBox30.Text = "Efficient Planter";
             this.checkBox30.UseVisualStyleBackColor = true;
             // 
             // checkBox40
             // 
             this.checkBox40.AutoSize = true;
-            this.checkBox40.Location = new System.Drawing.Point(127, 409);
+            this.checkBox40.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox40.Location = new System.Drawing.Point(12, 176);
             this.checkBox40.Name = "checkBox40";
-            this.checkBox40.Size = new System.Drawing.Size(59, 25);
+            this.checkBox40.Size = new System.Drawing.Size(101, 22);
             this.checkBox40.TabIndex = 72;
-            this.checkBox40.Text = "Sigma";
+            this.checkBox40.Text = "Flashbang Mine";
             this.checkBox40.UseVisualStyleBackColor = true;
             // 
             // checkBox41
             // 
             this.checkBox41.AutoSize = true;
-            this.checkBox41.Location = new System.Drawing.Point(127, 378);
+            this.checkBox41.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox41.Location = new System.Drawing.Point(12, 211);
             this.checkBox41.Name = "checkBox41";
-            this.checkBox41.Size = new System.Drawing.Size(67, 25);
+            this.checkBox41.Size = new System.Drawing.Size(84, 22);
             this.checkBox41.TabIndex = 71;
-            this.checkBox41.Text = "Python";
+            this.checkBox41.Text = "Medical Bed";
             this.checkBox41.UseVisualStyleBackColor = true;
             // 
             // checkBox42
             // 
             this.checkBox42.AutoSize = true;
-            this.checkBox42.Location = new System.Drawing.Point(127, 347);
+            this.checkBox42.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox42.Location = new System.Drawing.Point(256, 158);
             this.checkBox42.Name = "checkBox42";
-            this.checkBox42.Size = new System.Drawing.Size(84, 25);
+            this.checkBox42.Size = new System.Drawing.Size(104, 22);
             this.checkBox42.TabIndex = 70;
-            this.checkBox42.Text = "Feederral";
+            this.checkBox42.Text = "Electricity trap";
             this.checkBox42.UseVisualStyleBackColor = true;
             // 
             // checkBox43
             // 
             this.checkBox43.AutoSize = true;
-            this.checkBox43.Location = new System.Drawing.Point(127, 316);
+            this.checkBox43.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox43.Location = new System.Drawing.Point(146, 159);
             this.checkBox43.Name = "checkBox43";
-            this.checkBox43.Size = new System.Drawing.Size(61, 25);
+            this.checkBox43.Size = new System.Drawing.Size(67, 22);
             this.checkBox43.TabIndex = 69;
-            this.checkBox43.Text = "Crunk";
+            this.checkBox43.Text = "gas mine";
             this.checkBox43.UseVisualStyleBackColor = true;
             // 
             // checkBox44
             // 
             this.checkBox44.AutoSize = true;
-            this.checkBox44.Location = new System.Drawing.Point(127, 285);
+            this.checkBox44.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox44.Location = new System.Drawing.Point(12, 159);
             this.checkBox44.Name = "checkBox44";
-            this.checkBox44.Size = new System.Drawing.Size(72, 25);
+            this.checkBox44.Size = new System.Drawing.Size(91, 22);
             this.checkBox44.TabIndex = 68;
-            this.checkBox44.Text = "Alcohol";
+            this.checkBox44.Text = "Battery bank";
             this.checkBox44.UseVisualStyleBackColor = true;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(124, 261);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(68, 21);
-            this.label32.TabIndex = 67;
-            this.label32.Text = "Blueprints";
-            // 
-            // checkBox28
-            // 
-            this.checkBox28.AutoSize = true;
-            this.checkBox28.Location = new System.Drawing.Point(315, 440);
-            this.checkBox28.Name = "checkBox28";
-            this.checkBox28.Size = new System.Drawing.Size(143, 25);
-            this.checkBox28.TabIndex = 66;
-            this.checkBox28.Text = "Better trading Deals";
-            this.checkBox28.UseVisualStyleBackColor = true;
-            // 
-            // checkBox27
-            // 
-            this.checkBox27.AutoSize = true;
-            this.checkBox27.Location = new System.Drawing.Point(315, 409);
-            this.checkBox27.Name = "checkBox27";
-            this.checkBox27.Size = new System.Drawing.Size(143, 25);
-            this.checkBox27.TabIndex = 65;
-            this.checkBox27.Text = "Better trading Deals";
-            this.checkBox27.UseVisualStyleBackColor = true;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(322, 261);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(88, 21);
-            this.label31.TabIndex = 64;
-            this.label31.Text = "other unlocks";
             // 
             // checkBox26
             // 
             this.checkBox26.AutoSize = true;
-            this.checkBox26.Location = new System.Drawing.Point(315, 347);
+            this.checkBox26.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox26.Location = new System.Drawing.Point(146, 313);
             this.checkBox26.Name = "checkBox26";
-            this.checkBox26.Size = new System.Drawing.Size(128, 25);
+            this.checkBox26.Size = new System.Drawing.Size(116, 22);
             this.checkBox26.TabIndex = 63;
             this.checkBox26.Text = "Car Parts crafting";
             this.checkBox26.UseVisualStyleBackColor = true;
@@ -4079,29 +4112,21 @@ namespace Sheltered_2_SE
             // checkBox25
             // 
             this.checkBox25.AutoSize = true;
-            this.checkBox25.Location = new System.Drawing.Point(315, 316);
+            this.checkBox25.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox25.Location = new System.Drawing.Point(146, 296);
             this.checkBox25.Name = "checkBox25";
-            this.checkBox25.Size = new System.Drawing.Size(94, 25);
+            this.checkBox25.Size = new System.Drawing.Size(85, 22);
             this.checkBox25.TabIndex = 62;
             this.checkBox25.Text = "Guncrafting";
             this.checkBox25.UseVisualStyleBackColor = true;
             // 
-            // checkBox23
-            // 
-            this.checkBox23.AutoSize = true;
-            this.checkBox23.Location = new System.Drawing.Point(315, 378);
-            this.checkBox23.Name = "checkBox23";
-            this.checkBox23.Size = new System.Drawing.Size(143, 25);
-            this.checkBox23.TabIndex = 61;
-            this.checkBox23.Text = "Better trading Deals";
-            this.checkBox23.UseVisualStyleBackColor = true;
-            // 
             // checkBox24
             // 
             this.checkBox24.AutoSize = true;
-            this.checkBox24.Location = new System.Drawing.Point(315, 285);
+            this.checkBox24.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox24.Location = new System.Drawing.Point(146, 279);
             this.checkBox24.Name = "checkBox24";
-            this.checkBox24.Size = new System.Drawing.Size(143, 25);
+            this.checkBox24.Size = new System.Drawing.Size(127, 22);
             this.checkBox24.TabIndex = 60;
             this.checkBox24.Text = "Better trading Deals";
             this.checkBox24.UseVisualStyleBackColor = true;
@@ -4110,7 +4135,7 @@ namespace Sheltered_2_SE
             // 
             this.checkBox20.AutoSize = true;
             this.checkBox20.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox20.Location = new System.Drawing.Point(481, 517);
+            this.checkBox20.Location = new System.Drawing.Point(481, 518);
             this.checkBox20.Name = "checkBox20";
             this.checkBox20.Size = new System.Drawing.Size(39, 22);
             this.checkBox20.TabIndex = 58;
@@ -4121,7 +4146,7 @@ namespace Sheltered_2_SE
             // 
             this.checkBox21.AutoSize = true;
             this.checkBox21.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox21.Location = new System.Drawing.Point(481, 499);
+            this.checkBox21.Location = new System.Drawing.Point(481, 500);
             this.checkBox21.Name = "checkBox21";
             this.checkBox21.Size = new System.Drawing.Size(39, 22);
             this.checkBox21.TabIndex = 57;
@@ -4132,28 +4157,18 @@ namespace Sheltered_2_SE
             // 
             this.checkBox22.AutoSize = true;
             this.checkBox22.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox22.Location = new System.Drawing.Point(481, 481);
+            this.checkBox22.Location = new System.Drawing.Point(481, 482);
             this.checkBox22.Name = "checkBox22";
             this.checkBox22.Size = new System.Drawing.Size(39, 22);
             this.checkBox22.TabIndex = 56;
             this.checkBox22.Text = "---";
             this.checkBox22.UseVisualStyleBackColor = true;
             // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label27.Location = new System.Drawing.Point(464, 457);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(176, 21);
-            this.label27.TabIndex = 55;
-            this.label27.Text = "Reward Ally with The old clan";
-            // 
             // checkBox17
             // 
             this.checkBox17.AutoSize = true;
             this.checkBox17.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox17.Location = new System.Drawing.Point(481, 429);
+            this.checkBox17.Location = new System.Drawing.Point(481, 430);
             this.checkBox17.Name = "checkBox17";
             this.checkBox17.Size = new System.Drawing.Size(126, 22);
             this.checkBox17.TabIndex = 54;
@@ -4164,7 +4179,7 @@ namespace Sheltered_2_SE
             // 
             this.checkBox18.AutoSize = true;
             this.checkBox18.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox18.Location = new System.Drawing.Point(481, 411);
+            this.checkBox18.Location = new System.Drawing.Point(481, 412);
             this.checkBox18.Name = "checkBox18";
             this.checkBox18.Size = new System.Drawing.Size(102, 22);
             this.checkBox18.TabIndex = 53;
@@ -4175,26 +4190,16 @@ namespace Sheltered_2_SE
             // 
             this.checkBox19.AutoSize = true;
             this.checkBox19.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox19.Location = new System.Drawing.Point(481, 393);
+            this.checkBox19.Location = new System.Drawing.Point(481, 394);
             this.checkBox19.Name = "checkBox19";
             this.checkBox19.Size = new System.Drawing.Size(102, 22);
             this.checkBox19.TabIndex = 52;
             this.checkBox19.Text = "Pulserifle poor";
             this.checkBox19.UseVisualStyleBackColor = true;
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label26.Location = new System.Drawing.Point(464, 369);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(173, 21);
-            this.label26.TabIndex = 51;
-            this.label26.Text = "Reward Ally with LOS MUERTOS";
-            // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(264, 519);
+            this.button6.Location = new System.Drawing.Point(264, 507);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(107, 26);
             this.button6.TabIndex = 50;
@@ -4203,7 +4208,7 @@ namespace Sheltered_2_SE
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(138, 519);
+            this.button5.Location = new System.Drawing.Point(138, 507);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(107, 26);
             this.button5.TabIndex = 49;
@@ -4214,7 +4219,7 @@ namespace Sheltered_2_SE
             // 
             this.checkBox37.AutoSize = true;
             this.checkBox37.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox37.Location = new System.Drawing.Point(481, 341);
+            this.checkBox37.Location = new System.Drawing.Point(481, 342);
             this.checkBox37.Name = "checkBox37";
             this.checkBox37.Size = new System.Drawing.Size(138, 22);
             this.checkBox37.TabIndex = 48;
@@ -4225,7 +4230,7 @@ namespace Sheltered_2_SE
             // 
             this.checkBox38.AutoSize = true;
             this.checkBox38.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox38.Location = new System.Drawing.Point(481, 323);
+            this.checkBox38.Location = new System.Drawing.Point(481, 324);
             this.checkBox38.Name = "checkBox38";
             this.checkBox38.Size = new System.Drawing.Size(141, 22);
             this.checkBox38.TabIndex = 47;
@@ -4236,28 +4241,18 @@ namespace Sheltered_2_SE
             // 
             this.checkBox39.AutoSize = true;
             this.checkBox39.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox39.Location = new System.Drawing.Point(481, 305);
+            this.checkBox39.Location = new System.Drawing.Point(481, 306);
             this.checkBox39.Name = "checkBox39";
             this.checkBox39.Size = new System.Drawing.Size(95, 22);
             this.checkBox39.TabIndex = 46;
             this.checkBox39.Text = "Sentry Turret";
             this.checkBox39.UseVisualStyleBackColor = true;
             // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label30.Location = new System.Drawing.Point(464, 281);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(171, 21);
-            this.label30.TabIndex = 45;
-            this.label30.Text = "Reward Ally with Black roses";
-            // 
             // checkBox34
             // 
             this.checkBox34.AutoSize = true;
             this.checkBox34.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox34.Location = new System.Drawing.Point(481, 254);
+            this.checkBox34.Location = new System.Drawing.Point(481, 255);
             this.checkBox34.Name = "checkBox34";
             this.checkBox34.Size = new System.Drawing.Size(126, 22);
             this.checkBox34.TabIndex = 44;
@@ -4268,7 +4263,7 @@ namespace Sheltered_2_SE
             // 
             this.checkBox35.AutoSize = true;
             this.checkBox35.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox35.Location = new System.Drawing.Point(481, 236);
+            this.checkBox35.Location = new System.Drawing.Point(481, 237);
             this.checkBox35.Name = "checkBox35";
             this.checkBox35.Size = new System.Drawing.Size(102, 22);
             this.checkBox35.TabIndex = 43;
@@ -4279,28 +4274,18 @@ namespace Sheltered_2_SE
             // 
             this.checkBox36.AutoSize = true;
             this.checkBox36.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox36.Location = new System.Drawing.Point(481, 218);
+            this.checkBox36.Location = new System.Drawing.Point(481, 219);
             this.checkBox36.Name = "checkBox36";
             this.checkBox36.Size = new System.Drawing.Size(102, 22);
             this.checkBox36.TabIndex = 42;
             this.checkBox36.Text = "Pulserifle poor";
             this.checkBox36.UseVisualStyleBackColor = true;
             // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label29.Location = new System.Drawing.Point(464, 194);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(185, 21);
-            this.label29.TabIndex = 41;
-            this.label29.Text = "Reward Ally with The New Order";
-            // 
             // checkBox31
             // 
             this.checkBox31.AutoSize = true;
             this.checkBox31.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox31.Location = new System.Drawing.Point(481, 166);
+            this.checkBox31.Location = new System.Drawing.Point(481, 167);
             this.checkBox31.Name = "checkBox31";
             this.checkBox31.Size = new System.Drawing.Size(123, 22);
             this.checkBox31.TabIndex = 40;
@@ -4311,7 +4296,7 @@ namespace Sheltered_2_SE
             // 
             this.checkBox32.AutoSize = true;
             this.checkBox32.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox32.Location = new System.Drawing.Point(481, 148);
+            this.checkBox32.Location = new System.Drawing.Point(481, 149);
             this.checkBox32.Name = "checkBox32";
             this.checkBox32.Size = new System.Drawing.Size(115, 22);
             this.checkBox32.TabIndex = 39;
@@ -4322,29 +4307,20 @@ namespace Sheltered_2_SE
             // 
             this.checkBox33.AutoSize = true;
             this.checkBox33.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox33.Location = new System.Drawing.Point(481, 130);
+            this.checkBox33.Location = new System.Drawing.Point(481, 131);
             this.checkBox33.Name = "checkBox33";
             this.checkBox33.Size = new System.Drawing.Size(88, 22);
             this.checkBox33.TabIndex = 38;
             this.checkBox33.Text = "Morningstar";
             this.checkBox33.UseVisualStyleBackColor = true;
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label28.Location = new System.Drawing.Point(462, 106);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(150, 21);
-            this.label28.TabIndex = 37;
-            this.label28.Text = "Reward Ally with CTK Mob";
-            // 
             // checkBox16
             // 
             this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(12, 471);
+            this.checkBox16.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox16.Location = new System.Drawing.Point(12, 383);
             this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(85, 25);
+            this.checkBox16.Size = new System.Drawing.Size(77, 22);
             this.checkBox16.TabIndex = 20;
             this.checkBox16.Text = "Trankwill";
             this.checkBox16.UseVisualStyleBackColor = true;
@@ -4352,9 +4328,10 @@ namespace Sheltered_2_SE
             // checkBox13
             // 
             this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(12, 440);
+            this.checkBox13.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox13.Location = new System.Drawing.Point(12, 366);
             this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(67, 25);
+            this.checkBox13.Size = new System.Drawing.Size(60, 22);
             this.checkBox13.TabIndex = 19;
             this.checkBox13.Text = "Snodge";
             this.checkBox13.UseVisualStyleBackColor = true;
@@ -4362,9 +4339,10 @@ namespace Sheltered_2_SE
             // checkBox14
             // 
             this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(12, 409);
+            this.checkBox14.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox14.Location = new System.Drawing.Point(12, 349);
             this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(59, 25);
+            this.checkBox14.Size = new System.Drawing.Size(54, 22);
             this.checkBox14.TabIndex = 18;
             this.checkBox14.Text = "Sigma";
             this.checkBox14.UseVisualStyleBackColor = true;
@@ -4372,9 +4350,10 @@ namespace Sheltered_2_SE
             // checkBox15
             // 
             this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(12, 378);
+            this.checkBox15.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox15.Location = new System.Drawing.Point(12, 332);
             this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(67, 25);
+            this.checkBox15.Size = new System.Drawing.Size(61, 22);
             this.checkBox15.TabIndex = 17;
             this.checkBox15.Text = "Python";
             this.checkBox15.UseVisualStyleBackColor = true;
@@ -4382,9 +4361,10 @@ namespace Sheltered_2_SE
             // checkBox10
             // 
             this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(12, 347);
+            this.checkBox10.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox10.Location = new System.Drawing.Point(12, 315);
             this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(84, 25);
+            this.checkBox10.Size = new System.Drawing.Size(76, 22);
             this.checkBox10.TabIndex = 16;
             this.checkBox10.Text = "Feederral";
             this.checkBox10.UseVisualStyleBackColor = true;
@@ -4392,9 +4372,10 @@ namespace Sheltered_2_SE
             // checkBox11
             // 
             this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(12, 316);
+            this.checkBox11.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox11.Location = new System.Drawing.Point(12, 298);
             this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(61, 25);
+            this.checkBox11.Size = new System.Drawing.Size(56, 22);
             this.checkBox11.TabIndex = 15;
             this.checkBox11.Text = "Crunk";
             this.checkBox11.UseVisualStyleBackColor = true;
@@ -4402,27 +4383,19 @@ namespace Sheltered_2_SE
             // checkBox12
             // 
             this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(12, 285);
+            this.checkBox12.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox12.Location = new System.Drawing.Point(12, 281);
             this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(72, 25);
+            this.checkBox12.Size = new System.Drawing.Size(66, 22);
             this.checkBox12.TabIndex = 14;
             this.checkBox12.Text = "Alcohol";
             this.checkBox12.UseVisualStyleBackColor = true;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(9, 261);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(77, 21);
-            this.label25.TabIndex = 13;
-            this.label25.Text = "Drug recipes";
             // 
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
             this.checkBox7.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox7.Location = new System.Drawing.Point(481, 76);
+            this.checkBox7.Location = new System.Drawing.Point(481, 77);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(163, 22);
             this.checkBox7.TabIndex = 12;
@@ -4433,7 +4406,7 @@ namespace Sheltered_2_SE
             // 
             this.checkBox8.AutoSize = true;
             this.checkBox8.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox8.Location = new System.Drawing.Point(481, 58);
+            this.checkBox8.Location = new System.Drawing.Point(481, 59);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(167, 22);
             this.checkBox8.TabIndex = 11;
@@ -4444,27 +4417,16 @@ namespace Sheltered_2_SE
             // 
             this.checkBox9.AutoSize = true;
             this.checkBox9.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox9.Location = new System.Drawing.Point(481, 40);
+            this.checkBox9.Location = new System.Drawing.Point(481, 41);
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(120, 22);
             this.checkBox9.TabIndex = 10;
             this.checkBox9.Text = "Indoctrination Cell";
             this.checkBox9.UseVisualStyleBackColor = true;
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
-            this.label24.Location = new System.Drawing.Point(464, 16);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(188, 21);
-            this.label24.TabIndex = 9;
-            this.label24.Text = "Reward Ally with Church of Hope";
-            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 519);
+            this.button4.Location = new System.Drawing.Point(12, 507);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(107, 26);
             this.button4.TabIndex = 8;
@@ -4474,9 +4436,10 @@ namespace Sheltered_2_SE
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(127, 129);
+            this.checkBox4.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox4.Location = new System.Drawing.Point(147, 89);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(59, 25);
+            this.checkBox4.Size = new System.Drawing.Size(54, 22);
             this.checkBox4.TabIndex = 7;
             this.checkBox4.Text = "Tier 4";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -4484,9 +4447,10 @@ namespace Sheltered_2_SE
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(127, 98);
+            this.checkBox5.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox5.Location = new System.Drawing.Point(147, 72);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(59, 25);
+            this.checkBox5.Size = new System.Drawing.Size(54, 22);
             this.checkBox5.TabIndex = 6;
             this.checkBox5.Text = "Tier 3";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -4494,28 +4458,21 @@ namespace Sheltered_2_SE
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(127, 67);
+            this.checkBox6.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox6.Location = new System.Drawing.Point(147, 55);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(59, 25);
+            this.checkBox6.Size = new System.Drawing.Size(54, 22);
             this.checkBox6.TabIndex = 5;
             this.checkBox6.Text = "Tier 2";
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(124, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 21);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Workbench";
-            // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(12, 129);
+            this.checkBox3.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox3.Location = new System.Drawing.Point(12, 89);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(59, 25);
+            this.checkBox3.Size = new System.Drawing.Size(54, 22);
             this.checkBox3.TabIndex = 3;
             this.checkBox3.Text = "Tier 4";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -4523,9 +4480,10 @@ namespace Sheltered_2_SE
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(12, 98);
+            this.checkBox2.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox2.Location = new System.Drawing.Point(12, 72);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(59, 25);
+            this.checkBox2.Size = new System.Drawing.Size(54, 22);
             this.checkBox2.TabIndex = 2;
             this.checkBox2.Text = "Tier 3";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -4533,21 +4491,135 @@ namespace Sheltered_2_SE
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 67);
+            this.checkBox1.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.checkBox1.Location = new System.Drawing.Point(12, 55);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(59, 25);
+            this.checkBox1.Size = new System.Drawing.Size(54, 22);
             this.checkBox1.TabIndex = 1;
             this.checkBox1.Text = "Tier 2";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.label32.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundMedium;
+            this.label32.Location = new System.Drawing.Point(8, 136);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(110, 21);
+            this.label32.TabIndex = 67;
+            this.label32.Text = "    Blueprints          ";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.label31.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundMedium;
+            this.label31.Location = new System.Drawing.Point(143, 256);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(112, 21);
+            this.label31.TabIndex = 64;
+            this.label31.Text = "   other unlocks     ";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.label27.Image = ((System.Drawing.Image)(resources.GetObject("label27.Image")));
+            this.label27.Location = new System.Drawing.Point(432, 458);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(221, 21);
+            this.label27.TabIndex = 55;
+            this.label27.Text = "     Reward Ally with The old clan          ";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.label26.Image = ((System.Drawing.Image)(resources.GetObject("label26.Image")));
+            this.label26.Location = new System.Drawing.Point(432, 370);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(221, 21);
+            this.label26.TabIndex = 51;
+            this.label26.Text = "     Reward Ally with LOS MUERTOS           ";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.label30.Image = ((System.Drawing.Image)(resources.GetObject("label30.Image")));
+            this.label30.Location = new System.Drawing.Point(432, 280);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(222, 21);
+            this.label30.TabIndex = 45;
+            this.label30.Text = "     Reward Ally with Black roses            ";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.label29.Image = ((System.Drawing.Image)(resources.GetObject("label29.Image")));
+            this.label29.Location = new System.Drawing.Point(432, 195);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(221, 21);
+            this.label29.TabIndex = 41;
+            this.label29.Text = "     Reward Ally with The New Order       ";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.label28.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundNew;
+            this.label28.Location = new System.Drawing.Point(432, 107);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(222, 21);
+            this.label28.TabIndex = 37;
+            this.label28.Text = "     Reward Ally with CTK Mob                   ";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.label25.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundMedium;
+            this.label25.Location = new System.Drawing.Point(9, 256);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(110, 21);
+            this.label25.TabIndex = 13;
+            this.label25.Text = "   Drug recipes        ";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.label24.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundNew;
+            this.label24.Location = new System.Drawing.Point(432, 17);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(221, 21);
+            this.label24.TabIndex = 9;
+            this.label24.Text = "     Reward Ally with Church of Hope      ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.label4.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundMedium;
+            this.label4.Location = new System.Drawing.Point(143, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 21);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "   Workbench           ";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 43);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.label1.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundMedium;
+            this.label1.Location = new System.Drawing.Point(9, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 21);
+            this.label1.Size = new System.Drawing.Size(110, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Drafting Table";
+            this.label1.Text = "   Drafting Table    ";
             // 
             // debugTab
             // 
@@ -4572,12 +4644,34 @@ namespace Sheltered_2_SE
             // 
             // shelterDesignerTab
             // 
+            this.shelterDesignerTab.Controls.Add(this.label33);
+            this.shelterDesignerTab.Controls.Add(this.btnOpenDesigner);
             this.shelterDesignerTab.Location = new System.Drawing.Point(4, 30);
             this.shelterDesignerTab.Name = "shelterDesignerTab";
             this.shelterDesignerTab.Size = new System.Drawing.Size(659, 548);
             this.shelterDesignerTab.TabIndex = 6;
             this.shelterDesignerTab.Text = "Shelter Designer";
             this.shelterDesignerTab.UseVisualStyleBackColor = true;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(60, 77);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(503, 21);
+            this.label33.TabIndex = 1;
+            this.label33.Text = "Click on the image to change the Walltype of your room, The Shelter Door CANNOT b" +
+    "e moved\r\n";
+            // 
+            // btnOpenDesigner
+            // 
+            this.btnOpenDesigner.Location = new System.Drawing.Point(259, 499);
+            this.btnOpenDesigner.Name = "btnOpenDesigner";
+            this.btnOpenDesigner.Size = new System.Drawing.Size(115, 30);
+            this.btnOpenDesigner.TabIndex = 0;
+            this.btnOpenDesigner.Text = "Open Designer";
+            this.btnOpenDesigner.UseVisualStyleBackColor = true;
+            this.btnOpenDesigner.Click += new System.EventHandler(this.btnOpenDesigner_Click);
             // 
             // button3
             // 
@@ -4995,6 +5089,8 @@ namespace Sheltered_2_SE
             this.unlockingTab.PerformLayout();
             this.debugTab.ResumeLayout(false);
             this.debugTab.PerformLayout();
+            this.shelterDesignerTab.ResumeLayout(false);
+            this.shelterDesignerTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5311,7 +5407,6 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.Label lblPointsAvailableForValue;
         private System.Windows.Forms.Label lblPointsAvailableForName;
         private System.Windows.Forms.PictureBox pbxAvailablePointsFor;
-        private System.Windows.Forms.TabPage shelterDesignerTab;
         private System.Windows.Forms.CheckBox checkBox29;
         private System.Windows.Forms.CheckBox checkBox30;
         private System.Windows.Forms.CheckBox checkBox40;
@@ -5320,12 +5415,9 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.CheckBox checkBox43;
         private System.Windows.Forms.CheckBox checkBox44;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.CheckBox checkBox28;
-        private System.Windows.Forms.CheckBox checkBox27;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.CheckBox checkBox26;
         private System.Windows.Forms.CheckBox checkBox25;
-        private System.Windows.Forms.CheckBox checkBox23;
         private System.Windows.Forms.CheckBox checkBox24;
         private System.Windows.Forms.CheckBox checkBox20;
         private System.Windows.Forms.CheckBox checkBox21;
@@ -5370,6 +5462,14 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox46;
+        private System.Windows.Forms.CheckBox checkBox47;
+        private System.Windows.Forms.CheckBox checkBox48;
+        private System.Windows.Forms.CheckBox checkBox49;
+        private System.Windows.Forms.CheckBox checkBox45;
+        private System.Windows.Forms.TabPage shelterDesignerTab;
+        private System.Windows.Forms.Button btnOpenDesigner;
+        private System.Windows.Forms.Label label33;
     }
 }
 
