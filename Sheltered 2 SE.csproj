@@ -47,6 +47,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sheltered_2_se_icon_J28_9.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Build.Engine" />
     <Reference Include="Nevron.Nov.Barcode, Version=22.2.15.12, Culture=neutral, PublicKeyToken=b33b1a04bb5ca8ad" />
@@ -245,6 +251,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\garage_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sheltered_2_se_icon_J28_9.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

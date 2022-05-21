@@ -12,5 +12,9 @@ namespace Sheltered_2_SE
         public string RoomMaterial { get; set; }
         public string PercentExcavated { get; set; }
         public string BypassRoomSpawn { get; set; }
+
+        public static List<ShelterRoom>_shelterDesignerList;
     }
+
+
 }

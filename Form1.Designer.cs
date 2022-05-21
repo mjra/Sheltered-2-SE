@@ -4656,12 +4656,13 @@ namespace Sheltered_2_SE
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(60, 77);
+            this.label33.Font = new System.Drawing.Font("Bebas Neue", 30F);
+            this.label33.Location = new System.Drawing.Point(15, 28);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(503, 21);
+            this.label33.Size = new System.Drawing.Size(599, 208);
             this.label33.TabIndex = 1;
-            this.label33.Text = "Click on the image to change the Walltype of your room, The Shelter Door CANNOT b" +
-    "e moved\r\n";
+            this.label33.Text = "Warning the Shelter Designer is still \r\nexperimental. It can break your savegame." +
+    " \r\n\r\nLike Always MAKE backups!!!\r\n";
             // 
             // btnOpenDesigner
             // 
@@ -4681,6 +4682,7 @@ namespace Sheltered_2_SE
             this.button3.TabIndex = 12;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2

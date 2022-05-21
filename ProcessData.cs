@@ -18,6 +18,7 @@ namespace Sheltered_2_SE
         public static int changed = 0;
         public static int saved = 0;
         public static int skillLevel = 2;
+        public static int shelterDesignerLoad = 0;
         
 
         //Load in FamilyMemberData

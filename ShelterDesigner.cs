@@ -31,8 +31,9 @@ namespace Sheltered_2_SE
 
         private void ShelterDesigner_Load(object sender, EventArgs e)
         {
+            Console.WriteLine("Loading");
 
-            for (int i = 0; i < 80; i++)
+            for (int i = 0; i <= 80; i++)
             {
                 var pBName = "i" + i;
                 foreach (Control pB in pnlShelterDesigner.Controls.OfType<PictureBox>())
@@ -54,6 +55,7 @@ namespace Sheltered_2_SE
             var xDoc = XDocument.Load(ProcessFile.tempFilePath);
             for (int i = 0; i <= 80; i++)
             {
+
                 List<ShelterRoom> roomList = xDoc.Descendants("ShelterCellList").Descendants("i" + i)
                              .Select(q => new ShelterRoom()
                              {
@@ -62,14 +64,30 @@ namespace Sheltered_2_SE
                                  PercentExcavated = q.Element("percentageExcavated").Value,
                                  BypassRoomSpawn = q.Element("bypassRoomSpawn").Value
                              }).ToList<ShelterRoom>();
+
+                ShelterRoom._shelterDesignerList = roomList;
+
                 foreach (var item in roomList)
                 {
                     var cell = "i" + i;
 
+                    foreach (Control pB in pnlShelterDesigner.Controls.OfType<PictureBox>())
+                    {   
+                        if(pB.Name == cell)
+                        {
+                            pB.AccessibleDescription = item.RoomType;
+                            pB.Tag = item.RoomMaterial;
+                            Console.WriteLine("Tile:"+pB.Name);
+                            Console.WriteLine("Type:"+item.RoomType);
+                            Console.WriteLine("Mat:"+item.RoomMaterial);
+                            Console.WriteLine("-----");
+                        }
+                    }
                     if (item.RoomType == "1")
                     {
                         foreach (Control pB in pnlShelterDesigner.Controls.OfType<PictureBox>())
                         {
+
                             if (pB.Name == cell)
                             {
                                 pB.BackgroundImage = pbxRemoveRoom.BackgroundImage;
@@ -254,6 +272,7 @@ namespace Sheltered_2_SE
             }
         }
 
+
         private void pbxRemoveRoom_Click(object sender, EventArgs e)
         {
 
@@ -330,60 +349,46 @@ namespace Sheltered_2_SE
                     if (pbxRemoveRoomSelected.Visible == true)
                     {
                         pB.BackgroundImage = pbxRemoveRoom.BackgroundImage;
+                        pB.AccessibleDescription = "1";
+                        pB.Tag = "0";
                     }
                     else if (pbxDoorSelected.Visible == true)
                     {
                         pB.BackgroundImage = pbxDoor.BackgroundImage;
+                        pB.AccessibleDescription = "4";
+                        pB.Tag = "1";
                     }
                     else if (pbxDirtRoomSelected.Visible == true)
                     {
                         pB.BackgroundImage = pbxDirtRoom.BackgroundImage;
+                        pB.AccessibleDescription = "3";
+                        pB.Tag = "0";
                     }
                     else if (pbxStoneRoomSelected.Visible == true)
                     {
                         pB.BackgroundImage = pbxStoneRoom.BackgroundImage;
+                        pB.AccessibleDescription = "3";
+                        pB.Tag = "1";
                     }
                     else if (pbxTiledRoomSelected.Visible == true)
                     {
                         pB.BackgroundImage = pbxTiledRoom.BackgroundImage;
+                        pB.AccessibleDescription = "3";
+                        pB.Tag = "2";
                     }
                     else if (pbxPlasterRoomSelected.Visible == true)
                     {
                         pB.BackgroundImage = pbxPlasterRoom.BackgroundImage;
+                        pB.AccessibleDescription = "3";
+                        pB.Tag = "3";
                     }
                 }
             }
         }
 
-
-        private void i0_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void i1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void i2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void i3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void i4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ShelterDesigner_Unload(object sender, EventArgs e)
         {
-            for (int i = 0; i < 80; i++)
+            for (int i = 0; i <= 80; i++)
             {
                 var pBName = "i" + i;
                 foreach (Control pB in pnlShelterDesigner.Controls.OfType<PictureBox>())
@@ -396,8 +401,67 @@ namespace Sheltered_2_SE
             }
         }
 
+        private void SaveLayout_Click(object sender, EventArgs e)
+        {
+            //Read userchanges into List
+            Console.WriteLine("Save Content:");
 
+            List<ShelterRoom>shelterRoom = new List<ShelterRoom>(ShelterRoom._shelterDesignerList);
+            var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+
+            for (int i = 0; i <= 80; i++)
+            {
+                foreach (var room in shelterRoom)
+                {
+                    var cell = "i" + i;
+
+                    foreach (Control pB in pnlShelterDesigner.Controls.OfType<PictureBox>())
+                    {
+                        if (pB.Name == cell)
+                        {
+                            room.RoomType = pB.AccessibleDescription.ToString();
+                            room.RoomMaterial = pB.Tag.ToString();
+                            Console.WriteLine(pB.Name);
+                            Console.WriteLine(room.RoomType);
+                            Console.WriteLine(room.RoomMaterial);
+                            Console.WriteLine("-------");
+                            //Save to XML
+                            
+                            if (room.RoomType == "1")
+                            {
+                                xDoc.Descendants("ShelterCellList").Descendants("i" + i)
+                                    .Elements("type").FirstOrDefault().Value = room.RoomType;
+
+                                xDoc.Descendants("ShelterCellList").Descendants("i" + i)
+                                    .Elements("roomType").FirstOrDefault().Value = room.RoomMaterial;
+                                xDoc.Descendants("ShelterCellList").Descendants("i" + i)
+                                    .Elements("percentageExcavated").FirstOrDefault().Value = "0";
+                            }
+                            else
+                            {
+                                xDoc.Descendants("ShelterCellList").Descendants("i" + i)
+                                    .Elements("type").FirstOrDefault().Value = room.RoomType;
+
+                                xDoc.Descendants("ShelterCellList").Descendants("i" + i)
+                                    .Elements("roomType").FirstOrDefault().Value = room.RoomMaterial;
+                                xDoc.Descendants("ShelterCellList").Descendants("i" + i)
+                                    .Elements("percentageExcavated").FirstOrDefault().Value = "100";
+                            }
+
+                        }
+                    }
+
+                }
+            }
+            xDoc.Save(ProcessFile.tempFilePath);
+            MessageBox.Show("Shelter Layout Saved successfully");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ShelterDesigner_Load(null, EventArgs.Empty);
+        }
     }
-
-
 }
+
+

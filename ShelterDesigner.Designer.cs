@@ -36,7 +36,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SaveLayout = new System.Windows.Forms.Button();
             this.pbxTiledRoom = new System.Windows.Forms.PictureBox();
             this.pbxRemoveRoom = new System.Windows.Forms.PictureBox();
             this.pbxDirtRoom = new System.Windows.Forms.PictureBox();
@@ -141,6 +141,12 @@
             this.pbxStoneRoomSelected = new System.Windows.Forms.PictureBox();
             this.pbxTiledRoomSelected = new System.Windows.Forms.PictureBox();
             this.pbxPlasterRoomSelected = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxTiledRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDirtRoom)).BeginInit();
@@ -251,7 +257,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1052, 130);
+            this.label1.Location = new System.Drawing.Point(1052, 190);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 31);
             this.label1.TabIndex = 164;
@@ -261,7 +267,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1302, 130);
+            this.label2.Location = new System.Drawing.Point(1302, 190);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 31);
             this.label2.TabIndex = 165;
@@ -271,7 +277,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1280, 323);
+            this.label3.Location = new System.Drawing.Point(1280, 383);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 31);
             this.label3.TabIndex = 167;
@@ -281,7 +287,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1067, 323);
+            this.label4.Location = new System.Drawing.Point(1067, 383);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 31);
             this.label4.TabIndex = 166;
@@ -291,7 +297,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1272, 518);
+            this.label5.Location = new System.Drawing.Point(1272, 578);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 31);
             this.label5.TabIndex = 169;
@@ -301,7 +307,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1067, 518);
+            this.label6.Location = new System.Drawing.Point(1067, 578);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 31);
             this.label6.TabIndex = 168;
@@ -311,30 +317,30 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bebas Neue", 12F);
-            this.label7.Location = new System.Drawing.Point(1069, 9);
+            this.label7.Location = new System.Drawing.Point(1001, 4);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(319, 105);
+            this.label7.Size = new System.Drawing.Size(444, 42);
             this.label7.TabIndex = 170;
-            this.label7.Text = "Click on the Image to mark the room. then click on a Tile\r\nto add the room, when " +
-    "done just Save. \r\n\r\nMake sure to not build unreachable rooms. The shelter \r\nDoor" +
-    " is NOT placeable";
+            this.label7.Text = "Click on the Image to mark the room. then click on a Tile to add the room, when\r\n" +
+    "done just Save. ";
             // 
-            // button1
+            // SaveLayout
             // 
-            this.button1.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1178, 794);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 30);
-            this.button1.TabIndex = 177;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SaveLayout.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveLayout.Location = new System.Drawing.Point(1178, 794);
+            this.SaveLayout.Name = "SaveLayout";
+            this.SaveLayout.Size = new System.Drawing.Size(104, 30);
+            this.SaveLayout.TabIndex = 177;
+            this.SaveLayout.Text = "Save";
+            this.SaveLayout.UseVisualStyleBackColor = true;
+            this.SaveLayout.Click += new System.EventHandler(this.SaveLayout_Click);
             // 
             // pbxTiledRoom
             // 
             this.pbxTiledRoom.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.TiledRoom;
             this.pbxTiledRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbxTiledRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxTiledRoom.Location = new System.Drawing.Point(1029, 554);
+            this.pbxTiledRoom.Location = new System.Drawing.Point(1029, 614);
             this.pbxTiledRoom.Name = "pbxTiledRoom";
             this.pbxTiledRoom.Size = new System.Drawing.Size(176, 121);
             this.pbxTiledRoom.TabIndex = 163;
@@ -346,7 +352,7 @@
             this.pbxRemoveRoom.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.rock;
             this.pbxRemoveRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbxRemoveRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxRemoveRoom.Location = new System.Drawing.Point(1029, 164);
+            this.pbxRemoveRoom.Location = new System.Drawing.Point(1029, 224);
             this.pbxRemoveRoom.Name = "pbxRemoveRoom";
             this.pbxRemoveRoom.Size = new System.Drawing.Size(176, 121);
             this.pbxRemoveRoom.TabIndex = 162;
@@ -358,7 +364,7 @@
             this.pbxDirtRoom.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.DirtWall;
             this.pbxDirtRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbxDirtRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxDirtRoom.Location = new System.Drawing.Point(1029, 359);
+            this.pbxDirtRoom.Location = new System.Drawing.Point(1029, 419);
             this.pbxDirtRoom.Name = "pbxDirtRoom";
             this.pbxDirtRoom.Size = new System.Drawing.Size(176, 121);
             this.pbxDirtRoom.TabIndex = 161;
@@ -370,7 +376,7 @@
             this.pbxDoor.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.Door;
             this.pbxDoor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbxDoor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxDoor.Location = new System.Drawing.Point(1246, 164);
+            this.pbxDoor.Location = new System.Drawing.Point(1246, 224);
             this.pbxDoor.Name = "pbxDoor";
             this.pbxDoor.Size = new System.Drawing.Size(176, 121);
             this.pbxDoor.TabIndex = 160;
@@ -382,7 +388,7 @@
             this.pbxStoneRoom.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.StoneWall;
             this.pbxStoneRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbxStoneRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxStoneRoom.Location = new System.Drawing.Point(1246, 359);
+            this.pbxStoneRoom.Location = new System.Drawing.Point(1246, 419);
             this.pbxStoneRoom.Name = "pbxStoneRoom";
             this.pbxStoneRoom.Size = new System.Drawing.Size(176, 121);
             this.pbxStoneRoom.TabIndex = 159;
@@ -394,7 +400,7 @@
             this.pbxPlasterRoom.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.PlasterWall;
             this.pbxPlasterRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbxPlasterRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxPlasterRoom.Location = new System.Drawing.Point(1246, 554);
+            this.pbxPlasterRoom.Location = new System.Drawing.Point(1246, 614);
             this.pbxPlasterRoom.Name = "pbxPlasterRoom";
             this.pbxPlasterRoom.Size = new System.Drawing.Size(176, 121);
             this.pbxPlasterRoom.TabIndex = 158;
@@ -624,6 +630,7 @@
             // 
             this.i54.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i54.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.StoneWallRightPillar;
+            this.i54.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i54.Location = new System.Drawing.Point(644, 21);
             this.i54.Name = "i54";
             this.i54.Size = new System.Drawing.Size(103, 88);
@@ -634,6 +641,7 @@
             // 
             this.i72.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i72.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i72.BackgroundImage")));
+            this.i72.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i72.Location = new System.Drawing.Point(850, 20);
             this.i72.Name = "i72";
             this.i72.Size = new System.Drawing.Size(103, 88);
@@ -644,6 +652,7 @@
             // 
             this.i63.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i63.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i63.BackgroundImage")));
+            this.i63.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i63.Location = new System.Drawing.Point(747, 20);
             this.i63.Name = "i63";
             this.i63.Size = new System.Drawing.Size(103, 88);
@@ -654,6 +663,7 @@
             // 
             this.i45.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i45.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i45.BackgroundImage")));
+            this.i45.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i45.Location = new System.Drawing.Point(541, 20);
             this.i45.Name = "i45";
             this.i45.Size = new System.Drawing.Size(103, 88);
@@ -664,6 +674,7 @@
             // 
             this.i80.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i80.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i80.BackgroundImage")));
+            this.i80.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i80.Location = new System.Drawing.Point(850, 737);
             this.i80.Name = "i80";
             this.i80.Size = new System.Drawing.Size(103, 88);
@@ -674,6 +685,7 @@
             // 
             this.i71.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i71.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i71.BackgroundImage")));
+            this.i71.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i71.Location = new System.Drawing.Point(747, 737);
             this.i71.Name = "i71";
             this.i71.Size = new System.Drawing.Size(103, 88);
@@ -684,6 +696,7 @@
             // 
             this.i62.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i62.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i62.BackgroundImage")));
+            this.i62.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i62.Location = new System.Drawing.Point(644, 737);
             this.i62.Name = "i62";
             this.i62.Size = new System.Drawing.Size(103, 88);
@@ -694,6 +707,7 @@
             // 
             this.i53.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i53.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i53.BackgroundImage")));
+            this.i53.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i53.Location = new System.Drawing.Point(541, 737);
             this.i53.Name = "i53";
             this.i53.Size = new System.Drawing.Size(103, 88);
@@ -704,6 +718,7 @@
             // 
             this.i44.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i44.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i44.BackgroundImage")));
+            this.i44.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i44.Location = new System.Drawing.Point(438, 737);
             this.i44.Name = "i44";
             this.i44.Size = new System.Drawing.Size(103, 88);
@@ -714,6 +729,7 @@
             // 
             this.i35.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i35.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i35.BackgroundImage")));
+            this.i35.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i35.Location = new System.Drawing.Point(335, 737);
             this.i35.Name = "i35";
             this.i35.Size = new System.Drawing.Size(103, 88);
@@ -724,6 +740,7 @@
             // 
             this.i26.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i26.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i26.BackgroundImage")));
+            this.i26.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i26.Location = new System.Drawing.Point(232, 737);
             this.i26.Name = "i26";
             this.i26.Size = new System.Drawing.Size(103, 88);
@@ -734,6 +751,7 @@
             // 
             this.i8.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i8.BackgroundImage")));
+            this.i8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i8.Location = new System.Drawing.Point(26, 737);
             this.i8.Name = "i8";
             this.i8.Size = new System.Drawing.Size(103, 88);
@@ -744,6 +762,7 @@
             // 
             this.i17.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i17.BackgroundImage")));
+            this.i17.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i17.Location = new System.Drawing.Point(129, 737);
             this.i17.Name = "i17";
             this.i17.Size = new System.Drawing.Size(103, 88);
@@ -754,6 +773,7 @@
             // 
             this.i79.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i79.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i79.BackgroundImage")));
+            this.i79.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i79.Location = new System.Drawing.Point(850, 647);
             this.i79.Name = "i79";
             this.i79.Size = new System.Drawing.Size(103, 88);
@@ -764,6 +784,7 @@
             // 
             this.i70.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i70.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i70.BackgroundImage")));
+            this.i70.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i70.Location = new System.Drawing.Point(747, 647);
             this.i70.Name = "i70";
             this.i70.Size = new System.Drawing.Size(103, 88);
@@ -774,6 +795,7 @@
             // 
             this.i61.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i61.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i61.BackgroundImage")));
+            this.i61.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i61.Location = new System.Drawing.Point(644, 647);
             this.i61.Name = "i61";
             this.i61.Size = new System.Drawing.Size(103, 88);
@@ -784,6 +806,7 @@
             // 
             this.i52.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i52.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i52.BackgroundImage")));
+            this.i52.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i52.Location = new System.Drawing.Point(541, 647);
             this.i52.Name = "i52";
             this.i52.Size = new System.Drawing.Size(103, 88);
@@ -794,6 +817,7 @@
             // 
             this.i43.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i43.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i43.BackgroundImage")));
+            this.i43.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i43.Location = new System.Drawing.Point(438, 647);
             this.i43.Name = "i43";
             this.i43.Size = new System.Drawing.Size(103, 88);
@@ -804,6 +828,7 @@
             // 
             this.i34.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i34.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i34.BackgroundImage")));
+            this.i34.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i34.Location = new System.Drawing.Point(335, 647);
             this.i34.Name = "i34";
             this.i34.Size = new System.Drawing.Size(103, 88);
@@ -814,6 +839,7 @@
             // 
             this.i25.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i25.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i25.BackgroundImage")));
+            this.i25.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i25.Location = new System.Drawing.Point(232, 647);
             this.i25.Name = "i25";
             this.i25.Size = new System.Drawing.Size(103, 88);
@@ -824,6 +850,7 @@
             // 
             this.i7.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i7.BackgroundImage")));
+            this.i7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i7.Location = new System.Drawing.Point(26, 647);
             this.i7.Name = "i7";
             this.i7.Size = new System.Drawing.Size(103, 88);
@@ -834,6 +861,7 @@
             // 
             this.i16.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i16.BackgroundImage")));
+            this.i16.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i16.Location = new System.Drawing.Point(129, 647);
             this.i16.Name = "i16";
             this.i16.Size = new System.Drawing.Size(103, 88);
@@ -844,6 +872,7 @@
             // 
             this.i78.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i78.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i78.BackgroundImage")));
+            this.i78.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i78.Location = new System.Drawing.Point(850, 557);
             this.i78.Name = "i78";
             this.i78.Size = new System.Drawing.Size(103, 88);
@@ -854,6 +883,7 @@
             // 
             this.i69.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i69.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i69.BackgroundImage")));
+            this.i69.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i69.Location = new System.Drawing.Point(747, 557);
             this.i69.Name = "i69";
             this.i69.Size = new System.Drawing.Size(103, 88);
@@ -864,6 +894,7 @@
             // 
             this.i60.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i60.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i60.BackgroundImage")));
+            this.i60.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i60.Location = new System.Drawing.Point(644, 557);
             this.i60.Name = "i60";
             this.i60.Size = new System.Drawing.Size(103, 88);
@@ -874,6 +905,7 @@
             // 
             this.i51.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i51.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i51.BackgroundImage")));
+            this.i51.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i51.Location = new System.Drawing.Point(541, 557);
             this.i51.Name = "i51";
             this.i51.Size = new System.Drawing.Size(103, 88);
@@ -884,6 +916,7 @@
             // 
             this.i42.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i42.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i42.BackgroundImage")));
+            this.i42.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i42.Location = new System.Drawing.Point(438, 557);
             this.i42.Name = "i42";
             this.i42.Size = new System.Drawing.Size(103, 88);
@@ -894,6 +927,7 @@
             // 
             this.i33.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i33.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i33.BackgroundImage")));
+            this.i33.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i33.Location = new System.Drawing.Point(335, 557);
             this.i33.Name = "i33";
             this.i33.Size = new System.Drawing.Size(103, 88);
@@ -904,6 +938,7 @@
             // 
             this.i24.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i24.BackgroundImage")));
+            this.i24.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i24.Location = new System.Drawing.Point(232, 557);
             this.i24.Name = "i24";
             this.i24.Size = new System.Drawing.Size(103, 88);
@@ -914,6 +949,7 @@
             // 
             this.i6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i6.BackgroundImage")));
+            this.i6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i6.Location = new System.Drawing.Point(26, 557);
             this.i6.Name = "i6";
             this.i6.Size = new System.Drawing.Size(103, 88);
@@ -924,6 +960,7 @@
             // 
             this.i15.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i15.BackgroundImage")));
+            this.i15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i15.Location = new System.Drawing.Point(129, 557);
             this.i15.Name = "i15";
             this.i15.Size = new System.Drawing.Size(103, 88);
@@ -934,6 +971,7 @@
             // 
             this.i77.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i77.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i77.BackgroundImage")));
+            this.i77.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i77.Location = new System.Drawing.Point(850, 467);
             this.i77.Name = "i77";
             this.i77.Size = new System.Drawing.Size(103, 88);
@@ -944,6 +982,7 @@
             // 
             this.i68.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i68.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i68.BackgroundImage")));
+            this.i68.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i68.Location = new System.Drawing.Point(747, 467);
             this.i68.Name = "i68";
             this.i68.Size = new System.Drawing.Size(103, 88);
@@ -954,6 +993,7 @@
             // 
             this.i59.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i59.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i59.BackgroundImage")));
+            this.i59.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i59.Location = new System.Drawing.Point(644, 467);
             this.i59.Name = "i59";
             this.i59.Size = new System.Drawing.Size(103, 88);
@@ -964,6 +1004,7 @@
             // 
             this.i50.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i50.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i50.BackgroundImage")));
+            this.i50.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i50.Location = new System.Drawing.Point(541, 467);
             this.i50.Name = "i50";
             this.i50.Size = new System.Drawing.Size(103, 88);
@@ -974,6 +1015,7 @@
             // 
             this.i41.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i41.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i41.BackgroundImage")));
+            this.i41.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i41.Location = new System.Drawing.Point(438, 467);
             this.i41.Name = "i41";
             this.i41.Size = new System.Drawing.Size(103, 88);
@@ -984,6 +1026,7 @@
             // 
             this.i32.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i32.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i32.BackgroundImage")));
+            this.i32.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i32.Location = new System.Drawing.Point(335, 467);
             this.i32.Name = "i32";
             this.i32.Size = new System.Drawing.Size(103, 88);
@@ -994,6 +1037,7 @@
             // 
             this.i23.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i23.BackgroundImage")));
+            this.i23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i23.Location = new System.Drawing.Point(232, 467);
             this.i23.Name = "i23";
             this.i23.Size = new System.Drawing.Size(103, 88);
@@ -1004,6 +1048,7 @@
             // 
             this.i5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i5.BackgroundImage")));
+            this.i5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i5.Location = new System.Drawing.Point(26, 467);
             this.i5.Name = "i5";
             this.i5.Size = new System.Drawing.Size(103, 88);
@@ -1014,6 +1059,7 @@
             // 
             this.i14.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i14.BackgroundImage")));
+            this.i14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i14.Location = new System.Drawing.Point(129, 467);
             this.i14.Name = "i14";
             this.i14.Size = new System.Drawing.Size(103, 88);
@@ -1024,6 +1070,7 @@
             // 
             this.i76.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i76.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i76.BackgroundImage")));
+            this.i76.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i76.Location = new System.Drawing.Point(850, 377);
             this.i76.Name = "i76";
             this.i76.Size = new System.Drawing.Size(103, 88);
@@ -1034,6 +1081,7 @@
             // 
             this.i67.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i67.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i67.BackgroundImage")));
+            this.i67.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i67.Location = new System.Drawing.Point(747, 377);
             this.i67.Name = "i67";
             this.i67.Size = new System.Drawing.Size(103, 88);
@@ -1044,6 +1092,7 @@
             // 
             this.i58.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i58.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i58.BackgroundImage")));
+            this.i58.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i58.Location = new System.Drawing.Point(644, 377);
             this.i58.Name = "i58";
             this.i58.Size = new System.Drawing.Size(103, 88);
@@ -1054,6 +1103,7 @@
             // 
             this.i49.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i49.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i49.BackgroundImage")));
+            this.i49.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i49.Location = new System.Drawing.Point(541, 377);
             this.i49.Name = "i49";
             this.i49.Size = new System.Drawing.Size(103, 88);
@@ -1064,6 +1114,7 @@
             // 
             this.i40.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i40.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i40.BackgroundImage")));
+            this.i40.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i40.Location = new System.Drawing.Point(438, 377);
             this.i40.Name = "i40";
             this.i40.Size = new System.Drawing.Size(103, 88);
@@ -1074,6 +1125,7 @@
             // 
             this.i31.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i31.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i31.BackgroundImage")));
+            this.i31.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i31.Location = new System.Drawing.Point(335, 377);
             this.i31.Name = "i31";
             this.i31.Size = new System.Drawing.Size(103, 88);
@@ -1084,6 +1136,7 @@
             // 
             this.i22.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i22.BackgroundImage")));
+            this.i22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i22.Location = new System.Drawing.Point(232, 377);
             this.i22.Name = "i22";
             this.i22.Size = new System.Drawing.Size(103, 88);
@@ -1094,17 +1147,18 @@
             // 
             this.i4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i4.BackgroundImage")));
+            this.i4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i4.Location = new System.Drawing.Point(26, 377);
             this.i4.Name = "i4";
             this.i4.Size = new System.Drawing.Size(103, 88);
             this.i4.TabIndex = 168;
             this.i4.TabStop = false;
-            this.i4.Click += new System.EventHandler(this.i4_Click);
             // 
             // i13
             // 
             this.i13.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i13.BackgroundImage")));
+            this.i13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i13.Location = new System.Drawing.Point(129, 377);
             this.i13.Name = "i13";
             this.i13.Size = new System.Drawing.Size(103, 88);
@@ -1115,6 +1169,7 @@
             // 
             this.i75.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i75.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i75.BackgroundImage")));
+            this.i75.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i75.Location = new System.Drawing.Point(850, 287);
             this.i75.Name = "i75";
             this.i75.Size = new System.Drawing.Size(103, 88);
@@ -1125,6 +1180,7 @@
             // 
             this.i66.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i66.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i66.BackgroundImage")));
+            this.i66.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i66.Location = new System.Drawing.Point(747, 287);
             this.i66.Name = "i66";
             this.i66.Size = new System.Drawing.Size(103, 88);
@@ -1135,6 +1191,7 @@
             // 
             this.i57.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i57.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i57.BackgroundImage")));
+            this.i57.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i57.Location = new System.Drawing.Point(644, 287);
             this.i57.Name = "i57";
             this.i57.Size = new System.Drawing.Size(103, 88);
@@ -1145,6 +1202,7 @@
             // 
             this.i48.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i48.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i48.BackgroundImage")));
+            this.i48.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i48.Location = new System.Drawing.Point(541, 287);
             this.i48.Name = "i48";
             this.i48.Size = new System.Drawing.Size(103, 88);
@@ -1155,6 +1213,7 @@
             // 
             this.i39.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i39.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i39.BackgroundImage")));
+            this.i39.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i39.Location = new System.Drawing.Point(438, 287);
             this.i39.Name = "i39";
             this.i39.Size = new System.Drawing.Size(103, 88);
@@ -1165,6 +1224,7 @@
             // 
             this.i30.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i30.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i30.BackgroundImage")));
+            this.i30.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i30.Location = new System.Drawing.Point(335, 287);
             this.i30.Name = "i30";
             this.i30.Size = new System.Drawing.Size(103, 88);
@@ -1175,6 +1235,7 @@
             // 
             this.i21.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i21.BackgroundImage")));
+            this.i21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i21.Location = new System.Drawing.Point(232, 287);
             this.i21.Name = "i21";
             this.i21.Size = new System.Drawing.Size(103, 88);
@@ -1185,17 +1246,18 @@
             // 
             this.i3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i3.BackgroundImage")));
+            this.i3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i3.Location = new System.Drawing.Point(26, 287);
             this.i3.Name = "i3";
             this.i3.Size = new System.Drawing.Size(103, 88);
             this.i3.TabIndex = 159;
             this.i3.TabStop = false;
-            this.i3.Click += new System.EventHandler(this.i3_Click);
             // 
             // i12
             // 
             this.i12.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i12.BackgroundImage")));
+            this.i12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i12.Location = new System.Drawing.Point(129, 287);
             this.i12.Name = "i12";
             this.i12.Size = new System.Drawing.Size(103, 88);
@@ -1206,6 +1268,7 @@
             // 
             this.i74.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i74.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i74.BackgroundImage")));
+            this.i74.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i74.Location = new System.Drawing.Point(850, 198);
             this.i74.Name = "i74";
             this.i74.Size = new System.Drawing.Size(103, 88);
@@ -1216,6 +1279,7 @@
             // 
             this.i65.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i65.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i65.BackgroundImage")));
+            this.i65.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i65.Location = new System.Drawing.Point(747, 198);
             this.i65.Name = "i65";
             this.i65.Size = new System.Drawing.Size(103, 88);
@@ -1226,6 +1290,7 @@
             // 
             this.i56.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i56.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i56.BackgroundImage")));
+            this.i56.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i56.Location = new System.Drawing.Point(644, 198);
             this.i56.Name = "i56";
             this.i56.Size = new System.Drawing.Size(103, 88);
@@ -1236,6 +1301,7 @@
             // 
             this.i47.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i47.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i47.BackgroundImage")));
+            this.i47.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i47.Location = new System.Drawing.Point(541, 198);
             this.i47.Name = "i47";
             this.i47.Size = new System.Drawing.Size(103, 88);
@@ -1246,6 +1312,7 @@
             // 
             this.i38.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i38.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i38.BackgroundImage")));
+            this.i38.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i38.Location = new System.Drawing.Point(438, 198);
             this.i38.Name = "i38";
             this.i38.Size = new System.Drawing.Size(103, 88);
@@ -1256,6 +1323,7 @@
             // 
             this.i29.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i29.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i29.BackgroundImage")));
+            this.i29.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i29.Location = new System.Drawing.Point(335, 198);
             this.i29.Name = "i29";
             this.i29.Size = new System.Drawing.Size(103, 88);
@@ -1266,6 +1334,7 @@
             // 
             this.i20.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i20.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i20.BackgroundImage")));
+            this.i20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i20.Location = new System.Drawing.Point(232, 198);
             this.i20.Name = "i20";
             this.i20.Size = new System.Drawing.Size(103, 88);
@@ -1276,17 +1345,18 @@
             // 
             this.i2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i2.BackgroundImage")));
+            this.i2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i2.Location = new System.Drawing.Point(26, 198);
             this.i2.Name = "i2";
             this.i2.Size = new System.Drawing.Size(103, 88);
             this.i2.TabIndex = 150;
             this.i2.TabStop = false;
-            this.i2.Click += new System.EventHandler(this.i2_Click);
             // 
             // i11
             // 
             this.i11.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i11.BackgroundImage")));
+            this.i11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i11.Location = new System.Drawing.Point(129, 198);
             this.i11.Name = "i11";
             this.i11.Size = new System.Drawing.Size(103, 88);
@@ -1297,6 +1367,7 @@
             // 
             this.i73.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i73.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i73.BackgroundImage")));
+            this.i73.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i73.Location = new System.Drawing.Point(850, 109);
             this.i73.Name = "i73";
             this.i73.Size = new System.Drawing.Size(103, 88);
@@ -1307,6 +1378,7 @@
             // 
             this.i64.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i64.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i64.BackgroundImage")));
+            this.i64.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i64.Location = new System.Drawing.Point(747, 109);
             this.i64.Name = "i64";
             this.i64.Size = new System.Drawing.Size(103, 88);
@@ -1317,6 +1389,7 @@
             // 
             this.i55.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i55.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i55.BackgroundImage")));
+            this.i55.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i55.Location = new System.Drawing.Point(644, 109);
             this.i55.Name = "i55";
             this.i55.Size = new System.Drawing.Size(103, 88);
@@ -1326,7 +1399,8 @@
             // i46
             // 
             this.i46.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.i46.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.garage_right;
+            this.i46.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.rock;
+            this.i46.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i46.Location = new System.Drawing.Point(541, 109);
             this.i46.Name = "i46";
             this.i46.Size = new System.Drawing.Size(103, 88);
@@ -1337,6 +1411,7 @@
             // 
             this.i37.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i37.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i37.BackgroundImage")));
+            this.i37.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i37.Location = new System.Drawing.Point(438, 109);
             this.i37.Name = "i37";
             this.i37.Size = new System.Drawing.Size(103, 88);
@@ -1347,6 +1422,7 @@
             // 
             this.i28.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i28.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i28.BackgroundImage")));
+            this.i28.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i28.Location = new System.Drawing.Point(335, 109);
             this.i28.Name = "i28";
             this.i28.Size = new System.Drawing.Size(103, 88);
@@ -1357,6 +1433,7 @@
             // 
             this.i19.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i19.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i19.BackgroundImage")));
+            this.i19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i19.Location = new System.Drawing.Point(232, 109);
             this.i19.Name = "i19";
             this.i19.Size = new System.Drawing.Size(103, 88);
@@ -1366,18 +1443,19 @@
             // i1
             // 
             this.i1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.i1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i1.BackgroundImage")));
+            this.i1.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.Door;
+            this.i1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i1.Location = new System.Drawing.Point(26, 109);
             this.i1.Name = "i1";
             this.i1.Size = new System.Drawing.Size(103, 88);
             this.i1.TabIndex = 78;
             this.i1.TabStop = false;
-            this.i1.Click += new System.EventHandler(this.i1_Click);
             // 
             // i10
             // 
             this.i10.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.i10.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.PlasterWall;
+            this.i10.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.DirtWall;
+            this.i10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i10.Location = new System.Drawing.Point(129, 109);
             this.i10.Name = "i10";
             this.i10.Size = new System.Drawing.Size(103, 88);
@@ -1388,17 +1466,18 @@
             // 
             this.i0.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i0.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.DoorTopLeft;
+            this.i0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i0.Location = new System.Drawing.Point(26, 20);
             this.i0.Name = "i0";
             this.i0.Size = new System.Drawing.Size(103, 88);
             this.i0.TabIndex = 76;
             this.i0.TabStop = false;
-            this.i0.Click += new System.EventHandler(this.i0_Click);
             // 
             // i9
             // 
             this.i9.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i9.BackgroundImage")));
+            this.i9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i9.Location = new System.Drawing.Point(129, 20);
             this.i9.Name = "i9";
             this.i9.Size = new System.Drawing.Size(103, 88);
@@ -1409,6 +1488,7 @@
             // 
             this.i18.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i18.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.StoneWallLeftPillar;
+            this.i18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i18.Location = new System.Drawing.Point(232, 21);
             this.i18.Name = "i18";
             this.i18.Size = new System.Drawing.Size(103, 88);
@@ -1419,6 +1499,7 @@
             // 
             this.i27.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.i27.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("i27.BackgroundImage")));
+            this.i27.Cursor = System.Windows.Forms.Cursors.Hand;
             this.i27.Location = new System.Drawing.Point(333, 20);
             this.i27.Name = "i27";
             this.i27.Size = new System.Drawing.Size(103, 88);
@@ -1429,7 +1510,7 @@
             // 
             this.pbxRemoveRoomSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.pbxRemoveRoomSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxRemoveRoomSelected.Location = new System.Drawing.Point(1026, 161);
+            this.pbxRemoveRoomSelected.Location = new System.Drawing.Point(1026, 221);
             this.pbxRemoveRoomSelected.Name = "pbxRemoveRoomSelected";
             this.pbxRemoveRoomSelected.Size = new System.Drawing.Size(182, 128);
             this.pbxRemoveRoomSelected.TabIndex = 171;
@@ -1439,7 +1520,7 @@
             // 
             this.pbxDoorSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.pbxDoorSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxDoorSelected.Location = new System.Drawing.Point(1243, 161);
+            this.pbxDoorSelected.Location = new System.Drawing.Point(1243, 221);
             this.pbxDoorSelected.Name = "pbxDoorSelected";
             this.pbxDoorSelected.Size = new System.Drawing.Size(182, 128);
             this.pbxDoorSelected.TabIndex = 172;
@@ -1449,7 +1530,7 @@
             // 
             this.pbxDirtRoomSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.pbxDirtRoomSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxDirtRoomSelected.Location = new System.Drawing.Point(1026, 355);
+            this.pbxDirtRoomSelected.Location = new System.Drawing.Point(1026, 415);
             this.pbxDirtRoomSelected.Name = "pbxDirtRoomSelected";
             this.pbxDirtRoomSelected.Size = new System.Drawing.Size(182, 128);
             this.pbxDirtRoomSelected.TabIndex = 173;
@@ -1459,7 +1540,7 @@
             // 
             this.pbxStoneRoomSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.pbxStoneRoomSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxStoneRoomSelected.Location = new System.Drawing.Point(1243, 355);
+            this.pbxStoneRoomSelected.Location = new System.Drawing.Point(1243, 415);
             this.pbxStoneRoomSelected.Name = "pbxStoneRoomSelected";
             this.pbxStoneRoomSelected.Size = new System.Drawing.Size(182, 128);
             this.pbxStoneRoomSelected.TabIndex = 174;
@@ -1469,7 +1550,7 @@
             // 
             this.pbxTiledRoomSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.pbxTiledRoomSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxTiledRoomSelected.Location = new System.Drawing.Point(1026, 550);
+            this.pbxTiledRoomSelected.Location = new System.Drawing.Point(1026, 610);
             this.pbxTiledRoomSelected.Name = "pbxTiledRoomSelected";
             this.pbxTiledRoomSelected.Size = new System.Drawing.Size(182, 128);
             this.pbxTiledRoomSelected.TabIndex = 175;
@@ -1479,11 +1560,84 @@
             // 
             this.pbxPlasterRoomSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.pbxPlasterRoomSelected.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxPlasterRoomSelected.Location = new System.Drawing.Point(1243, 550);
+            this.pbxPlasterRoomSelected.Location = new System.Drawing.Point(1243, 610);
             this.pbxPlasterRoomSelected.Name = "pbxPlasterRoomSelected";
             this.pbxPlasterRoomSelected.Size = new System.Drawing.Size(182, 128);
             this.pbxPlasterRoomSelected.TabIndex = 176;
             this.pbxPlasterRoomSelected.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label8.Font = new System.Drawing.Font("Bebas Neue", 12F);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(166)))), ((int)(((byte)(33)))));
+            this.label8.Location = new System.Drawing.Point(1084, 59);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(280, 107);
+            this.label8.TabIndex = 178;
+            this.label8.Text = "Rules:\r\nDon\'t  build unreachable rooms\r\nThe shelter Door is NOT  placeable\r\nGarag" +
+    "es and Cells Are not  changable\r\ndon\'t  remove rooms where you have objects buil" +
+    "t\r\n";
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label9.Location = new System.Drawing.Point(1085, 81);
+            this.label9.Margin = new System.Windows.Forms.Padding(0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 23);
+            this.label9.TabIndex = 179;
+            this.label9.Text = "Don\'t";
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label10.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label10.Location = new System.Drawing.Point(1193, 102);
+            this.label10.Margin = new System.Windows.Forms.Padding(0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 17);
+            this.label10.TabIndex = 180;
+            this.label10.Text = "not";
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label11.Location = new System.Drawing.Point(1207, 123);
+            this.label11.Margin = new System.Windows.Forms.Padding(0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(29, 17);
+            this.label11.TabIndex = 182;
+            this.label11.Text = "not";
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label12.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label12.Location = new System.Drawing.Point(1086, 144);
+            this.label12.Margin = new System.Windows.Forms.Padding(0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(39, 17);
+            this.label12.TabIndex = 181;
+            this.label12.Text = "Don\'t";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1322, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 183;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ShelterDesigner
             // 
@@ -1491,6 +1645,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1455, 836);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.SaveLayout);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -1734,7 +1894,13 @@
         private System.Windows.Forms.PictureBox pbxStoneRoomSelected;
         private System.Windows.Forms.PictureBox pbxTiledRoomSelected;
         private System.Windows.Forms.PictureBox pbxPlasterRoomSelected;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SaveLayout;
         private System.Windows.Forms.PictureBox i45;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button1;
     }
 }
