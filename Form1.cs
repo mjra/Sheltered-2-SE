@@ -87,7 +87,7 @@ namespace Sheltered_2_SE
                 }
             }
 
-
+            tabControlMain.Visible = false;
 
         }
         ProcessFile processFile = new ProcessFile();
@@ -136,6 +136,7 @@ namespace Sheltered_2_SE
                     ProcessData.familyMemberCount++;
                 }
             }
+            tabControlMain.Visible = true;
         }
 
         public void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -168,19 +169,6 @@ namespace Sheltered_2_SE
         private void button1_Click(object sender, EventArgs e)
         {
 
-
-            Output.Text = "";
-
-            List<GetFamilyMemberData> f = ProcessData.FamilyMembersList();
-
-            int memberAmount = 0;
-
-            foreach (GetFamilyMemberData member in f)
-            {
-                memberAmount++;
-            }
-
-            Output.AppendText(f.ElementAt(0).ToString() + "\n" + "---------------" + "\n" + memberAmount + "\n");
         }
 
         public void cbxCharacterSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -368,7 +356,7 @@ namespace Sheltered_2_SE
             cbxCharacterSelect.SelectedItem = txbFirstname;
             cbxCharacterSelect.Text = "Select Character";
 
-            MessageBox.Show("Character Saved successfully");
+            MessageBox.Show("Character saved successfully" +"\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
 
             xDoc.Save(ProcessFile.tempFilePath);
 
@@ -618,6 +606,133 @@ namespace Sheltered_2_SE
                 cbxSkillsCharacterSelect.Items.AddRange(cbxCharacterSelect.Items.Cast<Object>().ToArray());
                 lblSkillsCharacterName.Text = cbxSkillsCharacterSelect.Text;
             }
+
+            if (tabControlMain.SelectedIndex == 2)
+            {
+
+            }
+            if (tabControlMain.SelectedIndex == 3)
+            {
+
+            }
+            if (tabControlMain.SelectedIndex == 4)
+            {
+                //Load in Unlocks from XML into variables
+                var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+
+                string draftingTier2 = xDoc.Descendants("FactionAchievement_Building101").First().Value;
+                string draftingTier3 = xDoc.Descendants("FactionAchievement_SkilledBuilder").First().Value;
+                string draftingTier4 = xDoc.Descendants("FactionAchievement_ExpertBuilder").First().Value;
+                string workbenchTier2 = xDoc.Descendants("FactionAchievement_Engineering101").First().Value;
+                string workbenchTier3 = xDoc.Descendants("FactionAchievement_SkilledEngineer").First().Value;
+                string workbenchTier4 = xDoc.Descendants("FactionAchievement_ExpertEngineer").First().Value;
+
+                //BPs
+                string batteryBank = xDoc.Descendants("RecipebatteryBank").First().Value;
+                string flashbangMine = xDoc.Descendants("RecipeflashbangMine").First().Value;
+                string industrialGenerator = xDoc.Descendants("RecipeindustrialGenerator").First().Value;
+                string medicalBed = xDoc.Descendants("RecipemedicalBed").First().Value;
+                string gasMine = xDoc.Descendants("RecipegasMine").First().Value;
+                string efficientPlanter = xDoc.Descendants("RecipeEfficientPlanter").First().Value;
+                string quantumBattery = xDoc.Descendants("RecipequantumBattery").First().Value;
+                string defibrilator = xDoc.Descendants("Recipedefib").First().Value;
+                string electricityTrap = xDoc.Descendants("RecipeelectricityTrap").First().Value;
+                string laboratory = xDoc.Descendants("Recipelaboratory").First().Value;
+                string recycler = xDoc.Descendants("Reciperecycler").First().Value;
+                string solarPanel = xDoc.Descendants("RecipesolarPanel").First().Value;
+
+                //Other unlocks
+                string betterTrading = xDoc.Descendants("FactionAchievement_InsiderTrading").First().Value;
+                string guncrafting = xDoc.Descendants("FactionAchievement_GunCrafting").First().Value;
+                string carPartsCrafting = xDoc.Descendants("FactionAchievement_Mechanic").First().Value;
+                string craftMedicine = xDoc.Descendants("FactionAchievement_Chemistry").First().Value;
+
+                //Drugs
+                string alcohol = xDoc.Descendants("RecipeAlcohol").First().Value;
+                string crunk = xDoc.Descendants("RecipeCrunk").First().Value;
+                string feederral = xDoc.Descendants("RecipeFeederral").First().Value;
+                string python = xDoc.Descendants("RecipePython").First().Value;
+                string sigma = xDoc.Descendants("RecipeSigma").First().Value;
+                string snodge = xDoc.Descendants("RecipeSnodge").First().Value;
+                string trankwill = xDoc.Descendants("RecipeTrankwill").First().Value;
+
+                //Ally Rewards
+                string indoctirnationCell1 = xDoc.Descendants("RecipeIndoctrinationCell").First().Value;
+                string indoctirnationCell2 = xDoc.Descendants("RecipeAdvancedIndoctrinationCell").First().Value;
+                string indoctirnationCell3 = xDoc.Descendants("RecipeUltimateIndoctrinationCell").First().Value;
+                string morningstar1 = xDoc.Descendants("Recipemorningstar").First().Value;
+                string morningstar2 = xDoc.Descendants("RecipetoxicMorningstar").First().Value;
+                string morningstar3 = xDoc.Descendants("RecipebrutalMorningstar").First().Value;
+                string pulsefireRifle1 = xDoc.Descendants("RecipePRiflePoor").First().Value;
+                string pulsefireRifle2 = xDoc.Descendants("RecipePRifleGood").First().Value;
+                string pulsefireRifle3 = xDoc.Descendants("RecipePRifleExcellent").First().Value;
+                string sentryTurret1 = xDoc.Descendants("RecipesentryTurret").First().Value;
+                string sentryTurret2 = xDoc.Descendants("RecipeImprovedSentryTurret").First().Value;
+                string sentryTurret3 = xDoc.Descendants("RecipeMilitarySentryTurret").First().Value;
+                string vaccine1 = xDoc.Descendants("Recipevaccinepoor").First().Value;
+                string vaccine2 = xDoc.Descendants("Recipevaccinegood").First().Value;
+                string vaccine3 = xDoc.Descendants("Recipevaccineexcellent").First().Value;
+
+                //Load values into Form
+
+                if (draftingTier2 == "5") { cbxDraftingTableTier2.Checked = true; }
+                if (draftingTier3 == "5") { cbxDraftingTableTier3.Checked = true; }
+                if (draftingTier4 == "1") { cbxDraftingTableTier4.Checked = true; }
+                if (workbenchTier2 == "25") { cbxDraftingTableTier2.Checked = true; }
+                if (workbenchTier3 == "25") { cbxDraftingTableTier3.Checked = true; }
+                if (workbenchTier4 == "1") { cbxDraftingTableTier4.Checked = true; }
+
+                if (batteryBank == "True") { cbxBpBatteryBank.Checked = true; }
+                if (flashbangMine == "True") { cbxBpFlashbangMine.Checked = true; }
+                if (industrialGenerator == "True") { cbxBpIndustrialGenerator.Checked = true; }
+                if (medicalBed == "True") { cbxBpMedicalBed.Checked = true; }
+                if (gasMine == "True") { cbxBpGasMine.Checked = true; }
+                if (efficientPlanter == "True") { cbxBpEfficientPlanter.Checked = true; }
+                if (quantumBattery == "True") { cbxBpQuantumBattery.Checked = true; }
+                if (defibrilator == "True") { cbxBpDefibrilator.Checked = true; }
+                if (electricityTrap == "True") { cbxBpElectricityTrap.Checked = true; }
+                if (laboratory == "True") { cbxBpLaboratory.Checked = true; }
+                if (recycler == "True") { cbxBpRecycler.Checked = true; }
+                if (solarPanel == "True") { cbxBpSolarPanel.Checked = true; }
+
+                if (alcohol == "True") { cbxDrugsAlcohol.Checked = true; }
+                if (crunk == "True") { cbxDrugsCrunk.Checked = true; }
+                if (feederral == "True") { cbxDrugsFeederral.Checked = true; }
+                if (python == "True") { cbxDrugsPython.Checked = true; }
+                if (sigma == "True") { cbxDrugsSigma.Checked = true; }
+                if (snodge == "True") { cbxDrugsSnodge.Checked = true; }
+                if (trankwill == "True") { cbxDrugsTrankwill.Checked = true; }
+
+                if (betterTrading == "1") { cbxOtherTrading.Checked = true; }
+                if (guncrafting == "1") { cbxOtherGunCrafting.Checked = true; }
+                if (carPartsCrafting == "1") { cbxOtherCarPartsCrafting.Checked = true; }
+                if (craftMedicine == "1") { cbxMedicineCrafting.Checked = true; }
+
+                if (indoctirnationCell1 == "True") { cbxDraftingTableTier2.Checked = true; }
+                if (indoctirnationCell2 == "True") { cbxDraftingTableTier3.Checked = true; }
+                if (indoctirnationCell3 == "True") { cbxDraftingTableTier4.Checked = true; }
+                if (morningstar1 == "True") { cbxBpBatteryBank.Checked = true; }
+                if (morningstar2 == "True") { cbxBpFlashbangMine.Checked = true; }
+                if (morningstar3 == "True") { cbxBpIndustrialGenerator.Checked = true; }
+                if (pulsefireRifle1 == "True") { cbxBpMedicalBed.Checked = true; }
+                if (pulsefireRifle2 == "True") { cbxBpGasMine.Checked = true; }
+                if (pulsefireRifle3 == "True") { cbxBpEfficientPlanter.Checked = true; }
+                if (sentryTurret1 == "True") { cbxBpQuantumBattery.Checked = true; }
+                if (sentryTurret2 == "True") { cbxBpDefibrilator.Checked = true; }
+                if (sentryTurret3 == "True") { cbxBpElectricityTrap.Checked = true; }
+                if (vaccine1 == "True") { cbxBpLaboratory.Checked = true; }
+                if (vaccine2 == "True") { cbxBpRecycler.Checked = true; }
+                if (vaccine3 == "True") { cbxBpSolarPanel.Checked = true; }
+
+
+                if (tabControlMain.SelectedIndex == 5)
+
+                {
+
+                }
+            }
+
+
         }
 
         private void cbxSkillsCharacterSelect_SelectedIndexChanged(object sender, EventArgs e)
@@ -640,6 +755,110 @@ namespace Sheltered_2_SE
 
             // Show the settings form
             shelterDesignerForm.Show();
+
+        }
+
+        private void btnRevealMap_Click(object sender, EventArgs e)
+        {
+            var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+
+            for (int i = 0; i < 40; i++)
+            {
+                for (int j = 0; j < 40; j++)
+                {
+                    xDoc.Descendants("Map").Elements().Where(p => p.Name == "MapTile_" + i + "_" + j).Descendants("Discovered").First().Value = "True";
+                }
+            }
+
+
+
+
+            xDoc.Save(ProcessFile.tempFilePath);
+            MessageBox.Show("Map revealed succesfully." + "\n"+ "--------------------------------" + "\n" + "\n"+"\n"+ "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
+
+
+        }
+
+        private void btnSaveUnlocks_Click(object sender, EventArgs e)
+        {
+            var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+
+            if (cbxDraftingTableTier2.Checked == true) { xDoc.Descendants("FactionAchievement_Building101").First().Value = "5"; }
+            if (cbxDraftingTableTier3.Checked == true) { xDoc.Descendants("FactionAchievement_SkilledBuilder").First().Value = "5"; }
+            if (cbxDraftingTableTier4.Checked == true) { xDoc.Descendants("FactionAchievement_ExpertBuilder").First().Value = "1"; }
+            if (cbxDraftingTableTier2.Checked == true) { xDoc.Descendants("FactionAchievement_Engineering101").First().Value = "25"; }
+            if (cbxDraftingTableTier3.Checked == true) { xDoc.Descendants("FactionAchievement_SkilledEngineer").First().Value = "25"; }
+            if (cbxDraftingTableTier4.Checked == true) { xDoc.Descendants("FactionAchievement_ExpertEngineer").First().Value = "1"; }
+
+            if (cbxBpBatteryBank.Checked == true) { xDoc.Descendants("RecipebatteryBank").First().Value = "True"; }
+            if (cbxBpFlashbangMine.Checked == true) { xDoc.Descendants("RecipeflashbangMine").First().Value = "True"; }
+            if (cbxBpIndustrialGenerator.Checked == true) { xDoc.Descendants("RecipeindustrialGenerator").First().Value = "True"; }
+            if (cbxBpMedicalBed.Checked == true) { xDoc.Descendants("RecipemedicalBed").First().Value = "True"; }
+            if (cbxBpGasMine.Checked == true) { xDoc.Descendants("RecipegasMine").First().Value = "True"; }
+            if (cbxBpEfficientPlanter.Checked == true) { xDoc.Descendants("RecipeEfficientPlanter").First().Value = "True"; }
+            if (cbxBpQuantumBattery.Checked == true) { xDoc.Descendants("RecipequantumBattery").First().Value = "True"; }
+            if (cbxBpDefibrilator.Checked == true) { xDoc.Descendants("Recipedefib").First().Value = "True"; }
+            if (cbxBpElectricityTrap.Checked == true) { xDoc.Descendants("RecipeelectricityTrap").First().Value = "True"; }
+            if (cbxBpLaboratory.Checked == true) { xDoc.Descendants("Recipelaboratory").First().Value = "True"; }
+            if (cbxBpRecycler.Checked == true) { xDoc.Descendants("Reciperecycler").First().Value = "True"; }
+            if (cbxBpSolarPanel.Checked == true) { xDoc.Descendants("RecipesolarPanel").First().Value = "True"; }
+
+            if (cbxDrugsAlcohol.Checked == true) { xDoc.Descendants("RecipeAlcohol").First().Value = "True"; }
+            if (cbxDrugsCrunk.Checked == true) { xDoc.Descendants("RecipeCrunk").First().Value = "True"; }
+            if (cbxDrugsFeederral.Checked == true) { xDoc.Descendants("RecipeFeederral").First().Value = "True"; }
+            if (cbxDrugsPython.Checked == true) { xDoc.Descendants("RecipePython").First().Value = "True"; }
+            if (cbxDrugsSigma.Checked == true) { xDoc.Descendants("RecipeSigma").First().Value = "True"; }
+            if (cbxDrugsSnodge.Checked == true) { xDoc.Descendants("RecipeSnodge").First().Value = "True"; }
+            if (cbxDrugsTrankwill.Checked == true) { xDoc.Descendants("RecipeTrankwill").First().Value = "True"; }
+
+            if (cbxOtherTrading.Checked == true) { xDoc.Descendants("FactionAchievement_InsiderTrading").First().Value = "1"; }
+            if (cbxOtherGunCrafting.Checked == true) { xDoc.Descendants("FactionAchievement_GunCrafting").First().Value = "1"; }
+            if (cbxOtherCarPartsCrafting.Checked == true) { xDoc.Descendants("FactionAchievement_Mechanic").First().Value = "1"; }
+            if (cbxMedicineCrafting.Checked == true) { xDoc.Descendants("FactionAchievement_Chemistry").First().Value = "1"; }
+            if (cbxDamageAmplifier.Checked == true) { xDoc.Descendants("RecipedamageAmplifier").First().Value = "True"; }
+
+            if (cbxRewardChurchQ1.Checked == true) { xDoc.Descendants("RecipeIndoctrinationCell").First().Value = "True"; }
+            if (cbxRewardChurchQ2.Checked == true) { xDoc.Descendants("RecipeAdvancedIndoctrinationCell").First().Value = "True"; }
+            if (cbxRewardChurchQ3.Checked == true) { xDoc.Descendants("RecipeUltimateIndoctrinationCell").First().Value = "True"; }
+            if (cbxRewardCtkQ1.Checked == true) { xDoc.Descendants("Recipemorningstar").First().Value = "True"; }
+            if (cbxRewardCtkQ2.Checked == true) { xDoc.Descendants("RecipetoxicMorningstar").First().Value = "True"; }
+            if (cbxRewardCtkQ3.Checked == true) { xDoc.Descendants("RecipebrutalMorningstar").First().Value = "True"; }
+            if (cbxRewardNewQ1.Checked == true) { xDoc.Descendants("RecipePRiflePoor").First().Value = "True"; xDoc.Descendants("RecipeantimatterCellRecipe").First().Value = "True"; }
+            if (cbxRewardNewQ2.Checked == true) { xDoc.Descendants("RecipePRifleGood").First().Value = "True"; xDoc.Descendants("RecipeantimatterCellRecipe").First().Value = "True"; }
+            if (cbxRewardNewQ3.Checked == true) { xDoc.Descendants("RecipePRifleExcellent").First().Value = "True"; xDoc.Descendants("RecipeantimatterCellRecipe").First().Value = "True"; }
+            if (cbxRewardBlackQ1.Checked == true) { xDoc.Descendants("RecipesentryTurret").First().Value = "True"; xDoc.Descendants("RecipesentryTurretAmmo").First().Value = "True"; }
+            if (cbxRewardBlackQ2.Checked == true) { xDoc.Descendants("RecipeImprovedSentryTurret").First().Value = "True"; xDoc.Descendants("RecipesentryTurretAmmo").First().Value = "True"; }
+            if (cbxRewardBlackQ3.Checked == true) { xDoc.Descendants("RecipeMilitarySentryTurret").First().Value = "True"; xDoc.Descendants("RecipesentryTurretAmmo").First().Value = "True"; }
+            if (cbxRewardLosQ1.Checked == true) { xDoc.Descendants("Recipevaccinepoor").First().Value = "True"; }
+            if (cbxRewardLosQ2.Checked == true) { xDoc.Descendants("Recipevaccinegood").First().Value = "True"; }
+            if (cbxRewardLosQ3.Checked == true) { xDoc.Descendants("Recipevaccineexcellent").First().Value = "True"; }
+            if (cbxRewardOldQ1.Checked == true) { /*toADD*/ }
+            if (cbxRewardOldQ2.Checked == true) { /*toADD*/ }
+            if (cbxRewardOldQ3.Checked == true) { /*toADD*/ }
+
+            MessageBox.Show("Unlocks saved successfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
+            xDoc.Save(ProcessFile.tempFilePath);
+
+        }
+
+        private void btnUnlockAll_Click(object sender, EventArgs e)
+        {
+
+            foreach (CheckBox cB in tabControlMain.SelectedTab.Controls.OfType<CheckBox>())
+            {
+                if (cB.Enabled == true)
+                {
+                    if (cB.Name.Contains("Q1") || cB.Name.Contains("Q2"))
+                    {
+
+                    }
+                    else
+                    {
+                        cB.Checked = true;
+                    }
+                }
+
+            }
 
         }
     }

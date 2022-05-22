@@ -329,55 +329,55 @@ namespace Sheltered_2_SE
             this.deseasesTab = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.unlockingTab = new System.Windows.Forms.TabPage();
-            this.checkBox46 = new System.Windows.Forms.CheckBox();
-            this.checkBox47 = new System.Windows.Forms.CheckBox();
-            this.checkBox48 = new System.Windows.Forms.CheckBox();
-            this.checkBox49 = new System.Windows.Forms.CheckBox();
-            this.checkBox45 = new System.Windows.Forms.CheckBox();
-            this.checkBox29 = new System.Windows.Forms.CheckBox();
-            this.checkBox30 = new System.Windows.Forms.CheckBox();
-            this.checkBox40 = new System.Windows.Forms.CheckBox();
-            this.checkBox41 = new System.Windows.Forms.CheckBox();
-            this.checkBox42 = new System.Windows.Forms.CheckBox();
-            this.checkBox43 = new System.Windows.Forms.CheckBox();
-            this.checkBox44 = new System.Windows.Forms.CheckBox();
-            this.checkBox26 = new System.Windows.Forms.CheckBox();
-            this.checkBox25 = new System.Windows.Forms.CheckBox();
-            this.checkBox24 = new System.Windows.Forms.CheckBox();
-            this.checkBox20 = new System.Windows.Forms.CheckBox();
-            this.checkBox21 = new System.Windows.Forms.CheckBox();
-            this.checkBox22 = new System.Windows.Forms.CheckBox();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
-            this.checkBox18 = new System.Windows.Forms.CheckBox();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.checkBox37 = new System.Windows.Forms.CheckBox();
-            this.checkBox38 = new System.Windows.Forms.CheckBox();
-            this.checkBox39 = new System.Windows.Forms.CheckBox();
-            this.checkBox34 = new System.Windows.Forms.CheckBox();
-            this.checkBox35 = new System.Windows.Forms.CheckBox();
-            this.checkBox36 = new System.Windows.Forms.CheckBox();
-            this.checkBox31 = new System.Windows.Forms.CheckBox();
-            this.checkBox32 = new System.Windows.Forms.CheckBox();
-            this.checkBox33 = new System.Windows.Forms.CheckBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbxBpSolarPanel = new System.Windows.Forms.CheckBox();
+            this.cbxBpRecycler = new System.Windows.Forms.CheckBox();
+            this.cbxBpQuantumBattery = new System.Windows.Forms.CheckBox();
+            this.cbxBpIndustrialGenerator = new System.Windows.Forms.CheckBox();
+            this.cbxBpDefibrilator = new System.Windows.Forms.CheckBox();
+            this.cbxBpLaboratory = new System.Windows.Forms.CheckBox();
+            this.cbxBpEfficientPlanter = new System.Windows.Forms.CheckBox();
+            this.cbxBpFlashbangMine = new System.Windows.Forms.CheckBox();
+            this.cbxBpMedicalBed = new System.Windows.Forms.CheckBox();
+            this.cbxBpElectricityTrap = new System.Windows.Forms.CheckBox();
+            this.cbxBpGasMine = new System.Windows.Forms.CheckBox();
+            this.cbxBpBatteryBank = new System.Windows.Forms.CheckBox();
+            this.cbxOtherCarPartsCrafting = new System.Windows.Forms.CheckBox();
+            this.cbxOtherGunCrafting = new System.Windows.Forms.CheckBox();
+            this.cbxOtherTrading = new System.Windows.Forms.CheckBox();
+            this.cbxRewardOldQ3 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardOldQ2 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardOldQ1 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardLosQ3 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardLosQ2 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardLosQ1 = new System.Windows.Forms.CheckBox();
+            this.btnSaveUnlocks = new System.Windows.Forms.Button();
+            this.btnUnlockAll = new System.Windows.Forms.Button();
+            this.cbxRewardBlackQ3 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardBlackQ2 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardBlackQ1 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardNewQ3 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardNewQ2 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardNewQ1 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardCtkQ3 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardCtkQ2 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardCtkQ1 = new System.Windows.Forms.CheckBox();
+            this.cbxDrugsTrankwill = new System.Windows.Forms.CheckBox();
+            this.cbxDrugsSnodge = new System.Windows.Forms.CheckBox();
+            this.cbxDrugsSigma = new System.Windows.Forms.CheckBox();
+            this.cbxDrugsPython = new System.Windows.Forms.CheckBox();
+            this.cbxDrugsFeederral = new System.Windows.Forms.CheckBox();
+            this.cbxDrugsCrunk = new System.Windows.Forms.CheckBox();
+            this.cbxDrugsAlcohol = new System.Windows.Forms.CheckBox();
+            this.cbxRewardChurchQ3 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardChurchQ2 = new System.Windows.Forms.CheckBox();
+            this.cbxRewardChurchQ1 = new System.Windows.Forms.CheckBox();
+            this.btnRevealMap = new System.Windows.Forms.Button();
+            this.cbxWorkbenchTier4 = new System.Windows.Forms.CheckBox();
+            this.cbxWorkbenchTier3 = new System.Windows.Forms.CheckBox();
+            this.cbxWorkbenchTier2 = new System.Windows.Forms.CheckBox();
+            this.cbxDraftingTableTier4 = new System.Windows.Forms.CheckBox();
+            this.cbxDraftingTableTier3 = new System.Windows.Forms.CheckBox();
+            this.cbxDraftingTableTier2 = new System.Windows.Forms.CheckBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -403,6 +403,8 @@ namespace Sheltered_2_SE
             this.skillIcons = new System.Windows.Forms.ImageList(this.components);
             this.skillLevelIcons = new System.Windows.Forms.ImageList(this.components);
             this.AvailablePointsIcon = new System.Windows.Forms.ImageList(this.components);
+            this.cbxMedicineCrafting = new System.Windows.Forms.CheckBox();
+            this.cbxDamageAmplifier = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.characterStatsTab.SuspendLayout();
@@ -3899,55 +3901,57 @@ namespace Sheltered_2_SE
             // unlockingTab
             // 
             this.unlockingTab.BackColor = System.Drawing.Color.LightGray;
-            this.unlockingTab.Controls.Add(this.checkBox46);
-            this.unlockingTab.Controls.Add(this.checkBox47);
-            this.unlockingTab.Controls.Add(this.checkBox48);
-            this.unlockingTab.Controls.Add(this.checkBox49);
-            this.unlockingTab.Controls.Add(this.checkBox45);
-            this.unlockingTab.Controls.Add(this.checkBox29);
-            this.unlockingTab.Controls.Add(this.checkBox30);
-            this.unlockingTab.Controls.Add(this.checkBox40);
-            this.unlockingTab.Controls.Add(this.checkBox41);
-            this.unlockingTab.Controls.Add(this.checkBox42);
-            this.unlockingTab.Controls.Add(this.checkBox43);
-            this.unlockingTab.Controls.Add(this.checkBox44);
-            this.unlockingTab.Controls.Add(this.checkBox26);
-            this.unlockingTab.Controls.Add(this.checkBox25);
-            this.unlockingTab.Controls.Add(this.checkBox24);
-            this.unlockingTab.Controls.Add(this.checkBox20);
-            this.unlockingTab.Controls.Add(this.checkBox21);
-            this.unlockingTab.Controls.Add(this.checkBox22);
-            this.unlockingTab.Controls.Add(this.checkBox17);
-            this.unlockingTab.Controls.Add(this.checkBox18);
-            this.unlockingTab.Controls.Add(this.checkBox19);
-            this.unlockingTab.Controls.Add(this.button6);
-            this.unlockingTab.Controls.Add(this.button5);
-            this.unlockingTab.Controls.Add(this.checkBox37);
-            this.unlockingTab.Controls.Add(this.checkBox38);
-            this.unlockingTab.Controls.Add(this.checkBox39);
-            this.unlockingTab.Controls.Add(this.checkBox34);
-            this.unlockingTab.Controls.Add(this.checkBox35);
-            this.unlockingTab.Controls.Add(this.checkBox36);
-            this.unlockingTab.Controls.Add(this.checkBox31);
-            this.unlockingTab.Controls.Add(this.checkBox32);
-            this.unlockingTab.Controls.Add(this.checkBox33);
-            this.unlockingTab.Controls.Add(this.checkBox16);
-            this.unlockingTab.Controls.Add(this.checkBox13);
-            this.unlockingTab.Controls.Add(this.checkBox14);
-            this.unlockingTab.Controls.Add(this.checkBox15);
-            this.unlockingTab.Controls.Add(this.checkBox10);
-            this.unlockingTab.Controls.Add(this.checkBox11);
-            this.unlockingTab.Controls.Add(this.checkBox12);
-            this.unlockingTab.Controls.Add(this.checkBox7);
-            this.unlockingTab.Controls.Add(this.checkBox8);
-            this.unlockingTab.Controls.Add(this.checkBox9);
-            this.unlockingTab.Controls.Add(this.button4);
-            this.unlockingTab.Controls.Add(this.checkBox4);
-            this.unlockingTab.Controls.Add(this.checkBox5);
-            this.unlockingTab.Controls.Add(this.checkBox6);
-            this.unlockingTab.Controls.Add(this.checkBox3);
-            this.unlockingTab.Controls.Add(this.checkBox2);
-            this.unlockingTab.Controls.Add(this.checkBox1);
+            this.unlockingTab.Controls.Add(this.cbxDamageAmplifier);
+            this.unlockingTab.Controls.Add(this.cbxMedicineCrafting);
+            this.unlockingTab.Controls.Add(this.cbxBpSolarPanel);
+            this.unlockingTab.Controls.Add(this.cbxBpRecycler);
+            this.unlockingTab.Controls.Add(this.cbxBpQuantumBattery);
+            this.unlockingTab.Controls.Add(this.cbxBpIndustrialGenerator);
+            this.unlockingTab.Controls.Add(this.cbxBpDefibrilator);
+            this.unlockingTab.Controls.Add(this.cbxBpLaboratory);
+            this.unlockingTab.Controls.Add(this.cbxBpEfficientPlanter);
+            this.unlockingTab.Controls.Add(this.cbxBpFlashbangMine);
+            this.unlockingTab.Controls.Add(this.cbxBpMedicalBed);
+            this.unlockingTab.Controls.Add(this.cbxBpElectricityTrap);
+            this.unlockingTab.Controls.Add(this.cbxBpGasMine);
+            this.unlockingTab.Controls.Add(this.cbxBpBatteryBank);
+            this.unlockingTab.Controls.Add(this.cbxOtherCarPartsCrafting);
+            this.unlockingTab.Controls.Add(this.cbxOtherGunCrafting);
+            this.unlockingTab.Controls.Add(this.cbxOtherTrading);
+            this.unlockingTab.Controls.Add(this.cbxRewardOldQ3);
+            this.unlockingTab.Controls.Add(this.cbxRewardOldQ2);
+            this.unlockingTab.Controls.Add(this.cbxRewardOldQ1);
+            this.unlockingTab.Controls.Add(this.cbxRewardLosQ3);
+            this.unlockingTab.Controls.Add(this.cbxRewardLosQ2);
+            this.unlockingTab.Controls.Add(this.cbxRewardLosQ1);
+            this.unlockingTab.Controls.Add(this.btnSaveUnlocks);
+            this.unlockingTab.Controls.Add(this.btnUnlockAll);
+            this.unlockingTab.Controls.Add(this.cbxRewardBlackQ3);
+            this.unlockingTab.Controls.Add(this.cbxRewardBlackQ2);
+            this.unlockingTab.Controls.Add(this.cbxRewardBlackQ1);
+            this.unlockingTab.Controls.Add(this.cbxRewardNewQ3);
+            this.unlockingTab.Controls.Add(this.cbxRewardNewQ2);
+            this.unlockingTab.Controls.Add(this.cbxRewardNewQ1);
+            this.unlockingTab.Controls.Add(this.cbxRewardCtkQ3);
+            this.unlockingTab.Controls.Add(this.cbxRewardCtkQ2);
+            this.unlockingTab.Controls.Add(this.cbxRewardCtkQ1);
+            this.unlockingTab.Controls.Add(this.cbxDrugsTrankwill);
+            this.unlockingTab.Controls.Add(this.cbxDrugsSnodge);
+            this.unlockingTab.Controls.Add(this.cbxDrugsSigma);
+            this.unlockingTab.Controls.Add(this.cbxDrugsPython);
+            this.unlockingTab.Controls.Add(this.cbxDrugsFeederral);
+            this.unlockingTab.Controls.Add(this.cbxDrugsCrunk);
+            this.unlockingTab.Controls.Add(this.cbxDrugsAlcohol);
+            this.unlockingTab.Controls.Add(this.cbxRewardChurchQ3);
+            this.unlockingTab.Controls.Add(this.cbxRewardChurchQ2);
+            this.unlockingTab.Controls.Add(this.cbxRewardChurchQ1);
+            this.unlockingTab.Controls.Add(this.btnRevealMap);
+            this.unlockingTab.Controls.Add(this.cbxWorkbenchTier4);
+            this.unlockingTab.Controls.Add(this.cbxWorkbenchTier3);
+            this.unlockingTab.Controls.Add(this.cbxWorkbenchTier2);
+            this.unlockingTab.Controls.Add(this.cbxDraftingTableTier4);
+            this.unlockingTab.Controls.Add(this.cbxDraftingTableTier3);
+            this.unlockingTab.Controls.Add(this.cbxDraftingTableTier2);
             this.unlockingTab.Controls.Add(this.label32);
             this.unlockingTab.Controls.Add(this.label31);
             this.unlockingTab.Controls.Add(this.label27);
@@ -3966,538 +3970,544 @@ namespace Sheltered_2_SE
             this.unlockingTab.Text = " Unlock";
             this.unlockingTab.Click += new System.EventHandler(this.unlockingTab_Click);
             // 
-            // checkBox46
-            // 
-            this.checkBox46.AutoSize = true;
-            this.checkBox46.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox46.Location = new System.Drawing.Point(256, 211);
-            this.checkBox46.Name = "checkBox46";
-            this.checkBox46.Size = new System.Drawing.Size(84, 22);
-            this.checkBox46.TabIndex = 80;
-            this.checkBox46.Text = "Solar Panel";
-            this.checkBox46.UseVisualStyleBackColor = true;
-            // 
-            // checkBox47
-            // 
-            this.checkBox47.AutoSize = true;
-            this.checkBox47.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox47.Location = new System.Drawing.Point(256, 192);
-            this.checkBox47.Name = "checkBox47";
-            this.checkBox47.Size = new System.Drawing.Size(70, 22);
-            this.checkBox47.TabIndex = 79;
-            this.checkBox47.Text = "Recycler";
-            this.checkBox47.UseVisualStyleBackColor = true;
-            // 
-            // checkBox48
-            // 
-            this.checkBox48.AutoSize = true;
-            this.checkBox48.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox48.Location = new System.Drawing.Point(146, 193);
-            this.checkBox48.Name = "checkBox48";
-            this.checkBox48.Size = new System.Drawing.Size(110, 22);
-            this.checkBox48.TabIndex = 78;
-            this.checkBox48.Text = "Quantum Battery";
-            this.checkBox48.UseVisualStyleBackColor = true;
-            // 
-            // checkBox49
-            // 
-            this.checkBox49.AutoSize = true;
-            this.checkBox49.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox49.Location = new System.Drawing.Point(12, 193);
-            this.checkBox49.Name = "checkBox49";
-            this.checkBox49.Size = new System.Drawing.Size(129, 22);
-            this.checkBox49.TabIndex = 77;
-            this.checkBox49.Text = "Industrial Generator";
-            this.checkBox49.UseVisualStyleBackColor = true;
-            // 
-            // checkBox45
-            // 
-            this.checkBox45.AutoSize = true;
-            this.checkBox45.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox45.Location = new System.Drawing.Point(146, 211);
-            this.checkBox45.Name = "checkBox45";
-            this.checkBox45.Size = new System.Drawing.Size(88, 22);
-            this.checkBox45.TabIndex = 75;
-            this.checkBox45.Text = "Defibrilator";
-            this.checkBox45.UseVisualStyleBackColor = true;
-            // 
-            // checkBox29
-            // 
-            this.checkBox29.AutoSize = true;
-            this.checkBox29.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox29.Location = new System.Drawing.Point(256, 175);
-            this.checkBox29.Name = "checkBox29";
-            this.checkBox29.Size = new System.Drawing.Size(84, 22);
-            this.checkBox29.TabIndex = 74;
-            this.checkBox29.Text = "Laboratory";
-            this.checkBox29.UseVisualStyleBackColor = true;
-            // 
-            // checkBox30
-            // 
-            this.checkBox30.AutoSize = true;
-            this.checkBox30.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox30.Location = new System.Drawing.Point(146, 176);
-            this.checkBox30.Name = "checkBox30";
-            this.checkBox30.Size = new System.Drawing.Size(109, 22);
-            this.checkBox30.TabIndex = 73;
-            this.checkBox30.Text = "Efficient Planter";
-            this.checkBox30.UseVisualStyleBackColor = true;
-            // 
-            // checkBox40
-            // 
-            this.checkBox40.AutoSize = true;
-            this.checkBox40.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox40.Location = new System.Drawing.Point(12, 176);
-            this.checkBox40.Name = "checkBox40";
-            this.checkBox40.Size = new System.Drawing.Size(101, 22);
-            this.checkBox40.TabIndex = 72;
-            this.checkBox40.Text = "Flashbang Mine";
-            this.checkBox40.UseVisualStyleBackColor = true;
-            // 
-            // checkBox41
-            // 
-            this.checkBox41.AutoSize = true;
-            this.checkBox41.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox41.Location = new System.Drawing.Point(12, 211);
-            this.checkBox41.Name = "checkBox41";
-            this.checkBox41.Size = new System.Drawing.Size(84, 22);
-            this.checkBox41.TabIndex = 71;
-            this.checkBox41.Text = "Medical Bed";
-            this.checkBox41.UseVisualStyleBackColor = true;
-            // 
-            // checkBox42
-            // 
-            this.checkBox42.AutoSize = true;
-            this.checkBox42.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox42.Location = new System.Drawing.Point(256, 158);
-            this.checkBox42.Name = "checkBox42";
-            this.checkBox42.Size = new System.Drawing.Size(104, 22);
-            this.checkBox42.TabIndex = 70;
-            this.checkBox42.Text = "Electricity trap";
-            this.checkBox42.UseVisualStyleBackColor = true;
-            // 
-            // checkBox43
-            // 
-            this.checkBox43.AutoSize = true;
-            this.checkBox43.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox43.Location = new System.Drawing.Point(146, 159);
-            this.checkBox43.Name = "checkBox43";
-            this.checkBox43.Size = new System.Drawing.Size(67, 22);
-            this.checkBox43.TabIndex = 69;
-            this.checkBox43.Text = "gas mine";
-            this.checkBox43.UseVisualStyleBackColor = true;
-            // 
-            // checkBox44
-            // 
-            this.checkBox44.AutoSize = true;
-            this.checkBox44.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox44.Location = new System.Drawing.Point(12, 159);
-            this.checkBox44.Name = "checkBox44";
-            this.checkBox44.Size = new System.Drawing.Size(91, 22);
-            this.checkBox44.TabIndex = 68;
-            this.checkBox44.Text = "Battery bank";
-            this.checkBox44.UseVisualStyleBackColor = true;
-            // 
-            // checkBox26
-            // 
-            this.checkBox26.AutoSize = true;
-            this.checkBox26.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox26.Location = new System.Drawing.Point(146, 313);
-            this.checkBox26.Name = "checkBox26";
-            this.checkBox26.Size = new System.Drawing.Size(116, 22);
-            this.checkBox26.TabIndex = 63;
-            this.checkBox26.Text = "Car Parts crafting";
-            this.checkBox26.UseVisualStyleBackColor = true;
-            // 
-            // checkBox25
-            // 
-            this.checkBox25.AutoSize = true;
-            this.checkBox25.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox25.Location = new System.Drawing.Point(146, 296);
-            this.checkBox25.Name = "checkBox25";
-            this.checkBox25.Size = new System.Drawing.Size(85, 22);
-            this.checkBox25.TabIndex = 62;
-            this.checkBox25.Text = "Guncrafting";
-            this.checkBox25.UseVisualStyleBackColor = true;
-            // 
-            // checkBox24
-            // 
-            this.checkBox24.AutoSize = true;
-            this.checkBox24.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox24.Location = new System.Drawing.Point(146, 279);
-            this.checkBox24.Name = "checkBox24";
-            this.checkBox24.Size = new System.Drawing.Size(127, 22);
-            this.checkBox24.TabIndex = 60;
-            this.checkBox24.Text = "Better trading Deals";
-            this.checkBox24.UseVisualStyleBackColor = true;
-            // 
-            // checkBox20
-            // 
-            this.checkBox20.AutoSize = true;
-            this.checkBox20.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox20.Location = new System.Drawing.Point(481, 518);
-            this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(39, 22);
-            this.checkBox20.TabIndex = 58;
-            this.checkBox20.Text = "---";
-            this.checkBox20.UseVisualStyleBackColor = true;
-            // 
-            // checkBox21
-            // 
-            this.checkBox21.AutoSize = true;
-            this.checkBox21.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox21.Location = new System.Drawing.Point(481, 500);
-            this.checkBox21.Name = "checkBox21";
-            this.checkBox21.Size = new System.Drawing.Size(39, 22);
-            this.checkBox21.TabIndex = 57;
-            this.checkBox21.Text = "---";
-            this.checkBox21.UseVisualStyleBackColor = true;
-            // 
-            // checkBox22
-            // 
-            this.checkBox22.AutoSize = true;
-            this.checkBox22.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox22.Location = new System.Drawing.Point(481, 482);
-            this.checkBox22.Name = "checkBox22";
-            this.checkBox22.Size = new System.Drawing.Size(39, 22);
-            this.checkBox22.TabIndex = 56;
-            this.checkBox22.Text = "---";
-            this.checkBox22.UseVisualStyleBackColor = true;
-            // 
-            // checkBox17
-            // 
-            this.checkBox17.AutoSize = true;
-            this.checkBox17.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox17.Location = new System.Drawing.Point(481, 430);
-            this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(126, 22);
-            this.checkBox17.TabIndex = 54;
-            this.checkBox17.Text = "Pulserifle excellent";
-            this.checkBox17.UseVisualStyleBackColor = true;
-            // 
-            // checkBox18
-            // 
-            this.checkBox18.AutoSize = true;
-            this.checkBox18.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox18.Location = new System.Drawing.Point(481, 412);
-            this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(102, 22);
-            this.checkBox18.TabIndex = 53;
-            this.checkBox18.Text = "Pulserifle good";
-            this.checkBox18.UseVisualStyleBackColor = true;
-            // 
-            // checkBox19
-            // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox19.Location = new System.Drawing.Point(481, 394);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(102, 22);
-            this.checkBox19.TabIndex = 52;
-            this.checkBox19.Text = "Pulserifle poor";
-            this.checkBox19.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(264, 507);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(107, 26);
-            this.button6.TabIndex = 50;
-            this.button6.Text = "Save UNLOcKS";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(138, 507);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(107, 26);
-            this.button5.TabIndex = 49;
-            this.button5.Text = "Unlock ALL";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox37
-            // 
-            this.checkBox37.AutoSize = true;
-            this.checkBox37.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox37.Location = new System.Drawing.Point(481, 342);
-            this.checkBox37.Name = "checkBox37";
-            this.checkBox37.Size = new System.Drawing.Size(138, 22);
-            this.checkBox37.TabIndex = 48;
-            this.checkBox37.Text = "Military Sentry Turret";
-            this.checkBox37.UseVisualStyleBackColor = true;
-            // 
-            // checkBox38
-            // 
-            this.checkBox38.AutoSize = true;
-            this.checkBox38.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox38.Location = new System.Drawing.Point(481, 324);
-            this.checkBox38.Name = "checkBox38";
-            this.checkBox38.Size = new System.Drawing.Size(141, 22);
-            this.checkBox38.TabIndex = 47;
-            this.checkBox38.Text = "Improved Sentry Turret";
-            this.checkBox38.UseVisualStyleBackColor = true;
-            // 
-            // checkBox39
-            // 
-            this.checkBox39.AutoSize = true;
-            this.checkBox39.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox39.Location = new System.Drawing.Point(481, 306);
-            this.checkBox39.Name = "checkBox39";
-            this.checkBox39.Size = new System.Drawing.Size(95, 22);
-            this.checkBox39.TabIndex = 46;
-            this.checkBox39.Text = "Sentry Turret";
-            this.checkBox39.UseVisualStyleBackColor = true;
-            // 
-            // checkBox34
-            // 
-            this.checkBox34.AutoSize = true;
-            this.checkBox34.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox34.Location = new System.Drawing.Point(481, 255);
-            this.checkBox34.Name = "checkBox34";
-            this.checkBox34.Size = new System.Drawing.Size(126, 22);
-            this.checkBox34.TabIndex = 44;
-            this.checkBox34.Text = "Pulserifle excellent";
-            this.checkBox34.UseVisualStyleBackColor = true;
-            // 
-            // checkBox35
-            // 
-            this.checkBox35.AutoSize = true;
-            this.checkBox35.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox35.Location = new System.Drawing.Point(481, 237);
-            this.checkBox35.Name = "checkBox35";
-            this.checkBox35.Size = new System.Drawing.Size(102, 22);
-            this.checkBox35.TabIndex = 43;
-            this.checkBox35.Text = "Pulserifle good";
-            this.checkBox35.UseVisualStyleBackColor = true;
-            // 
-            // checkBox36
-            // 
-            this.checkBox36.AutoSize = true;
-            this.checkBox36.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox36.Location = new System.Drawing.Point(481, 219);
-            this.checkBox36.Name = "checkBox36";
-            this.checkBox36.Size = new System.Drawing.Size(102, 22);
-            this.checkBox36.TabIndex = 42;
-            this.checkBox36.Text = "Pulserifle poor";
-            this.checkBox36.UseVisualStyleBackColor = true;
-            // 
-            // checkBox31
-            // 
-            this.checkBox31.AutoSize = true;
-            this.checkBox31.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox31.Location = new System.Drawing.Point(481, 167);
-            this.checkBox31.Name = "checkBox31";
-            this.checkBox31.Size = new System.Drawing.Size(123, 22);
-            this.checkBox31.TabIndex = 40;
-            this.checkBox31.Text = "Brutal Morningstar";
-            this.checkBox31.UseVisualStyleBackColor = true;
-            // 
-            // checkBox32
-            // 
-            this.checkBox32.AutoSize = true;
-            this.checkBox32.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox32.Location = new System.Drawing.Point(481, 149);
-            this.checkBox32.Name = "checkBox32";
-            this.checkBox32.Size = new System.Drawing.Size(115, 22);
-            this.checkBox32.TabIndex = 39;
-            this.checkBox32.Text = "Toxic Morningstar";
-            this.checkBox32.UseVisualStyleBackColor = true;
-            // 
-            // checkBox33
-            // 
-            this.checkBox33.AutoSize = true;
-            this.checkBox33.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox33.Location = new System.Drawing.Point(481, 131);
-            this.checkBox33.Name = "checkBox33";
-            this.checkBox33.Size = new System.Drawing.Size(88, 22);
-            this.checkBox33.TabIndex = 38;
-            this.checkBox33.Text = "Morningstar";
-            this.checkBox33.UseVisualStyleBackColor = true;
-            // 
-            // checkBox16
-            // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox16.Location = new System.Drawing.Point(12, 383);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(77, 22);
-            this.checkBox16.TabIndex = 20;
-            this.checkBox16.Text = "Trankwill";
-            this.checkBox16.UseVisualStyleBackColor = true;
-            // 
-            // checkBox13
-            // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox13.Location = new System.Drawing.Point(12, 366);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(60, 22);
-            this.checkBox13.TabIndex = 19;
-            this.checkBox13.Text = "Snodge";
-            this.checkBox13.UseVisualStyleBackColor = true;
-            // 
-            // checkBox14
-            // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox14.Location = new System.Drawing.Point(12, 349);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(54, 22);
-            this.checkBox14.TabIndex = 18;
-            this.checkBox14.Text = "Sigma";
-            this.checkBox14.UseVisualStyleBackColor = true;
-            // 
-            // checkBox15
-            // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox15.Location = new System.Drawing.Point(12, 332);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(61, 22);
-            this.checkBox15.TabIndex = 17;
-            this.checkBox15.Text = "Python";
-            this.checkBox15.UseVisualStyleBackColor = true;
-            // 
-            // checkBox10
-            // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox10.Location = new System.Drawing.Point(12, 315);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(76, 22);
-            this.checkBox10.TabIndex = 16;
-            this.checkBox10.Text = "Feederral";
-            this.checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // checkBox11
-            // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox11.Location = new System.Drawing.Point(12, 298);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(56, 22);
-            this.checkBox11.TabIndex = 15;
-            this.checkBox11.Text = "Crunk";
-            this.checkBox11.UseVisualStyleBackColor = true;
-            // 
-            // checkBox12
-            // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox12.Location = new System.Drawing.Point(12, 281);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(66, 22);
-            this.checkBox12.TabIndex = 14;
-            this.checkBox12.Text = "Alcohol";
-            this.checkBox12.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox7.Location = new System.Drawing.Point(481, 77);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(163, 22);
-            this.checkBox7.TabIndex = 12;
-            this.checkBox7.Text = "Ultimate Indoctrination Cell";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox8.Location = new System.Drawing.Point(481, 59);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(167, 22);
-            this.checkBox8.TabIndex = 11;
-            this.checkBox8.Text = "Advanced Indoctrination Cell";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox9.Location = new System.Drawing.Point(481, 41);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(120, 22);
-            this.checkBox9.TabIndex = 10;
-            this.checkBox9.Text = "Indoctrination Cell";
-            this.checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(12, 507);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 26);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Reveal Map";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox4.Location = new System.Drawing.Point(147, 89);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(54, 22);
-            this.checkBox4.TabIndex = 7;
-            this.checkBox4.Text = "Tier 4";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox5.Location = new System.Drawing.Point(147, 72);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(54, 22);
-            this.checkBox5.TabIndex = 6;
-            this.checkBox5.Text = "Tier 3";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox6.Location = new System.Drawing.Point(147, 55);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(54, 22);
-            this.checkBox6.TabIndex = 5;
-            this.checkBox6.Text = "Tier 2";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox3.Location = new System.Drawing.Point(12, 89);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(54, 22);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Tier 4";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox2.Location = new System.Drawing.Point(12, 72);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(54, 22);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "Tier 3";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.checkBox1.Location = new System.Drawing.Point(12, 55);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(54, 22);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Tier 2";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            // cbxBpSolarPanel
+            // 
+            this.cbxBpSolarPanel.AutoSize = true;
+            this.cbxBpSolarPanel.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxBpSolarPanel.Location = new System.Drawing.Point(256, 211);
+            this.cbxBpSolarPanel.Name = "cbxBpSolarPanel";
+            this.cbxBpSolarPanel.Size = new System.Drawing.Size(84, 22);
+            this.cbxBpSolarPanel.TabIndex = 80;
+            this.cbxBpSolarPanel.Text = "Solar Panel";
+            this.cbxBpSolarPanel.UseVisualStyleBackColor = true;
+            // 
+            // cbxBpRecycler
+            // 
+            this.cbxBpRecycler.AutoSize = true;
+            this.cbxBpRecycler.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxBpRecycler.Location = new System.Drawing.Point(256, 192);
+            this.cbxBpRecycler.Name = "cbxBpRecycler";
+            this.cbxBpRecycler.Size = new System.Drawing.Size(70, 22);
+            this.cbxBpRecycler.TabIndex = 79;
+            this.cbxBpRecycler.Text = "Recycler";
+            this.cbxBpRecycler.UseVisualStyleBackColor = true;
+            // 
+            // cbxBpQuantumBattery
+            // 
+            this.cbxBpQuantumBattery.AutoSize = true;
+            this.cbxBpQuantumBattery.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxBpQuantumBattery.Location = new System.Drawing.Point(146, 193);
+            this.cbxBpQuantumBattery.Name = "cbxBpQuantumBattery";
+            this.cbxBpQuantumBattery.Size = new System.Drawing.Size(110, 22);
+            this.cbxBpQuantumBattery.TabIndex = 78;
+            this.cbxBpQuantumBattery.Text = "Quantum Battery";
+            this.cbxBpQuantumBattery.UseVisualStyleBackColor = true;
+            // 
+            // cbxBpIndustrialGenerator
+            // 
+            this.cbxBpIndustrialGenerator.AutoSize = true;
+            this.cbxBpIndustrialGenerator.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxBpIndustrialGenerator.Location = new System.Drawing.Point(12, 193);
+            this.cbxBpIndustrialGenerator.Name = "cbxBpIndustrialGenerator";
+            this.cbxBpIndustrialGenerator.Size = new System.Drawing.Size(129, 22);
+            this.cbxBpIndustrialGenerator.TabIndex = 77;
+            this.cbxBpIndustrialGenerator.Text = "Industrial Generator";
+            this.cbxBpIndustrialGenerator.UseVisualStyleBackColor = true;
+            // 
+            // cbxBpDefibrilator
+            // 
+            this.cbxBpDefibrilator.AutoSize = true;
+            this.cbxBpDefibrilator.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxBpDefibrilator.Location = new System.Drawing.Point(146, 211);
+            this.cbxBpDefibrilator.Name = "cbxBpDefibrilator";
+            this.cbxBpDefibrilator.Size = new System.Drawing.Size(88, 22);
+            this.cbxBpDefibrilator.TabIndex = 75;
+            this.cbxBpDefibrilator.Text = "Defibrilator";
+            this.cbxBpDefibrilator.UseVisualStyleBackColor = true;
+            // 
+            // cbxBpLaboratory
+            // 
+            this.cbxBpLaboratory.AutoSize = true;
+            this.cbxBpLaboratory.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxBpLaboratory.Location = new System.Drawing.Point(256, 175);
+            this.cbxBpLaboratory.Name = "cbxBpLaboratory";
+            this.cbxBpLaboratory.Size = new System.Drawing.Size(84, 22);
+            this.cbxBpLaboratory.TabIndex = 74;
+            this.cbxBpLaboratory.Text = "Laboratory";
+            this.cbxBpLaboratory.UseVisualStyleBackColor = true;
+            // 
+            // cbxBpEfficientPlanter
+            // 
+            this.cbxBpEfficientPlanter.AutoSize = true;
+            this.cbxBpEfficientPlanter.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxBpEfficientPlanter.Location = new System.Drawing.Point(146, 176);
+            this.cbxBpEfficientPlanter.Name = "cbxBpEfficientPlanter";
+            this.cbxBpEfficientPlanter.Size = new System.Drawing.Size(109, 22);
+            this.cbxBpEfficientPlanter.TabIndex = 73;
+            this.cbxBpEfficientPlanter.Text = "Efficient Planter";
+            this.cbxBpEfficientPlanter.UseVisualStyleBackColor = true;
+            // 
+            // cbxBpFlashbangMine
+            // 
+            this.cbxBpFlashbangMine.AutoSize = true;
+            this.cbxBpFlashbangMine.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxBpFlashbangMine.Location = new System.Drawing.Point(12, 176);
+            this.cbxBpFlashbangMine.Name = "cbxBpFlashbangMine";
+            this.cbxBpFlashbangMine.Size = new System.Drawing.Size(101, 22);
+            this.cbxBpFlashbangMine.TabIndex = 72;
+            this.cbxBpFlashbangMine.Text = "Flashbang Mine";
+            this.cbxBpFlashbangMine.UseVisualStyleBackColor = true;
+            // 
+            // cbxBpMedicalBed
+            // 
+            this.cbxBpMedicalBed.AutoSize = true;
+            this.cbxBpMedicalBed.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxBpMedicalBed.Location = new System.Drawing.Point(12, 211);
+            this.cbxBpMedicalBed.Name = "cbxBpMedicalBed";
+            this.cbxBpMedicalBed.Size = new System.Drawing.Size(84, 22);
+            this.cbxBpMedicalBed.TabIndex = 71;
+            this.cbxBpMedicalBed.Text = "Medical Bed";
+            this.cbxBpMedicalBed.UseVisualStyleBackColor = true;
+            // 
+            // cbxBpElectricityTrap
+            // 
+            this.cbxBpElectricityTrap.AutoSize = true;
+            this.cbxBpElectricityTrap.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxBpElectricityTrap.Location = new System.Drawing.Point(256, 158);
+            this.cbxBpElectricityTrap.Name = "cbxBpElectricityTrap";
+            this.cbxBpElectricityTrap.Size = new System.Drawing.Size(104, 22);
+            this.cbxBpElectricityTrap.TabIndex = 70;
+            this.cbxBpElectricityTrap.Text = "Electricity trap";
+            this.cbxBpElectricityTrap.UseVisualStyleBackColor = true;
+            // 
+            // cbxBpGasMine
+            // 
+            this.cbxBpGasMine.AutoSize = true;
+            this.cbxBpGasMine.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxBpGasMine.Location = new System.Drawing.Point(146, 159);
+            this.cbxBpGasMine.Name = "cbxBpGasMine";
+            this.cbxBpGasMine.Size = new System.Drawing.Size(67, 22);
+            this.cbxBpGasMine.TabIndex = 69;
+            this.cbxBpGasMine.Text = "gas mine";
+            this.cbxBpGasMine.UseVisualStyleBackColor = true;
+            // 
+            // cbxBpBatteryBank
+            // 
+            this.cbxBpBatteryBank.AutoSize = true;
+            this.cbxBpBatteryBank.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxBpBatteryBank.Location = new System.Drawing.Point(12, 159);
+            this.cbxBpBatteryBank.Name = "cbxBpBatteryBank";
+            this.cbxBpBatteryBank.Size = new System.Drawing.Size(91, 22);
+            this.cbxBpBatteryBank.TabIndex = 68;
+            this.cbxBpBatteryBank.Text = "Battery bank";
+            this.cbxBpBatteryBank.UseVisualStyleBackColor = true;
+            // 
+            // cbxOtherCarPartsCrafting
+            // 
+            this.cbxOtherCarPartsCrafting.AutoSize = true;
+            this.cbxOtherCarPartsCrafting.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxOtherCarPartsCrafting.Location = new System.Drawing.Point(146, 313);
+            this.cbxOtherCarPartsCrafting.Name = "cbxOtherCarPartsCrafting";
+            this.cbxOtherCarPartsCrafting.Size = new System.Drawing.Size(116, 22);
+            this.cbxOtherCarPartsCrafting.TabIndex = 63;
+            this.cbxOtherCarPartsCrafting.Text = "Car Parts crafting";
+            this.cbxOtherCarPartsCrafting.UseVisualStyleBackColor = true;
+            // 
+            // cbxOtherGunCrafting
+            // 
+            this.cbxOtherGunCrafting.AutoSize = true;
+            this.cbxOtherGunCrafting.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxOtherGunCrafting.Location = new System.Drawing.Point(146, 296);
+            this.cbxOtherGunCrafting.Name = "cbxOtherGunCrafting";
+            this.cbxOtherGunCrafting.Size = new System.Drawing.Size(85, 22);
+            this.cbxOtherGunCrafting.TabIndex = 62;
+            this.cbxOtherGunCrafting.Text = "Guncrafting";
+            this.cbxOtherGunCrafting.UseVisualStyleBackColor = true;
+            // 
+            // cbxOtherTrading
+            // 
+            this.cbxOtherTrading.AutoSize = true;
+            this.cbxOtherTrading.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxOtherTrading.Location = new System.Drawing.Point(146, 279);
+            this.cbxOtherTrading.Name = "cbxOtherTrading";
+            this.cbxOtherTrading.Size = new System.Drawing.Size(127, 22);
+            this.cbxOtherTrading.TabIndex = 60;
+            this.cbxOtherTrading.Text = "Better trading Deals";
+            this.cbxOtherTrading.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardOldQ3
+            // 
+            this.cbxRewardOldQ3.AutoSize = true;
+            this.cbxRewardOldQ3.Enabled = false;
+            this.cbxRewardOldQ3.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardOldQ3.Location = new System.Drawing.Point(481, 518);
+            this.cbxRewardOldQ3.Name = "cbxRewardOldQ3";
+            this.cbxRewardOldQ3.Size = new System.Drawing.Size(39, 22);
+            this.cbxRewardOldQ3.TabIndex = 58;
+            this.cbxRewardOldQ3.Text = "---";
+            this.cbxRewardOldQ3.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardOldQ2
+            // 
+            this.cbxRewardOldQ2.AutoSize = true;
+            this.cbxRewardOldQ2.Enabled = false;
+            this.cbxRewardOldQ2.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardOldQ2.Location = new System.Drawing.Point(481, 500);
+            this.cbxRewardOldQ2.Name = "cbxRewardOldQ2";
+            this.cbxRewardOldQ2.Size = new System.Drawing.Size(39, 22);
+            this.cbxRewardOldQ2.TabIndex = 57;
+            this.cbxRewardOldQ2.Text = "---";
+            this.cbxRewardOldQ2.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardOldQ1
+            // 
+            this.cbxRewardOldQ1.AutoSize = true;
+            this.cbxRewardOldQ1.Enabled = false;
+            this.cbxRewardOldQ1.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardOldQ1.Location = new System.Drawing.Point(481, 482);
+            this.cbxRewardOldQ1.Name = "cbxRewardOldQ1";
+            this.cbxRewardOldQ1.Size = new System.Drawing.Size(39, 22);
+            this.cbxRewardOldQ1.TabIndex = 56;
+            this.cbxRewardOldQ1.Text = "---";
+            this.cbxRewardOldQ1.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardLosQ3
+            // 
+            this.cbxRewardLosQ3.AutoSize = true;
+            this.cbxRewardLosQ3.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardLosQ3.Location = new System.Drawing.Point(481, 430);
+            this.cbxRewardLosQ3.Name = "cbxRewardLosQ3";
+            this.cbxRewardLosQ3.Size = new System.Drawing.Size(111, 22);
+            this.cbxRewardLosQ3.TabIndex = 54;
+            this.cbxRewardLosQ3.Text = "Vaccine excellent";
+            this.cbxRewardLosQ3.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardLosQ2
+            // 
+            this.cbxRewardLosQ2.AutoSize = true;
+            this.cbxRewardLosQ2.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardLosQ2.Location = new System.Drawing.Point(481, 412);
+            this.cbxRewardLosQ2.Name = "cbxRewardLosQ2";
+            this.cbxRewardLosQ2.Size = new System.Drawing.Size(87, 22);
+            this.cbxRewardLosQ2.TabIndex = 53;
+            this.cbxRewardLosQ2.Text = "Vaccine good";
+            this.cbxRewardLosQ2.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardLosQ1
+            // 
+            this.cbxRewardLosQ1.AutoSize = true;
+            this.cbxRewardLosQ1.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardLosQ1.Location = new System.Drawing.Point(481, 394);
+            this.cbxRewardLosQ1.Name = "cbxRewardLosQ1";
+            this.cbxRewardLosQ1.Size = new System.Drawing.Size(87, 22);
+            this.cbxRewardLosQ1.TabIndex = 52;
+            this.cbxRewardLosQ1.Text = "Vaccine poor";
+            this.cbxRewardLosQ1.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveUnlocks
+            // 
+            this.btnSaveUnlocks.Location = new System.Drawing.Point(264, 507);
+            this.btnSaveUnlocks.Name = "btnSaveUnlocks";
+            this.btnSaveUnlocks.Size = new System.Drawing.Size(107, 26);
+            this.btnSaveUnlocks.TabIndex = 50;
+            this.btnSaveUnlocks.Text = "Save UNLOcKS";
+            this.btnSaveUnlocks.UseVisualStyleBackColor = true;
+            this.btnSaveUnlocks.Click += new System.EventHandler(this.btnSaveUnlocks_Click);
+            // 
+            // btnUnlockAll
+            // 
+            this.btnUnlockAll.Location = new System.Drawing.Point(138, 507);
+            this.btnUnlockAll.Name = "btnUnlockAll";
+            this.btnUnlockAll.Size = new System.Drawing.Size(107, 26);
+            this.btnUnlockAll.TabIndex = 49;
+            this.btnUnlockAll.Text = "Unlock ALL";
+            this.btnUnlockAll.UseVisualStyleBackColor = true;
+            this.btnUnlockAll.Click += new System.EventHandler(this.btnUnlockAll_Click);
+            // 
+            // cbxRewardBlackQ3
+            // 
+            this.cbxRewardBlackQ3.AutoSize = true;
+            this.cbxRewardBlackQ3.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardBlackQ3.Location = new System.Drawing.Point(481, 342);
+            this.cbxRewardBlackQ3.Name = "cbxRewardBlackQ3";
+            this.cbxRewardBlackQ3.Size = new System.Drawing.Size(138, 22);
+            this.cbxRewardBlackQ3.TabIndex = 48;
+            this.cbxRewardBlackQ3.Text = "Military Sentry Turret";
+            this.cbxRewardBlackQ3.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardBlackQ2
+            // 
+            this.cbxRewardBlackQ2.AutoSize = true;
+            this.cbxRewardBlackQ2.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardBlackQ2.Location = new System.Drawing.Point(481, 324);
+            this.cbxRewardBlackQ2.Name = "cbxRewardBlackQ2";
+            this.cbxRewardBlackQ2.Size = new System.Drawing.Size(141, 22);
+            this.cbxRewardBlackQ2.TabIndex = 47;
+            this.cbxRewardBlackQ2.Text = "Improved Sentry Turret";
+            this.cbxRewardBlackQ2.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardBlackQ1
+            // 
+            this.cbxRewardBlackQ1.AutoSize = true;
+            this.cbxRewardBlackQ1.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardBlackQ1.Location = new System.Drawing.Point(481, 306);
+            this.cbxRewardBlackQ1.Name = "cbxRewardBlackQ1";
+            this.cbxRewardBlackQ1.Size = new System.Drawing.Size(95, 22);
+            this.cbxRewardBlackQ1.TabIndex = 46;
+            this.cbxRewardBlackQ1.Text = "Sentry Turret";
+            this.cbxRewardBlackQ1.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardNewQ3
+            // 
+            this.cbxRewardNewQ3.AutoSize = true;
+            this.cbxRewardNewQ3.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardNewQ3.Location = new System.Drawing.Point(481, 255);
+            this.cbxRewardNewQ3.Name = "cbxRewardNewQ3";
+            this.cbxRewardNewQ3.Size = new System.Drawing.Size(126, 22);
+            this.cbxRewardNewQ3.TabIndex = 44;
+            this.cbxRewardNewQ3.Text = "Pulserifle excellent";
+            this.cbxRewardNewQ3.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardNewQ2
+            // 
+            this.cbxRewardNewQ2.AutoSize = true;
+            this.cbxRewardNewQ2.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardNewQ2.Location = new System.Drawing.Point(481, 237);
+            this.cbxRewardNewQ2.Name = "cbxRewardNewQ2";
+            this.cbxRewardNewQ2.Size = new System.Drawing.Size(102, 22);
+            this.cbxRewardNewQ2.TabIndex = 43;
+            this.cbxRewardNewQ2.Text = "Pulserifle good";
+            this.cbxRewardNewQ2.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardNewQ1
+            // 
+            this.cbxRewardNewQ1.AutoSize = true;
+            this.cbxRewardNewQ1.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardNewQ1.Location = new System.Drawing.Point(481, 219);
+            this.cbxRewardNewQ1.Name = "cbxRewardNewQ1";
+            this.cbxRewardNewQ1.Size = new System.Drawing.Size(102, 22);
+            this.cbxRewardNewQ1.TabIndex = 42;
+            this.cbxRewardNewQ1.Text = "Pulserifle poor";
+            this.cbxRewardNewQ1.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardCtkQ3
+            // 
+            this.cbxRewardCtkQ3.AutoSize = true;
+            this.cbxRewardCtkQ3.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardCtkQ3.Location = new System.Drawing.Point(481, 167);
+            this.cbxRewardCtkQ3.Name = "cbxRewardCtkQ3";
+            this.cbxRewardCtkQ3.Size = new System.Drawing.Size(123, 22);
+            this.cbxRewardCtkQ3.TabIndex = 40;
+            this.cbxRewardCtkQ3.Text = "Brutal Morningstar";
+            this.cbxRewardCtkQ3.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardCtkQ2
+            // 
+            this.cbxRewardCtkQ2.AutoSize = true;
+            this.cbxRewardCtkQ2.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardCtkQ2.Location = new System.Drawing.Point(481, 149);
+            this.cbxRewardCtkQ2.Name = "cbxRewardCtkQ2";
+            this.cbxRewardCtkQ2.Size = new System.Drawing.Size(115, 22);
+            this.cbxRewardCtkQ2.TabIndex = 39;
+            this.cbxRewardCtkQ2.Text = "Toxic Morningstar";
+            this.cbxRewardCtkQ2.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardCtkQ1
+            // 
+            this.cbxRewardCtkQ1.AutoSize = true;
+            this.cbxRewardCtkQ1.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardCtkQ1.Location = new System.Drawing.Point(481, 131);
+            this.cbxRewardCtkQ1.Name = "cbxRewardCtkQ1";
+            this.cbxRewardCtkQ1.Size = new System.Drawing.Size(88, 22);
+            this.cbxRewardCtkQ1.TabIndex = 38;
+            this.cbxRewardCtkQ1.Text = "Morningstar";
+            this.cbxRewardCtkQ1.UseVisualStyleBackColor = true;
+            // 
+            // cbxDrugsTrankwill
+            // 
+            this.cbxDrugsTrankwill.AutoSize = true;
+            this.cbxDrugsTrankwill.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxDrugsTrankwill.Location = new System.Drawing.Point(12, 383);
+            this.cbxDrugsTrankwill.Name = "cbxDrugsTrankwill";
+            this.cbxDrugsTrankwill.Size = new System.Drawing.Size(77, 22);
+            this.cbxDrugsTrankwill.TabIndex = 20;
+            this.cbxDrugsTrankwill.Text = "Trankwill";
+            this.cbxDrugsTrankwill.UseVisualStyleBackColor = true;
+            // 
+            // cbxDrugsSnodge
+            // 
+            this.cbxDrugsSnodge.AutoSize = true;
+            this.cbxDrugsSnodge.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxDrugsSnodge.Location = new System.Drawing.Point(12, 366);
+            this.cbxDrugsSnodge.Name = "cbxDrugsSnodge";
+            this.cbxDrugsSnodge.Size = new System.Drawing.Size(60, 22);
+            this.cbxDrugsSnodge.TabIndex = 19;
+            this.cbxDrugsSnodge.Text = "Snodge";
+            this.cbxDrugsSnodge.UseVisualStyleBackColor = true;
+            // 
+            // cbxDrugsSigma
+            // 
+            this.cbxDrugsSigma.AutoSize = true;
+            this.cbxDrugsSigma.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxDrugsSigma.Location = new System.Drawing.Point(12, 349);
+            this.cbxDrugsSigma.Name = "cbxDrugsSigma";
+            this.cbxDrugsSigma.Size = new System.Drawing.Size(54, 22);
+            this.cbxDrugsSigma.TabIndex = 18;
+            this.cbxDrugsSigma.Text = "Sigma";
+            this.cbxDrugsSigma.UseVisualStyleBackColor = true;
+            // 
+            // cbxDrugsPython
+            // 
+            this.cbxDrugsPython.AutoSize = true;
+            this.cbxDrugsPython.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxDrugsPython.Location = new System.Drawing.Point(12, 332);
+            this.cbxDrugsPython.Name = "cbxDrugsPython";
+            this.cbxDrugsPython.Size = new System.Drawing.Size(61, 22);
+            this.cbxDrugsPython.TabIndex = 17;
+            this.cbxDrugsPython.Text = "Python";
+            this.cbxDrugsPython.UseVisualStyleBackColor = true;
+            // 
+            // cbxDrugsFeederral
+            // 
+            this.cbxDrugsFeederral.AutoSize = true;
+            this.cbxDrugsFeederral.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxDrugsFeederral.Location = new System.Drawing.Point(12, 315);
+            this.cbxDrugsFeederral.Name = "cbxDrugsFeederral";
+            this.cbxDrugsFeederral.Size = new System.Drawing.Size(76, 22);
+            this.cbxDrugsFeederral.TabIndex = 16;
+            this.cbxDrugsFeederral.Text = "Feederral";
+            this.cbxDrugsFeederral.UseVisualStyleBackColor = true;
+            // 
+            // cbxDrugsCrunk
+            // 
+            this.cbxDrugsCrunk.AutoSize = true;
+            this.cbxDrugsCrunk.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxDrugsCrunk.Location = new System.Drawing.Point(12, 298);
+            this.cbxDrugsCrunk.Name = "cbxDrugsCrunk";
+            this.cbxDrugsCrunk.Size = new System.Drawing.Size(56, 22);
+            this.cbxDrugsCrunk.TabIndex = 15;
+            this.cbxDrugsCrunk.Text = "Crunk";
+            this.cbxDrugsCrunk.UseVisualStyleBackColor = true;
+            // 
+            // cbxDrugsAlcohol
+            // 
+            this.cbxDrugsAlcohol.AutoSize = true;
+            this.cbxDrugsAlcohol.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxDrugsAlcohol.Location = new System.Drawing.Point(12, 281);
+            this.cbxDrugsAlcohol.Name = "cbxDrugsAlcohol";
+            this.cbxDrugsAlcohol.Size = new System.Drawing.Size(66, 22);
+            this.cbxDrugsAlcohol.TabIndex = 14;
+            this.cbxDrugsAlcohol.Text = "Alcohol";
+            this.cbxDrugsAlcohol.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardChurchQ3
+            // 
+            this.cbxRewardChurchQ3.AutoSize = true;
+            this.cbxRewardChurchQ3.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardChurchQ3.Location = new System.Drawing.Point(481, 77);
+            this.cbxRewardChurchQ3.Name = "cbxRewardChurchQ3";
+            this.cbxRewardChurchQ3.Size = new System.Drawing.Size(163, 22);
+            this.cbxRewardChurchQ3.TabIndex = 12;
+            this.cbxRewardChurchQ3.Text = "Ultimate Indoctrination Cell";
+            this.cbxRewardChurchQ3.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardChurchQ2
+            // 
+            this.cbxRewardChurchQ2.AutoSize = true;
+            this.cbxRewardChurchQ2.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardChurchQ2.Location = new System.Drawing.Point(481, 59);
+            this.cbxRewardChurchQ2.Name = "cbxRewardChurchQ2";
+            this.cbxRewardChurchQ2.Size = new System.Drawing.Size(167, 22);
+            this.cbxRewardChurchQ2.TabIndex = 11;
+            this.cbxRewardChurchQ2.Text = "Advanced Indoctrination Cell";
+            this.cbxRewardChurchQ2.UseVisualStyleBackColor = true;
+            // 
+            // cbxRewardChurchQ1
+            // 
+            this.cbxRewardChurchQ1.AutoSize = true;
+            this.cbxRewardChurchQ1.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxRewardChurchQ1.Location = new System.Drawing.Point(481, 41);
+            this.cbxRewardChurchQ1.Name = "cbxRewardChurchQ1";
+            this.cbxRewardChurchQ1.Size = new System.Drawing.Size(120, 22);
+            this.cbxRewardChurchQ1.TabIndex = 10;
+            this.cbxRewardChurchQ1.Text = "Indoctrination Cell";
+            this.cbxRewardChurchQ1.UseVisualStyleBackColor = true;
+            // 
+            // btnRevealMap
+            // 
+            this.btnRevealMap.Location = new System.Drawing.Point(12, 507);
+            this.btnRevealMap.Name = "btnRevealMap";
+            this.btnRevealMap.Size = new System.Drawing.Size(107, 26);
+            this.btnRevealMap.TabIndex = 8;
+            this.btnRevealMap.Text = "Reveal Map";
+            this.btnRevealMap.UseVisualStyleBackColor = true;
+            this.btnRevealMap.Click += new System.EventHandler(this.btnRevealMap_Click);
+            // 
+            // cbxWorkbenchTier4
+            // 
+            this.cbxWorkbenchTier4.AutoSize = true;
+            this.cbxWorkbenchTier4.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxWorkbenchTier4.Location = new System.Drawing.Point(147, 89);
+            this.cbxWorkbenchTier4.Name = "cbxWorkbenchTier4";
+            this.cbxWorkbenchTier4.Size = new System.Drawing.Size(54, 22);
+            this.cbxWorkbenchTier4.TabIndex = 7;
+            this.cbxWorkbenchTier4.Text = "Tier 4";
+            this.cbxWorkbenchTier4.UseVisualStyleBackColor = true;
+            // 
+            // cbxWorkbenchTier3
+            // 
+            this.cbxWorkbenchTier3.AutoSize = true;
+            this.cbxWorkbenchTier3.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxWorkbenchTier3.Location = new System.Drawing.Point(147, 72);
+            this.cbxWorkbenchTier3.Name = "cbxWorkbenchTier3";
+            this.cbxWorkbenchTier3.Size = new System.Drawing.Size(54, 22);
+            this.cbxWorkbenchTier3.TabIndex = 6;
+            this.cbxWorkbenchTier3.Text = "Tier 3";
+            this.cbxWorkbenchTier3.UseVisualStyleBackColor = true;
+            // 
+            // cbxWorkbenchTier2
+            // 
+            this.cbxWorkbenchTier2.AutoSize = true;
+            this.cbxWorkbenchTier2.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxWorkbenchTier2.Location = new System.Drawing.Point(147, 55);
+            this.cbxWorkbenchTier2.Name = "cbxWorkbenchTier2";
+            this.cbxWorkbenchTier2.Size = new System.Drawing.Size(54, 22);
+            this.cbxWorkbenchTier2.TabIndex = 5;
+            this.cbxWorkbenchTier2.Text = "Tier 2";
+            this.cbxWorkbenchTier2.UseVisualStyleBackColor = true;
+            // 
+            // cbxDraftingTableTier4
+            // 
+            this.cbxDraftingTableTier4.AutoSize = true;
+            this.cbxDraftingTableTier4.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxDraftingTableTier4.Location = new System.Drawing.Point(12, 89);
+            this.cbxDraftingTableTier4.Name = "cbxDraftingTableTier4";
+            this.cbxDraftingTableTier4.Size = new System.Drawing.Size(54, 22);
+            this.cbxDraftingTableTier4.TabIndex = 3;
+            this.cbxDraftingTableTier4.Text = "Tier 4";
+            this.cbxDraftingTableTier4.UseVisualStyleBackColor = true;
+            // 
+            // cbxDraftingTableTier3
+            // 
+            this.cbxDraftingTableTier3.AutoSize = true;
+            this.cbxDraftingTableTier3.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxDraftingTableTier3.Location = new System.Drawing.Point(12, 72);
+            this.cbxDraftingTableTier3.Name = "cbxDraftingTableTier3";
+            this.cbxDraftingTableTier3.Size = new System.Drawing.Size(54, 22);
+            this.cbxDraftingTableTier3.TabIndex = 2;
+            this.cbxDraftingTableTier3.Text = "Tier 3";
+            this.cbxDraftingTableTier3.UseVisualStyleBackColor = true;
+            // 
+            // cbxDraftingTableTier2
+            // 
+            this.cbxDraftingTableTier2.AutoSize = true;
+            this.cbxDraftingTableTier2.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxDraftingTableTier2.Location = new System.Drawing.Point(12, 55);
+            this.cbxDraftingTableTier2.Name = "cbxDraftingTableTier2";
+            this.cbxDraftingTableTier2.Size = new System.Drawing.Size(54, 22);
+            this.cbxDraftingTableTier2.TabIndex = 1;
+            this.cbxDraftingTableTier2.Text = "Tier 2";
+            this.cbxDraftingTableTier2.UseVisualStyleBackColor = true;
             // 
             // label32
             // 
@@ -4853,6 +4863,28 @@ namespace Sheltered_2_SE
             this.AvailablePointsIcon.Images.SetKeyName(4, "AvailableSkillsPer.png");
             this.AvailablePointsIcon.Images.SetKeyName(5, "AvailableSkillsFor.png");
             // 
+            // cbxMedicineCrafting
+            // 
+            this.cbxMedicineCrafting.AutoSize = true;
+            this.cbxMedicineCrafting.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxMedicineCrafting.Location = new System.Drawing.Point(146, 332);
+            this.cbxMedicineCrafting.Name = "cbxMedicineCrafting";
+            this.cbxMedicineCrafting.Size = new System.Drawing.Size(111, 22);
+            this.cbxMedicineCrafting.TabIndex = 81;
+            this.cbxMedicineCrafting.Text = "Medicine crafting";
+            this.cbxMedicineCrafting.UseVisualStyleBackColor = true;
+            // 
+            // cbxDamageAmplifier
+            // 
+            this.cbxDamageAmplifier.AutoSize = true;
+            this.cbxDamageAmplifier.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxDamageAmplifier.Location = new System.Drawing.Point(146, 349);
+            this.cbxDamageAmplifier.Name = "cbxDamageAmplifier";
+            this.cbxDamageAmplifier.Size = new System.Drawing.Size(111, 22);
+            this.cbxDamageAmplifier.TabIndex = 82;
+            this.cbxDamageAmplifier.Text = "Damage amplifier";
+            this.cbxDamageAmplifier.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5148,12 +5180,6 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControlMain;
-        private System.Windows.Forms.TabPage characterStatsTab;
-        private System.Windows.Forms.TabPage characterSkillsTab;
-        private System.Windows.Forms.TabPage petsTab;
-        private System.Windows.Forms.TabPage deseasesTab;
-        private System.Windows.Forms.TabPage unlockingTab;
-        private System.Windows.Forms.TabPage debugTab;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox cBInteracting;
         private System.Windows.Forms.Label lblAnimTimeValue;
@@ -5409,69 +5435,77 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.Label lblPointsAvailableForValue;
         private System.Windows.Forms.Label lblPointsAvailableForName;
         private System.Windows.Forms.PictureBox pbxAvailablePointsFor;
-        private System.Windows.Forms.CheckBox checkBox29;
-        private System.Windows.Forms.CheckBox checkBox30;
-        private System.Windows.Forms.CheckBox checkBox40;
-        private System.Windows.Forms.CheckBox checkBox41;
-        private System.Windows.Forms.CheckBox checkBox42;
-        private System.Windows.Forms.CheckBox checkBox43;
-        private System.Windows.Forms.CheckBox checkBox44;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.CheckBox checkBox26;
-        private System.Windows.Forms.CheckBox checkBox25;
-        private System.Windows.Forms.CheckBox checkBox24;
-        private System.Windows.Forms.CheckBox checkBox20;
-        private System.Windows.Forms.CheckBox checkBox21;
-        private System.Windows.Forms.CheckBox checkBox22;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.CheckBox checkBox17;
-        private System.Windows.Forms.CheckBox checkBox18;
-        private System.Windows.Forms.CheckBox checkBox19;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.CheckBox checkBox37;
-        private System.Windows.Forms.CheckBox checkBox38;
-        private System.Windows.Forms.CheckBox checkBox39;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.CheckBox checkBox34;
-        private System.Windows.Forms.CheckBox checkBox35;
-        private System.Windows.Forms.CheckBox checkBox36;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.CheckBox checkBox31;
-        private System.Windows.Forms.CheckBox checkBox32;
-        private System.Windows.Forms.CheckBox checkBox33;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.CheckBox checkBox16;
-        private System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox46;
-        private System.Windows.Forms.CheckBox checkBox47;
-        private System.Windows.Forms.CheckBox checkBox48;
-        private System.Windows.Forms.CheckBox checkBox49;
-        private System.Windows.Forms.CheckBox checkBox45;
+        private System.Windows.Forms.Button btnSaveUnlocks;
+        private System.Windows.Forms.Button btnUnlockAll;
+        private System.Windows.Forms.Button btnRevealMap;
         private System.Windows.Forms.TabPage shelterDesignerTab;
         private System.Windows.Forms.Button btnOpenDesigner;
         private System.Windows.Forms.Label label33;
+        public System.Windows.Forms.CheckBox cbxBpLaboratory;
+        public System.Windows.Forms.CheckBox cbxBpEfficientPlanter;
+        public System.Windows.Forms.CheckBox cbxBpFlashbangMine;
+        public System.Windows.Forms.CheckBox cbxBpMedicalBed;
+        public System.Windows.Forms.CheckBox cbxBpElectricityTrap;
+        public System.Windows.Forms.CheckBox cbxBpGasMine;
+        public System.Windows.Forms.CheckBox cbxBpBatteryBank;
+        public System.Windows.Forms.Label label32;
+        public System.Windows.Forms.Label label31;
+        public System.Windows.Forms.CheckBox cbxOtherCarPartsCrafting;
+        public System.Windows.Forms.CheckBox cbxOtherGunCrafting;
+        public System.Windows.Forms.CheckBox cbxOtherTrading;
+        public System.Windows.Forms.CheckBox cbxRewardOldQ3;
+        public System.Windows.Forms.CheckBox cbxRewardOldQ2;
+        public System.Windows.Forms.CheckBox cbxRewardOldQ1;
+        public System.Windows.Forms.Label label27;
+        public System.Windows.Forms.CheckBox cbxRewardLosQ3;
+        public System.Windows.Forms.CheckBox cbxRewardLosQ2;
+        public System.Windows.Forms.CheckBox cbxRewardLosQ1;
+        public System.Windows.Forms.Label label26;
+        public System.Windows.Forms.CheckBox cbxRewardBlackQ3;
+        public System.Windows.Forms.CheckBox cbxRewardBlackQ2;
+        public System.Windows.Forms.CheckBox cbxRewardBlackQ1;
+        public System.Windows.Forms.Label label30;
+        public System.Windows.Forms.CheckBox cbxRewardNewQ3;
+        public System.Windows.Forms.CheckBox cbxRewardNewQ2;
+        public System.Windows.Forms.CheckBox cbxRewardNewQ1;
+        public System.Windows.Forms.Label label29;
+        public System.Windows.Forms.CheckBox cbxRewardCtkQ3;
+        public System.Windows.Forms.CheckBox cbxRewardCtkQ2;
+        public System.Windows.Forms.CheckBox cbxRewardCtkQ1;
+        public System.Windows.Forms.Label label28;
+        public System.Windows.Forms.CheckBox cbxDrugsTrankwill;
+        public System.Windows.Forms.CheckBox cbxDrugsSnodge;
+        public System.Windows.Forms.CheckBox cbxDrugsSigma;
+        public System.Windows.Forms.CheckBox cbxDrugsPython;
+        public System.Windows.Forms.CheckBox cbxDrugsFeederral;
+        public System.Windows.Forms.CheckBox cbxDrugsCrunk;
+        public System.Windows.Forms.CheckBox cbxDrugsAlcohol;
+        public System.Windows.Forms.Label label25;
+        public System.Windows.Forms.CheckBox cbxRewardChurchQ3;
+        public System.Windows.Forms.CheckBox cbxRewardChurchQ2;
+        public System.Windows.Forms.CheckBox cbxRewardChurchQ1;
+        public System.Windows.Forms.Label label24;
+        public System.Windows.Forms.CheckBox cbxWorkbenchTier4;
+        public System.Windows.Forms.CheckBox cbxWorkbenchTier3;
+        public System.Windows.Forms.CheckBox cbxWorkbenchTier2;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.CheckBox cbxDraftingTableTier4;
+        public System.Windows.Forms.CheckBox cbxDraftingTableTier3;
+        public System.Windows.Forms.CheckBox cbxDraftingTableTier2;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.CheckBox cbxBpSolarPanel;
+        public System.Windows.Forms.CheckBox cbxBpRecycler;
+        public System.Windows.Forms.CheckBox cbxBpQuantumBattery;
+        public System.Windows.Forms.CheckBox cbxBpIndustrialGenerator;
+        public System.Windows.Forms.CheckBox cbxBpDefibrilator;
+        public System.Windows.Forms.TabPage characterStatsTab;
+        public System.Windows.Forms.TabPage characterSkillsTab;
+        public System.Windows.Forms.TabPage petsTab;
+        public System.Windows.Forms.TabPage deseasesTab;
+        public System.Windows.Forms.TabPage unlockingTab;
+        public System.Windows.Forms.TabPage debugTab;
+        public System.Windows.Forms.CheckBox cbxMedicineCrafting;
+        public System.Windows.Forms.CheckBox cbxDamageAmplifier;
     }
 }
 

@@ -454,7 +454,7 @@ namespace Sheltered_2_SE
                 }
             }
             xDoc.Save(ProcessFile.tempFilePath);
-            MessageBox.Show("Shelter Layout Saved successfully");
+            MessageBox.Show("Shelter layout saved successfully" + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
         }
 
         private void button1_Click(object sender, EventArgs e)
