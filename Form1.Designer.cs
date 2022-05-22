@@ -4746,7 +4746,7 @@ namespace Sheltered_2_SE
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(69, 13);
             this.lblVersion.TabIndex = 40;
-            this.lblVersion.Text = "Version: 0.30";
+            this.lblVersion.Text = "Version: 0.32";
             // 
             // lblDebugCharacter
             // 
