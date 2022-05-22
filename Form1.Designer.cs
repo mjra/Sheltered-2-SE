@@ -329,6 +329,8 @@ namespace Sheltered_2_SE
             this.deseasesTab = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.unlockingTab = new System.Windows.Forms.TabPage();
+            this.cbxDamageAmplifier = new System.Windows.Forms.CheckBox();
+            this.cbxMedicineCrafting = new System.Windows.Forms.CheckBox();
             this.cbxBpSolarPanel = new System.Windows.Forms.CheckBox();
             this.cbxBpRecycler = new System.Windows.Forms.CheckBox();
             this.cbxBpQuantumBattery = new System.Windows.Forms.CheckBox();
@@ -403,8 +405,6 @@ namespace Sheltered_2_SE
             this.skillIcons = new System.Windows.Forms.ImageList(this.components);
             this.skillLevelIcons = new System.Windows.Forms.ImageList(this.components);
             this.AvailablePointsIcon = new System.Windows.Forms.ImageList(this.components);
-            this.cbxMedicineCrafting = new System.Windows.Forms.CheckBox();
-            this.cbxDamageAmplifier = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.characterStatsTab.SuspendLayout();
@@ -1275,9 +1275,8 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableStrValue.Font = new System.Drawing.Font("Bebas Neue", 13F);
             this.lblPointsAvailableStrValue.Location = new System.Drawing.Point(584, 246);
             this.lblPointsAvailableStrValue.Name = "lblPointsAvailableStrValue";
-            this.lblPointsAvailableStrValue.Size = new System.Drawing.Size(17, 23);
+            this.lblPointsAvailableStrValue.Size = new System.Drawing.Size(0, 23);
             this.lblPointsAvailableStrValue.TabIndex = 71;
-            this.lblPointsAvailableStrValue.Text = "0";
             // 
             // lblPointsAvailableStrName
             // 
@@ -1290,9 +1289,10 @@ namespace Sheltered_2_SE
             // 
             // pbxAvailablePointsStr
             // 
-            this.pbxAvailablePointsStr.Location = new System.Drawing.Point(548, 171);
+            this.pbxAvailablePointsStr.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.AvailableSkillsStr;
+            this.pbxAvailablePointsStr.Location = new System.Drawing.Point(547, 131);
             this.pbxAvailablePointsStr.Name = "pbxAvailablePointsStr";
-            this.pbxAvailablePointsStr.Size = new System.Drawing.Size(100, 50);
+            this.pbxAvailablePointsStr.Size = new System.Drawing.Size(90, 90);
             this.pbxAvailablePointsStr.TabIndex = 72;
             this.pbxAvailablePointsStr.TabStop = false;
             // 
@@ -1618,6 +1618,7 @@ namespace Sheltered_2_SE
             this.pbxStrSkill1.Size = new System.Drawing.Size(50, 50);
             this.pbxStrSkill1.TabIndex = 11;
             this.pbxStrSkill1.TabStop = false;
+            this.pbxStrSkill1.Tag = "";
             this.tTStrSkill1.SetToolTip(this.pbxStrSkill1, "Attack Skill\r\n\r\na jab to the targets Windpipe, \r\ncausing the winded status effect" +
         ".");
             this.pbxStrSkill1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbxStrSkill1_MouseClick);
@@ -1670,9 +1671,8 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableDexValue.Font = new System.Drawing.Font("Bebas Neue", 13F);
             this.lblPointsAvailableDexValue.Location = new System.Drawing.Point(584, 246);
             this.lblPointsAvailableDexValue.Name = "lblPointsAvailableDexValue";
-            this.lblPointsAvailableDexValue.Size = new System.Drawing.Size(17, 23);
+            this.lblPointsAvailableDexValue.Size = new System.Drawing.Size(0, 23);
             this.lblPointsAvailableDexValue.TabIndex = 128;
-            this.lblPointsAvailableDexValue.Text = "0";
             // 
             // lblPointsAvailableDexName
             // 
@@ -1715,9 +1715,10 @@ namespace Sheltered_2_SE
             // 
             // pbxAvailablePointsDex
             // 
-            this.pbxAvailablePointsDex.Location = new System.Drawing.Point(548, 171);
+            this.pbxAvailablePointsDex.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.AvailableSkillsDex;
+            this.pbxAvailablePointsDex.Location = new System.Drawing.Point(547, 131);
             this.pbxAvailablePointsDex.Name = "pbxAvailablePointsDex";
-            this.pbxAvailablePointsDex.Size = new System.Drawing.Size(100, 50);
+            this.pbxAvailablePointsDex.Size = new System.Drawing.Size(90, 90);
             this.pbxAvailablePointsDex.TabIndex = 129;
             this.pbxAvailablePointsDex.TabStop = false;
             // 
@@ -2032,9 +2033,8 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableIntValue.Font = new System.Drawing.Font("Bebas Neue", 13F);
             this.lblPointsAvailableIntValue.Location = new System.Drawing.Point(584, 246);
             this.lblPointsAvailableIntValue.Name = "lblPointsAvailableIntValue";
-            this.lblPointsAvailableIntValue.Size = new System.Drawing.Size(17, 23);
+            this.lblPointsAvailableIntValue.Size = new System.Drawing.Size(0, 23);
             this.lblPointsAvailableIntValue.TabIndex = 129;
-            this.lblPointsAvailableIntValue.Text = "0";
             // 
             // lblPointsAvailableIntName
             // 
@@ -2078,9 +2078,10 @@ namespace Sheltered_2_SE
             // 
             // pbxAvailablePointsInt
             // 
-            this.pbxAvailablePointsInt.Location = new System.Drawing.Point(548, 171);
+            this.pbxAvailablePointsInt.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.AvailableSkillsInt;
+            this.pbxAvailablePointsInt.Location = new System.Drawing.Point(547, 131);
             this.pbxAvailablePointsInt.Name = "pbxAvailablePointsInt";
-            this.pbxAvailablePointsInt.Size = new System.Drawing.Size(100, 50);
+            this.pbxAvailablePointsInt.Size = new System.Drawing.Size(90, 90);
             this.pbxAvailablePointsInt.TabIndex = 130;
             this.pbxAvailablePointsInt.TabStop = false;
             // 
@@ -2492,9 +2493,8 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableChaValue.Font = new System.Drawing.Font("Bebas Neue", 13F);
             this.lblPointsAvailableChaValue.Location = new System.Drawing.Point(584, 246);
             this.lblPointsAvailableChaValue.Name = "lblPointsAvailableChaValue";
-            this.lblPointsAvailableChaValue.Size = new System.Drawing.Size(17, 23);
+            this.lblPointsAvailableChaValue.Size = new System.Drawing.Size(0, 23);
             this.lblPointsAvailableChaValue.TabIndex = 127;
-            this.lblPointsAvailableChaValue.Text = "0";
             // 
             // lblPointsAvailableChaName
             // 
@@ -2537,9 +2537,10 @@ namespace Sheltered_2_SE
             // 
             // pbxAvailablePointsCha
             // 
-            this.pbxAvailablePointsCha.Location = new System.Drawing.Point(548, 171);
+            this.pbxAvailablePointsCha.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.AvailableSkillsCha;
+            this.pbxAvailablePointsCha.Location = new System.Drawing.Point(547, 131);
             this.pbxAvailablePointsCha.Name = "pbxAvailablePointsCha";
-            this.pbxAvailablePointsCha.Size = new System.Drawing.Size(100, 50);
+            this.pbxAvailablePointsCha.Size = new System.Drawing.Size(90, 90);
             this.pbxAvailablePointsCha.TabIndex = 128;
             this.pbxAvailablePointsCha.TabStop = false;
             // 
@@ -2875,9 +2876,8 @@ namespace Sheltered_2_SE
             this.lblPointsAvailablePerValue.Font = new System.Drawing.Font("Bebas Neue", 13F);
             this.lblPointsAvailablePerValue.Location = new System.Drawing.Point(584, 246);
             this.lblPointsAvailablePerValue.Name = "lblPointsAvailablePerValue";
-            this.lblPointsAvailablePerValue.Size = new System.Drawing.Size(17, 23);
+            this.lblPointsAvailablePerValue.Size = new System.Drawing.Size(0, 23);
             this.lblPointsAvailablePerValue.TabIndex = 130;
-            this.lblPointsAvailablePerValue.Text = "0";
             // 
             // lblPointsAvailablePerName
             // 
@@ -2920,9 +2920,10 @@ namespace Sheltered_2_SE
             // 
             // pbxAvailablePointsPer
             // 
-            this.pbxAvailablePointsPer.Location = new System.Drawing.Point(548, 171);
+            this.pbxAvailablePointsPer.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.AvailableSkillsPer;
+            this.pbxAvailablePointsPer.Location = new System.Drawing.Point(547, 131);
             this.pbxAvailablePointsPer.Name = "pbxAvailablePointsPer";
-            this.pbxAvailablePointsPer.Size = new System.Drawing.Size(100, 50);
+            this.pbxAvailablePointsPer.Size = new System.Drawing.Size(90, 90);
             this.pbxAvailablePointsPer.TabIndex = 131;
             this.pbxAvailablePointsPer.TabStop = false;
             // 
@@ -3348,9 +3349,8 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableForValue.Font = new System.Drawing.Font("Bebas Neue", 13F);
             this.lblPointsAvailableForValue.Location = new System.Drawing.Point(584, 246);
             this.lblPointsAvailableForValue.Name = "lblPointsAvailableForValue";
-            this.lblPointsAvailableForValue.Size = new System.Drawing.Size(17, 23);
+            this.lblPointsAvailableForValue.Size = new System.Drawing.Size(0, 23);
             this.lblPointsAvailableForValue.TabIndex = 130;
-            this.lblPointsAvailableForValue.Text = "0";
             // 
             // lblPointsAvailableForName
             // 
@@ -3393,9 +3393,10 @@ namespace Sheltered_2_SE
             // 
             // pbxAvailablePointsFor
             // 
-            this.pbxAvailablePointsFor.Location = new System.Drawing.Point(548, 171);
+            this.pbxAvailablePointsFor.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.AvailableSkillsFor;
+            this.pbxAvailablePointsFor.Location = new System.Drawing.Point(547, 131);
             this.pbxAvailablePointsFor.Name = "pbxAvailablePointsFor";
-            this.pbxAvailablePointsFor.Size = new System.Drawing.Size(100, 50);
+            this.pbxAvailablePointsFor.Size = new System.Drawing.Size(90, 90);
             this.pbxAvailablePointsFor.TabIndex = 131;
             this.pbxAvailablePointsFor.TabStop = false;
             // 
@@ -3838,7 +3839,7 @@ namespace Sheltered_2_SE
             // 
             this.lblSkillsCharacterName.AutoSize = true;
             this.lblSkillsCharacterName.Font = new System.Drawing.Font("Bebas Neue", 20.25F);
-            this.lblSkillsCharacterName.Location = new System.Drawing.Point(263, 6);
+            this.lblSkillsCharacterName.Location = new System.Drawing.Point(194, 6);
             this.lblSkillsCharacterName.Name = "lblSkillsCharacterName";
             this.lblSkillsCharacterName.Size = new System.Drawing.Size(162, 35);
             this.lblSkillsCharacterName.TabIndex = 10;
@@ -3969,6 +3970,28 @@ namespace Sheltered_2_SE
             this.unlockingTab.TabIndex = 4;
             this.unlockingTab.Text = " Unlock";
             this.unlockingTab.Click += new System.EventHandler(this.unlockingTab_Click);
+            // 
+            // cbxDamageAmplifier
+            // 
+            this.cbxDamageAmplifier.AutoSize = true;
+            this.cbxDamageAmplifier.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxDamageAmplifier.Location = new System.Drawing.Point(146, 349);
+            this.cbxDamageAmplifier.Name = "cbxDamageAmplifier";
+            this.cbxDamageAmplifier.Size = new System.Drawing.Size(111, 22);
+            this.cbxDamageAmplifier.TabIndex = 82;
+            this.cbxDamageAmplifier.Text = "Damage amplifier";
+            this.cbxDamageAmplifier.UseVisualStyleBackColor = true;
+            // 
+            // cbxMedicineCrafting
+            // 
+            this.cbxMedicineCrafting.AutoSize = true;
+            this.cbxMedicineCrafting.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbxMedicineCrafting.Location = new System.Drawing.Point(146, 332);
+            this.cbxMedicineCrafting.Name = "cbxMedicineCrafting";
+            this.cbxMedicineCrafting.Size = new System.Drawing.Size(111, 22);
+            this.cbxMedicineCrafting.TabIndex = 81;
+            this.cbxMedicineCrafting.Text = "Medicine crafting";
+            this.cbxMedicineCrafting.UseVisualStyleBackColor = true;
             // 
             // cbxBpSolarPanel
             // 
@@ -4723,7 +4746,7 @@ namespace Sheltered_2_SE
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(69, 13);
             this.lblVersion.TabIndex = 40;
-            this.lblVersion.Text = "Version: 0.20";
+            this.lblVersion.Text = "Version: 0.30";
             // 
             // lblDebugCharacter
             // 
@@ -4862,28 +4885,6 @@ namespace Sheltered_2_SE
             this.AvailablePointsIcon.Images.SetKeyName(3, "AvailableSkillsCha.png");
             this.AvailablePointsIcon.Images.SetKeyName(4, "AvailableSkillsPer.png");
             this.AvailablePointsIcon.Images.SetKeyName(5, "AvailableSkillsFor.png");
-            // 
-            // cbxMedicineCrafting
-            // 
-            this.cbxMedicineCrafting.AutoSize = true;
-            this.cbxMedicineCrafting.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxMedicineCrafting.Location = new System.Drawing.Point(146, 332);
-            this.cbxMedicineCrafting.Name = "cbxMedicineCrafting";
-            this.cbxMedicineCrafting.Size = new System.Drawing.Size(111, 22);
-            this.cbxMedicineCrafting.TabIndex = 81;
-            this.cbxMedicineCrafting.Text = "Medicine crafting";
-            this.cbxMedicineCrafting.UseVisualStyleBackColor = true;
-            // 
-            // cbxDamageAmplifier
-            // 
-            this.cbxDamageAmplifier.AutoSize = true;
-            this.cbxDamageAmplifier.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxDamageAmplifier.Location = new System.Drawing.Point(146, 349);
-            this.cbxDamageAmplifier.Name = "cbxDamageAmplifier";
-            this.cbxDamageAmplifier.Size = new System.Drawing.Size(111, 22);
-            this.cbxDamageAmplifier.TabIndex = 82;
-            this.cbxDamageAmplifier.Text = "Damage amplifier";
-            this.cbxDamageAmplifier.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -5417,22 +5418,16 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.Button button3;
         public System.Windows.Forms.ImageList skillLevelIcons;
         private System.Windows.Forms.ImageList AvailablePointsIcon;
-        private System.Windows.Forms.Label lblPointsAvailableStrValue;
         private System.Windows.Forms.Label lblPointsAvailableStrName;
         private System.Windows.Forms.PictureBox pbxAvailablePointsStr;
-        private System.Windows.Forms.Label lblPointsAvailableDexValue;
         private System.Windows.Forms.Label lblPointsAvailableDexName;
         private System.Windows.Forms.PictureBox pbxAvailablePointsDex;
-        private System.Windows.Forms.Label lblPointsAvailableIntValue;
         private System.Windows.Forms.Label lblPointsAvailableIntName;
         private System.Windows.Forms.PictureBox pbxAvailablePointsInt;
-        private System.Windows.Forms.Label lblPointsAvailableChaValue;
         private System.Windows.Forms.Label lblPointsAvailableChaName;
         private System.Windows.Forms.PictureBox pbxAvailablePointsCha;
-        private System.Windows.Forms.Label lblPointsAvailablePerValue;
         private System.Windows.Forms.Label lblPointsAvailablePerName;
         private System.Windows.Forms.PictureBox pbxAvailablePointsPer;
-        private System.Windows.Forms.Label lblPointsAvailableForValue;
         private System.Windows.Forms.Label lblPointsAvailableForName;
         private System.Windows.Forms.PictureBox pbxAvailablePointsFor;
         private System.Windows.Forms.Button btnSaveUnlocks;
@@ -5506,6 +5501,12 @@ namespace Sheltered_2_SE
         public System.Windows.Forms.TabPage debugTab;
         public System.Windows.Forms.CheckBox cbxMedicineCrafting;
         public System.Windows.Forms.CheckBox cbxDamageAmplifier;
+        public System.Windows.Forms.Label lblPointsAvailableStrValue;
+        public System.Windows.Forms.Label lblPointsAvailableDexValue;
+        public System.Windows.Forms.Label lblPointsAvailableIntValue;
+        public System.Windows.Forms.Label lblPointsAvailableChaValue;
+        public System.Windows.Forms.Label lblPointsAvailablePerValue;
+        public System.Windows.Forms.Label lblPointsAvailableForValue;
     }
 }
 

@@ -14,17 +14,34 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using System.Drawing.Text;
 
 namespace Sheltered_2_SE
 {
     public partial class Form1 : Form
     {
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont,
+            IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
+
+             private PrivateFontCollection fonts = new PrivateFontCollection();
+
+        Font myFont;
 
         public Form1()
         {
 
             InitializeComponent();
 
+                        byte[] fontData = Properties.Resources.BebasNeue_Regular;
+            IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
+            System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+            uint dummy = 0;
+            fonts.AddMemoryFont(fontPtr, Properties.Resources.BebasNeue_Regular.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.BebasNeue_Regular.Length, IntPtr.Zero, ref dummy);
+            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+
+            myFont = new Font(fonts.Families[0], 16.0F);
 
             //Load in Images
             string skillName = "";
@@ -86,7 +103,6 @@ namespace Sheltered_2_SE
                     }
                 }
             }
-
             tabControlMain.Visible = false;
 
         }
@@ -347,6 +363,8 @@ namespace Sheltered_2_SE
                     getFortitudeLvl.Value = txbLevelFortitude.Text;
                     getFortitudeCap.Value = txbCapFortitude.Text;
 
+                    
+
                 }
 
             }
@@ -356,7 +374,7 @@ namespace Sheltered_2_SE
             cbxCharacterSelect.SelectedItem = txbFirstname;
             cbxCharacterSelect.Text = "Select Character";
 
-            MessageBox.Show("Character saved successfully" +"\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
+            MessageBox.Show("Character saved successfully" + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
 
             xDoc.Save(ProcessFile.tempFilePath);
 
@@ -597,6 +615,8 @@ namespace Sheltered_2_SE
 
         private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+
             if (tabControlMain.SelectedIndex != 1)
             {
                 cbxSkillsCharacterSelect.Items.Clear();
@@ -605,6 +625,9 @@ namespace Sheltered_2_SE
             {
                 cbxSkillsCharacterSelect.Items.AddRange(cbxCharacterSelect.Items.Cast<Object>().ToArray());
                 lblSkillsCharacterName.Text = cbxSkillsCharacterSelect.Text;
+                tabControlSkills.SelectedIndex = 0;
+
+
             }
 
             if (tabControlMain.SelectedIndex == 2)
@@ -618,8 +641,8 @@ namespace Sheltered_2_SE
             if (tabControlMain.SelectedIndex == 4)
             {
                 //Load in Unlocks from XML into variables
-                var xDoc = XDocument.Load(ProcessFile.tempFilePath);
 
+                var xDoc = XDocument.Load(ProcessFile.tempFilePath);
                 string draftingTier2 = xDoc.Descendants("FactionAchievement_Building101").First().Value;
                 string draftingTier3 = xDoc.Descendants("FactionAchievement_SkilledBuilder").First().Value;
                 string draftingTier4 = xDoc.Descendants("FactionAchievement_ExpertBuilder").First().Value;
@@ -738,7 +761,109 @@ namespace Sheltered_2_SE
         private void cbxSkillsCharacterSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            lblSkillsCharacterName.Text = cbxSkillsCharacterSelect.Text;
+            var firstName = cbxSkillsCharacterSelect.Text;
+            var lastName = "";
+
+            List<GetFamilyMemberData> familyMembers = ProcessData.FamilyMembersList();
+
+            foreach (GetFamilyMemberData member in familyMembers)
+            {
+                if (member.FirstName == firstName)
+                {
+                    lastName = member.LastName;
+                }
+            }
+
+            lblSkillsCharacterName.Text = firstName + " " + lastName;
+
+            var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+
+            //Get MemberNumber
+
+
+            ProcessData.skillMember = xDoc
+                .Descendants("FamilyMembers").Descendants("firstName").Where(p => p.Value == firstName && p.ElementsAfterSelf("lastName").FirstOrDefault().Value == lastName).Ancestors().First().Name.ToString();
+            
+            //Load in Availabe Points
+            lblPointsAvailableStrValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Strength").Descendants("ProfessionPoints").First().Value;
+            lblPointsAvailableDexValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Dexterity").Descendants("ProfessionPoints").First().Value;
+            lblPointsAvailableIntValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Intelligence").Descendants("ProfessionPoints").First().Value;
+            lblPointsAvailableChaValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Charisma").Descendants("ProfessionPoints").First().Value;
+            lblPointsAvailablePerValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Perception").Descendants("ProfessionPoints").First().Value;
+            lblPointsAvailableForValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Fortitude").Descendants("ProfessionPoints").First().Value;
+
+            //Get skill amount
+
+            string skillType = "";
+            if (tabControlSkills.SelectedIndex == 0)
+            {
+                skillType = "strength";
+                ProcessData.skillName = "Str";
+            }
+            else if (tabControlSkills.SelectedIndex == 1)
+            {
+                skillType = "dexterity";
+                ProcessData.skillName = "Dex";
+            }
+            if (tabControlSkills.SelectedIndex == 2)
+            {
+                skillType = "intelligence";
+                ProcessData.skillName = "Int";
+            }
+            else if (tabControlSkills.SelectedIndex == 3)
+            {
+                skillType = "charisma";
+                ProcessData.skillName = "Cha";
+            }
+            else if (tabControlSkills.SelectedIndex == 4)
+            {
+                skillType = "perception";
+                ProcessData.skillName = "Per";
+            }
+            else if (tabControlSkills.SelectedIndex == 5)
+            {
+                skillType = "fortitude";
+                ProcessData.skillName = "For";
+            }
+
+            var skillsAmount = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Profession").Descendants(skillType+"Skills").FirstOrDefault().Attribute("size").Value;
+            
+            //Load in skills
+            //Strength
+            
+            for (int i = 0; i < Convert.ToInt32(skillsAmount); i++)
+            {
+               // xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Profession").Descendants(skillType + "Skills").FirstOrDefault().Attribute("size").Value;
+            }
+
+
+
+            //var getSkillInput = new GetFamilyMemberData();
+
+           
+            //Get All Members
+            var members = xDoc.Descendants("FamilyMembers").Elements().Where(p => p.Name.LocalName.StartsWith("Member_"));
+        }
+
+        public void GetSkillKey()
+        {
+
+            //Load in Images
+            string skillName = "";
+            int numberSkills = 0;
+
+            var skillList = new[]
+            {
+                new { Number =  14, Name = "Str"},
+                new { Number =  12, Name = "Dex"},
+                new { Number =  17, Name = "Int"},
+                new { Number =  13, Name = "Cha"},
+                new { Number =  17, Name = "Per"},
+                new { Number =  20, Name = "For"}
+
+            }.ToList();
+
+
 
         }
 
@@ -774,7 +899,7 @@ namespace Sheltered_2_SE
 
 
             xDoc.Save(ProcessFile.tempFilePath);
-            MessageBox.Show("Map revealed succesfully." + "\n"+ "--------------------------------" + "\n" + "\n"+"\n"+ "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
+            MessageBox.Show("Map revealed succesfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
 
 
         }
@@ -783,12 +908,18 @@ namespace Sheltered_2_SE
         {
             var xDoc = XDocument.Load(ProcessFile.tempFilePath);
 
-            if (cbxDraftingTableTier2.Checked == true) { xDoc.Descendants("FactionAchievement_Building101").First().Value = "5"; }
-            if (cbxDraftingTableTier3.Checked == true) { xDoc.Descendants("FactionAchievement_SkilledBuilder").First().Value = "5"; }
-            if (cbxDraftingTableTier4.Checked == true) { xDoc.Descendants("FactionAchievement_ExpertBuilder").First().Value = "1"; }
-            if (cbxDraftingTableTier2.Checked == true) { xDoc.Descendants("FactionAchievement_Engineering101").First().Value = "25"; }
-            if (cbxDraftingTableTier3.Checked == true) { xDoc.Descendants("FactionAchievement_SkilledEngineer").First().Value = "25"; }
-            if (cbxDraftingTableTier4.Checked == true) { xDoc.Descendants("FactionAchievement_ExpertEngineer").First().Value = "1"; }
+            if (cbxDraftingTableTier2.Checked == true) { xDoc.Descendants("FactionAchievement_Building101").Descendants().First().Value = "5";
+                xDoc.Descendants("BuiltBed").First().Value = "True";
+                xDoc.Descendants("BuiltToilet").First().Value = "True";
+                xDoc.Descendants("BuiltShower").First().Value = "True";
+                xDoc.Descendants("BuiltRoom").First().Value = "True";
+                xDoc.Descendants("BuiltStove").First().Value = "True";
+            }
+            if (cbxDraftingTableTier3.Checked == true) { xDoc.Descendants("FactionAchievement_SkilledBuilder").Descendants().First().Value = "5"; }
+            if (cbxDraftingTableTier4.Checked == true) { xDoc.Descendants("FactionAchievement_ExpertBuilder").Descendants().First().Value = "1"; }
+            if (cbxDraftingTableTier2.Checked == true) { xDoc.Descendants("FactionAchievement_Engineering101").Descendants().First().Value = "25"; }
+            if (cbxDraftingTableTier3.Checked == true) { xDoc.Descendants("FactionAchievement_SkilledEngineer").Descendants().First().Value = "25"; }
+            if (cbxDraftingTableTier4.Checked == true) { xDoc.Descendants("FactionAchievement_ExpertEngineer").Descendants().First().Value = "1"; }
 
             if (cbxBpBatteryBank.Checked == true) { xDoc.Descendants("RecipebatteryBank").First().Value = "True"; }
             if (cbxBpFlashbangMine.Checked == true) { xDoc.Descendants("RecipeflashbangMine").First().Value = "True"; }
@@ -811,10 +942,10 @@ namespace Sheltered_2_SE
             if (cbxDrugsSnodge.Checked == true) { xDoc.Descendants("RecipeSnodge").First().Value = "True"; }
             if (cbxDrugsTrankwill.Checked == true) { xDoc.Descendants("RecipeTrankwill").First().Value = "True"; }
 
-            if (cbxOtherTrading.Checked == true) { xDoc.Descendants("FactionAchievement_InsiderTrading").First().Value = "1"; }
-            if (cbxOtherGunCrafting.Checked == true) { xDoc.Descendants("FactionAchievement_GunCrafting").First().Value = "1"; }
-            if (cbxOtherCarPartsCrafting.Checked == true) { xDoc.Descendants("FactionAchievement_Mechanic").First().Value = "1"; }
-            if (cbxMedicineCrafting.Checked == true) { xDoc.Descendants("FactionAchievement_Chemistry").First().Value = "1"; }
+            if (cbxOtherTrading.Checked == true) { xDoc.Descendants("FactionAchievement_InsiderTrading").Descendants().First().Value = "1"; }
+            if (cbxOtherGunCrafting.Checked == true) { xDoc.Descendants("FactionAchievement_GunCrafting").Descendants().First().Value = "1"; }
+            if (cbxOtherCarPartsCrafting.Checked == true) { xDoc.Descendants("FactionAchievement_Mechanic").Descendants().First().Value = "1"; }
+            if (cbxMedicineCrafting.Checked == true) { xDoc.Descendants("FactionAchievement_Chemistry").Descendants().First().Value = "1"; }
             if (cbxDamageAmplifier.Checked == true) { xDoc.Descendants("RecipedamageAmplifier").First().Value = "True"; }
 
             if (cbxRewardChurchQ1.Checked == true) { xDoc.Descendants("RecipeIndoctrinationCell").First().Value = "True"; }
@@ -836,8 +967,9 @@ namespace Sheltered_2_SE
             if (cbxRewardOldQ2.Checked == true) { /*toADD*/ }
             if (cbxRewardOldQ3.Checked == true) { /*toADD*/ }
 
-            MessageBox.Show("Unlocks saved successfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
             xDoc.Save(ProcessFile.tempFilePath);
+            MessageBox.Show("Unlocks saved successfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
+            
 
         }
 

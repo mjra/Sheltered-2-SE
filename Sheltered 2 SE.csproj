@@ -161,6 +161,7 @@
     <None Include="Resources\AvailableSkillsStr.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\BebasNeue_Regular.ttf" />
     <None Include="Resources\textBackground.png" />
   </ItemGroup>
   <ItemGroup>
