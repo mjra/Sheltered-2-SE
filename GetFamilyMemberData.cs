@@ -8,6 +8,7 @@ using System.Xml.Linq;
 namespace Sheltered_2_SE
 {
 
+
     class GetSkillPoints
     {
         public string FirstName { get; set; }
@@ -18,6 +19,22 @@ namespace Sheltered_2_SE
         public int CharismaLevelBefore { get; set; }
         public int PerceptionLevelBefore { get; set; }
         public int FortitudeLevelBefore { get; set; }
+
+        public static List<GetSkillPoints> _getSkillPoints;
+    }
+
+    class NewSkillPoints
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int StrengthLevelNew{ get; set; }
+        public int DexterityLevelNew { get; set; }
+        public int IntelligenceLevelNew { get; set; }
+        public int CharismaLevelNew { get; set; }
+        public int PerceptionLevelNew { get; set; }
+        public int FortitudeLevelNew { get; set; }
+
+        public static List<GetSkillPoints> _newSkillPoints;
     }
 
     class LoadNames

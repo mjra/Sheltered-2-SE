@@ -201,6 +201,27 @@ namespace Sheltered_2_SE
                 }
             }
             tabControlMain.Visible = true;
+
+
+            //Set Values of Character for available Points
+            var doc = XElement.Load(ProcessFile.tempFilePath);
+
+            List<GetSkillPoints> skillPoints = doc.Descendants("FamilyMembers").Descendants().Where(x => x.Name.LocalName.StartsWith("Member_"))
+                .Select(p => new GetSkillPoints()
+                {
+                    FirstName = p.DescendantsAndSelf("firstName").FirstOrDefault().Value,
+                    LastName = p.DescendantsAndSelf("lastName").FirstOrDefault().Value,
+                    StrengthLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Strength").Descendants("level").FirstOrDefault().Value),
+                    DexterityLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Dexterity").Descendants("level").FirstOrDefault().Value),
+                    IntelligenceLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Intelligence").Descendants("level").FirstOrDefault().Value),
+                    CharismaLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Charisma").Descendants("level").FirstOrDefault().Value),
+                    PerceptionLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Perception").Descendants("level").FirstOrDefault().Value),
+                    FortitudeLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Fortitude").Descendants("level").FirstOrDefault().Value),
+
+                }).ToList();
+
+            GetSkillPoints._getSkillPoints = skillPoints;
+
         }
 
         public void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -414,16 +435,13 @@ namespace Sheltered_2_SE
             }
 
             cbxCharacterSelect.Items.RemoveAt(ProcessData.memberNr);
-            cbxCharacterSelect.Items.Insert(ProcessData.memberNr, txbFirstname.Text);
-            cbxCharacterSelect.SelectedItem = txbFirstname;
+            cbxCharacterSelect.Items.Insert(ProcessData.memberNr, txbFirstname.Text + " " + txbLastname.Text);
+            cbxCharacterSelect.SelectedItem = txbFirstname +" "+ txbLastname;
             cbxCharacterSelect.Text = "Select Character";
 
 
-
-            MessageBox.Show("Character saved successfully" + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
-
             xDoc.Save(ProcessFile.tempFilePath);
-
+            MessageBox.Show("Character saved successfully" + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
         }
 
 
@@ -869,6 +887,57 @@ namespace Sheltered_2_SE
 
         private void cbxSkillsCharacterSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Read in User Skill Values into List
+
+            var doc = XDocument.Load(ProcessFile.tempFilePath);
+
+            List<NewSkillPoints> getNewSkillPoints = doc.Descendants("FamilyMembers").Descendants().Where(x => x.Name.LocalName.StartsWith("Member_"))
+
+                .Select(p => new NewSkillPoints()
+                {
+                    FirstName = p.DescendantsAndSelf("firstName").FirstOrDefault().Value,
+                    LastName = p.DescendantsAndSelf("lastName").FirstOrDefault().Value,
+                    StrengthLevelNew = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Strength").Descendants("level").FirstOrDefault().Value),
+                    DexterityLevelNew = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Dexterity").Descendants("level").FirstOrDefault().Value),
+                    IntelligenceLevelNew = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Intelligence").Descendants("level").FirstOrDefault().Value),
+                    CharismaLevelNew = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Charisma").Descendants("level").FirstOrDefault().Value),
+                    PerceptionLevelNew = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Perception").Descendants("level").FirstOrDefault().Value),
+                    FortitudeLevelNew = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Fortitude").Descendants("level").FirstOrDefault().Value),
+
+                }).ToList();
+
+            //Get available Points
+
+            string selectedName = Convert.ToString(cbxSkillsCharacterSelect.SelectedItem);
+            List<GetSkillPoints> getOldSkillValues = new List<GetSkillPoints>(GetSkillPoints._getSkillPoints);
+
+            foreach (var point in getNewSkillPoints)
+            {
+                if (selectedName == point.FirstName + " " + point.LastName)
+                {                    
+                    foreach (var oldPoint in getOldSkillValues)
+                    {
+                        if (selectedName == oldPoint.FirstName + " " + oldPoint.LastName)
+                        {
+                            lblPointsAvailableStrValue.Text = (point.StrengthLevelNew - oldPoint.StrengthLevelBefore).ToString();
+                            lblPointsAvailableDexValue.Text = (point.DexterityLevelNew - oldPoint.DexterityLevelBefore).ToString();
+                            lblPointsAvailableIntValue.Text = (point.IntelligenceLevelNew - oldPoint.IntelligenceLevelBefore).ToString();
+                            lblPointsAvailableChaValue.Text = (point.CharismaLevelNew - oldPoint.CharismaLevelBefore).ToString();
+                            lblPointsAvailablePerValue.Text = (point.PerceptionLevelNew - oldPoint.PerceptionLevelBefore).ToString();
+                            lblPointsAvailableForValue.Text = (point.FortitudeLevelNew - oldPoint.FortitudeLevelBefore).ToString();
+
+                        }                            
+                    }
+                }
+            }
+            lblPointsAvailableStrValue.Refresh();
+            lblPointsAvailableDexValue.Refresh();
+            lblPointsAvailableIntValue.Refresh();
+            lblPointsAvailableChaValue.Refresh();
+            lblPointsAvailablePerValue.Refresh();
+            lblPointsAvailableForValue.Refresh();
+
+
             //Reset the Skills each time a character is chosen
             var skillNum = new[]
             {
@@ -938,15 +1007,21 @@ namespace Sheltered_2_SE
             {
                 lblPointsAvailableStrValue.Text = Convert.ToString(member.StrengthLevel);
             }
-            
+
+            int strValue = Convert.ToInt32(lblPointsAvailableStrValue.Text);
+            int dexValue = Convert.ToInt32(lblPointsAvailableDexValue.Text);
+            int intValue = Convert.ToInt32(lblPointsAvailableIntValue.Text);
+            int chaValue = Convert.ToInt32(lblPointsAvailableChaValue.Text);
+            int perValue = Convert.ToInt32(lblPointsAvailablePerValue.Text);
+            int forValue = Convert.ToInt32(lblPointsAvailableForValue.Text);            
 
             //Load in Availabe Points
-            lblPointsAvailableStrValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Strength").Descendants("ProfessionPoints").First().Value;
-            lblPointsAvailableDexValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Dexterity").Descendants("ProfessionPoints").First().Value;
-            lblPointsAvailableIntValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Intelligence").Descendants("ProfessionPoints").First().Value;
-            lblPointsAvailableChaValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Charisma").Descendants("ProfessionPoints").First().Value;
-            lblPointsAvailablePerValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Perception").Descendants("ProfessionPoints").First().Value;
-            lblPointsAvailableForValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Fortitude").Descendants("ProfessionPoints").First().Value;
+            strValue += Convert.ToInt32(xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Strength").Descendants("ProfessionPoints").First().Value);
+            dexValue += Convert.ToInt32(xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Dexterity").Descendants("ProfessionPoints").First().Value);
+            intValue += Convert.ToInt32(xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Intelligence").Descendants("ProfessionPoints").First().Value);
+            chaValue += Convert.ToInt32(xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Charisma").Descendants("ProfessionPoints").First().Value);
+            perValue += Convert.ToInt32(xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Perception").Descendants("ProfessionPoints").First().Value);
+            forValue += Convert.ToInt32(xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Fortitude").Descendants("ProfessionPoints").First().Value);
 
             //Get skill amount
             string skillType = "";
@@ -1267,9 +1342,6 @@ namespace Sheltered_2_SE
                 new { Number =  20, Name = "For"}
 
             }.ToList();
-
-
-
         }
 
         private void unlockingTab_Click(object sender, EventArgs e)
@@ -1299,9 +1371,6 @@ namespace Sheltered_2_SE
                     xDoc.Descendants("Map").Elements().Where(p => p.Name == "MapTile_" + i + "_" + j).Descendants("Discovered").First().Value = "True";
                 }
             }
-
-
-
 
             xDoc.Save(ProcessFile.tempFilePath);
             MessageBox.Show("Map revealed succesfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
