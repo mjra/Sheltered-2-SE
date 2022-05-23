@@ -162,6 +162,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\BebasNeue_Regular.ttf" />
+    <EmbeddedResource Include="Resources\BebasNeue.ttf" />
+    <None Include="Resources\BebasNeue-Regular.ttf" />
     <None Include="Resources\textBackground.png" />
   </ItemGroup>
   <ItemGroup>

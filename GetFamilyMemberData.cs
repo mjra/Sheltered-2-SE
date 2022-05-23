@@ -164,13 +164,34 @@ namespace Sheltered_2_SE
         public static int _perSkillAmount = 17;
         public static int _forSkillAmount = 20;
 
-    }  
-    
-    //class SkillList
-    //{
-    //    private var skill = new List<Skills>();
+    }
 
-    //    public bool AddSkill (string )
-    //}
+    class SkillList
+    {
+        
+        private List<Skills> skill = new List<Skills>();
+
+        public bool AddSkill(string aSkillName, string aSkill, string aType, string aSkillKey, string aSkillLevel)
+        {
+            skill.Add(new Skills
+            {
+                SkillName = aSkillName,
+                Skill = aSkill,
+                Type = aType,
+                SkillKey = aSkillKey,
+                SkillLevel = aSkillLevel
+            });
+                return true;
+        }
+
+        static void SkillAdd(string[] args)
+        {
+            var skillList = new SkillList();
+            //skillList.AddSkill ("")
+        }
+
+    }
+
+
 
 }

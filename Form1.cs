@@ -15,6 +15,8 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using System.Drawing.Text;
+using System.Runtime.InteropServices;
+using System.Reflection;
 
 namespace Sheltered_2_SE
 {
@@ -24,24 +26,96 @@ namespace Sheltered_2_SE
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont,
             IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
 
-             private PrivateFontCollection fonts = new PrivateFontCollection();
+        private PrivateFontCollection pfc = new PrivateFontCollection();
 
-        Font myFont;
+        Font bebas;
+        Font bebas10;
+        Font bebas16;
 
         public Form1()
         {
 
             InitializeComponent();
 
-                        byte[] fontData = Properties.Resources.BebasNeue_Regular;
+            byte[] fontData = Properties.Resources.BebasNeue_Regular;
             IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
             System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
             uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, Properties.Resources.BebasNeue_Regular.Length);
+            pfc.AddMemoryFont(fontPtr, Properties.Resources.BebasNeue_Regular.Length);
             AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.BebasNeue_Regular.Length, IntPtr.Zero, ref dummy);
             System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
 
-            myFont = new Font(fonts.Families[0], 16.0F);
+            bebas = new Font(pfc.Families[0], 12.0F);
+            bebas10 = new Font(pfc.Families[0], 10.0F);
+            bebas16 = new Font(pfc.Families[0], 16.0F);
+
+
+
+            //read in embeded font 
+            tabControlMain.Font = bebas;
+            characterStatsTab.Font = bebas;
+            lblCharacterStats.Font = bebas16;
+            lblWarning.Font = bebas;
+
+            characterSkillsTab.Font = bebas;
+            skillPageStr.Font = bebas;
+            skillPageDex.Font = bebas;
+            skillPageInt.Font = bebas;
+            skillPageCha.Font = bebas;
+            skillPagePer.Font = bebas;
+            skillPageFor.Font = bebas;
+            petsTab.Font = bebas;
+            deseasesTab.Font = bebas;
+
+            unlockingTab.Font = bebas;
+            cbxDraftingTableTier2.Font = bebas10;
+            cbxDraftingTableTier3.Font = bebas10;
+            cbxDraftingTableTier4.Font = bebas10;
+            cbxWorkbenchTier2.Font = bebas10;
+            cbxWorkbenchTier3.Font = bebas10;
+            cbxWorkbenchTier4.Font = bebas10;
+            cbxBpBatteryBank.Font = bebas10;
+            cbxBpFlashbangMine.Font = bebas10;
+            cbxBpIndustrialGenerator.Font = bebas10;
+            cbxBpMedicalBed.Font = bebas10;
+            cbxBpGasMine.Font = bebas10;
+            cbxBpEfficientPlanter.Font = bebas10;
+            cbxBpQuantumBattery.Font = bebas10;
+            cbxBpDefibrilator.Font = bebas10;
+            cbxBpElectricityTrap.Font = bebas10;
+            cbxBpLaboratory.Font = bebas10;
+            cbxBpRecycler.Font = bebas10;
+            cbxBpSolarPanel.Font = bebas10;
+            cbxDrugsAlcohol.Font = bebas10;
+            cbxDrugsCrunk.Font = bebas10;
+            cbxDrugsFeederral.Font = bebas10;
+            cbxDrugsPython.Font = bebas10;
+            cbxDrugsSigma.Font = bebas10;
+            cbxDrugsSnodge.Font = bebas10;
+            cbxDrugsTrankwill.Font = bebas10;
+            cbxOtherTrading.Font = bebas10;
+            cbxOtherGunCrafting.Font = bebas10;
+            cbxOtherCarPartsCrafting.Font = bebas10;
+            cbxMedicineCrafting.Font = bebas10;
+            cbxDamageAmplifier.Font = bebas10;
+            cbxRewardChurchQ1.Font = bebas10;
+            cbxRewardChurchQ2.Font = bebas10;
+            cbxRewardChurchQ3.Font = bebas10;
+            cbxRewardCtkQ1.Font = bebas10;
+            cbxRewardCtkQ2.Font = bebas10;
+            cbxRewardCtkQ3.Font = bebas10;
+            cbxRewardNewQ1.Font = bebas10;
+            cbxRewardNewQ2.Font = bebas10;
+            cbxRewardNewQ3.Font = bebas10;
+            cbxRewardBlackQ1.Font = bebas10;
+            cbxRewardBlackQ2.Font = bebas10;
+            cbxRewardBlackQ3.Font = bebas10;
+            cbxRewardLosQ1.Font = bebas10;
+            cbxRewardLosQ2.Font = bebas10;
+            cbxRewardLosQ3.Font = bebas10;
+
+            debugTab.Font = bebas;
+            shelterDesignerTab.Font = bebas;
 
             //Load in Images
             string skillName = "";
@@ -106,6 +180,13 @@ namespace Sheltered_2_SE
             tabControlMain.Visible = false;
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblDraftingTable.Font = bebas;
+            label24.Font = bebas;
+        }
+
         ProcessFile processFile = new ProcessFile();
         ProcessData processData = new ProcessData();
         OpenFileDialog openSaveFile = new OpenFileDialog();
@@ -363,7 +444,7 @@ namespace Sheltered_2_SE
                     getFortitudeLvl.Value = txbLevelFortitude.Text;
                     getFortitudeCap.Value = txbCapFortitude.Text;
 
-                    
+
 
                 }
 
@@ -783,7 +864,7 @@ namespace Sheltered_2_SE
 
             ProcessData.skillMember = xDoc
                 .Descendants("FamilyMembers").Descendants("firstName").Where(p => p.Value == firstName && p.ElementsAfterSelf("lastName").FirstOrDefault().Value == lastName).Ancestors().First().Name.ToString();
-            
+
             //Load in Availabe Points
             lblPointsAvailableStrValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Strength").Descendants("ProfessionPoints").First().Value;
             lblPointsAvailableDexValue.Text = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Dexterity").Descendants("ProfessionPoints").First().Value;
@@ -826,21 +907,21 @@ namespace Sheltered_2_SE
                 ProcessData.skillName = "For";
             }
 
-            var skillsAmount = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Profession").Descendants(skillType+"Skills").FirstOrDefault().Attribute("size").Value;
-            
+            var skillsAmount = xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Profession").Descendants(skillType + "Skills").FirstOrDefault().Attribute("size").Value;
+
             //Load in skills
             //Strength
-            
+
             for (int i = 0; i < Convert.ToInt32(skillsAmount); i++)
             {
-               // xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Profession").Descendants(skillType + "Skills").FirstOrDefault().Attribute("size").Value;
+                // xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Profession").Descendants(skillType + "Skills").FirstOrDefault().Attribute("size").Value;
             }
 
 
 
             //var getSkillInput = new GetFamilyMemberData();
 
-           
+
             //Get All Members
             var members = xDoc.Descendants("FamilyMembers").Elements().Where(p => p.Name.LocalName.StartsWith("Member_"));
         }
@@ -908,7 +989,9 @@ namespace Sheltered_2_SE
         {
             var xDoc = XDocument.Load(ProcessFile.tempFilePath);
 
-            if (cbxDraftingTableTier2.Checked == true) { xDoc.Descendants("FactionAchievement_Building101").Descendants().First().Value = "5";
+            if (cbxDraftingTableTier2.Checked == true)
+            {
+                xDoc.Descendants("FactionAchievement_Building101").Descendants().First().Value = "5";
                 xDoc.Descendants("BuiltBed").First().Value = "True";
                 xDoc.Descendants("BuiltToilet").First().Value = "True";
                 xDoc.Descendants("BuiltShower").First().Value = "True";
@@ -969,7 +1052,7 @@ namespace Sheltered_2_SE
 
             xDoc.Save(ProcessFile.tempFilePath);
             MessageBox.Show("Unlocks saved successfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
-            
+
 
         }
 

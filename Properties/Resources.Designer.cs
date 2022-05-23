@@ -123,6 +123,16 @@ namespace Sheltered_2_SE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] BebasNeue {
+            get {
+                object obj = ResourceManager.GetObject("BebasNeue", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] BebasNeue_Regular {
             get {
                 object obj = ResourceManager.GetObject("BebasNeue_Regular", resourceCulture);

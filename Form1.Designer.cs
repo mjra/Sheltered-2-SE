@@ -1,4 +1,6 @@
 ﻿
+using System.Drawing;
+
 namespace Sheltered_2_SE
 {
     partial class Form1
@@ -389,8 +391,8 @@ namespace Sheltered_2_SE
             this.label28 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblWorkbench = new System.Windows.Forms.Label();
+            this.lblDraftingTable = new System.Windows.Forms.Label();
             this.debugTab = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.shelterDesignerTab = new System.Windows.Forms.TabPage();
@@ -721,40 +723,36 @@ namespace Sheltered_2_SE
             // lblFirstname
             // 
             this.lblFirstname.AutoSize = true;
-            this.lblFirstname.Font = new System.Drawing.Font("Bebas Neue", 12.25F);
             this.lblFirstname.Location = new System.Drawing.Point(25, 47);
             this.lblFirstname.Name = "lblFirstname";
-            this.lblFirstname.Size = new System.Drawing.Size(70, 22);
+            this.lblFirstname.Size = new System.Drawing.Size(55, 13);
             this.lblFirstname.TabIndex = 0;
             this.lblFirstname.Text = "Firstname:";
             // 
             // lblLastname
             // 
             this.lblLastname.AutoSize = true;
-            this.lblLastname.Font = new System.Drawing.Font("Bebas Neue", 12.25F);
             this.lblLastname.Location = new System.Drawing.Point(25, 79);
             this.lblLastname.Name = "lblLastname";
-            this.lblLastname.Size = new System.Drawing.Size(67, 22);
+            this.lblLastname.Size = new System.Drawing.Size(56, 13);
             this.lblLastname.TabIndex = 1;
             this.lblLastname.Text = "Lastname:";
             // 
             // lblHealth
             // 
             this.lblHealth.AutoSize = true;
-            this.lblHealth.Font = new System.Drawing.Font("Bebas Neue", 12.25F);
             this.lblHealth.Location = new System.Drawing.Point(25, 111);
             this.lblHealth.Name = "lblHealth";
-            this.lblHealth.Size = new System.Drawing.Size(51, 22);
+            this.lblHealth.Size = new System.Drawing.Size(41, 13);
             this.lblHealth.TabIndex = 2;
             this.lblHealth.Text = "Health:";
             // 
             // lblMaxHealth
             // 
             this.lblMaxHealth.AutoSize = true;
-            this.lblMaxHealth.Font = new System.Drawing.Font("Bebas Neue", 12.25F);
             this.lblMaxHealth.Location = new System.Drawing.Point(25, 143);
             this.lblMaxHealth.Name = "lblMaxHealth";
-            this.lblMaxHealth.Size = new System.Drawing.Size(77, 22);
+            this.lblMaxHealth.Size = new System.Drawing.Size(64, 13);
             this.lblMaxHealth.TabIndex = 3;
             this.lblMaxHealth.Text = "Max Health:";
             // 
@@ -762,28 +760,28 @@ namespace Sheltered_2_SE
             // 
             this.txbFirstname.Location = new System.Drawing.Point(104, 44);
             this.txbFirstname.Name = "txbFirstname";
-            this.txbFirstname.Size = new System.Drawing.Size(258, 28);
+            this.txbFirstname.Size = new System.Drawing.Size(258, 20);
             this.txbFirstname.TabIndex = 4;
             // 
             // txbLastname
             // 
             this.txbLastname.Location = new System.Drawing.Point(104, 76);
             this.txbLastname.Name = "txbLastname";
-            this.txbLastname.Size = new System.Drawing.Size(258, 28);
+            this.txbLastname.Size = new System.Drawing.Size(258, 20);
             this.txbLastname.TabIndex = 5;
             // 
             // txbMaxHealth
             // 
             this.txbMaxHealth.Location = new System.Drawing.Point(104, 140);
             this.txbMaxHealth.Name = "txbMaxHealth";
-            this.txbMaxHealth.Size = new System.Drawing.Size(54, 28);
+            this.txbMaxHealth.Size = new System.Drawing.Size(54, 20);
             this.txbMaxHealth.TabIndex = 6;
             // 
             // txbHealth
             // 
             this.txbHealth.Location = new System.Drawing.Point(104, 108);
             this.txbHealth.Name = "txbHealth";
-            this.txbHealth.Size = new System.Drawing.Size(54, 28);
+            this.txbHealth.Size = new System.Drawing.Size(54, 20);
             this.txbHealth.TabIndex = 7;
             // 
             // cbxCharacterSelect
@@ -791,7 +789,7 @@ namespace Sheltered_2_SE
             this.cbxCharacterSelect.FormattingEnabled = true;
             this.cbxCharacterSelect.Location = new System.Drawing.Point(104, 9);
             this.cbxCharacterSelect.Name = "cbxCharacterSelect";
-            this.cbxCharacterSelect.Size = new System.Drawing.Size(128, 29);
+            this.cbxCharacterSelect.Size = new System.Drawing.Size(128, 21);
             this.cbxCharacterSelect.TabIndex = 8;
             this.cbxCharacterSelect.Tag = "";
             this.cbxCharacterSelect.Text = "Select Character";
@@ -800,20 +798,18 @@ namespace Sheltered_2_SE
             // lblCharacterStats
             // 
             this.lblCharacterStats.AutoSize = true;
-            this.lblCharacterStats.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCharacterStats.Location = new System.Drawing.Point(3, 305);
+            this.lblCharacterStats.Location = new System.Drawing.Point(3, 286);
             this.lblCharacterStats.Name = "lblCharacterStats";
-            this.lblCharacterStats.Size = new System.Drawing.Size(92, 19);
+            this.lblCharacterStats.Size = new System.Drawing.Size(83, 13);
             this.lblCharacterStats.TabIndex = 9;
             this.lblCharacterStats.Text = "Character Stats:";
             // 
             // lblStrenght
             // 
             this.lblStrenght.AutoSize = true;
-            this.lblStrenght.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStrenght.Location = new System.Drawing.Point(56, 331);
+            this.lblStrenght.Location = new System.Drawing.Point(63, 324);
             this.lblStrenght.Name = "lblStrenght";
-            this.lblStrenght.Size = new System.Drawing.Size(60, 21);
+            this.lblStrenght.Size = new System.Drawing.Size(47, 13);
             this.lblStrenght.TabIndex = 10;
             this.lblStrenght.Text = "Strength";
             this.lblStrenght.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -821,10 +817,9 @@ namespace Sheltered_2_SE
             // lblDexterity
             // 
             this.lblDexterity.AutoSize = true;
-            this.lblDexterity.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDexterity.Location = new System.Drawing.Point(119, 331);
+            this.lblDexterity.Location = new System.Drawing.Point(122, 324);
             this.lblDexterity.Name = "lblDexterity";
-            this.lblDexterity.Size = new System.Drawing.Size(63, 21);
+            this.lblDexterity.Size = new System.Drawing.Size(48, 13);
             this.lblDexterity.TabIndex = 11;
             this.lblDexterity.Text = "Dexterity";
             this.lblDexterity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -832,10 +827,9 @@ namespace Sheltered_2_SE
             // lblIntelligence
             // 
             this.lblIntelligence.AutoSize = true;
-            this.lblIntelligence.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIntelligence.Location = new System.Drawing.Point(183, 331);
+            this.lblIntelligence.Location = new System.Drawing.Point(186, 324);
             this.lblIntelligence.Name = "lblIntelligence";
-            this.lblIntelligence.Size = new System.Drawing.Size(78, 21);
+            this.lblIntelligence.Size = new System.Drawing.Size(61, 13);
             this.lblIntelligence.TabIndex = 12;
             this.lblIntelligence.Text = "Intelligence";
             this.lblIntelligence.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -843,10 +837,9 @@ namespace Sheltered_2_SE
             // lblCharisma
             // 
             this.lblCharisma.AutoSize = true;
-            this.lblCharisma.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCharisma.Location = new System.Drawing.Point(260, 331);
+            this.lblCharisma.Location = new System.Drawing.Point(263, 324);
             this.lblCharisma.Name = "lblCharisma";
-            this.lblCharisma.Size = new System.Drawing.Size(59, 21);
+            this.lblCharisma.Size = new System.Drawing.Size(50, 13);
             this.lblCharisma.TabIndex = 13;
             this.lblCharisma.Text = "Charisma";
             this.lblCharisma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -854,10 +847,9 @@ namespace Sheltered_2_SE
             // lblPerception
             // 
             this.lblPerception.AutoSize = true;
-            this.lblPerception.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPerception.Location = new System.Drawing.Point(326, 331);
+            this.lblPerception.Location = new System.Drawing.Point(331, 324);
             this.lblPerception.Name = "lblPerception";
-            this.lblPerception.Size = new System.Drawing.Size(68, 21);
+            this.lblPerception.Size = new System.Drawing.Size(58, 13);
             this.lblPerception.TabIndex = 14;
             this.lblPerception.Text = "Perception";
             this.lblPerception.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -865,10 +857,9 @@ namespace Sheltered_2_SE
             // lblFortitude
             // 
             this.lblFortitude.AutoSize = true;
-            this.lblFortitude.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFortitude.Location = new System.Drawing.Point(400, 331);
+            this.lblFortitude.Location = new System.Drawing.Point(407, 324);
             this.lblFortitude.Name = "lblFortitude";
-            this.lblFortitude.Size = new System.Drawing.Size(62, 21);
+            this.lblFortitude.Size = new System.Drawing.Size(48, 13);
             this.lblFortitude.TabIndex = 15;
             this.lblFortitude.Text = "Fortitude";
             this.lblFortitude.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -877,26 +868,24 @@ namespace Sheltered_2_SE
             // 
             this.txbLevelStrenght.Location = new System.Drawing.Point(59, 353);
             this.txbLevelStrenght.Name = "txbLevelStrenght";
-            this.txbLevelStrenght.Size = new System.Drawing.Size(59, 28);
+            this.txbLevelStrenght.Size = new System.Drawing.Size(59, 20);
             this.txbLevelStrenght.TabIndex = 16;
             // 
             // lblCap
             // 
             this.lblCap.AutoSize = true;
-            this.lblCap.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCap.Location = new System.Drawing.Point(5, 390);
             this.lblCap.Name = "lblCap";
-            this.lblCap.Size = new System.Drawing.Size(31, 21);
+            this.lblCap.Size = new System.Drawing.Size(29, 13);
             this.lblCap.TabIndex = 17;
             this.lblCap.Text = "Cap:";
             // 
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
-            this.lblLevel.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLevel.Location = new System.Drawing.Point(5, 356);
             this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(43, 21);
+            this.lblLevel.Size = new System.Drawing.Size(36, 13);
             this.lblLevel.TabIndex = 18;
             this.lblLevel.Text = "Level:";
             // 
@@ -904,49 +893,49 @@ namespace Sheltered_2_SE
             // 
             this.txbLevelDexterity.Location = new System.Drawing.Point(122, 353);
             this.txbLevelDexterity.Name = "txbLevelDexterity";
-            this.txbLevelDexterity.Size = new System.Drawing.Size(58, 28);
+            this.txbLevelDexterity.Size = new System.Drawing.Size(58, 20);
             this.txbLevelDexterity.TabIndex = 19;
             // 
             // txbLevelIntelligence
             // 
             this.txbLevelIntelligence.Location = new System.Drawing.Point(186, 353);
             this.txbLevelIntelligence.Name = "txbLevelIntelligence";
-            this.txbLevelIntelligence.Size = new System.Drawing.Size(71, 28);
+            this.txbLevelIntelligence.Size = new System.Drawing.Size(71, 20);
             this.txbLevelIntelligence.TabIndex = 20;
             // 
             // txbLevelCharisma
             // 
             this.txbLevelCharisma.Location = new System.Drawing.Point(263, 353);
             this.txbLevelCharisma.Name = "txbLevelCharisma";
-            this.txbLevelCharisma.Size = new System.Drawing.Size(60, 28);
+            this.txbLevelCharisma.Size = new System.Drawing.Size(60, 20);
             this.txbLevelCharisma.TabIndex = 21;
             // 
             // txbLevelPerception
             // 
             this.txbLevelPerception.Location = new System.Drawing.Point(329, 353);
             this.txbLevelPerception.Name = "txbLevelPerception";
-            this.txbLevelPerception.Size = new System.Drawing.Size(68, 28);
+            this.txbLevelPerception.Size = new System.Drawing.Size(68, 20);
             this.txbLevelPerception.TabIndex = 22;
             // 
             // txbLevelFortitude
             // 
             this.txbLevelFortitude.Location = new System.Drawing.Point(403, 353);
             this.txbLevelFortitude.Name = "txbLevelFortitude";
-            this.txbLevelFortitude.Size = new System.Drawing.Size(61, 28);
+            this.txbLevelFortitude.Size = new System.Drawing.Size(61, 20);
             this.txbLevelFortitude.TabIndex = 23;
             // 
             // txbCapFortitude
             // 
             this.txbCapFortitude.Location = new System.Drawing.Point(403, 387);
             this.txbCapFortitude.Name = "txbCapFortitude";
-            this.txbCapFortitude.Size = new System.Drawing.Size(61, 28);
+            this.txbCapFortitude.Size = new System.Drawing.Size(61, 20);
             this.txbCapFortitude.TabIndex = 29;
             // 
             // txbCapPerception
             // 
             this.txbCapPerception.Location = new System.Drawing.Point(329, 387);
             this.txbCapPerception.Name = "txbCapPerception";
-            this.txbCapPerception.Size = new System.Drawing.Size(68, 28);
+            this.txbCapPerception.Size = new System.Drawing.Size(68, 20);
             this.txbCapPerception.TabIndex = 28;
             // 
             // txbCapCharisma
@@ -954,28 +943,28 @@ namespace Sheltered_2_SE
             this.txbCapCharisma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbCapCharisma.Location = new System.Drawing.Point(263, 387);
             this.txbCapCharisma.Name = "txbCapCharisma";
-            this.txbCapCharisma.Size = new System.Drawing.Size(60, 28);
+            this.txbCapCharisma.Size = new System.Drawing.Size(60, 20);
             this.txbCapCharisma.TabIndex = 27;
             // 
             // txbCapIntelligence
             // 
             this.txbCapIntelligence.Location = new System.Drawing.Point(186, 387);
             this.txbCapIntelligence.Name = "txbCapIntelligence";
-            this.txbCapIntelligence.Size = new System.Drawing.Size(71, 28);
+            this.txbCapIntelligence.Size = new System.Drawing.Size(71, 20);
             this.txbCapIntelligence.TabIndex = 26;
             // 
             // txbCapDexterity
             // 
             this.txbCapDexterity.Location = new System.Drawing.Point(122, 387);
             this.txbCapDexterity.Name = "txbCapDexterity";
-            this.txbCapDexterity.Size = new System.Drawing.Size(58, 28);
+            this.txbCapDexterity.Size = new System.Drawing.Size(58, 20);
             this.txbCapDexterity.TabIndex = 25;
             // 
             // txbCapStrenght
             // 
             this.txbCapStrenght.Location = new System.Drawing.Point(59, 387);
             this.txbCapStrenght.Name = "txbCapStrenght";
-            this.txbCapStrenght.Size = new System.Drawing.Size(59, 28);
+            this.txbCapStrenght.Size = new System.Drawing.Size(59, 20);
             this.txbCapStrenght.TabIndex = 24;
             // 
             // lblDebug
@@ -983,7 +972,7 @@ namespace Sheltered_2_SE
             this.lblDebug.AutoSize = true;
             this.lblDebug.Location = new System.Drawing.Point(5, 441);
             this.lblDebug.Name = "lblDebug";
-            this.lblDebug.Size = new System.Drawing.Size(44, 21);
+            this.lblDebug.Size = new System.Drawing.Size(48, 13);
             this.lblDebug.TabIndex = 30;
             this.lblDebug.Text = "DEBUG:";
             // 
@@ -991,7 +980,7 @@ namespace Sheltered_2_SE
             // 
             this.btnUnstuckCharacter.Location = new System.Drawing.Point(8, 457);
             this.btnUnstuckCharacter.Name = "btnUnstuckCharacter";
-            this.btnUnstuckCharacter.Size = new System.Drawing.Size(106, 23);
+            this.btnUnstuckCharacter.Size = new System.Drawing.Size(139, 23);
             this.btnUnstuckCharacter.TabIndex = 31;
             this.btnUnstuckCharacter.Text = "Unstuck Character";
             this.btnUnstuckCharacter.UseVisualStyleBackColor = true;
@@ -1000,10 +989,9 @@ namespace Sheltered_2_SE
             // lblWarning
             // 
             this.lblWarning.AutoSize = true;
-            this.lblWarning.Font = new System.Drawing.Font("Bebas Neue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWarning.Location = new System.Drawing.Point(353, 442);
+            this.lblWarning.Location = new System.Drawing.Point(312, 442);
             this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(284, 76);
+            this.lblWarning.Size = new System.Drawing.Size(280, 52);
             this.lblWarning.TabIndex = 33;
             this.lblWarning.Text = "WARNING\r\nThe \"Save Character\" doesn\'t save the XML, it just saves\r\nthe changes. W" +
     "hen done you still have to save using the \r\nmenu \"File\" then save\r\n";
@@ -1038,7 +1026,6 @@ namespace Sheltered_2_SE
             this.tabControlMain.Controls.Add(this.unlockingTab);
             this.tabControlMain.Controls.Add(this.debugTab);
             this.tabControlMain.Controls.Add(this.shelterDesignerTab);
-            this.tabControlMain.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControlMain.Location = new System.Drawing.Point(317, 48);
             this.tabControlMain.Name = "tabControlMain";
@@ -1093,17 +1080,16 @@ namespace Sheltered_2_SE
             this.characterStatsTab.Controls.Add(this.lblLevel);
             this.characterStatsTab.Controls.Add(this.txbLevelStrenght);
             this.characterStatsTab.Controls.Add(this.lblCap);
-            this.characterStatsTab.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.characterStatsTab.Location = new System.Drawing.Point(4, 30);
+            this.characterStatsTab.Location = new System.Drawing.Point(4, 22);
             this.characterStatsTab.Name = "characterStatsTab";
             this.characterStatsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.characterStatsTab.Size = new System.Drawing.Size(659, 548);
+            this.characterStatsTab.Size = new System.Drawing.Size(659, 556);
             this.characterStatsTab.TabIndex = 0;
             this.characterStatsTab.Text = "Characters Stats";
             // 
             // btnMaxStats
             // 
-            this.btnMaxStats.Location = new System.Drawing.Point(135, 299);
+            this.btnMaxStats.Location = new System.Drawing.Point(135, 287);
             this.btnMaxStats.Name = "btnMaxStats";
             this.btnMaxStats.Size = new System.Drawing.Size(72, 26);
             this.btnMaxStats.TabIndex = 42;
@@ -1116,16 +1102,15 @@ namespace Sheltered_2_SE
             this.lblAnimTimeValue.AutoSize = true;
             this.lblAnimTimeValue.Location = new System.Drawing.Point(67, 506);
             this.lblAnimTimeValue.Name = "lblAnimTimeValue";
-            this.lblAnimTimeValue.Size = new System.Drawing.Size(0, 21);
+            this.lblAnimTimeValue.Size = new System.Drawing.Size(0, 13);
             this.lblAnimTimeValue.TabIndex = 41;
             // 
             // lblAnimTime
             // 
             this.lblAnimTime.AutoSize = true;
-            this.lblAnimTime.Font = new System.Drawing.Font("Bebas Neue", 10F);
             this.lblAnimTime.Location = new System.Drawing.Point(6, 506);
             this.lblAnimTime.Name = "lblAnimTime";
-            this.lblAnimTime.Size = new System.Drawing.Size(55, 18);
+            this.lblAnimTime.Size = new System.Drawing.Size(56, 13);
             this.lblAnimTime.TabIndex = 40;
             this.lblAnimTime.Text = "AnimTime:";
             // 
@@ -1134,17 +1119,16 @@ namespace Sheltered_2_SE
             this.lblAnimHashValue.AutoSize = true;
             this.lblAnimHashValue.Location = new System.Drawing.Point(67, 483);
             this.lblAnimHashValue.Name = "lblAnimHashValue";
-            this.lblAnimHashValue.Size = new System.Drawing.Size(22, 21);
+            this.lblAnimHashValue.Size = new System.Drawing.Size(19, 13);
             this.lblAnimHashValue.TabIndex = 39;
             this.lblAnimHashValue.Text = "    ";
             // 
             // lblAnimHash
             // 
             this.lblAnimHash.AutoSize = true;
-            this.lblAnimHash.Font = new System.Drawing.Font("Bebas Neue", 10F);
             this.lblAnimHash.Location = new System.Drawing.Point(6, 483);
             this.lblAnimHash.Name = "lblAnimHash";
-            this.lblAnimHash.Size = new System.Drawing.Size(57, 18);
+            this.lblAnimHash.Size = new System.Drawing.Size(58, 13);
             this.lblAnimHash.TabIndex = 38;
             this.lblAnimHash.Text = "AnimHash:";
             // 
@@ -1153,7 +1137,7 @@ namespace Sheltered_2_SE
             this.cBHasBeenDefibbed.AutoSize = true;
             this.cBHasBeenDefibbed.Location = new System.Drawing.Point(288, 207);
             this.cBHasBeenDefibbed.Name = "cBHasBeenDefibbed";
-            this.cBHasBeenDefibbed.Size = new System.Drawing.Size(146, 25);
+            this.cBHasBeenDefibbed.Size = new System.Drawing.Size(126, 17);
             this.cBHasBeenDefibbed.TabIndex = 37;
             this.cBHasBeenDefibbed.Text = "Has been defibrilated";
             this.cBHasBeenDefibbed.UseVisualStyleBackColor = true;
@@ -1163,7 +1147,7 @@ namespace Sheltered_2_SE
             this.cBInteractingWithObj.AutoSize = true;
             this.cBInteractingWithObj.Location = new System.Drawing.Point(126, 207);
             this.cBInteractingWithObj.Name = "cBInteractingWithObj";
-            this.cBInteractingWithObj.Size = new System.Drawing.Size(156, 25);
+            this.cBInteractingWithObj.Size = new System.Drawing.Size(132, 17);
             this.cBInteractingWithObj.TabIndex = 36;
             this.cBInteractingWithObj.Text = "Interacting with Object";
             this.cBInteractingWithObj.UseVisualStyleBackColor = true;
@@ -1173,7 +1157,7 @@ namespace Sheltered_2_SE
             this.cBInteracting.AutoSize = true;
             this.cBInteracting.Location = new System.Drawing.Point(29, 207);
             this.cBInteracting.Name = "cBInteracting";
-            this.cBInteracting.Size = new System.Drawing.Size(91, 25);
+            this.cBInteracting.Size = new System.Drawing.Size(76, 17);
             this.cBInteracting.TabIndex = 35;
             this.cBInteracting.Text = "Interacting";
             this.cBInteracting.UseVisualStyleBackColor = true;
@@ -1182,7 +1166,7 @@ namespace Sheltered_2_SE
             // 
             this.pbxWarning.BackColor = System.Drawing.SystemColors.Control;
             this.pbxWarning.Image = ((System.Drawing.Image)(resources.GetObject("pbxWarning.Image")));
-            this.pbxWarning.Location = new System.Drawing.Point(316, 442);
+            this.pbxWarning.Location = new System.Drawing.Point(275, 442);
             this.pbxWarning.Name = "pbxWarning";
             this.pbxWarning.Size = new System.Drawing.Size(31, 27);
             this.pbxWarning.TabIndex = 32;
@@ -1194,11 +1178,10 @@ namespace Sheltered_2_SE
             this.characterSkillsTab.Controls.Add(this.tabControlSkills);
             this.characterSkillsTab.Controls.Add(this.lblSkillsCharacterName);
             this.characterSkillsTab.Controls.Add(this.cbxSkillsCharacterSelect);
-            this.characterSkillsTab.Font = new System.Drawing.Font("Bebas Neue", 10.25F);
-            this.characterSkillsTab.Location = new System.Drawing.Point(4, 30);
+            this.characterSkillsTab.Location = new System.Drawing.Point(4, 22);
             this.characterSkillsTab.Name = "characterSkillsTab";
             this.characterSkillsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.characterSkillsTab.Size = new System.Drawing.Size(659, 548);
+            this.characterSkillsTab.Size = new System.Drawing.Size(659, 556);
             this.characterSkillsTab.TabIndex = 1;
             this.characterSkillsTab.Text = "Character Skills";
             // 
@@ -1210,7 +1193,6 @@ namespace Sheltered_2_SE
             this.tabControlSkills.Controls.Add(this.skillPageCha);
             this.tabControlSkills.Controls.Add(this.skillPagePer);
             this.tabControlSkills.Controls.Add(this.skillPageFor);
-            this.tabControlSkills.Font = new System.Drawing.Font("Bebas Neue", 11F);
             this.tabControlSkills.HotTrack = true;
             this.tabControlSkills.ImageList = this.tabIcons;
             this.tabControlSkills.ItemSize = new System.Drawing.Size(70, 18);
@@ -1272,10 +1254,9 @@ namespace Sheltered_2_SE
             // lblPointsAvailableStrValue
             // 
             this.lblPointsAvailableStrValue.AutoSize = true;
-            this.lblPointsAvailableStrValue.Font = new System.Drawing.Font("Bebas Neue", 13F);
             this.lblPointsAvailableStrValue.Location = new System.Drawing.Point(584, 246);
             this.lblPointsAvailableStrValue.Name = "lblPointsAvailableStrValue";
-            this.lblPointsAvailableStrValue.Size = new System.Drawing.Size(0, 23);
+            this.lblPointsAvailableStrValue.Size = new System.Drawing.Size(0, 13);
             this.lblPointsAvailableStrValue.TabIndex = 71;
             // 
             // lblPointsAvailableStrName
@@ -1283,7 +1264,7 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableStrName.AutoSize = true;
             this.lblPointsAvailableStrName.Location = new System.Drawing.Point(546, 224);
             this.lblPointsAvailableStrName.Name = "lblPointsAvailableStrName";
-            this.lblPointsAvailableStrName.Size = new System.Drawing.Size(91, 19);
+            this.lblPointsAvailableStrName.Size = new System.Drawing.Size(82, 13);
             this.lblPointsAvailableStrName.TabIndex = 70;
             this.lblPointsAvailableStrName.Text = "Points Available";
             // 
@@ -1516,30 +1497,27 @@ namespace Sheltered_2_SE
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(5, 232);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 27);
+            this.label8.Size = new System.Drawing.Size(41, 13);
             this.label8.TabIndex = 27;
             this.label8.Text = "TIER 3";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(6, 136);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 27);
+            this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 26;
             this.label7.Text = "TIER 2";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 27);
+            this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 18;
             this.label6.Text = "TIER 1";
             // 
@@ -1668,10 +1646,9 @@ namespace Sheltered_2_SE
             // lblPointsAvailableDexValue
             // 
             this.lblPointsAvailableDexValue.AutoSize = true;
-            this.lblPointsAvailableDexValue.Font = new System.Drawing.Font("Bebas Neue", 13F);
             this.lblPointsAvailableDexValue.Location = new System.Drawing.Point(584, 246);
             this.lblPointsAvailableDexValue.Name = "lblPointsAvailableDexValue";
-            this.lblPointsAvailableDexValue.Size = new System.Drawing.Size(0, 23);
+            this.lblPointsAvailableDexValue.Size = new System.Drawing.Size(0, 13);
             this.lblPointsAvailableDexValue.TabIndex = 128;
             // 
             // lblPointsAvailableDexName
@@ -1679,37 +1656,34 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableDexName.AutoSize = true;
             this.lblPointsAvailableDexName.Location = new System.Drawing.Point(546, 224);
             this.lblPointsAvailableDexName.Name = "lblPointsAvailableDexName";
-            this.lblPointsAvailableDexName.Size = new System.Drawing.Size(91, 19);
+            this.lblPointsAvailableDexName.Size = new System.Drawing.Size(82, 13);
             this.lblPointsAvailableDexName.TabIndex = 127;
             this.lblPointsAvailableDexName.Text = "Points Available";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(5, 232);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 27);
+            this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 84;
             this.label9.Text = "TIER 3";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(6, 136);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 27);
+            this.label10.Size = new System.Drawing.Size(41, 13);
             this.label10.TabIndex = 83;
             this.label10.Text = "TIER 2";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(6, 40);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(57, 27);
+            this.label11.Size = new System.Drawing.Size(41, 13);
             this.label11.TabIndex = 82;
             this.label11.Text = "TIER 1";
             // 
@@ -2030,10 +2004,9 @@ namespace Sheltered_2_SE
             // lblPointsAvailableIntValue
             // 
             this.lblPointsAvailableIntValue.AutoSize = true;
-            this.lblPointsAvailableIntValue.Font = new System.Drawing.Font("Bebas Neue", 13F);
             this.lblPointsAvailableIntValue.Location = new System.Drawing.Point(584, 246);
             this.lblPointsAvailableIntValue.Name = "lblPointsAvailableIntValue";
-            this.lblPointsAvailableIntValue.Size = new System.Drawing.Size(0, 23);
+            this.lblPointsAvailableIntValue.Size = new System.Drawing.Size(0, 13);
             this.lblPointsAvailableIntValue.TabIndex = 129;
             // 
             // lblPointsAvailableIntName
@@ -2041,7 +2014,7 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableIntName.AutoSize = true;
             this.lblPointsAvailableIntName.Location = new System.Drawing.Point(546, 224);
             this.lblPointsAvailableIntName.Name = "lblPointsAvailableIntName";
-            this.lblPointsAvailableIntName.Size = new System.Drawing.Size(91, 19);
+            this.lblPointsAvailableIntName.Size = new System.Drawing.Size(82, 13);
             this.lblPointsAvailableIntName.TabIndex = 128;
             this.lblPointsAvailableIntName.Text = "Points Available";
             this.lblPointsAvailableIntName.Click += new System.EventHandler(this.label27_Click);
@@ -2049,30 +2022,27 @@ namespace Sheltered_2_SE
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(5, 232);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 27);
+            this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 84;
             this.label12.Text = "TIER 3";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(6, 136);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(57, 27);
+            this.label13.Size = new System.Drawing.Size(41, 13);
             this.label13.TabIndex = 83;
             this.label13.Text = "TIER 2";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(6, 40);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(57, 27);
+            this.label14.Size = new System.Drawing.Size(41, 13);
             this.label14.TabIndex = 82;
             this.label14.Text = "TIER 1";
             // 
@@ -2490,10 +2460,9 @@ namespace Sheltered_2_SE
             // lblPointsAvailableChaValue
             // 
             this.lblPointsAvailableChaValue.AutoSize = true;
-            this.lblPointsAvailableChaValue.Font = new System.Drawing.Font("Bebas Neue", 13F);
             this.lblPointsAvailableChaValue.Location = new System.Drawing.Point(584, 246);
             this.lblPointsAvailableChaValue.Name = "lblPointsAvailableChaValue";
-            this.lblPointsAvailableChaValue.Size = new System.Drawing.Size(0, 23);
+            this.lblPointsAvailableChaValue.Size = new System.Drawing.Size(0, 13);
             this.lblPointsAvailableChaValue.TabIndex = 127;
             // 
             // lblPointsAvailableChaName
@@ -2501,37 +2470,34 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableChaName.AutoSize = true;
             this.lblPointsAvailableChaName.Location = new System.Drawing.Point(546, 224);
             this.lblPointsAvailableChaName.Name = "lblPointsAvailableChaName";
-            this.lblPointsAvailableChaName.Size = new System.Drawing.Size(91, 19);
+            this.lblPointsAvailableChaName.Size = new System.Drawing.Size(82, 13);
             this.lblPointsAvailableChaName.TabIndex = 126;
             this.lblPointsAvailableChaName.Text = "Points Available";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(5, 232);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(57, 27);
+            this.label15.Size = new System.Drawing.Size(41, 13);
             this.label15.TabIndex = 84;
             this.label15.Text = "TIER 3";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(6, 136);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(57, 27);
+            this.label16.Size = new System.Drawing.Size(41, 13);
             this.label16.TabIndex = 83;
             this.label16.Text = "TIER 2";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(6, 40);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(57, 27);
+            this.label17.Size = new System.Drawing.Size(41, 13);
             this.label17.TabIndex = 82;
             this.label17.Text = "TIER 1";
             // 
@@ -2873,10 +2839,9 @@ namespace Sheltered_2_SE
             // lblPointsAvailablePerValue
             // 
             this.lblPointsAvailablePerValue.AutoSize = true;
-            this.lblPointsAvailablePerValue.Font = new System.Drawing.Font("Bebas Neue", 13F);
             this.lblPointsAvailablePerValue.Location = new System.Drawing.Point(584, 246);
             this.lblPointsAvailablePerValue.Name = "lblPointsAvailablePerValue";
-            this.lblPointsAvailablePerValue.Size = new System.Drawing.Size(0, 23);
+            this.lblPointsAvailablePerValue.Size = new System.Drawing.Size(0, 13);
             this.lblPointsAvailablePerValue.TabIndex = 130;
             // 
             // lblPointsAvailablePerName
@@ -2884,37 +2849,34 @@ namespace Sheltered_2_SE
             this.lblPointsAvailablePerName.AutoSize = true;
             this.lblPointsAvailablePerName.Location = new System.Drawing.Point(546, 224);
             this.lblPointsAvailablePerName.Name = "lblPointsAvailablePerName";
-            this.lblPointsAvailablePerName.Size = new System.Drawing.Size(91, 19);
+            this.lblPointsAvailablePerName.Size = new System.Drawing.Size(82, 13);
             this.lblPointsAvailablePerName.TabIndex = 129;
             this.lblPointsAvailablePerName.Text = "Points Available";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(5, 232);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(57, 27);
+            this.label18.Size = new System.Drawing.Size(41, 13);
             this.label18.TabIndex = 84;
             this.label18.Text = "TIER 3";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(6, 136);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(57, 27);
+            this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 83;
             this.label19.Text = "TIER 2";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(6, 40);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(57, 27);
+            this.label20.Size = new System.Drawing.Size(41, 13);
             this.label20.TabIndex = 82;
             this.label20.Text = "TIER 1";
             // 
@@ -3346,10 +3308,9 @@ namespace Sheltered_2_SE
             // lblPointsAvailableForValue
             // 
             this.lblPointsAvailableForValue.AutoSize = true;
-            this.lblPointsAvailableForValue.Font = new System.Drawing.Font("Bebas Neue", 13F);
             this.lblPointsAvailableForValue.Location = new System.Drawing.Point(584, 246);
             this.lblPointsAvailableForValue.Name = "lblPointsAvailableForValue";
-            this.lblPointsAvailableForValue.Size = new System.Drawing.Size(0, 23);
+            this.lblPointsAvailableForValue.Size = new System.Drawing.Size(0, 13);
             this.lblPointsAvailableForValue.TabIndex = 130;
             // 
             // lblPointsAvailableForName
@@ -3357,37 +3318,34 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableForName.AutoSize = true;
             this.lblPointsAvailableForName.Location = new System.Drawing.Point(546, 224);
             this.lblPointsAvailableForName.Name = "lblPointsAvailableForName";
-            this.lblPointsAvailableForName.Size = new System.Drawing.Size(91, 19);
+            this.lblPointsAvailableForName.Size = new System.Drawing.Size(82, 13);
             this.lblPointsAvailableForName.TabIndex = 129;
             this.lblPointsAvailableForName.Text = "Points Available";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(5, 232);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(57, 27);
+            this.label21.Size = new System.Drawing.Size(41, 13);
             this.label21.TabIndex = 84;
             this.label21.Text = "TIER 3";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(6, 136);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(57, 27);
+            this.label22.Size = new System.Drawing.Size(41, 13);
             this.label22.TabIndex = 83;
             this.label22.Text = "TIER 2";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(6, 40);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(57, 27);
+            this.label23.Size = new System.Drawing.Size(41, 13);
             this.label23.TabIndex = 82;
             this.label23.Text = "TIER 1";
             // 
@@ -3838,20 +3796,18 @@ namespace Sheltered_2_SE
             // lblSkillsCharacterName
             // 
             this.lblSkillsCharacterName.AutoSize = true;
-            this.lblSkillsCharacterName.Font = new System.Drawing.Font("Bebas Neue", 20.25F);
             this.lblSkillsCharacterName.Location = new System.Drawing.Point(194, 6);
             this.lblSkillsCharacterName.Name = "lblSkillsCharacterName";
-            this.lblSkillsCharacterName.Size = new System.Drawing.Size(162, 35);
+            this.lblSkillsCharacterName.Size = new System.Drawing.Size(84, 13);
             this.lblSkillsCharacterName.TabIndex = 10;
             this.lblSkillsCharacterName.Text = "Character Name";
             // 
             // cbxSkillsCharacterSelect
             // 
-            this.cbxSkillsCharacterSelect.Font = new System.Drawing.Font("Bebas Neue", 12.25F);
             this.cbxSkillsCharacterSelect.FormattingEnabled = true;
             this.cbxSkillsCharacterSelect.Location = new System.Drawing.Point(35, 6);
             this.cbxSkillsCharacterSelect.Name = "cbxSkillsCharacterSelect";
-            this.cbxSkillsCharacterSelect.Size = new System.Drawing.Size(128, 29);
+            this.cbxSkillsCharacterSelect.Size = new System.Drawing.Size(128, 21);
             this.cbxSkillsCharacterSelect.TabIndex = 9;
             this.cbxSkillsCharacterSelect.Tag = "";
             this.cbxSkillsCharacterSelect.Text = "Select Character";
@@ -3860,9 +3816,9 @@ namespace Sheltered_2_SE
             // petsTab
             // 
             this.petsTab.Controls.Add(this.label2);
-            this.petsTab.Location = new System.Drawing.Point(4, 30);
+            this.petsTab.Location = new System.Drawing.Point(4, 22);
             this.petsTab.Name = "petsTab";
-            this.petsTab.Size = new System.Drawing.Size(659, 548);
+            this.petsTab.Size = new System.Drawing.Size(659, 556);
             this.petsTab.TabIndex = 2;
             this.petsTab.Text = "Pets";
             this.petsTab.UseVisualStyleBackColor = true;
@@ -3870,10 +3826,9 @@ namespace Sheltered_2_SE
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(69, 241);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(394, 74);
+            this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "To be added";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -3881,9 +3836,9 @@ namespace Sheltered_2_SE
             // deseasesTab
             // 
             this.deseasesTab.Controls.Add(this.label3);
-            this.deseasesTab.Location = new System.Drawing.Point(4, 30);
+            this.deseasesTab.Location = new System.Drawing.Point(4, 22);
             this.deseasesTab.Name = "deseasesTab";
-            this.deseasesTab.Size = new System.Drawing.Size(659, 548);
+            this.deseasesTab.Size = new System.Drawing.Size(659, 556);
             this.deseasesTab.TabIndex = 3;
             this.deseasesTab.Text = "Deseases/Infestations";
             this.deseasesTab.UseVisualStyleBackColor = true;
@@ -3891,10 +3846,9 @@ namespace Sheltered_2_SE
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(69, 241);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(411, 74);
+            this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "To be added ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -3962,11 +3916,11 @@ namespace Sheltered_2_SE
             this.unlockingTab.Controls.Add(this.label28);
             this.unlockingTab.Controls.Add(this.label25);
             this.unlockingTab.Controls.Add(this.label24);
-            this.unlockingTab.Controls.Add(this.label4);
-            this.unlockingTab.Controls.Add(this.label1);
-            this.unlockingTab.Location = new System.Drawing.Point(4, 30);
+            this.unlockingTab.Controls.Add(this.lblWorkbench);
+            this.unlockingTab.Controls.Add(this.lblDraftingTable);
+            this.unlockingTab.Location = new System.Drawing.Point(4, 22);
             this.unlockingTab.Name = "unlockingTab";
-            this.unlockingTab.Size = new System.Drawing.Size(659, 548);
+            this.unlockingTab.Size = new System.Drawing.Size(659, 556);
             this.unlockingTab.TabIndex = 4;
             this.unlockingTab.Text = " Unlock";
             this.unlockingTab.Click += new System.EventHandler(this.unlockingTab_Click);
@@ -3974,10 +3928,9 @@ namespace Sheltered_2_SE
             // cbxDamageAmplifier
             // 
             this.cbxDamageAmplifier.AutoSize = true;
-            this.cbxDamageAmplifier.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxDamageAmplifier.Location = new System.Drawing.Point(146, 349);
+            this.cbxDamageAmplifier.Location = new System.Drawing.Point(146, 353);
             this.cbxDamageAmplifier.Name = "cbxDamageAmplifier";
-            this.cbxDamageAmplifier.Size = new System.Drawing.Size(111, 22);
+            this.cbxDamageAmplifier.Size = new System.Drawing.Size(107, 17);
             this.cbxDamageAmplifier.TabIndex = 82;
             this.cbxDamageAmplifier.Text = "Damage amplifier";
             this.cbxDamageAmplifier.UseVisualStyleBackColor = true;
@@ -3985,10 +3938,9 @@ namespace Sheltered_2_SE
             // cbxMedicineCrafting
             // 
             this.cbxMedicineCrafting.AutoSize = true;
-            this.cbxMedicineCrafting.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxMedicineCrafting.Location = new System.Drawing.Point(146, 332);
+            this.cbxMedicineCrafting.Location = new System.Drawing.Point(146, 335);
             this.cbxMedicineCrafting.Name = "cbxMedicineCrafting";
-            this.cbxMedicineCrafting.Size = new System.Drawing.Size(111, 22);
+            this.cbxMedicineCrafting.Size = new System.Drawing.Size(107, 17);
             this.cbxMedicineCrafting.TabIndex = 81;
             this.cbxMedicineCrafting.Text = "Medicine crafting";
             this.cbxMedicineCrafting.UseVisualStyleBackColor = true;
@@ -3996,10 +3948,9 @@ namespace Sheltered_2_SE
             // cbxBpSolarPanel
             // 
             this.cbxBpSolarPanel.AutoSize = true;
-            this.cbxBpSolarPanel.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxBpSolarPanel.Location = new System.Drawing.Point(256, 211);
+            this.cbxBpSolarPanel.Location = new System.Drawing.Point(290, 214);
             this.cbxBpSolarPanel.Name = "cbxBpSolarPanel";
-            this.cbxBpSolarPanel.Size = new System.Drawing.Size(84, 22);
+            this.cbxBpSolarPanel.Size = new System.Drawing.Size(80, 17);
             this.cbxBpSolarPanel.TabIndex = 80;
             this.cbxBpSolarPanel.Text = "Solar Panel";
             this.cbxBpSolarPanel.UseVisualStyleBackColor = true;
@@ -4007,10 +3958,9 @@ namespace Sheltered_2_SE
             // cbxBpRecycler
             // 
             this.cbxBpRecycler.AutoSize = true;
-            this.cbxBpRecycler.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxBpRecycler.Location = new System.Drawing.Point(256, 192);
+            this.cbxBpRecycler.Location = new System.Drawing.Point(290, 194);
             this.cbxBpRecycler.Name = "cbxBpRecycler";
-            this.cbxBpRecycler.Size = new System.Drawing.Size(70, 22);
+            this.cbxBpRecycler.Size = new System.Drawing.Size(68, 17);
             this.cbxBpRecycler.TabIndex = 79;
             this.cbxBpRecycler.Text = "Recycler";
             this.cbxBpRecycler.UseVisualStyleBackColor = true;
@@ -4018,10 +3968,9 @@ namespace Sheltered_2_SE
             // cbxBpQuantumBattery
             // 
             this.cbxBpQuantumBattery.AutoSize = true;
-            this.cbxBpQuantumBattery.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxBpQuantumBattery.Location = new System.Drawing.Point(146, 193);
+            this.cbxBpQuantumBattery.Location = new System.Drawing.Point(160, 195);
             this.cbxBpQuantumBattery.Name = "cbxBpQuantumBattery";
-            this.cbxBpQuantumBattery.Size = new System.Drawing.Size(110, 22);
+            this.cbxBpQuantumBattery.Size = new System.Drawing.Size(105, 17);
             this.cbxBpQuantumBattery.TabIndex = 78;
             this.cbxBpQuantumBattery.Text = "Quantum Battery";
             this.cbxBpQuantumBattery.UseVisualStyleBackColor = true;
@@ -4029,10 +3978,9 @@ namespace Sheltered_2_SE
             // cbxBpIndustrialGenerator
             // 
             this.cbxBpIndustrialGenerator.AutoSize = true;
-            this.cbxBpIndustrialGenerator.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxBpIndustrialGenerator.Location = new System.Drawing.Point(12, 193);
+            this.cbxBpIndustrialGenerator.Location = new System.Drawing.Point(12, 195);
             this.cbxBpIndustrialGenerator.Name = "cbxBpIndustrialGenerator";
-            this.cbxBpIndustrialGenerator.Size = new System.Drawing.Size(129, 22);
+            this.cbxBpIndustrialGenerator.Size = new System.Drawing.Size(118, 17);
             this.cbxBpIndustrialGenerator.TabIndex = 77;
             this.cbxBpIndustrialGenerator.Text = "Industrial Generator";
             this.cbxBpIndustrialGenerator.UseVisualStyleBackColor = true;
@@ -4040,10 +3988,9 @@ namespace Sheltered_2_SE
             // cbxBpDefibrilator
             // 
             this.cbxBpDefibrilator.AutoSize = true;
-            this.cbxBpDefibrilator.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxBpDefibrilator.Location = new System.Drawing.Point(146, 211);
+            this.cbxBpDefibrilator.Location = new System.Drawing.Point(160, 214);
             this.cbxBpDefibrilator.Name = "cbxBpDefibrilator";
-            this.cbxBpDefibrilator.Size = new System.Drawing.Size(88, 22);
+            this.cbxBpDefibrilator.Size = new System.Drawing.Size(76, 17);
             this.cbxBpDefibrilator.TabIndex = 75;
             this.cbxBpDefibrilator.Text = "Defibrilator";
             this.cbxBpDefibrilator.UseVisualStyleBackColor = true;
@@ -4051,10 +3998,9 @@ namespace Sheltered_2_SE
             // cbxBpLaboratory
             // 
             this.cbxBpLaboratory.AutoSize = true;
-            this.cbxBpLaboratory.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxBpLaboratory.Location = new System.Drawing.Point(256, 175);
+            this.cbxBpLaboratory.Location = new System.Drawing.Point(290, 176);
             this.cbxBpLaboratory.Name = "cbxBpLaboratory";
-            this.cbxBpLaboratory.Size = new System.Drawing.Size(84, 22);
+            this.cbxBpLaboratory.Size = new System.Drawing.Size(76, 17);
             this.cbxBpLaboratory.TabIndex = 74;
             this.cbxBpLaboratory.Text = "Laboratory";
             this.cbxBpLaboratory.UseVisualStyleBackColor = true;
@@ -4062,10 +4008,9 @@ namespace Sheltered_2_SE
             // cbxBpEfficientPlanter
             // 
             this.cbxBpEfficientPlanter.AutoSize = true;
-            this.cbxBpEfficientPlanter.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxBpEfficientPlanter.Location = new System.Drawing.Point(146, 176);
+            this.cbxBpEfficientPlanter.Location = new System.Drawing.Point(160, 177);
             this.cbxBpEfficientPlanter.Name = "cbxBpEfficientPlanter";
-            this.cbxBpEfficientPlanter.Size = new System.Drawing.Size(109, 22);
+            this.cbxBpEfficientPlanter.Size = new System.Drawing.Size(100, 17);
             this.cbxBpEfficientPlanter.TabIndex = 73;
             this.cbxBpEfficientPlanter.Text = "Efficient Planter";
             this.cbxBpEfficientPlanter.UseVisualStyleBackColor = true;
@@ -4073,10 +4018,9 @@ namespace Sheltered_2_SE
             // cbxBpFlashbangMine
             // 
             this.cbxBpFlashbangMine.AutoSize = true;
-            this.cbxBpFlashbangMine.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxBpFlashbangMine.Location = new System.Drawing.Point(12, 176);
+            this.cbxBpFlashbangMine.Location = new System.Drawing.Point(12, 177);
             this.cbxBpFlashbangMine.Name = "cbxBpFlashbangMine";
-            this.cbxBpFlashbangMine.Size = new System.Drawing.Size(101, 22);
+            this.cbxBpFlashbangMine.Size = new System.Drawing.Size(101, 17);
             this.cbxBpFlashbangMine.TabIndex = 72;
             this.cbxBpFlashbangMine.Text = "Flashbang Mine";
             this.cbxBpFlashbangMine.UseVisualStyleBackColor = true;
@@ -4084,10 +4028,9 @@ namespace Sheltered_2_SE
             // cbxBpMedicalBed
             // 
             this.cbxBpMedicalBed.AutoSize = true;
-            this.cbxBpMedicalBed.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxBpMedicalBed.Location = new System.Drawing.Point(12, 211);
+            this.cbxBpMedicalBed.Location = new System.Drawing.Point(12, 214);
             this.cbxBpMedicalBed.Name = "cbxBpMedicalBed";
-            this.cbxBpMedicalBed.Size = new System.Drawing.Size(84, 22);
+            this.cbxBpMedicalBed.Size = new System.Drawing.Size(85, 17);
             this.cbxBpMedicalBed.TabIndex = 71;
             this.cbxBpMedicalBed.Text = "Medical Bed";
             this.cbxBpMedicalBed.UseVisualStyleBackColor = true;
@@ -4095,10 +4038,9 @@ namespace Sheltered_2_SE
             // cbxBpElectricityTrap
             // 
             this.cbxBpElectricityTrap.AutoSize = true;
-            this.cbxBpElectricityTrap.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxBpElectricityTrap.Location = new System.Drawing.Point(256, 158);
+            this.cbxBpElectricityTrap.Location = new System.Drawing.Point(290, 158);
             this.cbxBpElectricityTrap.Name = "cbxBpElectricityTrap";
-            this.cbxBpElectricityTrap.Size = new System.Drawing.Size(104, 22);
+            this.cbxBpElectricityTrap.Size = new System.Drawing.Size(92, 17);
             this.cbxBpElectricityTrap.TabIndex = 70;
             this.cbxBpElectricityTrap.Text = "Electricity trap";
             this.cbxBpElectricityTrap.UseVisualStyleBackColor = true;
@@ -4106,10 +4048,9 @@ namespace Sheltered_2_SE
             // cbxBpGasMine
             // 
             this.cbxBpGasMine.AutoSize = true;
-            this.cbxBpGasMine.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxBpGasMine.Location = new System.Drawing.Point(146, 159);
+            this.cbxBpGasMine.Location = new System.Drawing.Point(160, 159);
             this.cbxBpGasMine.Name = "cbxBpGasMine";
-            this.cbxBpGasMine.Size = new System.Drawing.Size(67, 22);
+            this.cbxBpGasMine.Size = new System.Drawing.Size(68, 17);
             this.cbxBpGasMine.TabIndex = 69;
             this.cbxBpGasMine.Text = "gas mine";
             this.cbxBpGasMine.UseVisualStyleBackColor = true;
@@ -4117,10 +4058,9 @@ namespace Sheltered_2_SE
             // cbxBpBatteryBank
             // 
             this.cbxBpBatteryBank.AutoSize = true;
-            this.cbxBpBatteryBank.Font = new System.Drawing.Font("Bebas Neue", 10F);
             this.cbxBpBatteryBank.Location = new System.Drawing.Point(12, 159);
             this.cbxBpBatteryBank.Name = "cbxBpBatteryBank";
-            this.cbxBpBatteryBank.Size = new System.Drawing.Size(91, 22);
+            this.cbxBpBatteryBank.Size = new System.Drawing.Size(86, 17);
             this.cbxBpBatteryBank.TabIndex = 68;
             this.cbxBpBatteryBank.Text = "Battery bank";
             this.cbxBpBatteryBank.UseVisualStyleBackColor = true;
@@ -4128,10 +4068,9 @@ namespace Sheltered_2_SE
             // cbxOtherCarPartsCrafting
             // 
             this.cbxOtherCarPartsCrafting.AutoSize = true;
-            this.cbxOtherCarPartsCrafting.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxOtherCarPartsCrafting.Location = new System.Drawing.Point(146, 313);
+            this.cbxOtherCarPartsCrafting.Location = new System.Drawing.Point(146, 315);
             this.cbxOtherCarPartsCrafting.Name = "cbxOtherCarPartsCrafting";
-            this.cbxOtherCarPartsCrafting.Size = new System.Drawing.Size(116, 22);
+            this.cbxOtherCarPartsCrafting.Size = new System.Drawing.Size(107, 17);
             this.cbxOtherCarPartsCrafting.TabIndex = 63;
             this.cbxOtherCarPartsCrafting.Text = "Car Parts crafting";
             this.cbxOtherCarPartsCrafting.UseVisualStyleBackColor = true;
@@ -4139,10 +4078,9 @@ namespace Sheltered_2_SE
             // cbxOtherGunCrafting
             // 
             this.cbxOtherGunCrafting.AutoSize = true;
-            this.cbxOtherGunCrafting.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxOtherGunCrafting.Location = new System.Drawing.Point(146, 296);
+            this.cbxOtherGunCrafting.Location = new System.Drawing.Point(146, 297);
             this.cbxOtherGunCrafting.Name = "cbxOtherGunCrafting";
-            this.cbxOtherGunCrafting.Size = new System.Drawing.Size(85, 22);
+            this.cbxOtherGunCrafting.Size = new System.Drawing.Size(81, 17);
             this.cbxOtherGunCrafting.TabIndex = 62;
             this.cbxOtherGunCrafting.Text = "Guncrafting";
             this.cbxOtherGunCrafting.UseVisualStyleBackColor = true;
@@ -4150,10 +4088,9 @@ namespace Sheltered_2_SE
             // cbxOtherTrading
             // 
             this.cbxOtherTrading.AutoSize = true;
-            this.cbxOtherTrading.Font = new System.Drawing.Font("Bebas Neue", 10F);
             this.cbxOtherTrading.Location = new System.Drawing.Point(146, 279);
             this.cbxOtherTrading.Name = "cbxOtherTrading";
-            this.cbxOtherTrading.Size = new System.Drawing.Size(127, 22);
+            this.cbxOtherTrading.Size = new System.Drawing.Size(119, 17);
             this.cbxOtherTrading.TabIndex = 60;
             this.cbxOtherTrading.Text = "Better trading Deals";
             this.cbxOtherTrading.UseVisualStyleBackColor = true;
@@ -4162,10 +4099,9 @@ namespace Sheltered_2_SE
             // 
             this.cbxRewardOldQ3.AutoSize = true;
             this.cbxRewardOldQ3.Enabled = false;
-            this.cbxRewardOldQ3.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardOldQ3.Location = new System.Drawing.Point(481, 518);
+            this.cbxRewardOldQ3.Location = new System.Drawing.Point(456, 518);
             this.cbxRewardOldQ3.Name = "cbxRewardOldQ3";
-            this.cbxRewardOldQ3.Size = new System.Drawing.Size(39, 22);
+            this.cbxRewardOldQ3.Size = new System.Drawing.Size(35, 17);
             this.cbxRewardOldQ3.TabIndex = 58;
             this.cbxRewardOldQ3.Text = "---";
             this.cbxRewardOldQ3.UseVisualStyleBackColor = true;
@@ -4174,10 +4110,9 @@ namespace Sheltered_2_SE
             // 
             this.cbxRewardOldQ2.AutoSize = true;
             this.cbxRewardOldQ2.Enabled = false;
-            this.cbxRewardOldQ2.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardOldQ2.Location = new System.Drawing.Point(481, 500);
+            this.cbxRewardOldQ2.Location = new System.Drawing.Point(456, 500);
             this.cbxRewardOldQ2.Name = "cbxRewardOldQ2";
-            this.cbxRewardOldQ2.Size = new System.Drawing.Size(39, 22);
+            this.cbxRewardOldQ2.Size = new System.Drawing.Size(35, 17);
             this.cbxRewardOldQ2.TabIndex = 57;
             this.cbxRewardOldQ2.Text = "---";
             this.cbxRewardOldQ2.UseVisualStyleBackColor = true;
@@ -4186,10 +4121,9 @@ namespace Sheltered_2_SE
             // 
             this.cbxRewardOldQ1.AutoSize = true;
             this.cbxRewardOldQ1.Enabled = false;
-            this.cbxRewardOldQ1.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardOldQ1.Location = new System.Drawing.Point(481, 482);
+            this.cbxRewardOldQ1.Location = new System.Drawing.Point(456, 482);
             this.cbxRewardOldQ1.Name = "cbxRewardOldQ1";
-            this.cbxRewardOldQ1.Size = new System.Drawing.Size(39, 22);
+            this.cbxRewardOldQ1.Size = new System.Drawing.Size(35, 17);
             this.cbxRewardOldQ1.TabIndex = 56;
             this.cbxRewardOldQ1.Text = "---";
             this.cbxRewardOldQ1.UseVisualStyleBackColor = true;
@@ -4197,10 +4131,9 @@ namespace Sheltered_2_SE
             // cbxRewardLosQ3
             // 
             this.cbxRewardLosQ3.AutoSize = true;
-            this.cbxRewardLosQ3.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardLosQ3.Location = new System.Drawing.Point(481, 430);
+            this.cbxRewardLosQ3.Location = new System.Drawing.Point(456, 430);
             this.cbxRewardLosQ3.Name = "cbxRewardLosQ3";
-            this.cbxRewardLosQ3.Size = new System.Drawing.Size(111, 22);
+            this.cbxRewardLosQ3.Size = new System.Drawing.Size(110, 17);
             this.cbxRewardLosQ3.TabIndex = 54;
             this.cbxRewardLosQ3.Text = "Vaccine excellent";
             this.cbxRewardLosQ3.UseVisualStyleBackColor = true;
@@ -4208,10 +4141,9 @@ namespace Sheltered_2_SE
             // cbxRewardLosQ2
             // 
             this.cbxRewardLosQ2.AutoSize = true;
-            this.cbxRewardLosQ2.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardLosQ2.Location = new System.Drawing.Point(481, 412);
+            this.cbxRewardLosQ2.Location = new System.Drawing.Point(456, 412);
             this.cbxRewardLosQ2.Name = "cbxRewardLosQ2";
-            this.cbxRewardLosQ2.Size = new System.Drawing.Size(87, 22);
+            this.cbxRewardLosQ2.Size = new System.Drawing.Size(92, 17);
             this.cbxRewardLosQ2.TabIndex = 53;
             this.cbxRewardLosQ2.Text = "Vaccine good";
             this.cbxRewardLosQ2.UseVisualStyleBackColor = true;
@@ -4219,10 +4151,9 @@ namespace Sheltered_2_SE
             // cbxRewardLosQ1
             // 
             this.cbxRewardLosQ1.AutoSize = true;
-            this.cbxRewardLosQ1.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardLosQ1.Location = new System.Drawing.Point(481, 394);
+            this.cbxRewardLosQ1.Location = new System.Drawing.Point(456, 394);
             this.cbxRewardLosQ1.Name = "cbxRewardLosQ1";
-            this.cbxRewardLosQ1.Size = new System.Drawing.Size(87, 22);
+            this.cbxRewardLosQ1.Size = new System.Drawing.Size(89, 17);
             this.cbxRewardLosQ1.TabIndex = 52;
             this.cbxRewardLosQ1.Text = "Vaccine poor";
             this.cbxRewardLosQ1.UseVisualStyleBackColor = true;
@@ -4250,10 +4181,9 @@ namespace Sheltered_2_SE
             // cbxRewardBlackQ3
             // 
             this.cbxRewardBlackQ3.AutoSize = true;
-            this.cbxRewardBlackQ3.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardBlackQ3.Location = new System.Drawing.Point(481, 342);
+            this.cbxRewardBlackQ3.Location = new System.Drawing.Point(456, 342);
             this.cbxRewardBlackQ3.Name = "cbxRewardBlackQ3";
-            this.cbxRewardBlackQ3.Size = new System.Drawing.Size(138, 22);
+            this.cbxRewardBlackQ3.Size = new System.Drawing.Size(122, 17);
             this.cbxRewardBlackQ3.TabIndex = 48;
             this.cbxRewardBlackQ3.Text = "Military Sentry Turret";
             this.cbxRewardBlackQ3.UseVisualStyleBackColor = true;
@@ -4261,10 +4191,9 @@ namespace Sheltered_2_SE
             // cbxRewardBlackQ2
             // 
             this.cbxRewardBlackQ2.AutoSize = true;
-            this.cbxRewardBlackQ2.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardBlackQ2.Location = new System.Drawing.Point(481, 324);
+            this.cbxRewardBlackQ2.Location = new System.Drawing.Point(456, 324);
             this.cbxRewardBlackQ2.Name = "cbxRewardBlackQ2";
-            this.cbxRewardBlackQ2.Size = new System.Drawing.Size(141, 22);
+            this.cbxRewardBlackQ2.Size = new System.Drawing.Size(134, 17);
             this.cbxRewardBlackQ2.TabIndex = 47;
             this.cbxRewardBlackQ2.Text = "Improved Sentry Turret";
             this.cbxRewardBlackQ2.UseVisualStyleBackColor = true;
@@ -4272,10 +4201,9 @@ namespace Sheltered_2_SE
             // cbxRewardBlackQ1
             // 
             this.cbxRewardBlackQ1.AutoSize = true;
-            this.cbxRewardBlackQ1.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardBlackQ1.Location = new System.Drawing.Point(481, 306);
+            this.cbxRewardBlackQ1.Location = new System.Drawing.Point(456, 306);
             this.cbxRewardBlackQ1.Name = "cbxRewardBlackQ1";
-            this.cbxRewardBlackQ1.Size = new System.Drawing.Size(95, 22);
+            this.cbxRewardBlackQ1.Size = new System.Drawing.Size(87, 17);
             this.cbxRewardBlackQ1.TabIndex = 46;
             this.cbxRewardBlackQ1.Text = "Sentry Turret";
             this.cbxRewardBlackQ1.UseVisualStyleBackColor = true;
@@ -4283,10 +4211,9 @@ namespace Sheltered_2_SE
             // cbxRewardNewQ3
             // 
             this.cbxRewardNewQ3.AutoSize = true;
-            this.cbxRewardNewQ3.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardNewQ3.Location = new System.Drawing.Point(481, 255);
+            this.cbxRewardNewQ3.Location = new System.Drawing.Point(456, 255);
             this.cbxRewardNewQ3.Name = "cbxRewardNewQ3";
-            this.cbxRewardNewQ3.Size = new System.Drawing.Size(126, 22);
+            this.cbxRewardNewQ3.Size = new System.Drawing.Size(113, 17);
             this.cbxRewardNewQ3.TabIndex = 44;
             this.cbxRewardNewQ3.Text = "Pulserifle excellent";
             this.cbxRewardNewQ3.UseVisualStyleBackColor = true;
@@ -4294,10 +4221,9 @@ namespace Sheltered_2_SE
             // cbxRewardNewQ2
             // 
             this.cbxRewardNewQ2.AutoSize = true;
-            this.cbxRewardNewQ2.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardNewQ2.Location = new System.Drawing.Point(481, 237);
+            this.cbxRewardNewQ2.Location = new System.Drawing.Point(456, 237);
             this.cbxRewardNewQ2.Name = "cbxRewardNewQ2";
-            this.cbxRewardNewQ2.Size = new System.Drawing.Size(102, 22);
+            this.cbxRewardNewQ2.Size = new System.Drawing.Size(95, 17);
             this.cbxRewardNewQ2.TabIndex = 43;
             this.cbxRewardNewQ2.Text = "Pulserifle good";
             this.cbxRewardNewQ2.UseVisualStyleBackColor = true;
@@ -4305,10 +4231,9 @@ namespace Sheltered_2_SE
             // cbxRewardNewQ1
             // 
             this.cbxRewardNewQ1.AutoSize = true;
-            this.cbxRewardNewQ1.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardNewQ1.Location = new System.Drawing.Point(481, 219);
+            this.cbxRewardNewQ1.Location = new System.Drawing.Point(456, 219);
             this.cbxRewardNewQ1.Name = "cbxRewardNewQ1";
-            this.cbxRewardNewQ1.Size = new System.Drawing.Size(102, 22);
+            this.cbxRewardNewQ1.Size = new System.Drawing.Size(92, 17);
             this.cbxRewardNewQ1.TabIndex = 42;
             this.cbxRewardNewQ1.Text = "Pulserifle poor";
             this.cbxRewardNewQ1.UseVisualStyleBackColor = true;
@@ -4316,10 +4241,9 @@ namespace Sheltered_2_SE
             // cbxRewardCtkQ3
             // 
             this.cbxRewardCtkQ3.AutoSize = true;
-            this.cbxRewardCtkQ3.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardCtkQ3.Location = new System.Drawing.Point(481, 167);
+            this.cbxRewardCtkQ3.Location = new System.Drawing.Point(456, 167);
             this.cbxRewardCtkQ3.Name = "cbxRewardCtkQ3";
-            this.cbxRewardCtkQ3.Size = new System.Drawing.Size(123, 22);
+            this.cbxRewardCtkQ3.Size = new System.Drawing.Size(111, 17);
             this.cbxRewardCtkQ3.TabIndex = 40;
             this.cbxRewardCtkQ3.Text = "Brutal Morningstar";
             this.cbxRewardCtkQ3.UseVisualStyleBackColor = true;
@@ -4327,10 +4251,9 @@ namespace Sheltered_2_SE
             // cbxRewardCtkQ2
             // 
             this.cbxRewardCtkQ2.AutoSize = true;
-            this.cbxRewardCtkQ2.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardCtkQ2.Location = new System.Drawing.Point(481, 149);
+            this.cbxRewardCtkQ2.Location = new System.Drawing.Point(456, 149);
             this.cbxRewardCtkQ2.Name = "cbxRewardCtkQ2";
-            this.cbxRewardCtkQ2.Size = new System.Drawing.Size(115, 22);
+            this.cbxRewardCtkQ2.Size = new System.Drawing.Size(110, 17);
             this.cbxRewardCtkQ2.TabIndex = 39;
             this.cbxRewardCtkQ2.Text = "Toxic Morningstar";
             this.cbxRewardCtkQ2.UseVisualStyleBackColor = true;
@@ -4338,10 +4261,9 @@ namespace Sheltered_2_SE
             // cbxRewardCtkQ1
             // 
             this.cbxRewardCtkQ1.AutoSize = true;
-            this.cbxRewardCtkQ1.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardCtkQ1.Location = new System.Drawing.Point(481, 131);
+            this.cbxRewardCtkQ1.Location = new System.Drawing.Point(456, 131);
             this.cbxRewardCtkQ1.Name = "cbxRewardCtkQ1";
-            this.cbxRewardCtkQ1.Size = new System.Drawing.Size(88, 22);
+            this.cbxRewardCtkQ1.Size = new System.Drawing.Size(81, 17);
             this.cbxRewardCtkQ1.TabIndex = 38;
             this.cbxRewardCtkQ1.Text = "Morningstar";
             this.cbxRewardCtkQ1.UseVisualStyleBackColor = true;
@@ -4349,10 +4271,9 @@ namespace Sheltered_2_SE
             // cbxDrugsTrankwill
             // 
             this.cbxDrugsTrankwill.AutoSize = true;
-            this.cbxDrugsTrankwill.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxDrugsTrankwill.Location = new System.Drawing.Point(12, 383);
+            this.cbxDrugsTrankwill.Location = new System.Drawing.Point(12, 389);
             this.cbxDrugsTrankwill.Name = "cbxDrugsTrankwill";
-            this.cbxDrugsTrankwill.Size = new System.Drawing.Size(77, 22);
+            this.cbxDrugsTrankwill.Size = new System.Drawing.Size(68, 17);
             this.cbxDrugsTrankwill.TabIndex = 20;
             this.cbxDrugsTrankwill.Text = "Trankwill";
             this.cbxDrugsTrankwill.UseVisualStyleBackColor = true;
@@ -4360,10 +4281,9 @@ namespace Sheltered_2_SE
             // cbxDrugsSnodge
             // 
             this.cbxDrugsSnodge.AutoSize = true;
-            this.cbxDrugsSnodge.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxDrugsSnodge.Location = new System.Drawing.Point(12, 366);
+            this.cbxDrugsSnodge.Location = new System.Drawing.Point(12, 371);
             this.cbxDrugsSnodge.Name = "cbxDrugsSnodge";
-            this.cbxDrugsSnodge.Size = new System.Drawing.Size(60, 22);
+            this.cbxDrugsSnodge.Size = new System.Drawing.Size(63, 17);
             this.cbxDrugsSnodge.TabIndex = 19;
             this.cbxDrugsSnodge.Text = "Snodge";
             this.cbxDrugsSnodge.UseVisualStyleBackColor = true;
@@ -4371,10 +4291,9 @@ namespace Sheltered_2_SE
             // cbxDrugsSigma
             // 
             this.cbxDrugsSigma.AutoSize = true;
-            this.cbxDrugsSigma.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxDrugsSigma.Location = new System.Drawing.Point(12, 349);
+            this.cbxDrugsSigma.Location = new System.Drawing.Point(12, 353);
             this.cbxDrugsSigma.Name = "cbxDrugsSigma";
-            this.cbxDrugsSigma.Size = new System.Drawing.Size(54, 22);
+            this.cbxDrugsSigma.Size = new System.Drawing.Size(55, 17);
             this.cbxDrugsSigma.TabIndex = 18;
             this.cbxDrugsSigma.Text = "Sigma";
             this.cbxDrugsSigma.UseVisualStyleBackColor = true;
@@ -4382,10 +4301,9 @@ namespace Sheltered_2_SE
             // cbxDrugsPython
             // 
             this.cbxDrugsPython.AutoSize = true;
-            this.cbxDrugsPython.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxDrugsPython.Location = new System.Drawing.Point(12, 332);
+            this.cbxDrugsPython.Location = new System.Drawing.Point(12, 335);
             this.cbxDrugsPython.Name = "cbxDrugsPython";
-            this.cbxDrugsPython.Size = new System.Drawing.Size(61, 22);
+            this.cbxDrugsPython.Size = new System.Drawing.Size(59, 17);
             this.cbxDrugsPython.TabIndex = 17;
             this.cbxDrugsPython.Text = "Python";
             this.cbxDrugsPython.UseVisualStyleBackColor = true;
@@ -4393,10 +4311,9 @@ namespace Sheltered_2_SE
             // cbxDrugsFeederral
             // 
             this.cbxDrugsFeederral.AutoSize = true;
-            this.cbxDrugsFeederral.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxDrugsFeederral.Location = new System.Drawing.Point(12, 315);
+            this.cbxDrugsFeederral.Location = new System.Drawing.Point(12, 317);
             this.cbxDrugsFeederral.Name = "cbxDrugsFeederral";
-            this.cbxDrugsFeederral.Size = new System.Drawing.Size(76, 22);
+            this.cbxDrugsFeederral.Size = new System.Drawing.Size(70, 17);
             this.cbxDrugsFeederral.TabIndex = 16;
             this.cbxDrugsFeederral.Text = "Feederral";
             this.cbxDrugsFeederral.UseVisualStyleBackColor = true;
@@ -4404,10 +4321,9 @@ namespace Sheltered_2_SE
             // cbxDrugsCrunk
             // 
             this.cbxDrugsCrunk.AutoSize = true;
-            this.cbxDrugsCrunk.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxDrugsCrunk.Location = new System.Drawing.Point(12, 298);
+            this.cbxDrugsCrunk.Location = new System.Drawing.Point(12, 299);
             this.cbxDrugsCrunk.Name = "cbxDrugsCrunk";
-            this.cbxDrugsCrunk.Size = new System.Drawing.Size(56, 22);
+            this.cbxDrugsCrunk.Size = new System.Drawing.Size(54, 17);
             this.cbxDrugsCrunk.TabIndex = 15;
             this.cbxDrugsCrunk.Text = "Crunk";
             this.cbxDrugsCrunk.UseVisualStyleBackColor = true;
@@ -4415,10 +4331,9 @@ namespace Sheltered_2_SE
             // cbxDrugsAlcohol
             // 
             this.cbxDrugsAlcohol.AutoSize = true;
-            this.cbxDrugsAlcohol.Font = new System.Drawing.Font("Bebas Neue", 10F);
             this.cbxDrugsAlcohol.Location = new System.Drawing.Point(12, 281);
             this.cbxDrugsAlcohol.Name = "cbxDrugsAlcohol";
-            this.cbxDrugsAlcohol.Size = new System.Drawing.Size(66, 22);
+            this.cbxDrugsAlcohol.Size = new System.Drawing.Size(61, 17);
             this.cbxDrugsAlcohol.TabIndex = 14;
             this.cbxDrugsAlcohol.Text = "Alcohol";
             this.cbxDrugsAlcohol.UseVisualStyleBackColor = true;
@@ -4426,10 +4341,9 @@ namespace Sheltered_2_SE
             // cbxRewardChurchQ3
             // 
             this.cbxRewardChurchQ3.AutoSize = true;
-            this.cbxRewardChurchQ3.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardChurchQ3.Location = new System.Drawing.Point(481, 77);
+            this.cbxRewardChurchQ3.Location = new System.Drawing.Point(456, 77);
             this.cbxRewardChurchQ3.Name = "cbxRewardChurchQ3";
-            this.cbxRewardChurchQ3.Size = new System.Drawing.Size(163, 22);
+            this.cbxRewardChurchQ3.Size = new System.Drawing.Size(151, 17);
             this.cbxRewardChurchQ3.TabIndex = 12;
             this.cbxRewardChurchQ3.Text = "Ultimate Indoctrination Cell";
             this.cbxRewardChurchQ3.UseVisualStyleBackColor = true;
@@ -4437,10 +4351,9 @@ namespace Sheltered_2_SE
             // cbxRewardChurchQ2
             // 
             this.cbxRewardChurchQ2.AutoSize = true;
-            this.cbxRewardChurchQ2.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardChurchQ2.Location = new System.Drawing.Point(481, 59);
+            this.cbxRewardChurchQ2.Location = new System.Drawing.Point(456, 59);
             this.cbxRewardChurchQ2.Name = "cbxRewardChurchQ2";
-            this.cbxRewardChurchQ2.Size = new System.Drawing.Size(167, 22);
+            this.cbxRewardChurchQ2.Size = new System.Drawing.Size(162, 17);
             this.cbxRewardChurchQ2.TabIndex = 11;
             this.cbxRewardChurchQ2.Text = "Advanced Indoctrination Cell";
             this.cbxRewardChurchQ2.UseVisualStyleBackColor = true;
@@ -4448,10 +4361,9 @@ namespace Sheltered_2_SE
             // cbxRewardChurchQ1
             // 
             this.cbxRewardChurchQ1.AutoSize = true;
-            this.cbxRewardChurchQ1.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.cbxRewardChurchQ1.Location = new System.Drawing.Point(481, 41);
+            this.cbxRewardChurchQ1.Location = new System.Drawing.Point(456, 41);
             this.cbxRewardChurchQ1.Name = "cbxRewardChurchQ1";
-            this.cbxRewardChurchQ1.Size = new System.Drawing.Size(120, 22);
+            this.cbxRewardChurchQ1.Size = new System.Drawing.Size(110, 17);
             this.cbxRewardChurchQ1.TabIndex = 10;
             this.cbxRewardChurchQ1.Text = "Indoctrination Cell";
             this.cbxRewardChurchQ1.UseVisualStyleBackColor = true;
@@ -4469,10 +4381,9 @@ namespace Sheltered_2_SE
             // cbxWorkbenchTier4
             // 
             this.cbxWorkbenchTier4.AutoSize = true;
-            this.cbxWorkbenchTier4.Font = new System.Drawing.Font("Bebas Neue", 10F);
             this.cbxWorkbenchTier4.Location = new System.Drawing.Point(147, 89);
             this.cbxWorkbenchTier4.Name = "cbxWorkbenchTier4";
-            this.cbxWorkbenchTier4.Size = new System.Drawing.Size(54, 22);
+            this.cbxWorkbenchTier4.Size = new System.Drawing.Size(53, 17);
             this.cbxWorkbenchTier4.TabIndex = 7;
             this.cbxWorkbenchTier4.Text = "Tier 4";
             this.cbxWorkbenchTier4.UseVisualStyleBackColor = true;
@@ -4480,10 +4391,9 @@ namespace Sheltered_2_SE
             // cbxWorkbenchTier3
             // 
             this.cbxWorkbenchTier3.AutoSize = true;
-            this.cbxWorkbenchTier3.Font = new System.Drawing.Font("Bebas Neue", 10F);
             this.cbxWorkbenchTier3.Location = new System.Drawing.Point(147, 72);
             this.cbxWorkbenchTier3.Name = "cbxWorkbenchTier3";
-            this.cbxWorkbenchTier3.Size = new System.Drawing.Size(54, 22);
+            this.cbxWorkbenchTier3.Size = new System.Drawing.Size(53, 17);
             this.cbxWorkbenchTier3.TabIndex = 6;
             this.cbxWorkbenchTier3.Text = "Tier 3";
             this.cbxWorkbenchTier3.UseVisualStyleBackColor = true;
@@ -4491,10 +4401,9 @@ namespace Sheltered_2_SE
             // cbxWorkbenchTier2
             // 
             this.cbxWorkbenchTier2.AutoSize = true;
-            this.cbxWorkbenchTier2.Font = new System.Drawing.Font("Bebas Neue", 10F);
             this.cbxWorkbenchTier2.Location = new System.Drawing.Point(147, 55);
             this.cbxWorkbenchTier2.Name = "cbxWorkbenchTier2";
-            this.cbxWorkbenchTier2.Size = new System.Drawing.Size(54, 22);
+            this.cbxWorkbenchTier2.Size = new System.Drawing.Size(53, 17);
             this.cbxWorkbenchTier2.TabIndex = 5;
             this.cbxWorkbenchTier2.Text = "Tier 2";
             this.cbxWorkbenchTier2.UseVisualStyleBackColor = true;
@@ -4502,10 +4411,9 @@ namespace Sheltered_2_SE
             // cbxDraftingTableTier4
             // 
             this.cbxDraftingTableTier4.AutoSize = true;
-            this.cbxDraftingTableTier4.Font = new System.Drawing.Font("Bebas Neue", 10F);
             this.cbxDraftingTableTier4.Location = new System.Drawing.Point(12, 89);
             this.cbxDraftingTableTier4.Name = "cbxDraftingTableTier4";
-            this.cbxDraftingTableTier4.Size = new System.Drawing.Size(54, 22);
+            this.cbxDraftingTableTier4.Size = new System.Drawing.Size(53, 17);
             this.cbxDraftingTableTier4.TabIndex = 3;
             this.cbxDraftingTableTier4.Text = "Tier 4";
             this.cbxDraftingTableTier4.UseVisualStyleBackColor = true;
@@ -4513,10 +4421,9 @@ namespace Sheltered_2_SE
             // cbxDraftingTableTier3
             // 
             this.cbxDraftingTableTier3.AutoSize = true;
-            this.cbxDraftingTableTier3.Font = new System.Drawing.Font("Bebas Neue", 10F);
             this.cbxDraftingTableTier3.Location = new System.Drawing.Point(12, 72);
             this.cbxDraftingTableTier3.Name = "cbxDraftingTableTier3";
-            this.cbxDraftingTableTier3.Size = new System.Drawing.Size(54, 22);
+            this.cbxDraftingTableTier3.Size = new System.Drawing.Size(53, 17);
             this.cbxDraftingTableTier3.TabIndex = 2;
             this.cbxDraftingTableTier3.Text = "Tier 3";
             this.cbxDraftingTableTier3.UseVisualStyleBackColor = true;
@@ -4524,10 +4431,9 @@ namespace Sheltered_2_SE
             // cbxDraftingTableTier2
             // 
             this.cbxDraftingTableTier2.AutoSize = true;
-            this.cbxDraftingTableTier2.Font = new System.Drawing.Font("Bebas Neue", 10F);
             this.cbxDraftingTableTier2.Location = new System.Drawing.Point(12, 55);
             this.cbxDraftingTableTier2.Name = "cbxDraftingTableTier2";
-            this.cbxDraftingTableTier2.Size = new System.Drawing.Size(54, 22);
+            this.cbxDraftingTableTier2.Size = new System.Drawing.Size(53, 17);
             this.cbxDraftingTableTier2.TabIndex = 1;
             this.cbxDraftingTableTier2.Text = "Tier 2";
             this.cbxDraftingTableTier2.UseVisualStyleBackColor = true;
@@ -4537,9 +4443,10 @@ namespace Sheltered_2_SE
             this.label32.AutoSize = true;
             this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.label32.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundMedium;
+            this.label32.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label32.Location = new System.Drawing.Point(8, 136);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(110, 21);
+            this.label32.Size = new System.Drawing.Size(95, 13);
             this.label32.TabIndex = 67;
             this.label32.Text = "    Blueprints          ";
             // 
@@ -4548,9 +4455,10 @@ namespace Sheltered_2_SE
             this.label31.AutoSize = true;
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.label31.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundMedium;
+            this.label31.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label31.Location = new System.Drawing.Point(143, 256);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(112, 21);
+            this.label31.Size = new System.Drawing.Size(95, 13);
             this.label31.TabIndex = 64;
             this.label31.Text = "   other unlocks     ";
             // 
@@ -4559,9 +4467,10 @@ namespace Sheltered_2_SE
             this.label27.AutoSize = true;
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.label27.Image = ((System.Drawing.Image)(resources.GetObject("label27.Image")));
-            this.label27.Location = new System.Drawing.Point(432, 458);
+            this.label27.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label27.Location = new System.Drawing.Point(407, 458);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(221, 21);
+            this.label27.Size = new System.Drawing.Size(192, 13);
             this.label27.TabIndex = 55;
             this.label27.Text = "     Reward Ally with The old clan          ";
             // 
@@ -4570,9 +4479,10 @@ namespace Sheltered_2_SE
             this.label26.AutoSize = true;
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.label26.Image = ((System.Drawing.Image)(resources.GetObject("label26.Image")));
-            this.label26.Location = new System.Drawing.Point(432, 370);
+            this.label26.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label26.Location = new System.Drawing.Point(407, 370);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(221, 21);
+            this.label26.Size = new System.Drawing.Size(214, 13);
             this.label26.TabIndex = 51;
             this.label26.Text = "     Reward Ally with LOS MUERTOS           ";
             // 
@@ -4581,9 +4491,10 @@ namespace Sheltered_2_SE
             this.label30.AutoSize = true;
             this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.label30.Image = ((System.Drawing.Image)(resources.GetObject("label30.Image")));
-            this.label30.Location = new System.Drawing.Point(432, 280);
+            this.label30.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label30.Location = new System.Drawing.Point(407, 280);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(222, 21);
+            this.label30.Size = new System.Drawing.Size(194, 13);
             this.label30.TabIndex = 45;
             this.label30.Text = "     Reward Ally with Black roses            ";
             // 
@@ -4592,9 +4503,10 @@ namespace Sheltered_2_SE
             this.label29.AutoSize = true;
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.label29.Image = ((System.Drawing.Image)(resources.GetObject("label29.Image")));
-            this.label29.Location = new System.Drawing.Point(432, 195);
+            this.label29.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label29.Location = new System.Drawing.Point(407, 195);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(221, 21);
+            this.label29.Size = new System.Drawing.Size(197, 13);
             this.label29.TabIndex = 41;
             this.label29.Text = "     Reward Ally with The New Order       ";
             // 
@@ -4603,9 +4515,10 @@ namespace Sheltered_2_SE
             this.label28.AutoSize = true;
             this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.label28.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundNew;
-            this.label28.Location = new System.Drawing.Point(432, 107);
+            this.label28.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label28.Location = new System.Drawing.Point(407, 107);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(222, 21);
+            this.label28.Size = new System.Drawing.Size(205, 13);
             this.label28.TabIndex = 37;
             this.label28.Text = "     Reward Ally with CTK Mob                   ";
             // 
@@ -4614,9 +4527,10 @@ namespace Sheltered_2_SE
             this.label25.AutoSize = true;
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.label25.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundMedium;
+            this.label25.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label25.Location = new System.Drawing.Point(9, 256);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(110, 21);
+            this.label25.Size = new System.Drawing.Size(100, 13);
             this.label25.TabIndex = 13;
             this.label25.Text = "   Drug recipes        ";
             // 
@@ -4626,40 +4540,43 @@ namespace Sheltered_2_SE
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
             this.label24.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundNew;
-            this.label24.Location = new System.Drawing.Point(432, 17);
+            this.label24.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label24.Location = new System.Drawing.Point(407, 17);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(221, 21);
+            this.label24.Size = new System.Drawing.Size(196, 13);
             this.label24.TabIndex = 9;
             this.label24.Text = "     Reward Ally with Church of Hope      ";
             // 
-            // label4
+            // lblWorkbench
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
-            this.label4.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundMedium;
-            this.label4.Location = new System.Drawing.Point(143, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 21);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "   Workbench           ";
+            this.lblWorkbench.AutoSize = true;
+            this.lblWorkbench.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.lblWorkbench.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundMedium;
+            this.lblWorkbench.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblWorkbench.Location = new System.Drawing.Point(143, 31);
+            this.lblWorkbench.Name = "lblWorkbench";
+            this.lblWorkbench.Size = new System.Drawing.Size(105, 13);
+            this.lblWorkbench.TabIndex = 4;
+            this.lblWorkbench.Text = "   Workbench           ";
             // 
-            // label1
+            // lblDraftingTable
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
-            this.label1.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundMedium;
-            this.label1.Location = new System.Drawing.Point(9, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "   Drafting Table    ";
+            this.lblDraftingTable.AutoSize = true;
+            this.lblDraftingTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(190)))), ((int)(((byte)(15)))));
+            this.lblDraftingTable.Image = global::Sheltered_2_SE.Properties.Resources.TextBackgroundMedium;
+            this.lblDraftingTable.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblDraftingTable.Location = new System.Drawing.Point(9, 31);
+            this.lblDraftingTable.Name = "lblDraftingTable";
+            this.lblDraftingTable.Size = new System.Drawing.Size(95, 13);
+            this.lblDraftingTable.TabIndex = 0;
+            this.lblDraftingTable.Text = "   Drafting Table    ";
             // 
             // debugTab
             // 
             this.debugTab.Controls.Add(this.label5);
-            this.debugTab.Location = new System.Drawing.Point(4, 30);
+            this.debugTab.Location = new System.Drawing.Point(4, 22);
             this.debugTab.Name = "debugTab";
-            this.debugTab.Size = new System.Drawing.Size(659, 548);
+            this.debugTab.Size = new System.Drawing.Size(659, 556);
             this.debugTab.TabIndex = 5;
             this.debugTab.Text = "Debug";
             this.debugTab.UseVisualStyleBackColor = true;
@@ -4679,9 +4596,9 @@ namespace Sheltered_2_SE
             // 
             this.shelterDesignerTab.Controls.Add(this.label33);
             this.shelterDesignerTab.Controls.Add(this.btnOpenDesigner);
-            this.shelterDesignerTab.Location = new System.Drawing.Point(4, 30);
+            this.shelterDesignerTab.Location = new System.Drawing.Point(4, 22);
             this.shelterDesignerTab.Name = "shelterDesignerTab";
-            this.shelterDesignerTab.Size = new System.Drawing.Size(659, 548);
+            this.shelterDesignerTab.Size = new System.Drawing.Size(659, 556);
             this.shelterDesignerTab.TabIndex = 6;
             this.shelterDesignerTab.Text = "Shelter Designer";
             this.shelterDesignerTab.UseVisualStyleBackColor = true;
@@ -4689,13 +4606,13 @@ namespace Sheltered_2_SE
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Bebas Neue", 30F);
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.label33.Location = new System.Drawing.Point(15, 28);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(599, 208);
+            this.label33.Size = new System.Drawing.Size(661, 230);
             this.label33.TabIndex = 1;
-            this.label33.Text = "Warning the Shelter Designer is still \r\nexperimental. It can break your savegame." +
-    " \r\n\r\nLike Always MAKE backups!!!\r\n";
+            this.label33.Text = "Warning the Shelter Designer is still \r\nexperimental. It can break your \r\nsavegam" +
+    "e. \r\n\r\nLike Always MAKE backups!\r\n";
             // 
             // btnOpenDesigner
             // 
@@ -4746,7 +4663,7 @@ namespace Sheltered_2_SE
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(69, 13);
             this.lblVersion.TabIndex = 40;
-            this.lblVersion.Text = "Version: 0.32";
+            this.lblVersion.Text = "Version: 0.33";
             // 
             // lblDebugCharacter
             // 
@@ -5483,11 +5400,11 @@ namespace Sheltered_2_SE
         public System.Windows.Forms.CheckBox cbxWorkbenchTier4;
         public System.Windows.Forms.CheckBox cbxWorkbenchTier3;
         public System.Windows.Forms.CheckBox cbxWorkbenchTier2;
-        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label lblWorkbench;
         public System.Windows.Forms.CheckBox cbxDraftingTableTier4;
         public System.Windows.Forms.CheckBox cbxDraftingTableTier3;
         public System.Windows.Forms.CheckBox cbxDraftingTableTier2;
-        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lblDraftingTable;
         public System.Windows.Forms.CheckBox cbxBpSolarPanel;
         public System.Windows.Forms.CheckBox cbxBpRecycler;
         public System.Windows.Forms.CheckBox cbxBpQuantumBattery;
