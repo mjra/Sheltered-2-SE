@@ -706,7 +706,7 @@ namespace Sheltered_2_SE
             this.version01ToolStripMenuItem.Enabled = false;
             this.version01ToolStripMenuItem.Name = "version01ToolStripMenuItem";
             this.version01ToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.version01ToolStripMenuItem.Text = "Sheltered 2 SE Version 0.33";
+            this.version01ToolStripMenuItem.Text = "Sheltered 2 SE Version 0.40";
             // 
             // Output
             // 
@@ -4778,7 +4778,7 @@ namespace Sheltered_2_SE
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(69, 13);
             this.lblVersion.TabIndex = 40;
-            this.lblVersion.Text = "Version: 0.33";
+            this.lblVersion.Text = "Version: 0.40";
             // 
             // lblDebugCharacter
             // 
