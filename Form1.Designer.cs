@@ -120,9 +120,9 @@ namespace Sheltered_2_SE
             this.pbxStrSkill10 = new System.Windows.Forms.PictureBox();
             this.pbxStrSkill9 = new System.Windows.Forms.PictureBox();
             this.pbxStrSkill8 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblStrTier3 = new System.Windows.Forms.Label();
+            this.lblStrTier2 = new System.Windows.Forms.Label();
+            this.lblStrTier1 = new System.Windows.Forms.Label();
             this.pbxStrSkill7 = new System.Windows.Forms.PictureBox();
             this.pbxStrSkill6 = new System.Windows.Forms.PictureBox();
             this.pbxStrSkill5 = new System.Windows.Forms.PictureBox();
@@ -133,9 +133,9 @@ namespace Sheltered_2_SE
             this.skillPageDex = new System.Windows.Forms.TabPage();
             this.lblPointsAvailableDexValue = new System.Windows.Forms.Label();
             this.lblPointsAvailableDexName = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblDexTier3 = new System.Windows.Forms.Label();
+            this.lblDexTier2 = new System.Windows.Forms.Label();
+            this.lblDexTier1 = new System.Windows.Forms.Label();
             this.pbxAvailablePointsDex = new System.Windows.Forms.PictureBox();
             this.pbxDexSkillLevel12 = new System.Windows.Forms.PictureBox();
             this.pbxDexSkillLevel11 = new System.Windows.Forms.PictureBox();
@@ -164,9 +164,9 @@ namespace Sheltered_2_SE
             this.skillPageInt = new System.Windows.Forms.TabPage();
             this.lblPointsAvailableIntValue = new System.Windows.Forms.Label();
             this.lblPointsAvailableIntName = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblIntTier3 = new System.Windows.Forms.Label();
+            this.lblIntTier2 = new System.Windows.Forms.Label();
+            this.lblIntTier1 = new System.Windows.Forms.Label();
             this.pbxAvailablePointsInt = new System.Windows.Forms.PictureBox();
             this.pbxIntSkillLevel17 = new System.Windows.Forms.PictureBox();
             this.pbxIntSkillLevel16 = new System.Windows.Forms.PictureBox();
@@ -205,9 +205,9 @@ namespace Sheltered_2_SE
             this.skillPageCha = new System.Windows.Forms.TabPage();
             this.lblPointsAvailableChaValue = new System.Windows.Forms.Label();
             this.lblPointsAvailableChaName = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblChaTier3 = new System.Windows.Forms.Label();
+            this.lblChaTier2 = new System.Windows.Forms.Label();
+            this.lblChaTier1 = new System.Windows.Forms.Label();
             this.pbxAvailablePointsCha = new System.Windows.Forms.PictureBox();
             this.pbxChaSkillLevel13 = new System.Windows.Forms.PictureBox();
             this.pbxChaSkillLevel12 = new System.Windows.Forms.PictureBox();
@@ -238,9 +238,9 @@ namespace Sheltered_2_SE
             this.skillPagePer = new System.Windows.Forms.TabPage();
             this.lblPointsAvailablePerValue = new System.Windows.Forms.Label();
             this.lblPointsAvailablePerName = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblPerTier3 = new System.Windows.Forms.Label();
+            this.lblPerTier2 = new System.Windows.Forms.Label();
+            this.lblPerTier1 = new System.Windows.Forms.Label();
             this.pbxAvailablePointsPer = new System.Windows.Forms.PictureBox();
             this.pbxPerSkillLevel17 = new System.Windows.Forms.PictureBox();
             this.pbxPerSkillLevel16 = new System.Windows.Forms.PictureBox();
@@ -279,9 +279,9 @@ namespace Sheltered_2_SE
             this.skillPageFor = new System.Windows.Forms.TabPage();
             this.lblPointsAvailableForValue = new System.Windows.Forms.Label();
             this.lblPointsAvailableForName = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lblForTier3 = new System.Windows.Forms.Label();
+            this.lblForTier2 = new System.Windows.Forms.Label();
+            this.lblForTier1 = new System.Windows.Forms.Label();
             this.pbxAvailablePointsFor = new System.Windows.Forms.PictureBox();
             this.pbxForSkillLevel20 = new System.Windows.Forms.PictureBox();
             this.pbxForSkillLevel19 = new System.Windows.Forms.PictureBox();
@@ -327,9 +327,9 @@ namespace Sheltered_2_SE
             this.lblSkillsCharacterName = new System.Windows.Forms.Label();
             this.cbxSkillsCharacterSelect = new System.Windows.Forms.ComboBox();
             this.petsTab = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPetsToBeAdded = new System.Windows.Forms.Label();
             this.deseasesTab = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblDeseasesToBeAdded = new System.Windows.Forms.Label();
             this.unlockingTab = new System.Windows.Forms.TabPage();
             this.cbxDamageAmplifier = new System.Windows.Forms.CheckBox();
             this.cbxMedicineCrafting = new System.Windows.Forms.CheckBox();
@@ -394,7 +394,7 @@ namespace Sheltered_2_SE
             this.lblWorkbench = new System.Windows.Forms.Label();
             this.lblDraftingTable = new System.Windows.Forms.Label();
             this.debugTab = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblDebugToBeAdded = new System.Windows.Forms.Label();
             this.shelterDesignerTab = new System.Windows.Forms.TabPage();
             this.label33 = new System.Windows.Forms.Label();
             this.btnOpenDesigner = new System.Windows.Forms.Button();
@@ -697,7 +697,7 @@ namespace Sheltered_2_SE
             this.buyMeACoffeeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline);
             this.buyMeACoffeeToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
             this.buyMeACoffeeToolStripMenuItem.Name = "buyMeACoffeeToolStripMenuItem";
-            this.buyMeACoffeeToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.buyMeACoffeeToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.buyMeACoffeeToolStripMenuItem.Text = "Buy me a Coffee";
             this.buyMeACoffeeToolStripMenuItem.Click += new System.EventHandler(this.buyMeACoffeeToolStripMenuItem_Click);
             // 
@@ -705,8 +705,8 @@ namespace Sheltered_2_SE
             // 
             this.version01ToolStripMenuItem.Enabled = false;
             this.version01ToolStripMenuItem.Name = "version01ToolStripMenuItem";
-            this.version01ToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.version01ToolStripMenuItem.Text = "Sheltered 2 SE Version 0.1";
+            this.version01ToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.version01ToolStripMenuItem.Text = "Sheltered 2 SE Version 0.33";
             // 
             // Output
             // 
@@ -1165,10 +1165,12 @@ namespace Sheltered_2_SE
             // pbxWarning
             // 
             this.pbxWarning.BackColor = System.Drawing.SystemColors.Control;
+            this.pbxWarning.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxWarning.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxWarning.Image = ((System.Drawing.Image)(resources.GetObject("pbxWarning.Image")));
-            this.pbxWarning.Location = new System.Drawing.Point(275, 442);
+            this.pbxWarning.Location = new System.Drawing.Point(273, 442);
             this.pbxWarning.Name = "pbxWarning";
-            this.pbxWarning.Size = new System.Drawing.Size(31, 27);
+            this.pbxWarning.Size = new System.Drawing.Size(33, 32);
             this.pbxWarning.TabIndex = 32;
             this.pbxWarning.TabStop = false;
             // 
@@ -1204,6 +1206,7 @@ namespace Sheltered_2_SE
             this.tabControlSkills.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControlSkills.TabIndex = 11;
             this.tabControlSkills.Tag = "2";
+            this.tabControlSkills.SelectedIndexChanged += new System.EventHandler(this.tabControlSkills_SelectedIndexChanged);
             // 
             // skillPageStr
             // 
@@ -1231,9 +1234,9 @@ namespace Sheltered_2_SE
             this.skillPageStr.Controls.Add(this.pbxStrSkill10);
             this.skillPageStr.Controls.Add(this.pbxStrSkill9);
             this.skillPageStr.Controls.Add(this.pbxStrSkill8);
-            this.skillPageStr.Controls.Add(this.label8);
-            this.skillPageStr.Controls.Add(this.label7);
-            this.skillPageStr.Controls.Add(this.label6);
+            this.skillPageStr.Controls.Add(this.lblStrTier3);
+            this.skillPageStr.Controls.Add(this.lblStrTier2);
+            this.skillPageStr.Controls.Add(this.lblStrTier1);
             this.skillPageStr.Controls.Add(this.pbxStrSkill7);
             this.skillPageStr.Controls.Add(this.pbxStrSkill6);
             this.skillPageStr.Controls.Add(this.pbxStrSkill5);
@@ -1271,6 +1274,7 @@ namespace Sheltered_2_SE
             // pbxAvailablePointsStr
             // 
             this.pbxAvailablePointsStr.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.AvailableSkillsStr;
+            this.pbxAvailablePointsStr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbxAvailablePointsStr.Location = new System.Drawing.Point(547, 131);
             this.pbxAvailablePointsStr.Name = "pbxAvailablePointsStr";
             this.pbxAvailablePointsStr.Size = new System.Drawing.Size(90, 90);
@@ -1279,6 +1283,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel14
             // 
+            this.pbxStrSkillLevel14.AccessibleDescription = "37";
             this.pbxStrSkillLevel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel14.Location = new System.Drawing.Point(369, 267);
             this.pbxStrSkillLevel14.Name = "pbxStrSkillLevel14";
@@ -1289,6 +1294,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel13
             // 
+            this.pbxStrSkillLevel13.AccessibleDescription = "31";
             this.pbxStrSkillLevel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel13.Location = new System.Drawing.Point(302, 267);
             this.pbxStrSkillLevel13.Name = "pbxStrSkillLevel13";
@@ -1299,6 +1305,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel12
             // 
+            this.pbxStrSkillLevel12.AccessibleDescription = "24";
             this.pbxStrSkillLevel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel12.Location = new System.Drawing.Point(235, 267);
             this.pbxStrSkillLevel12.Name = "pbxStrSkillLevel12";
@@ -1309,6 +1316,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel11
             // 
+            this.pbxStrSkillLevel11.AccessibleDescription = "8";
             this.pbxStrSkillLevel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel11.Location = new System.Drawing.Point(403, 173);
             this.pbxStrSkillLevel11.Name = "pbxStrSkillLevel11";
@@ -1319,6 +1327,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel10
             // 
+            this.pbxStrSkillLevel10.AccessibleDescription = "0";
             this.pbxStrSkillLevel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel10.Location = new System.Drawing.Point(336, 173);
             this.pbxStrSkillLevel10.Name = "pbxStrSkillLevel10";
@@ -1329,6 +1338,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel9
             // 
+            this.pbxStrSkillLevel9.AccessibleDescription = "42";
             this.pbxStrSkillLevel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel9.Location = new System.Drawing.Point(269, 173);
             this.pbxStrSkillLevel9.Name = "pbxStrSkillLevel9";
@@ -1339,6 +1349,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel8
             // 
+            this.pbxStrSkillLevel8.AccessibleDescription = "4";
             this.pbxStrSkillLevel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel8.Location = new System.Drawing.Point(202, 173);
             this.pbxStrSkillLevel8.Name = "pbxStrSkillLevel8";
@@ -1349,6 +1360,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel7
             // 
+            this.pbxStrSkillLevel7.AccessibleDescription = "25";
             this.pbxStrSkillLevel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel7.Location = new System.Drawing.Point(503, 79);
             this.pbxStrSkillLevel7.Name = "pbxStrSkillLevel7";
@@ -1359,6 +1371,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel6
             // 
+            this.pbxStrSkillLevel6.AccessibleDescription = "28";
             this.pbxStrSkillLevel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel6.Location = new System.Drawing.Point(436, 79);
             this.pbxStrSkillLevel6.Name = "pbxStrSkillLevel6";
@@ -1369,6 +1382,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel5
             // 
+            this.pbxStrSkillLevel5.AccessibleDescription = "30";
             this.pbxStrSkillLevel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel5.Location = new System.Drawing.Point(369, 79);
             this.pbxStrSkillLevel5.Name = "pbxStrSkillLevel5";
@@ -1379,6 +1393,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel4
             // 
+            this.pbxStrSkillLevel4.AccessibleDescription = "41";
             this.pbxStrSkillLevel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel4.Location = new System.Drawing.Point(302, 79);
             this.pbxStrSkillLevel4.Name = "pbxStrSkillLevel4";
@@ -1389,6 +1404,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel3
             // 
+            this.pbxStrSkillLevel3.AccessibleDescription = "12";
             this.pbxStrSkillLevel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel3.Location = new System.Drawing.Point(235, 79);
             this.pbxStrSkillLevel3.Name = "pbxStrSkillLevel3";
@@ -1399,6 +1415,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel2
             // 
+            this.pbxStrSkillLevel2.AccessibleDescription = "19";
             this.pbxStrSkillLevel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel2.Location = new System.Drawing.Point(168, 79);
             this.pbxStrSkillLevel2.Name = "pbxStrSkillLevel2";
@@ -1409,6 +1426,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkillLevel1
             // 
+            this.pbxStrSkillLevel1.AccessibleDescription = "15";
             this.pbxStrSkillLevel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkillLevel1.Location = new System.Drawing.Point(101, 79);
             this.pbxStrSkillLevel1.Name = "pbxStrSkillLevel1";
@@ -1419,6 +1437,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill14
             // 
+            this.pbxStrSkill14.AccessibleDescription = "";
             this.pbxStrSkill14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill14.Location = new System.Drawing.Point(369, 218);
@@ -1430,6 +1449,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill13
             // 
+            this.pbxStrSkill13.AccessibleDescription = "";
             this.pbxStrSkill13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill13.Location = new System.Drawing.Point(302, 218);
@@ -1441,6 +1461,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill12
             // 
+            this.pbxStrSkill12.AccessibleDescription = "";
             this.pbxStrSkill12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill12.Location = new System.Drawing.Point(235, 218);
@@ -1452,6 +1473,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill11
             // 
+            this.pbxStrSkill11.AccessibleDescription = "";
             this.pbxStrSkill11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill11.Location = new System.Drawing.Point(403, 124);
@@ -1463,6 +1485,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill10
             // 
+            this.pbxStrSkill10.AccessibleDescription = "";
             this.pbxStrSkill10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill10.Location = new System.Drawing.Point(336, 124);
@@ -1474,6 +1497,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill9
             // 
+            this.pbxStrSkill9.AccessibleDescription = "";
             this.pbxStrSkill9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill9.Location = new System.Drawing.Point(269, 124);
@@ -1485,6 +1509,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill8
             // 
+            this.pbxStrSkill8.AccessibleDescription = "";
             this.pbxStrSkill8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill8.Location = new System.Drawing.Point(202, 124);
@@ -1494,35 +1519,36 @@ namespace Sheltered_2_SE
             this.pbxStrSkill8.TabIndex = 30;
             this.pbxStrSkill8.TabStop = false;
             // 
-            // label8
+            // lblStrTier3
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 232);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 13);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "TIER 3";
+            this.lblStrTier3.AutoSize = true;
+            this.lblStrTier3.Location = new System.Drawing.Point(5, 232);
+            this.lblStrTier3.Name = "lblStrTier3";
+            this.lblStrTier3.Size = new System.Drawing.Size(41, 13);
+            this.lblStrTier3.TabIndex = 27;
+            this.lblStrTier3.Text = "TIER 3";
             // 
-            // label7
+            // lblStrTier2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 136);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 13);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "TIER 2";
+            this.lblStrTier2.AutoSize = true;
+            this.lblStrTier2.Location = new System.Drawing.Point(6, 136);
+            this.lblStrTier2.Name = "lblStrTier2";
+            this.lblStrTier2.Size = new System.Drawing.Size(41, 13);
+            this.lblStrTier2.TabIndex = 26;
+            this.lblStrTier2.Text = "TIER 2";
             // 
-            // label6
+            // lblStrTier1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "TIER 1";
+            this.lblStrTier1.AutoSize = true;
+            this.lblStrTier1.Location = new System.Drawing.Point(6, 40);
+            this.lblStrTier1.Name = "lblStrTier1";
+            this.lblStrTier1.Size = new System.Drawing.Size(41, 13);
+            this.lblStrTier1.TabIndex = 18;
+            this.lblStrTier1.Text = "TIER 1";
             // 
             // pbxStrSkill7
             // 
+            this.pbxStrSkill7.AccessibleDescription = "";
             this.pbxStrSkill7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill7.Location = new System.Drawing.Point(503, 30);
@@ -1534,6 +1560,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill6
             // 
+            this.pbxStrSkill6.AccessibleDescription = "";
             this.pbxStrSkill6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill6.Location = new System.Drawing.Point(436, 30);
@@ -1545,6 +1572,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill5
             // 
+            this.pbxStrSkill5.AccessibleDescription = "";
             this.pbxStrSkill5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill5.Location = new System.Drawing.Point(369, 30);
@@ -1556,6 +1584,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill4
             // 
+            this.pbxStrSkill4.AccessibleDescription = "";
             this.pbxStrSkill4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill4.Location = new System.Drawing.Point(302, 30);
@@ -1567,6 +1596,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill3
             // 
+            this.pbxStrSkill3.AccessibleDescription = "";
             this.pbxStrSkill3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill3.Location = new System.Drawing.Point(235, 30);
@@ -1578,6 +1608,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill2
             // 
+            this.pbxStrSkill2.AccessibleDescription = "";
             this.pbxStrSkill2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill2.Location = new System.Drawing.Point(168, 30);
@@ -1589,6 +1620,7 @@ namespace Sheltered_2_SE
             // 
             // pbxStrSkill1
             // 
+            this.pbxStrSkill1.AccessibleDescription = "";
             this.pbxStrSkill1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxStrSkill1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxStrSkill1.Location = new System.Drawing.Point(101, 30);
@@ -1605,9 +1637,9 @@ namespace Sheltered_2_SE
             // 
             this.skillPageDex.Controls.Add(this.lblPointsAvailableDexValue);
             this.skillPageDex.Controls.Add(this.lblPointsAvailableDexName);
-            this.skillPageDex.Controls.Add(this.label9);
-            this.skillPageDex.Controls.Add(this.label10);
-            this.skillPageDex.Controls.Add(this.label11);
+            this.skillPageDex.Controls.Add(this.lblDexTier3);
+            this.skillPageDex.Controls.Add(this.lblDexTier2);
+            this.skillPageDex.Controls.Add(this.lblDexTier1);
             this.skillPageDex.Controls.Add(this.pbxAvailablePointsDex);
             this.skillPageDex.Controls.Add(this.pbxDexSkillLevel12);
             this.skillPageDex.Controls.Add(this.pbxDexSkillLevel11);
@@ -1660,36 +1692,37 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableDexName.TabIndex = 127;
             this.lblPointsAvailableDexName.Text = "Points Available";
             // 
-            // label9
+            // lblDexTier3
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 232);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 13);
-            this.label9.TabIndex = 84;
-            this.label9.Text = "TIER 3";
+            this.lblDexTier3.AutoSize = true;
+            this.lblDexTier3.Location = new System.Drawing.Point(5, 232);
+            this.lblDexTier3.Name = "lblDexTier3";
+            this.lblDexTier3.Size = new System.Drawing.Size(41, 13);
+            this.lblDexTier3.TabIndex = 84;
+            this.lblDexTier3.Text = "TIER 3";
             // 
-            // label10
+            // lblDexTier2
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 136);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 83;
-            this.label10.Text = "TIER 2";
+            this.lblDexTier2.AutoSize = true;
+            this.lblDexTier2.Location = new System.Drawing.Point(6, 136);
+            this.lblDexTier2.Name = "lblDexTier2";
+            this.lblDexTier2.Size = new System.Drawing.Size(41, 13);
+            this.lblDexTier2.TabIndex = 83;
+            this.lblDexTier2.Text = "TIER 2";
             // 
-            // label11
+            // lblDexTier1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 40);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 82;
-            this.label11.Text = "TIER 1";
+            this.lblDexTier1.AutoSize = true;
+            this.lblDexTier1.Location = new System.Drawing.Point(6, 40);
+            this.lblDexTier1.Name = "lblDexTier1";
+            this.lblDexTier1.Size = new System.Drawing.Size(41, 13);
+            this.lblDexTier1.TabIndex = 82;
+            this.lblDexTier1.Text = "TIER 1";
             // 
             // pbxAvailablePointsDex
             // 
             this.pbxAvailablePointsDex.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.AvailableSkillsDex;
+            this.pbxAvailablePointsDex.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbxAvailablePointsDex.Location = new System.Drawing.Point(547, 131);
             this.pbxAvailablePointsDex.Name = "pbxAvailablePointsDex";
             this.pbxAvailablePointsDex.Size = new System.Drawing.Size(90, 90);
@@ -1698,6 +1731,7 @@ namespace Sheltered_2_SE
             // 
             // pbxDexSkillLevel12
             // 
+            this.pbxDexSkillLevel12.AccessibleDescription = "104";
             this.pbxDexSkillLevel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxDexSkillLevel12.Location = new System.Drawing.Point(369, 267);
             this.pbxDexSkillLevel12.Name = "pbxDexSkillLevel12";
@@ -1708,6 +1742,7 @@ namespace Sheltered_2_SE
             // 
             // pbxDexSkillLevel11
             // 
+            this.pbxDexSkillLevel11.AccessibleDescription = "106";
             this.pbxDexSkillLevel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxDexSkillLevel11.Location = new System.Drawing.Point(302, 267);
             this.pbxDexSkillLevel11.Name = "pbxDexSkillLevel11";
@@ -1718,6 +1753,7 @@ namespace Sheltered_2_SE
             // 
             // pbxDexSkillLevel10
             // 
+            this.pbxDexSkillLevel10.AccessibleDescription = "127";
             this.pbxDexSkillLevel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxDexSkillLevel10.Location = new System.Drawing.Point(235, 267);
             this.pbxDexSkillLevel10.Name = "pbxDexSkillLevel10";
@@ -1728,6 +1764,7 @@ namespace Sheltered_2_SE
             // 
             // pbxDexSkillLevel9
             // 
+            this.pbxDexSkillLevel9.AccessibleDescription = "139";
             this.pbxDexSkillLevel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxDexSkillLevel9.Location = new System.Drawing.Point(369, 173);
             this.pbxDexSkillLevel9.Name = "pbxDexSkillLevel9";
@@ -1738,6 +1775,7 @@ namespace Sheltered_2_SE
             // 
             // pbxDexSkillLevel8
             // 
+            this.pbxDexSkillLevel8.AccessibleDescription = "115";
             this.pbxDexSkillLevel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxDexSkillLevel8.Location = new System.Drawing.Point(302, 173);
             this.pbxDexSkillLevel8.Name = "pbxDexSkillLevel8";
@@ -1748,6 +1786,7 @@ namespace Sheltered_2_SE
             // 
             // pbxDexSkillLevel7
             // 
+            this.pbxDexSkillLevel7.AccessibleDescription = "100";
             this.pbxDexSkillLevel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxDexSkillLevel7.Location = new System.Drawing.Point(235, 173);
             this.pbxDexSkillLevel7.Name = "pbxDexSkillLevel7";
@@ -1758,6 +1797,7 @@ namespace Sheltered_2_SE
             // 
             // pbxDexSkillLevel6
             // 
+            this.pbxDexSkillLevel6.AccessibleDescription = "122";
             this.pbxDexSkillLevel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxDexSkillLevel6.Location = new System.Drawing.Point(470, 79);
             this.pbxDexSkillLevel6.Name = "pbxDexSkillLevel6";
@@ -1768,6 +1808,7 @@ namespace Sheltered_2_SE
             // 
             // pbxDexSkillLevel5
             // 
+            this.pbxDexSkillLevel5.AccessibleDescription = "110";
             this.pbxDexSkillLevel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxDexSkillLevel5.Location = new System.Drawing.Point(403, 79);
             this.pbxDexSkillLevel5.Name = "pbxDexSkillLevel5";
@@ -1778,6 +1819,7 @@ namespace Sheltered_2_SE
             // 
             // pbxDexSkillLevel4
             // 
+            this.pbxDexSkillLevel4.AccessibleDescription = "143";
             this.pbxDexSkillLevel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxDexSkillLevel4.Location = new System.Drawing.Point(336, 79);
             this.pbxDexSkillLevel4.Name = "pbxDexSkillLevel4";
@@ -1788,6 +1830,7 @@ namespace Sheltered_2_SE
             // 
             // pbxDexSkillLevel3
             // 
+            this.pbxDexSkillLevel3.AccessibleDescription = "131";
             this.pbxDexSkillLevel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxDexSkillLevel3.Location = new System.Drawing.Point(269, 79);
             this.pbxDexSkillLevel3.Name = "pbxDexSkillLevel3";
@@ -1798,6 +1841,7 @@ namespace Sheltered_2_SE
             // 
             // pbxDexSkillLevel2
             // 
+            this.pbxDexSkillLevel2.AccessibleDescription = "105";
             this.pbxDexSkillLevel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxDexSkillLevel2.Location = new System.Drawing.Point(202, 79);
             this.pbxDexSkillLevel2.Name = "pbxDexSkillLevel2";
@@ -1808,6 +1852,7 @@ namespace Sheltered_2_SE
             // 
             // pbxDexSkillLevel1
             // 
+            this.pbxDexSkillLevel1.AccessibleDescription = "102";
             this.pbxDexSkillLevel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxDexSkillLevel1.Location = new System.Drawing.Point(135, 79);
             this.pbxDexSkillLevel1.Name = "pbxDexSkillLevel1";
@@ -1954,9 +1999,9 @@ namespace Sheltered_2_SE
             // 
             this.skillPageInt.Controls.Add(this.lblPointsAvailableIntValue);
             this.skillPageInt.Controls.Add(this.lblPointsAvailableIntName);
-            this.skillPageInt.Controls.Add(this.label12);
-            this.skillPageInt.Controls.Add(this.label13);
-            this.skillPageInt.Controls.Add(this.label14);
+            this.skillPageInt.Controls.Add(this.lblIntTier3);
+            this.skillPageInt.Controls.Add(this.lblIntTier2);
+            this.skillPageInt.Controls.Add(this.lblIntTier1);
             this.skillPageInt.Controls.Add(this.pbxAvailablePointsInt);
             this.skillPageInt.Controls.Add(this.pbxIntSkillLevel17);
             this.skillPageInt.Controls.Add(this.pbxIntSkillLevel16);
@@ -2019,36 +2064,37 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableIntName.Text = "Points Available";
             this.lblPointsAvailableIntName.Click += new System.EventHandler(this.label27_Click);
             // 
-            // label12
+            // lblIntTier3
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(5, 232);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 84;
-            this.label12.Text = "TIER 3";
+            this.lblIntTier3.AutoSize = true;
+            this.lblIntTier3.Location = new System.Drawing.Point(5, 232);
+            this.lblIntTier3.Name = "lblIntTier3";
+            this.lblIntTier3.Size = new System.Drawing.Size(41, 13);
+            this.lblIntTier3.TabIndex = 84;
+            this.lblIntTier3.Text = "TIER 3";
             // 
-            // label13
+            // lblIntTier2
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 136);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 83;
-            this.label13.Text = "TIER 2";
+            this.lblIntTier2.AutoSize = true;
+            this.lblIntTier2.Location = new System.Drawing.Point(6, 136);
+            this.lblIntTier2.Name = "lblIntTier2";
+            this.lblIntTier2.Size = new System.Drawing.Size(41, 13);
+            this.lblIntTier2.TabIndex = 83;
+            this.lblIntTier2.Text = "TIER 2";
             // 
-            // label14
+            // lblIntTier1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 40);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
-            this.label14.TabIndex = 82;
-            this.label14.Text = "TIER 1";
+            this.lblIntTier1.AutoSize = true;
+            this.lblIntTier1.Location = new System.Drawing.Point(6, 40);
+            this.lblIntTier1.Name = "lblIntTier1";
+            this.lblIntTier1.Size = new System.Drawing.Size(41, 13);
+            this.lblIntTier1.TabIndex = 82;
+            this.lblIntTier1.Text = "TIER 1";
             // 
             // pbxAvailablePointsInt
             // 
             this.pbxAvailablePointsInt.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.AvailableSkillsInt;
+            this.pbxAvailablePointsInt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbxAvailablePointsInt.Location = new System.Drawing.Point(547, 131);
             this.pbxAvailablePointsInt.Name = "pbxAvailablePointsInt";
             this.pbxAvailablePointsInt.Size = new System.Drawing.Size(90, 90);
@@ -2057,6 +2103,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel17
             // 
+            this.pbxIntSkillLevel17.AccessibleDescription = "224";
             this.pbxIntSkillLevel17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel17.Location = new System.Drawing.Point(403, 267);
             this.pbxIntSkillLevel17.Name = "pbxIntSkillLevel17";
@@ -2067,6 +2114,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel16
             // 
+            this.pbxIntSkillLevel16.AccessibleDescription = "243";
             this.pbxIntSkillLevel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel16.Location = new System.Drawing.Point(336, 267);
             this.pbxIntSkillLevel16.Name = "pbxIntSkillLevel16";
@@ -2077,6 +2125,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel15
             // 
+            this.pbxIntSkillLevel15.AccessibleDescription = "206";
             this.pbxIntSkillLevel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel15.Location = new System.Drawing.Point(269, 267);
             this.pbxIntSkillLevel15.Name = "pbxIntSkillLevel15";
@@ -2087,6 +2136,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel14
             // 
+            this.pbxIntSkillLevel14.AccessibleDescription = "235";
             this.pbxIntSkillLevel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel14.Location = new System.Drawing.Point(202, 267);
             this.pbxIntSkillLevel14.Name = "pbxIntSkillLevel14";
@@ -2097,6 +2147,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel13
             // 
+            this.pbxIntSkillLevel13.AccessibleDescription = "209";
             this.pbxIntSkillLevel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel13.Location = new System.Drawing.Point(436, 173);
             this.pbxIntSkillLevel13.Name = "pbxIntSkillLevel13";
@@ -2107,6 +2158,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel12
             // 
+            this.pbxIntSkillLevel12.AccessibleDescription = "241";
             this.pbxIntSkillLevel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel12.Location = new System.Drawing.Point(369, 173);
             this.pbxIntSkillLevel12.Name = "pbxIntSkillLevel12";
@@ -2117,6 +2169,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel11
             // 
+            this.pbxIntSkillLevel11.AccessibleDescription = "213";
             this.pbxIntSkillLevel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel11.Location = new System.Drawing.Point(302, 173);
             this.pbxIntSkillLevel11.Name = "pbxIntSkillLevel11";
@@ -2127,6 +2180,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel10
             // 
+            this.pbxIntSkillLevel10.AccessibleDescription = "201";
             this.pbxIntSkillLevel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel10.Location = new System.Drawing.Point(235, 173);
             this.pbxIntSkillLevel10.Name = "pbxIntSkillLevel10";
@@ -2137,6 +2191,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel9
             // 
+            this.pbxIntSkillLevel9.AccessibleDescription = "210";
             this.pbxIntSkillLevel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel9.Location = new System.Drawing.Point(168, 173);
             this.pbxIntSkillLevel9.Name = "pbxIntSkillLevel9";
@@ -2147,6 +2202,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel8
             // 
+            this.pbxIntSkillLevel8.AccessibleDescription = "239";
             this.pbxIntSkillLevel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel8.Location = new System.Drawing.Point(537, 79);
             this.pbxIntSkillLevel8.Name = "pbxIntSkillLevel8";
@@ -2157,6 +2213,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel7
             // 
+            this.pbxIntSkillLevel7.AccessibleDescription = "230";
             this.pbxIntSkillLevel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel7.Location = new System.Drawing.Point(470, 79);
             this.pbxIntSkillLevel7.Name = "pbxIntSkillLevel7";
@@ -2167,6 +2224,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel6
             // 
+            this.pbxIntSkillLevel6.AccessibleDescription = "234";
             this.pbxIntSkillLevel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel6.Location = new System.Drawing.Point(403, 79);
             this.pbxIntSkillLevel6.Name = "pbxIntSkillLevel6";
@@ -2177,6 +2235,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel5
             // 
+            this.pbxIntSkillLevel5.AccessibleDescription = "240";
             this.pbxIntSkillLevel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel5.Location = new System.Drawing.Point(336, 79);
             this.pbxIntSkillLevel5.Name = "pbxIntSkillLevel5";
@@ -2187,6 +2246,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel4
             // 
+            this.pbxIntSkillLevel4.AccessibleDescription = "229";
             this.pbxIntSkillLevel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel4.Location = new System.Drawing.Point(269, 79);
             this.pbxIntSkillLevel4.Name = "pbxIntSkillLevel4";
@@ -2197,6 +2257,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel3
             // 
+            this.pbxIntSkillLevel3.AccessibleDescription = "208";
             this.pbxIntSkillLevel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel3.Location = new System.Drawing.Point(202, 79);
             this.pbxIntSkillLevel3.Name = "pbxIntSkillLevel3";
@@ -2207,6 +2268,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel2
             // 
+            this.pbxIntSkillLevel2.AccessibleDescription = "200";
             this.pbxIntSkillLevel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel2.Location = new System.Drawing.Point(135, 79);
             this.pbxIntSkillLevel2.Name = "pbxIntSkillLevel2";
@@ -2217,6 +2279,7 @@ namespace Sheltered_2_SE
             // 
             // pbxIntSkillLevel1
             // 
+            this.pbxIntSkillLevel1.AccessibleDescription = "214";
             this.pbxIntSkillLevel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxIntSkillLevel1.Location = new System.Drawing.Point(68, 79);
             this.pbxIntSkillLevel1.Name = "pbxIntSkillLevel1";
@@ -2418,9 +2481,9 @@ namespace Sheltered_2_SE
             // 
             this.skillPageCha.Controls.Add(this.lblPointsAvailableChaValue);
             this.skillPageCha.Controls.Add(this.lblPointsAvailableChaName);
-            this.skillPageCha.Controls.Add(this.label15);
-            this.skillPageCha.Controls.Add(this.label16);
-            this.skillPageCha.Controls.Add(this.label17);
+            this.skillPageCha.Controls.Add(this.lblChaTier3);
+            this.skillPageCha.Controls.Add(this.lblChaTier2);
+            this.skillPageCha.Controls.Add(this.lblChaTier1);
             this.skillPageCha.Controls.Add(this.pbxAvailablePointsCha);
             this.skillPageCha.Controls.Add(this.pbxChaSkillLevel13);
             this.skillPageCha.Controls.Add(this.pbxChaSkillLevel12);
@@ -2474,36 +2537,37 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableChaName.TabIndex = 126;
             this.lblPointsAvailableChaName.Text = "Points Available";
             // 
-            // label15
+            // lblChaTier3
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(5, 232);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
-            this.label15.TabIndex = 84;
-            this.label15.Text = "TIER 3";
+            this.lblChaTier3.AutoSize = true;
+            this.lblChaTier3.Location = new System.Drawing.Point(5, 232);
+            this.lblChaTier3.Name = "lblChaTier3";
+            this.lblChaTier3.Size = new System.Drawing.Size(41, 13);
+            this.lblChaTier3.TabIndex = 84;
+            this.lblChaTier3.Text = "TIER 3";
             // 
-            // label16
+            // lblChaTier2
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 136);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
-            this.label16.TabIndex = 83;
-            this.label16.Text = "TIER 2";
+            this.lblChaTier2.AutoSize = true;
+            this.lblChaTier2.Location = new System.Drawing.Point(6, 136);
+            this.lblChaTier2.Name = "lblChaTier2";
+            this.lblChaTier2.Size = new System.Drawing.Size(41, 13);
+            this.lblChaTier2.TabIndex = 83;
+            this.lblChaTier2.Text = "TIER 2";
             // 
-            // label17
+            // lblChaTier1
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 40);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 13);
-            this.label17.TabIndex = 82;
-            this.label17.Text = "TIER 1";
+            this.lblChaTier1.AutoSize = true;
+            this.lblChaTier1.Location = new System.Drawing.Point(6, 40);
+            this.lblChaTier1.Name = "lblChaTier1";
+            this.lblChaTier1.Size = new System.Drawing.Size(41, 13);
+            this.lblChaTier1.TabIndex = 82;
+            this.lblChaTier1.Text = "TIER 1";
             // 
             // pbxAvailablePointsCha
             // 
             this.pbxAvailablePointsCha.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.AvailableSkillsCha;
+            this.pbxAvailablePointsCha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbxAvailablePointsCha.Location = new System.Drawing.Point(547, 131);
             this.pbxAvailablePointsCha.Name = "pbxAvailablePointsCha";
             this.pbxAvailablePointsCha.Size = new System.Drawing.Size(90, 90);
@@ -2512,6 +2576,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel13
             // 
+            this.pbxChaSkillLevel13.AccessibleDescription = "300";
             this.pbxChaSkillLevel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel13.Location = new System.Drawing.Point(336, 267);
             this.pbxChaSkillLevel13.Name = "pbxChaSkillLevel13";
@@ -2522,6 +2587,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel12
             // 
+            this.pbxChaSkillLevel12.AccessibleDescription = "306";
             this.pbxChaSkillLevel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel12.Location = new System.Drawing.Point(269, 267);
             this.pbxChaSkillLevel12.Name = "pbxChaSkillLevel12";
@@ -2532,6 +2598,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel11
             // 
+            this.pbxChaSkillLevel11.AccessibleDescription = "326";
             this.pbxChaSkillLevel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel11.Location = new System.Drawing.Point(403, 173);
             this.pbxChaSkillLevel11.Name = "pbxChaSkillLevel11";
@@ -2542,6 +2609,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel10
             // 
+            this.pbxChaSkillLevel10.AccessibleDescription = "429";
             this.pbxChaSkillLevel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel10.Location = new System.Drawing.Point(336, 173);
             this.pbxChaSkillLevel10.Name = "pbxChaSkillLevel10";
@@ -2552,6 +2620,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel9
             // 
+            this.pbxChaSkillLevel9.AccessibleDescription = "301";
             this.pbxChaSkillLevel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel9.Location = new System.Drawing.Point(269, 173);
             this.pbxChaSkillLevel9.Name = "pbxChaSkillLevel9";
@@ -2562,6 +2631,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel8
             // 
+            this.pbxChaSkillLevel8.AccessibleDescription = "324";
             this.pbxChaSkillLevel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel8.Location = new System.Drawing.Point(202, 173);
             this.pbxChaSkillLevel8.Name = "pbxChaSkillLevel8";
@@ -2572,6 +2642,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel7
             // 
+            this.pbxChaSkillLevel7.AccessibleDescription = "320";
             this.pbxChaSkillLevel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel7.Location = new System.Drawing.Point(503, 79);
             this.pbxChaSkillLevel7.Name = "pbxChaSkillLevel7";
@@ -2582,6 +2653,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel6
             // 
+            this.pbxChaSkillLevel6.AccessibleDescription = "319";
             this.pbxChaSkillLevel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel6.Location = new System.Drawing.Point(436, 79);
             this.pbxChaSkillLevel6.Name = "pbxChaSkillLevel6";
@@ -2592,6 +2664,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel5
             // 
+            this.pbxChaSkillLevel5.AccessibleDescription = "316";
             this.pbxChaSkillLevel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel5.Location = new System.Drawing.Point(369, 79);
             this.pbxChaSkillLevel5.Name = "pbxChaSkillLevel5";
@@ -2602,6 +2675,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel4
             // 
+            this.pbxChaSkillLevel4.AccessibleDescription = "304";
             this.pbxChaSkillLevel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel4.Location = new System.Drawing.Point(302, 79);
             this.pbxChaSkillLevel4.Name = "pbxChaSkillLevel4";
@@ -2612,6 +2686,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel3
             // 
+            this.pbxChaSkillLevel3.AccessibleDescription = "302";
             this.pbxChaSkillLevel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel3.Location = new System.Drawing.Point(235, 79);
             this.pbxChaSkillLevel3.Name = "pbxChaSkillLevel3";
@@ -2622,6 +2697,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel2
             // 
+            this.pbxChaSkillLevel2.AccessibleDescription = "309";
             this.pbxChaSkillLevel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel2.Location = new System.Drawing.Point(168, 79);
             this.pbxChaSkillLevel2.Name = "pbxChaSkillLevel2";
@@ -2632,6 +2708,7 @@ namespace Sheltered_2_SE
             // 
             // pbxChaSkillLevel1
             // 
+            this.pbxChaSkillLevel1.AccessibleDescription = "327";
             this.pbxChaSkillLevel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxChaSkillLevel1.Location = new System.Drawing.Point(101, 79);
             this.pbxChaSkillLevel1.Name = "pbxChaSkillLevel1";
@@ -2789,9 +2866,9 @@ namespace Sheltered_2_SE
             // 
             this.skillPagePer.Controls.Add(this.lblPointsAvailablePerValue);
             this.skillPagePer.Controls.Add(this.lblPointsAvailablePerName);
-            this.skillPagePer.Controls.Add(this.label18);
-            this.skillPagePer.Controls.Add(this.label19);
-            this.skillPagePer.Controls.Add(this.label20);
+            this.skillPagePer.Controls.Add(this.lblPerTier3);
+            this.skillPagePer.Controls.Add(this.lblPerTier2);
+            this.skillPagePer.Controls.Add(this.lblPerTier1);
             this.skillPagePer.Controls.Add(this.pbxAvailablePointsPer);
             this.skillPagePer.Controls.Add(this.pbxPerSkillLevel17);
             this.skillPagePer.Controls.Add(this.pbxPerSkillLevel16);
@@ -2853,36 +2930,37 @@ namespace Sheltered_2_SE
             this.lblPointsAvailablePerName.TabIndex = 129;
             this.lblPointsAvailablePerName.Text = "Points Available";
             // 
-            // label18
+            // lblPerTier3
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(5, 232);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(41, 13);
-            this.label18.TabIndex = 84;
-            this.label18.Text = "TIER 3";
+            this.lblPerTier3.AutoSize = true;
+            this.lblPerTier3.Location = new System.Drawing.Point(5, 232);
+            this.lblPerTier3.Name = "lblPerTier3";
+            this.lblPerTier3.Size = new System.Drawing.Size(41, 13);
+            this.lblPerTier3.TabIndex = 84;
+            this.lblPerTier3.Text = "TIER 3";
             // 
-            // label19
+            // lblPerTier2
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 136);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 13);
-            this.label19.TabIndex = 83;
-            this.label19.Text = "TIER 2";
+            this.lblPerTier2.AutoSize = true;
+            this.lblPerTier2.Location = new System.Drawing.Point(6, 136);
+            this.lblPerTier2.Name = "lblPerTier2";
+            this.lblPerTier2.Size = new System.Drawing.Size(41, 13);
+            this.lblPerTier2.TabIndex = 83;
+            this.lblPerTier2.Text = "TIER 2";
             // 
-            // label20
+            // lblPerTier1
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 40);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 13);
-            this.label20.TabIndex = 82;
-            this.label20.Text = "TIER 1";
+            this.lblPerTier1.AutoSize = true;
+            this.lblPerTier1.Location = new System.Drawing.Point(6, 40);
+            this.lblPerTier1.Name = "lblPerTier1";
+            this.lblPerTier1.Size = new System.Drawing.Size(41, 13);
+            this.lblPerTier1.TabIndex = 82;
+            this.lblPerTier1.Text = "TIER 1";
             // 
             // pbxAvailablePointsPer
             // 
             this.pbxAvailablePointsPer.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.AvailableSkillsPer;
+            this.pbxAvailablePointsPer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbxAvailablePointsPer.Location = new System.Drawing.Point(547, 131);
             this.pbxAvailablePointsPer.Name = "pbxAvailablePointsPer";
             this.pbxAvailablePointsPer.Size = new System.Drawing.Size(90, 90);
@@ -2891,6 +2969,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel17
             // 
+            this.pbxPerSkillLevel17.AccessibleDescription = "422";
             this.pbxPerSkillLevel17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel17.Location = new System.Drawing.Point(436, 267);
             this.pbxPerSkillLevel17.Name = "pbxPerSkillLevel17";
@@ -2901,6 +2980,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel16
             // 
+            this.pbxPerSkillLevel16.AccessibleDescription = "410";
             this.pbxPerSkillLevel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel16.Location = new System.Drawing.Point(369, 267);
             this.pbxPerSkillLevel16.Name = "pbxPerSkillLevel16";
@@ -2911,6 +2991,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel15
             // 
+            this.pbxPerSkillLevel15.AccessibleDescription = "416";
             this.pbxPerSkillLevel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel15.Location = new System.Drawing.Point(302, 267);
             this.pbxPerSkillLevel15.Name = "pbxPerSkillLevel15";
@@ -2921,6 +3002,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel14
             // 
+            this.pbxPerSkillLevel14.AccessibleDescription = "419";
             this.pbxPerSkillLevel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel14.Location = new System.Drawing.Point(235, 267);
             this.pbxPerSkillLevel14.Name = "pbxPerSkillLevel14";
@@ -2931,6 +3013,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel13
             // 
+            this.pbxPerSkillLevel13.AccessibleDescription = "403";
             this.pbxPerSkillLevel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel13.Location = new System.Drawing.Point(168, 267);
             this.pbxPerSkillLevel13.Name = "pbxPerSkillLevel13";
@@ -2941,6 +3024,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel12
             // 
+            this.pbxPerSkillLevel12.AccessibleDescription = "413";
             this.pbxPerSkillLevel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel12.Location = new System.Drawing.Point(436, 173);
             this.pbxPerSkillLevel12.Name = "pbxPerSkillLevel12";
@@ -2951,6 +3035,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel11
             // 
+            this.pbxPerSkillLevel11.AccessibleDescription = "517";
             this.pbxPerSkillLevel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel11.Location = new System.Drawing.Point(369, 173);
             this.pbxPerSkillLevel11.Name = "pbxPerSkillLevel11";
@@ -2961,6 +3046,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel10
             // 
+            this.pbxPerSkillLevel10.AccessibleDescription = "420";
             this.pbxPerSkillLevel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel10.Location = new System.Drawing.Point(302, 173);
             this.pbxPerSkillLevel10.Name = "pbxPerSkillLevel10";
@@ -2971,6 +3057,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel9
             // 
+            this.pbxPerSkillLevel9.AccessibleDescription = "425";
             this.pbxPerSkillLevel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel9.Location = new System.Drawing.Point(235, 173);
             this.pbxPerSkillLevel9.Name = "pbxPerSkillLevel9";
@@ -2981,6 +3068,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel8
             // 
+            this.pbxPerSkillLevel8.AccessibleDescription = "402";
             this.pbxPerSkillLevel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel8.Location = new System.Drawing.Point(168, 173);
             this.pbxPerSkillLevel8.Name = "pbxPerSkillLevel8";
@@ -2991,6 +3079,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel7
             // 
+            this.pbxPerSkillLevel7.AccessibleDescription = "507";
             this.pbxPerSkillLevel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel7.Location = new System.Drawing.Point(503, 79);
             this.pbxPerSkillLevel7.Name = "pbxPerSkillLevel7";
@@ -3001,6 +3090,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel6
             // 
+            this.pbxPerSkillLevel6.AccessibleDescription = "424";
             this.pbxPerSkillLevel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel6.Location = new System.Drawing.Point(436, 79);
             this.pbxPerSkillLevel6.Name = "pbxPerSkillLevel6";
@@ -3011,6 +3101,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel5
             // 
+            this.pbxPerSkillLevel5.AccessibleDescription = "406";
             this.pbxPerSkillLevel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel5.Location = new System.Drawing.Point(369, 79);
             this.pbxPerSkillLevel5.Name = "pbxPerSkillLevel5";
@@ -3021,6 +3112,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel4
             // 
+            this.pbxPerSkillLevel4.AccessibleDescription = "431";
             this.pbxPerSkillLevel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel4.Location = new System.Drawing.Point(302, 79);
             this.pbxPerSkillLevel4.Name = "pbxPerSkillLevel4";
@@ -3031,6 +3123,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel3
             // 
+            this.pbxPerSkillLevel3.AccessibleDescription = "432";
             this.pbxPerSkillLevel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel3.Location = new System.Drawing.Point(235, 79);
             this.pbxPerSkillLevel3.Name = "pbxPerSkillLevel3";
@@ -3041,6 +3134,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel2
             // 
+            this.pbxPerSkillLevel2.AccessibleDescription = "433";
             this.pbxPerSkillLevel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel2.Location = new System.Drawing.Point(168, 79);
             this.pbxPerSkillLevel2.Name = "pbxPerSkillLevel2";
@@ -3051,6 +3145,7 @@ namespace Sheltered_2_SE
             // 
             // pbxPerSkillLevel1
             // 
+            this.pbxPerSkillLevel1.AccessibleDescription = "405";
             this.pbxPerSkillLevel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxPerSkillLevel1.Location = new System.Drawing.Point(101, 79);
             this.pbxPerSkillLevel1.Name = "pbxPerSkillLevel1";
@@ -3252,9 +3347,9 @@ namespace Sheltered_2_SE
             // 
             this.skillPageFor.Controls.Add(this.lblPointsAvailableForValue);
             this.skillPageFor.Controls.Add(this.lblPointsAvailableForName);
-            this.skillPageFor.Controls.Add(this.label21);
-            this.skillPageFor.Controls.Add(this.label22);
-            this.skillPageFor.Controls.Add(this.label23);
+            this.skillPageFor.Controls.Add(this.lblForTier3);
+            this.skillPageFor.Controls.Add(this.lblForTier2);
+            this.skillPageFor.Controls.Add(this.lblForTier1);
             this.skillPageFor.Controls.Add(this.pbxAvailablePointsFor);
             this.skillPageFor.Controls.Add(this.pbxForSkillLevel20);
             this.skillPageFor.Controls.Add(this.pbxForSkillLevel19);
@@ -3322,36 +3417,37 @@ namespace Sheltered_2_SE
             this.lblPointsAvailableForName.TabIndex = 129;
             this.lblPointsAvailableForName.Text = "Points Available";
             // 
-            // label21
+            // lblForTier3
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(5, 232);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(41, 13);
-            this.label21.TabIndex = 84;
-            this.label21.Text = "TIER 3";
+            this.lblForTier3.AutoSize = true;
+            this.lblForTier3.Location = new System.Drawing.Point(5, 232);
+            this.lblForTier3.Name = "lblForTier3";
+            this.lblForTier3.Size = new System.Drawing.Size(41, 13);
+            this.lblForTier3.TabIndex = 84;
+            this.lblForTier3.Text = "TIER 3";
             // 
-            // label22
+            // lblForTier2
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 136);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(41, 13);
-            this.label22.TabIndex = 83;
-            this.label22.Text = "TIER 2";
+            this.lblForTier2.AutoSize = true;
+            this.lblForTier2.Location = new System.Drawing.Point(6, 136);
+            this.lblForTier2.Name = "lblForTier2";
+            this.lblForTier2.Size = new System.Drawing.Size(41, 13);
+            this.lblForTier2.TabIndex = 83;
+            this.lblForTier2.Text = "TIER 2";
             // 
-            // label23
+            // lblForTier1
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 40);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(41, 13);
-            this.label23.TabIndex = 82;
-            this.label23.Text = "TIER 1";
+            this.lblForTier1.AutoSize = true;
+            this.lblForTier1.Location = new System.Drawing.Point(6, 40);
+            this.lblForTier1.Name = "lblForTier1";
+            this.lblForTier1.Size = new System.Drawing.Size(41, 13);
+            this.lblForTier1.TabIndex = 82;
+            this.lblForTier1.Text = "TIER 1";
             // 
             // pbxAvailablePointsFor
             // 
             this.pbxAvailablePointsFor.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.AvailableSkillsFor;
+            this.pbxAvailablePointsFor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbxAvailablePointsFor.Location = new System.Drawing.Point(547, 131);
             this.pbxAvailablePointsFor.Name = "pbxAvailablePointsFor";
             this.pbxAvailablePointsFor.Size = new System.Drawing.Size(90, 90);
@@ -3360,6 +3456,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel20
             // 
+            this.pbxForSkillLevel20.AccessibleDescription = "516";
             this.pbxForSkillLevel20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel20.Location = new System.Drawing.Point(436, 267);
             this.pbxForSkillLevel20.Name = "pbxForSkillLevel20";
@@ -3370,6 +3467,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel19
             // 
+            this.pbxForSkillLevel19.AccessibleDescription = "510";
             this.pbxForSkillLevel19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel19.Location = new System.Drawing.Point(369, 267);
             this.pbxForSkillLevel19.Name = "pbxForSkillLevel19";
@@ -3380,6 +3478,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel18
             // 
+            this.pbxForSkillLevel18.AccessibleDescription = "509";
             this.pbxForSkillLevel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel18.Location = new System.Drawing.Point(302, 267);
             this.pbxForSkillLevel18.Name = "pbxForSkillLevel18";
@@ -3390,6 +3489,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel17
             // 
+            this.pbxForSkillLevel17.AccessibleDescription = "503";
             this.pbxForSkillLevel17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel17.Location = new System.Drawing.Point(235, 267);
             this.pbxForSkillLevel17.Name = "pbxForSkillLevel17";
@@ -3400,6 +3500,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel16
             // 
+            this.pbxForSkillLevel16.AccessibleDescription = "526";
             this.pbxForSkillLevel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel16.Location = new System.Drawing.Point(168, 267);
             this.pbxForSkillLevel16.Name = "pbxForSkillLevel16";
@@ -3410,6 +3511,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel15
             // 
+            this.pbxForSkillLevel15.AccessibleDescription = "512";
             this.pbxForSkillLevel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel15.Location = new System.Drawing.Point(470, 173);
             this.pbxForSkillLevel15.Name = "pbxForSkillLevel15";
@@ -3420,6 +3522,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel14
             // 
+            this.pbxForSkillLevel14.AccessibleDescription = "523";
             this.pbxForSkillLevel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel14.Location = new System.Drawing.Point(403, 173);
             this.pbxForSkillLevel14.Name = "pbxForSkillLevel14";
@@ -3430,6 +3533,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel13
             // 
+            this.pbxForSkillLevel13.AccessibleDescription = "521";
             this.pbxForSkillLevel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel13.Location = new System.Drawing.Point(336, 173);
             this.pbxForSkillLevel13.Name = "pbxForSkillLevel13";
@@ -3440,6 +3544,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel12
             // 
+            this.pbxForSkillLevel12.AccessibleDescription = "504";
             this.pbxForSkillLevel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel12.Location = new System.Drawing.Point(269, 173);
             this.pbxForSkillLevel12.Name = "pbxForSkillLevel12";
@@ -3450,6 +3555,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel11
             // 
+            this.pbxForSkillLevel11.AccessibleDescription = "501";
             this.pbxForSkillLevel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel11.Location = new System.Drawing.Point(202, 173);
             this.pbxForSkillLevel11.Name = "pbxForSkillLevel11";
@@ -3460,6 +3566,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel10
             // 
+            this.pbxForSkillLevel10.AccessibleDescription = "506";
             this.pbxForSkillLevel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel10.Location = new System.Drawing.Point(135, 173);
             this.pbxForSkillLevel10.Name = "pbxForSkillLevel10";
@@ -3470,6 +3577,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel9
             // 
+            this.pbxForSkillLevel9.AccessibleDescription = "515";
             this.pbxForSkillLevel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel9.Location = new System.Drawing.Point(600, 79);
             this.pbxForSkillLevel9.Name = "pbxForSkillLevel9";
@@ -3480,6 +3588,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel8
             // 
+            this.pbxForSkillLevel8.AccessibleDescription = "513";
             this.pbxForSkillLevel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel8.Location = new System.Drawing.Point(533, 79);
             this.pbxForSkillLevel8.Name = "pbxForSkillLevel8";
@@ -3490,6 +3599,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel7
             // 
+            this.pbxForSkillLevel7.AccessibleDescription = "522";
             this.pbxForSkillLevel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel7.Location = new System.Drawing.Point(466, 79);
             this.pbxForSkillLevel7.Name = "pbxForSkillLevel7";
@@ -3500,6 +3610,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel6
             // 
+            this.pbxForSkillLevel6.AccessibleDescription = "518";
             this.pbxForSkillLevel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel6.Location = new System.Drawing.Point(399, 79);
             this.pbxForSkillLevel6.Name = "pbxForSkillLevel6";
@@ -3510,6 +3621,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel5
             // 
+            this.pbxForSkillLevel5.AccessibleDescription = "524";
             this.pbxForSkillLevel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel5.Location = new System.Drawing.Point(332, 79);
             this.pbxForSkillLevel5.Name = "pbxForSkillLevel5";
@@ -3520,6 +3632,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel4
             // 
+            this.pbxForSkillLevel4.AccessibleDescription = "505";
             this.pbxForSkillLevel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel4.Location = new System.Drawing.Point(265, 79);
             this.pbxForSkillLevel4.Name = "pbxForSkillLevel4";
@@ -3530,6 +3643,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel3
             // 
+            this.pbxForSkillLevel3.AccessibleDescription = "502";
             this.pbxForSkillLevel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel3.Location = new System.Drawing.Point(198, 79);
             this.pbxForSkillLevel3.Name = "pbxForSkillLevel3";
@@ -3540,6 +3654,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel2
             // 
+            this.pbxForSkillLevel2.AccessibleDescription = "500";
             this.pbxForSkillLevel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel2.Location = new System.Drawing.Point(131, 79);
             this.pbxForSkillLevel2.Name = "pbxForSkillLevel2";
@@ -3550,6 +3665,7 @@ namespace Sheltered_2_SE
             // 
             // pbxForSkillLevel1
             // 
+            this.pbxForSkillLevel1.AccessibleDescription = "519";
             this.pbxForSkillLevel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbxForSkillLevel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxForSkillLevel1.Location = new System.Drawing.Point(64, 79);
@@ -3815,7 +3931,7 @@ namespace Sheltered_2_SE
             // 
             // petsTab
             // 
-            this.petsTab.Controls.Add(this.label2);
+            this.petsTab.Controls.Add(this.lblPetsToBeAdded);
             this.petsTab.Location = new System.Drawing.Point(4, 22);
             this.petsTab.Name = "petsTab";
             this.petsTab.Size = new System.Drawing.Size(659, 556);
@@ -3823,19 +3939,19 @@ namespace Sheltered_2_SE
             this.petsTab.Text = "Pets";
             this.petsTab.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lblPetsToBeAdded
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 241);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "To be added";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblPetsToBeAdded.AutoSize = true;
+            this.lblPetsToBeAdded.Location = new System.Drawing.Point(3, 0);
+            this.lblPetsToBeAdded.Name = "lblPetsToBeAdded";
+            this.lblPetsToBeAdded.Size = new System.Drawing.Size(68, 13);
+            this.lblPetsToBeAdded.TabIndex = 1;
+            this.lblPetsToBeAdded.Text = "To be added";
+            this.lblPetsToBeAdded.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // deseasesTab
             // 
-            this.deseasesTab.Controls.Add(this.label3);
+            this.deseasesTab.Controls.Add(this.lblDeseasesToBeAdded);
             this.deseasesTab.Location = new System.Drawing.Point(4, 22);
             this.deseasesTab.Name = "deseasesTab";
             this.deseasesTab.Size = new System.Drawing.Size(659, 556);
@@ -3843,15 +3959,15 @@ namespace Sheltered_2_SE
             this.deseasesTab.Text = "Deseases/Infestations";
             this.deseasesTab.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // lblDeseasesToBeAdded
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(69, 241);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "To be added ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblDeseasesToBeAdded.AutoSize = true;
+            this.lblDeseasesToBeAdded.Location = new System.Drawing.Point(3, 0);
+            this.lblDeseasesToBeAdded.Name = "lblDeseasesToBeAdded";
+            this.lblDeseasesToBeAdded.Size = new System.Drawing.Size(71, 13);
+            this.lblDeseasesToBeAdded.TabIndex = 1;
+            this.lblDeseasesToBeAdded.Text = "To be added ";
+            this.lblDeseasesToBeAdded.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // unlockingTab
             // 
@@ -4573,7 +4689,7 @@ namespace Sheltered_2_SE
             // 
             // debugTab
             // 
-            this.debugTab.Controls.Add(this.label5);
+            this.debugTab.Controls.Add(this.lblDebugToBeAdded);
             this.debugTab.Location = new System.Drawing.Point(4, 22);
             this.debugTab.Name = "debugTab";
             this.debugTab.Size = new System.Drawing.Size(659, 556);
@@ -4581,16 +4697,15 @@ namespace Sheltered_2_SE
             this.debugTab.Text = "Debug";
             this.debugTab.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // lblDebugToBeAdded
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 48.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(69, 241);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(394, 74);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "To be added";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblDebugToBeAdded.AutoSize = true;
+            this.lblDebugToBeAdded.Location = new System.Drawing.Point(3, 0);
+            this.lblDebugToBeAdded.Name = "lblDebugToBeAdded";
+            this.lblDebugToBeAdded.Size = new System.Drawing.Size(68, 13);
+            this.lblDebugToBeAdded.TabIndex = 1;
+            this.lblDebugToBeAdded.Text = "To be added";
+            this.lblDebugToBeAdded.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // shelterDesignerTab
             // 
@@ -4787,8 +4902,8 @@ namespace Sheltered_2_SE
             this.skillLevelIcons.Images.SetKeyName(2, "Skilllevel03.png");
             this.skillLevelIcons.Images.SetKeyName(3, "Skilllevel11.png");
             this.skillLevelIcons.Images.SetKeyName(4, "Skilllevel12.png");
-            this.skillLevelIcons.Images.SetKeyName(5, "Skilllevel13.png");
-            this.skillLevelIcons.Images.SetKeyName(6, "Skilllevel22.png");
+            this.skillLevelIcons.Images.SetKeyName(5, "Skilllevel22.png");
+            this.skillLevelIcons.Images.SetKeyName(6, "Skilllevel13.png");
             this.skillLevelIcons.Images.SetKeyName(7, "Skilllevel23.png");
             this.skillLevelIcons.Images.SetKeyName(8, "Skilllevel33.png");
             // 
@@ -5106,9 +5221,9 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.Label lblAnimHash;
         private System.Windows.Forms.CheckBox cBHasBeenDefibbed;
         private System.Windows.Forms.CheckBox cBInteractingWithObj;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblPetsToBeAdded;
+        private System.Windows.Forms.Label lblDeseasesToBeAdded;
+        private System.Windows.Forms.Label lblDebugToBeAdded;
         private System.Windows.Forms.ToolStripMenuItem buyMeACoffeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem version01ToolStripMenuItem;
@@ -5119,9 +5234,9 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.ComboBox cbxSkillsCharacterSelect;
         public System.Windows.Forms.TabControl tabControlSkills;
         public System.Windows.Forms.TabPage skillPageStr;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblStrTier3;
+        private System.Windows.Forms.Label lblStrTier2;
+        private System.Windows.Forms.Label lblStrTier1;
         public System.Windows.Forms.PictureBox pbxStrSkill7;
         public System.Windows.Forms.PictureBox pbxStrSkill6;
         public System.Windows.Forms.PictureBox pbxStrSkill5;
@@ -5175,9 +5290,9 @@ namespace Sheltered_2_SE
         public System.Windows.Forms.PictureBox pbxDexSkill9;
         public System.Windows.Forms.PictureBox pbxDexSkill8;
         public System.Windows.Forms.PictureBox pbxDexSkill7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblDexTier3;
+        private System.Windows.Forms.Label lblDexTier2;
+        private System.Windows.Forms.Label lblDexTier1;
         public System.Windows.Forms.PictureBox pbxDexSkill6;
         public System.Windows.Forms.PictureBox pbxDexSkill5;
         public System.Windows.Forms.PictureBox pbxDexSkill4;
@@ -5211,9 +5326,9 @@ namespace Sheltered_2_SE
         public System.Windows.Forms.PictureBox pbxIntSkill10;
         public System.Windows.Forms.PictureBox pbxIntSkill9;
         public System.Windows.Forms.PictureBox pbxIntSkill8;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblIntTier3;
+        private System.Windows.Forms.Label lblIntTier2;
+        private System.Windows.Forms.Label lblIntTier1;
         public System.Windows.Forms.PictureBox pbxIntSkill7;
         public System.Windows.Forms.PictureBox pbxIntSkill6;
         public System.Windows.Forms.PictureBox pbxIntSkill5;
@@ -5240,9 +5355,9 @@ namespace Sheltered_2_SE
         public System.Windows.Forms.PictureBox pbxChaSkill10;
         public System.Windows.Forms.PictureBox pbxChaSkill9;
         public System.Windows.Forms.PictureBox pbxChaSkill8;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblChaTier3;
+        private System.Windows.Forms.Label lblChaTier2;
+        private System.Windows.Forms.Label lblChaTier1;
         public System.Windows.Forms.PictureBox pbxChaSkill7;
         public System.Windows.Forms.PictureBox pbxChaSkill6;
         public System.Windows.Forms.PictureBox pbxChaSkill5;
@@ -5277,9 +5392,9 @@ namespace Sheltered_2_SE
         public System.Windows.Forms.PictureBox pbxPerSkill10;
         public System.Windows.Forms.PictureBox pbxPerSkill9;
         public System.Windows.Forms.PictureBox pbxPerSkill8;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblPerTier3;
+        private System.Windows.Forms.Label lblPerTier2;
+        private System.Windows.Forms.Label lblPerTier1;
         public System.Windows.Forms.PictureBox pbxPerSkill7;
         public System.Windows.Forms.PictureBox pbxPerSkill6;
         public System.Windows.Forms.PictureBox pbxPerSkill5;
@@ -5320,9 +5435,9 @@ namespace Sheltered_2_SE
         public System.Windows.Forms.PictureBox pbxForSkill10;
         public System.Windows.Forms.PictureBox pbxForSkill9;
         public System.Windows.Forms.PictureBox pbxForSkill8;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblForTier3;
+        private System.Windows.Forms.Label lblForTier2;
+        private System.Windows.Forms.Label lblForTier1;
         public System.Windows.Forms.PictureBox pbxForSkill7;
         public System.Windows.Forms.PictureBox pbxForSkill6;
         public System.Windows.Forms.PictureBox pbxForSkill5;

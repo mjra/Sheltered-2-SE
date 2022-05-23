@@ -8,6 +8,23 @@ using System.Xml.Linq;
 namespace Sheltered_2_SE
 {
 
+    class GetSkillPoints
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int StrengthLevelBefore { get; set; }
+        public int DexterityLevelBefore { get; set; }
+        public int IntelligenceLevelBefore { get; set; }
+        public int CharismaLevelBefore { get; set; }
+        public int PerceptionLevelBefore { get; set; }
+        public int FortitudeLevelBefore { get; set; }
+    }
+
+    class LoadNames
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
 
     class GetFamilyMemberData
     {
@@ -45,11 +62,16 @@ namespace Sheltered_2_SE
 
     class Skills
     {
-        public string SkillName { get; set; }
-        public string Skill { get; set; }
-        public string Type { get; set; }
         public string SkillKey { get; set; }
         public string SkillLevel { get; set; }
+
+        //public Lists
+        public static List<Skills> _strSkillList;
+        public static List<Skills> _dexSkillList;
+        public static List<Skills> _intSkillList;
+        public static List<Skills> _chaSkillList;
+        public static List<Skills> _perSkillList;
+        public static List<Skills> _forSkillList;
 
         //Strength Skill Keys
         public static int _strSkillKey1 = 15;
@@ -168,26 +190,23 @@ namespace Sheltered_2_SE
 
     class SkillList
     {
-        
+
         private List<Skills> skill = new List<Skills>();
 
-        public bool AddSkill(string aSkillName, string aSkill, string aType, string aSkillKey, string aSkillLevel)
+        public bool AddSkill(string aSkillKey, string aSkillLevel)
         {
             skill.Add(new Skills
             {
-                SkillName = aSkillName,
-                Skill = aSkill,
-                Type = aType,
                 SkillKey = aSkillKey,
                 SkillLevel = aSkillLevel
             });
-                return true;
+            return true;
         }
 
         static void SkillAdd(string[] args)
         {
             var skillList = new SkillList();
-            //skillList.AddSkill ("")
+            skillList.AddSkill("15", "1");
         }
 
     }

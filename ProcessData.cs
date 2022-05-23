@@ -21,6 +21,8 @@ namespace Sheltered_2_SE
         public static int shelterDesignerLoad = 0;
         public static string skillMember = "";
         public static string skillName = "";
+        public static string selectedFirstName = "";
+        public static string selectedLastname = "";
         
 
         //Load in FamilyMemberData
