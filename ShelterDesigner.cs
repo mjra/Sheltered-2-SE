@@ -20,6 +20,20 @@ namespace Sheltered_2_SE
 
             //InitializeComponent();
 
+            lblRules1.Font = Form1.bebas;
+            lblRules2.Font = Form1.bebas;
+            lblRules3.Font = Form1.bebas;
+            lblRules4.Font = Form1.bebas;
+            lblRules5.Font = Form1.bebas;
+            lblDesignerText.Font = Form1.bebas;
+            lblRoom1.Font = Form1.bebas16;
+            lblRoom2.Font = Form1.bebas16;
+            lblRoom3.Font = Form1.bebas16;
+            lblRoom4.Font = Form1.bebas16;
+            lblRoom5.Font = Form1.bebas16;
+            lblRoom6.Font = Form1.bebas16;
+            SaveLayout.Font = Form1.bebas;
+
             pbxRemoveRoomSelected.Visible = false;
             pbxDirtRoomSelected.Visible = false;
             pbxStoneRoomSelected.Visible = false;

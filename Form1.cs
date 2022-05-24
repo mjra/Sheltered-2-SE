@@ -28,10 +28,10 @@ namespace Sheltered_2_SE
 
         private PrivateFontCollection pfc = new PrivateFontCollection();
 
-        Font bebas;
-        Font bebas10;
-        Font bebas16;
-        Font bebas30;
+        public static Font bebas;
+        public static Font bebas10;
+        public static Font bebas16;
+        public static Font bebas30;
 
         public Form1()
         {
@@ -143,6 +143,10 @@ namespace Sheltered_2_SE
             lblDebugToBeAdded.Font = bebas30;
 
             shelterDesignerTab.Font = bebas;
+            
+
+
+
 
             LoadSkillImages();
 

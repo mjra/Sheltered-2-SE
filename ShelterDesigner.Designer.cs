@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShelterDesigner));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblRoom1 = new System.Windows.Forms.Label();
+            this.lblRoom2 = new System.Windows.Forms.Label();
+            this.lblRoom4 = new System.Windows.Forms.Label();
+            this.lblRoom3 = new System.Windows.Forms.Label();
+            this.lblRoom6 = new System.Windows.Forms.Label();
+            this.lblRoom5 = new System.Windows.Forms.Label();
+            this.lblDesignerText = new System.Windows.Forms.Label();
             this.SaveLayout = new System.Windows.Forms.Button();
             this.pbxTiledRoom = new System.Windows.Forms.PictureBox();
             this.pbxRemoveRoom = new System.Windows.Forms.PictureBox();
@@ -141,11 +141,11 @@
             this.pbxStoneRoomSelected = new System.Windows.Forms.PictureBox();
             this.pbxTiledRoomSelected = new System.Windows.Forms.PictureBox();
             this.pbxPlasterRoomSelected = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblRules1 = new System.Windows.Forms.Label();
+            this.lblRules2 = new System.Windows.Forms.Label();
+            this.lblRules3 = new System.Windows.Forms.Label();
+            this.lblRules4 = new System.Windows.Forms.Label();
+            this.lblRules5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxTiledRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveRoom)).BeginInit();
@@ -253,80 +253,80 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxPlasterRoomSelected)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblRoom1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1052, 190);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 31);
-            this.label1.TabIndex = 164;
-            this.label1.Text = "Remove Room";
+            this.lblRoom1.AutoSize = true;
+            this.lblRoom1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoom1.Location = new System.Drawing.Point(1052, 190);
+            this.lblRoom1.Name = "lblRoom1";
+            this.lblRoom1.Size = new System.Drawing.Size(174, 29);
+            this.lblRoom1.TabIndex = 164;
+            this.lblRoom1.Text = "Remove Room";
             // 
-            // label2
+            // lblRoom2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1302, 190);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 31);
-            this.label2.TabIndex = 165;
-            this.label2.Text = "Door";
+            this.lblRoom2.AutoSize = true;
+            this.lblRoom2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoom2.Location = new System.Drawing.Point(1302, 190);
+            this.lblRoom2.Name = "lblRoom2";
+            this.lblRoom2.Size = new System.Drawing.Size(66, 29);
+            this.lblRoom2.TabIndex = 165;
+            this.lblRoom2.Text = "Door";
             // 
-            // label3
+            // lblRoom4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1280, 383);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 31);
-            this.label3.TabIndex = 167;
-            this.label3.Text = "Stone Room";
+            this.lblRoom4.AutoSize = true;
+            this.lblRoom4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoom4.Location = new System.Drawing.Point(1280, 383);
+            this.lblRoom4.Name = "lblRoom4";
+            this.lblRoom4.Size = new System.Drawing.Size(147, 29);
+            this.lblRoom4.TabIndex = 167;
+            this.lblRoom4.Text = "Stone Room";
             // 
-            // label4
+            // lblRoom3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1067, 383);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 31);
-            this.label4.TabIndex = 166;
-            this.label4.Text = "Dirt Room";
+            this.lblRoom3.AutoSize = true;
+            this.lblRoom3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoom3.Location = new System.Drawing.Point(1067, 383);
+            this.lblRoom3.Name = "lblRoom3";
+            this.lblRoom3.Size = new System.Drawing.Size(121, 29);
+            this.lblRoom3.TabIndex = 166;
+            this.lblRoom3.Text = "Dirt Room";
             // 
-            // label5
+            // lblRoom6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1272, 578);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 31);
-            this.label5.TabIndex = 169;
-            this.label5.Text = "Plaster Room";
+            this.lblRoom6.AutoSize = true;
+            this.lblRoom6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoom6.Location = new System.Drawing.Point(1272, 578);
+            this.lblRoom6.Name = "lblRoom6";
+            this.lblRoom6.Size = new System.Drawing.Size(159, 29);
+            this.lblRoom6.TabIndex = 169;
+            this.lblRoom6.Text = "Plaster Room";
             // 
-            // label6
+            // lblRoom5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bebas Neue", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1067, 578);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 31);
-            this.label6.TabIndex = 168;
-            this.label6.Text = "Tiled Room";
+            this.lblRoom5.AutoSize = true;
+            this.lblRoom5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoom5.Location = new System.Drawing.Point(1067, 578);
+            this.lblRoom5.Name = "lblRoom5";
+            this.lblRoom5.Size = new System.Drawing.Size(140, 29);
+            this.lblRoom5.TabIndex = 168;
+            this.lblRoom5.Text = "Tiled Room";
             // 
-            // label7
+            // lblDesignerText
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bebas Neue", 12F);
-            this.label7.Location = new System.Drawing.Point(1001, 4);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(444, 42);
-            this.label7.TabIndex = 170;
-            this.label7.Text = "Click on the Image to mark the room. then click on a Tile to add the room, when\r\n" +
+            this.lblDesignerText.AutoSize = true;
+            this.lblDesignerText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblDesignerText.Location = new System.Drawing.Point(1001, 4);
+            this.lblDesignerText.Name = "lblDesignerText";
+            this.lblDesignerText.Size = new System.Drawing.Size(563, 40);
+            this.lblDesignerText.TabIndex = 170;
+            this.lblDesignerText.Text = "Click on the Image to mark the room. then click on a Tile to add the room, when\r\n" +
     "done just Save. ";
             // 
             // SaveLayout
             // 
-            this.SaveLayout.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveLayout.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveLayout.Location = new System.Drawing.Point(1178, 794);
             this.SaveLayout.Name = "SaveLayout";
             this.SaveLayout.Size = new System.Drawing.Size(104, 30);
@@ -1566,68 +1566,68 @@
             this.pbxPlasterRoomSelected.TabIndex = 176;
             this.pbxPlasterRoomSelected.TabStop = false;
             // 
-            // label8
+            // lblRules1
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label8.Font = new System.Drawing.Font("Bebas Neue", 12F);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(166)))), ((int)(((byte)(33)))));
-            this.label8.Location = new System.Drawing.Point(1084, 59);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(280, 107);
-            this.label8.TabIndex = 178;
-            this.label8.Text = "Rules:\r\nDon\'t  build unreachable rooms\r\nThe shelter Door is NOT  placeable\r\nGarag" +
+            this.lblRules1.AutoSize = true;
+            this.lblRules1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblRules1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRules1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblRules1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(166)))), ((int)(((byte)(33)))));
+            this.lblRules1.Location = new System.Drawing.Point(1084, 59);
+            this.lblRules1.Name = "lblRules1";
+            this.lblRules1.Size = new System.Drawing.Size(356, 102);
+            this.lblRules1.TabIndex = 178;
+            this.lblRules1.Text = "Rules:\r\nDon\'t  build unreachable rooms\r\nThe shelter Door is NOT  placeable\r\nGarag" +
     "es and Cells Are not  changable\r\ndon\'t  remove rooms where you have objects buil" +
     "t\r\n";
             // 
-            // label9
+            // lblRules2
             // 
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label9.Location = new System.Drawing.Point(1085, 81);
-            this.label9.Margin = new System.Windows.Forms.Padding(0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 23);
-            this.label9.TabIndex = 179;
-            this.label9.Text = "Don\'t";
+            this.lblRules2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblRules2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRules2.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblRules2.Location = new System.Drawing.Point(1085, 81);
+            this.lblRules2.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRules2.Name = "lblRules2";
+            this.lblRules2.Size = new System.Drawing.Size(39, 23);
+            this.lblRules2.TabIndex = 179;
+            this.lblRules2.Text = "Don\'t";
             // 
-            // label10
+            // lblRules3
             // 
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label10.Location = new System.Drawing.Point(1193, 102);
-            this.label10.Margin = new System.Windows.Forms.Padding(0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 17);
-            this.label10.TabIndex = 180;
-            this.label10.Text = "not";
+            this.lblRules3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblRules3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRules3.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblRules3.Location = new System.Drawing.Point(1193, 102);
+            this.lblRules3.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRules3.Name = "lblRules3";
+            this.lblRules3.Size = new System.Drawing.Size(29, 17);
+            this.lblRules3.TabIndex = 180;
+            this.lblRules3.Text = "not";
             // 
-            // label11
+            // lblRules4
             // 
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label11.Location = new System.Drawing.Point(1207, 123);
-            this.label11.Margin = new System.Windows.Forms.Padding(0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 17);
-            this.label11.TabIndex = 182;
-            this.label11.Text = "not";
+            this.lblRules4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblRules4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRules4.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblRules4.Location = new System.Drawing.Point(1207, 123);
+            this.lblRules4.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRules4.Name = "lblRules4";
+            this.lblRules4.Size = new System.Drawing.Size(29, 17);
+            this.lblRules4.TabIndex = 182;
+            this.lblRules4.Text = "not";
             // 
-            // label12
+            // lblRules5
             // 
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label12.Location = new System.Drawing.Point(1086, 144);
-            this.label12.Margin = new System.Windows.Forms.Padding(0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(39, 17);
-            this.label12.TabIndex = 181;
-            this.label12.Text = "Don\'t";
+            this.lblRules5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblRules5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRules5.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblRules5.Location = new System.Drawing.Point(1086, 144);
+            this.lblRules5.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRules5.Name = "lblRules5";
+            this.lblRules5.Size = new System.Drawing.Size(39, 17);
+            this.lblRules5.TabIndex = 181;
+            this.lblRules5.Text = "Don\'t";
             // 
             // button1
             // 
@@ -1646,19 +1646,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1455, 836);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblRules4);
+            this.Controls.Add(this.lblRules5);
+            this.Controls.Add(this.lblRules3);
+            this.Controls.Add(this.lblRules2);
+            this.Controls.Add(this.lblRules1);
             this.Controls.Add(this.SaveLayout);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDesignerText);
+            this.Controls.Add(this.lblRoom6);
+            this.Controls.Add(this.lblRoom5);
+            this.Controls.Add(this.lblRoom4);
+            this.Controls.Add(this.lblRoom3);
+            this.Controls.Add(this.lblRoom2);
+            this.Controls.Add(this.lblRoom1);
             this.Controls.Add(this.pbxTiledRoom);
             this.Controls.Add(this.pbxRemoveRoom);
             this.Controls.Add(this.pbxDirtRoom);
@@ -1882,13 +1882,12 @@
         private System.Windows.Forms.PictureBox pbxDirtRoom;
         private System.Windows.Forms.PictureBox pbxRemoveRoom;
         private System.Windows.Forms.PictureBox pbxTiledRoom;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblRoom1;
+        private System.Windows.Forms.Label lblRoom2;
+        private System.Windows.Forms.Label lblRoom4;
+        private System.Windows.Forms.Label lblRoom3;
+        private System.Windows.Forms.Label lblRoom6;
+        private System.Windows.Forms.Label lblRoom5;
         private System.Windows.Forms.PictureBox pbxRemoveRoomSelected;
         private System.Windows.Forms.PictureBox pbxDoorSelected;
         private System.Windows.Forms.PictureBox pbxDirtRoomSelected;
@@ -1897,11 +1896,12 @@
         private System.Windows.Forms.PictureBox pbxPlasterRoomSelected;
         private System.Windows.Forms.Button SaveLayout;
         private System.Windows.Forms.PictureBox i45;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label lblDesignerText;
+        public System.Windows.Forms.Label lblRules1;
+        public System.Windows.Forms.Label lblRules2;
+        public System.Windows.Forms.Label lblRules3;
+        public System.Windows.Forms.Label lblRules4;
+        public System.Windows.Forms.Label lblRules5;
     }
 }
