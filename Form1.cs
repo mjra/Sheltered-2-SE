@@ -61,6 +61,7 @@ namespace Sheltered_2_SE
 
             characterSkillsTab.Font = bebas;
             lblSkillsCharacterName.Font = bebas16;
+            btnSaveCharacterSkills.Font = bebas;
             skillPageStr.Font = bebas;
             skillPageDex.Font = bebas;
             skillPageInt.Font = bebas;
@@ -87,7 +88,7 @@ namespace Sheltered_2_SE
             lblForTier3.Font = bebas16;
 
             petsTab.Font = bebas;
-            lblPetsToBeAdded.Font = bebas30; 
+            lblPetsToBeAdded.Font = bebas30;
 
             deseasesTab.Font = bebas;
             lblDeseasesToBeAdded.Font = bebas30;
@@ -143,16 +144,185 @@ namespace Sheltered_2_SE
             lblDebugToBeAdded.Font = bebas30;
 
             shelterDesignerTab.Font = bebas;
-            
-
-
-
 
             LoadSkillImages();
+            GetClick();
+
 
             tabControlMain.Visible = false;
 
         }
+
+        private void GetClick()
+        {
+            var tabPagesList = new List<TabPage> { skillPageStr, skillPageDex, skillPageInt, skillPageCha, skillPagePer, skillPageFor };
+
+            List<PictureBox> skillList = new List<PictureBox>();
+            foreach (var tabPage in tabPagesList)
+            {
+                skillList = tabPage.Controls.OfType<PictureBox>()
+                   .Where(p => p.Name.Contains("Skill") && !p.Name.Contains("Level"))
+                   .ToList();
+                foreach (var pictureBox in skillList)
+                {
+                    pictureBox.MouseClick += PictureBoxClick;
+                }
+            }
+        }
+
+        private void PictureBoxClick(object sender, MouseEventArgs e)
+        {
+            var picBoxName = ((PictureBox)sender).Name.Insert(11, "Level");
+
+            var tabPagesList = new List<TabPage> { skillPageStr, skillPageDex, skillPageInt, skillPageCha, skillPagePer, skillPageFor };
+
+            List<PictureBox> skillList = new List<PictureBox>();
+            foreach (var tabPage in tabPagesList)
+            {
+                skillList = tabPage.Controls.OfType<PictureBox>()
+                   .Where(p => p.Name.Contains("SkillLevel"))
+                   .ToList();
+                foreach (var pictureBox in skillList)
+                {
+                    var availablePointsList = new List<Label>() { lblPointsAvailableStrValue, lblPointsAvailableDexValue, lblPointsAvailableIntValue, lblPointsAvailableChaValue, lblPointsAvailablePerValue, lblPointsAvailableForValue };
+                    foreach (var label in availablePointsList)
+                    {
+                        var checkTab = tabPage.Name.Remove(0, 9) + "Value";
+                        var checkLabel = label.Name.Remove(0, 18);
+                        if (checkTab == checkLabel)
+                        {
+                            if (picBoxName == pictureBox.Name)
+                            {
+                                int labelValue = Convert.ToInt32(label.Text);
+                                switch (e.Button)
+                                {
+                                    case MouseButtons.Right:
+                                        {
+                                            if (Convert.ToInt32(label.Text) >= 0)
+                                            {
+                                                if (pictureBox.Tag.ToString() == "0")
+                                                {
+                                                    if (pictureBox.AccessibleName == "1")
+                                                    {
+                                                        pictureBox.AccessibleName = "0";
+                                                        pictureBox.Image = skillLevelIcons.Images[0];
+                                                        labelValue += 1;
+                                                        label.Text = labelValue.ToString();
+                                                    }
+                                                }
+                                                else if (pictureBox.Tag.ToString() == "1")
+                                                {
+                                                    if (pictureBox.AccessibleName == "1")
+                                                    {
+                                                        pictureBox.AccessibleName = "0";
+                                                        pictureBox.Image = skillLevelIcons.Images[1];
+                                                        labelValue += 1;
+                                                        label.Text = labelValue.ToString();
+                                                    }
+                                                    else if (pictureBox.AccessibleName == "2")
+                                                    {
+                                                        pictureBox.AccessibleName = "1";
+                                                        pictureBox.Image = skillLevelIcons.Images[4];
+                                                        labelValue += 1;
+                                                        label.Text = labelValue.ToString();
+                                                    }
+                                                }
+                                                else if (pictureBox.Tag.ToString() == "2")
+                                                {
+                                                    if (pictureBox.AccessibleName == "1")
+                                                    {
+                                                        pictureBox.AccessibleName = "0";
+                                                        pictureBox.Image = skillLevelIcons.Images[2];
+                                                        labelValue += 1;
+                                                        label.Text = labelValue.ToString();
+                                                    }
+                                                    else if (pictureBox.AccessibleName == "2")
+                                                    {
+                                                        pictureBox.AccessibleName = "1";
+                                                        pictureBox.Image = skillLevelIcons.Images[6];
+                                                        labelValue += 1;
+                                                        label.Text = labelValue.ToString();
+                                                    }
+                                                    else if (pictureBox.AccessibleName == "3")
+                                                    {
+                                                        pictureBox.AccessibleName = "2";
+                                                        pictureBox.Image = skillLevelIcons.Images[7];
+                                                        labelValue += 1;
+                                                        label.Text = labelValue.ToString();
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        break;
+                                }
+                                switch (e.Button)
+                                {
+                                    case MouseButtons.Left:
+                                        {
+                                            if (Convert.ToInt32(label.Text) > 0)
+                                            {
+                                                if (pictureBox.Tag.ToString() == "0")
+                                                {
+                                                    if (pictureBox.AccessibleName == "0")
+                                                    {
+                                                        pictureBox.AccessibleName = "1";
+                                                        pictureBox.Image = skillLevelIcons.Images[3];
+                                                        labelValue -= 1;
+                                                        label.Text = labelValue.ToString();
+                                                    }
+                                                }
+                                                else if (pictureBox.Tag.ToString() == "1")
+                                                {
+                                                    if (pictureBox.AccessibleName == "0")
+                                                    {
+                                                        pictureBox.AccessibleName = "1";
+                                                        pictureBox.Image = skillLevelIcons.Images[4];
+                                                        labelValue -= 1;
+                                                        label.Text = labelValue.ToString();
+                                                    }
+                                                    else if (pictureBox.AccessibleName == "1")
+                                                    {
+                                                        pictureBox.AccessibleName = "2";
+                                                        pictureBox.Image = skillLevelIcons.Images[5];
+                                                        labelValue -= 1;
+                                                        label.Text = labelValue.ToString();
+                                                    }
+                                                }
+                                                else if (pictureBox.Tag.ToString() == "2")
+                                                {
+                                                    if (pictureBox.AccessibleName == "0")
+                                                    {
+                                                        pictureBox.AccessibleName = "1";
+                                                        pictureBox.Image = skillLevelIcons.Images[6];
+                                                        labelValue -= 1;
+                                                        label.Text = labelValue.ToString();
+                                                    }
+                                                    else if (pictureBox.AccessibleName == "1")
+                                                    {
+                                                        pictureBox.AccessibleName = "2";
+                                                        pictureBox.Image = skillLevelIcons.Images[7];
+                                                        labelValue -= 1;
+                                                        label.Text = labelValue.ToString();
+                                                    }
+                                                    else if (pictureBox.AccessibleName == "2")
+                                                    {
+                                                        pictureBox.AccessibleName = "3";
+                                                        pictureBox.Image = skillLevelIcons.Images[8];
+                                                        labelValue -= 1;
+                                                        label.Text = labelValue.ToString();
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
 
         ProcessFile processFile = new ProcessFile();
         ProcessData processData = new ProcessData();
@@ -193,11 +363,11 @@ namespace Sheltered_2_SE
                 var xDoc = XElement.Load(ProcessFile.tempFilePath);
                 List<LoadNames> fullName = xDoc.Descendants("FamilyMembers").Descendants().Where(x => x.Name.LocalName.StartsWith("Member_"))
                     .Select(p => new LoadNames()
-                {
-                    FirstName = p.DescendantsAndSelf("firstName").FirstOrDefault().Value,
-                    LastName = p.DescendantsAndSelf("lastName").FirstOrDefault().Value
+                    {
+                        FirstName = p.DescendantsAndSelf("firstName").FirstOrDefault().Value,
+                        LastName = p.DescendantsAndSelf("lastName").FirstOrDefault().Value
 
-                }).ToList();
+                    }).ToList();
                 foreach (var name in fullName)
                 {
                     cbxCharacterSelect.Items.Add(name.FirstName + " " + name.LastName);
@@ -440,7 +610,7 @@ namespace Sheltered_2_SE
 
             cbxCharacterSelect.Items.RemoveAt(ProcessData.memberNr);
             cbxCharacterSelect.Items.Insert(ProcessData.memberNr, txbFirstname.Text + " " + txbLastname.Text);
-            cbxCharacterSelect.SelectedItem = txbFirstname +" "+ txbLastname;
+            cbxCharacterSelect.SelectedItem = txbFirstname + " " + txbLastname;
             cbxCharacterSelect.Text = "Select Character";
 
 
@@ -591,94 +761,6 @@ namespace Sheltered_2_SE
         {
             Output.Text = "";
 
-            //SkillPage.SkillLevelImage skill1 = new SkillPage.SkillLevelImage();
-            //skill1.name = "pbx" + "SkillLevel" + "1";
-
-            //var test = pbxStrSkill1 as PictureBox;
-
-            //SkillPage.GetClick((PictureBox)test);
-
-            var xDoc = XDocument.Load(ProcessFile.tempFilePath);
-            for (int i = 0; i <= 80; i++)
-            {
-                List<ShelterRoom> roomList = xDoc.Descendants("ShelterCellList").Descendants("i" + i)
-                             .Select(q => new ShelterRoom()
-                             {
-                                 RoomType = q.Element("type").Value,
-                                 RoomMaterial = q.Element("roomType").Value,
-                                 PercentExcavated = q.Element("percentageExcavated").Value
-                             }).ToList<ShelterRoom>();
-                foreach (var item in roomList)
-                {
-                    Output.AppendText("i" + i + "\n"
-                        + item.RoomType + "\n"
-                        + item.RoomMaterial + "\n"
-                        + item.PercentExcavated + "\n"
-                        + "___________________________________________" + "\n");
-
-
-                }
-            }
-        }
-
-        private void label27_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pbxForSkill1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pbxStrSkill1_MouseClick(object sender, MouseEventArgs e)
-        {
-
-
-            //switch (e.Button)
-            //{
-            //    case MouseButtons.Right:
-            //        {
-            //            if (ProcessData.skillLevel == 5)
-            //            {
-            //                pbxStrSkillLevel1.Image = skillLevelIcons.Images[2];
-            //                ProcessData.skillLevel = 2;
-            //            }
-            //            else if (ProcessData.skillLevel == 7)
-            //            {
-            //                pbxStrSkillLevel1.Image = skillLevelIcons.Images[5];
-            //                ProcessData.skillLevel = 5;
-            //            }
-            //            else if (ProcessData.skillLevel == 8)
-            //            {
-            //                pbxStrSkillLevel1.Image = skillLevelIcons.Images[7];
-            //                ProcessData.skillLevel = 7;
-            //            }
-            //        }
-            //        break;
-            //}
-            //switch (e.Button)
-            //{
-            //    case MouseButtons.Left:
-            //        {
-            //            if (ProcessData.skillLevel == 2)
-            //            {
-            //                pbxStrSkillLevel1.Image = skillLevelIcons.Images[5];
-            //                ProcessData.skillLevel = 5;
-            //            }
-            //            else if (ProcessData.skillLevel == 5)
-            //            {
-            //                pbxStrSkillLevel1.Image = skillLevelIcons.Images[7];
-            //                ProcessData.skillLevel = 7;
-            //            }
-            //            else if (ProcessData.skillLevel == 7)
-            //            {
-            //                pbxStrSkillLevel1.Image = skillLevelIcons.Images[8];
-            //                ProcessData.skillLevel = 8;
-            //            }
-            //        }
-            //        break;
-            //}
         }
 
         private void LoadSkillImages()
@@ -688,8 +770,6 @@ namespace Sheltered_2_SE
             int numberSkills = 0;
 
             var skillList = new[]
-
-
             {
                 new { Number =  14, Name = "Str"},
                 new { Number =  12, Name = "Dex"},
@@ -758,7 +838,7 @@ namespace Sheltered_2_SE
                 cbxSkillsCharacterSelect.Items.AddRange(cbxCharacterSelect.Items.Cast<Object>().ToArray());
                 lblSkillsCharacterName.Text = cbxSkillsCharacterSelect.Text;
                 tabControlSkills.SelectedIndex = 0;
-                //LoadSkills();
+
             }
 
             if (tabControlMain.SelectedIndex == 2)
@@ -832,9 +912,9 @@ namespace Sheltered_2_SE
                 if (draftingTier2 == "5") { cbxDraftingTableTier2.Checked = true; }
                 if (draftingTier3 == "5") { cbxDraftingTableTier3.Checked = true; }
                 if (draftingTier4 == "1") { cbxDraftingTableTier4.Checked = true; }
-                if (workbenchTier2 == "25") { cbxDraftingTableTier2.Checked = true; }
-                if (workbenchTier3 == "25") { cbxDraftingTableTier3.Checked = true; }
-                if (workbenchTier4 == "1") { cbxDraftingTableTier4.Checked = true; }
+                if (workbenchTier2 == "25") { cbxWorkbenchTier2.Checked = true; }
+                if (workbenchTier3 == "25") { cbxWorkbenchTier3.Checked = true; }
+                if (workbenchTier4 == "1") { cbxWorkbenchTier4.Checked = true; }
 
                 if (batteryBank == "True") { cbxBpBatteryBank.Checked = true; }
                 if (flashbangMine == "True") { cbxBpFlashbangMine.Checked = true; }
@@ -862,21 +942,21 @@ namespace Sheltered_2_SE
                 if (carPartsCrafting == "1") { cbxOtherCarPartsCrafting.Checked = true; }
                 if (craftMedicine == "1") { cbxMedicineCrafting.Checked = true; }
 
-                if (indoctirnationCell1 == "True") { cbxDraftingTableTier2.Checked = true; }
-                if (indoctirnationCell2 == "True") { cbxDraftingTableTier3.Checked = true; }
-                if (indoctirnationCell3 == "True") { cbxDraftingTableTier4.Checked = true; }
-                if (morningstar1 == "True") { cbxBpBatteryBank.Checked = true; }
-                if (morningstar2 == "True") { cbxBpFlashbangMine.Checked = true; }
-                if (morningstar3 == "True") { cbxBpIndustrialGenerator.Checked = true; }
-                if (pulsefireRifle1 == "True") { cbxBpMedicalBed.Checked = true; }
-                if (pulsefireRifle2 == "True") { cbxBpGasMine.Checked = true; }
-                if (pulsefireRifle3 == "True") { cbxBpEfficientPlanter.Checked = true; }
-                if (sentryTurret1 == "True") { cbxBpQuantumBattery.Checked = true; }
-                if (sentryTurret2 == "True") { cbxBpDefibrilator.Checked = true; }
-                if (sentryTurret3 == "True") { cbxBpElectricityTrap.Checked = true; }
-                if (vaccine1 == "True") { cbxBpLaboratory.Checked = true; }
-                if (vaccine2 == "True") { cbxBpRecycler.Checked = true; }
-                if (vaccine3 == "True") { cbxBpSolarPanel.Checked = true; }
+                if (indoctirnationCell1 == "True") { cbxRewardChurchQ1.Checked = true; }
+                if (indoctirnationCell2 == "True") { cbxRewardChurchQ2.Checked = true; }
+                if (indoctirnationCell3 == "True") { cbxRewardChurchQ3.Checked = true; }
+                if (morningstar1 == "True") { cbxRewardCtkQ1.Checked = true; }
+                if (morningstar2 == "True") { cbxRewardCtkQ2.Checked = true; }
+                if (morningstar3 == "True") { cbxRewardCtkQ3.Checked = true; }
+                if (pulsefireRifle1 == "True") { cbxRewardNewQ1.Checked = true; }
+                if (pulsefireRifle2 == "True") { cbxRewardNewQ2.Checked = true; }
+                if (pulsefireRifle3 == "True") { cbxRewardNewQ3.Checked = true; }
+                if (sentryTurret1 == "True") { cbxRewardBlackQ1.Checked = true; }
+                if (sentryTurret2 == "True") { cbxRewardBlackQ2.Checked = true; }
+                if (sentryTurret3 == "True") { cbxRewardBlackQ3.Checked = true; }
+                if (vaccine1 == "True") { cbxRewardLosQ1.Checked = true; }
+                if (vaccine2 == "True") { cbxRewardLosQ2.Checked = true; }
+                if (vaccine3 == "True") { cbxRewardLosQ3.Checked = true; }
 
 
                 if (tabControlMain.SelectedIndex == 5)
@@ -892,6 +972,7 @@ namespace Sheltered_2_SE
         private void cbxSkillsCharacterSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Read in User Skill Values into List
+            tabControlSkills.Visible = true;
 
             var doc = XDocument.Load(ProcessFile.tempFilePath);
 
@@ -918,7 +999,7 @@ namespace Sheltered_2_SE
             foreach (var point in getNewSkillPoints)
             {
                 if (selectedName == point.FirstName + " " + point.LastName)
-                {                    
+                {
                     foreach (var oldPoint in getOldSkillValues)
                     {
                         if (selectedName == oldPoint.FirstName + " " + oldPoint.LastName)
@@ -930,7 +1011,7 @@ namespace Sheltered_2_SE
                             lblPointsAvailablePerValue.Text = (point.PerceptionLevelNew - oldPoint.PerceptionLevelBefore).ToString();
                             lblPointsAvailableForValue.Text = (point.FortitudeLevelNew - oldPoint.FortitudeLevelBefore).ToString();
 
-                        }                            
+                        }
                     }
                 }
             }
@@ -957,9 +1038,10 @@ namespace Sheltered_2_SE
             {
                 for (int i = 1; i <= num.Nr; i++)
                 {
-                    var imageBox = tabControlSkills.SelectedTab.Controls.OfType<PictureBox>().FirstOrDefault(p => p.Name == "pbx"+ num.Skill +"SkillLevel" + i.ToString());
+                    var imageBox = tabControlSkills.SelectedTab.Controls.OfType<PictureBox>().FirstOrDefault(p => p.Name == "pbx" + num.Skill + "SkillLevel" + i.ToString());
                     if (imageBox != null)
                     {
+                        imageBox.AccessibleName = "0";
                         if (imageBox.Tag.ToString() == "0")
                         {
                             imageBox.Image = skillLevelIcons.Images[0];
@@ -978,7 +1060,7 @@ namespace Sheltered_2_SE
 
             LoadSkills();
         }
-        
+
 
         private void LoadSkills()
         {
@@ -989,7 +1071,7 @@ namespace Sheltered_2_SE
 
             foreach (GetFamilyMemberData member in familyMembers)
             {
-                if (member.FirstName + " " +member.LastName == firstName)
+                if (member.FirstName + " " + member.LastName == firstName)
                 {
                     firstName = member.FirstName;
                     lastName = member.LastName;
@@ -1004,9 +1086,9 @@ namespace Sheltered_2_SE
             ProcessData.skillMember = xDoc.Descendants("FamilyMembers").Descendants("firstName").Where(p => p.Value == firstName && p.ElementsAfterSelf("lastName").FirstOrDefault().Value == lastName).Ancestors().First().Name.ToString();
 
             //Load in Available Points
-            
+
             List<GetFamilyMemberData> getAvailablePoints = new List<GetFamilyMemberData>();
-            
+
             foreach (var member in getAvailablePoints)
             {
                 lblPointsAvailableStrValue.Text = Convert.ToString(member.StrengthLevel);
@@ -1017,7 +1099,7 @@ namespace Sheltered_2_SE
             int intValue = Convert.ToInt32(lblPointsAvailableIntValue.Text);
             int chaValue = Convert.ToInt32(lblPointsAvailableChaValue.Text);
             int perValue = Convert.ToInt32(lblPointsAvailablePerValue.Text);
-            int forValue = Convert.ToInt32(lblPointsAvailableForValue.Text);            
+            int forValue = Convert.ToInt32(lblPointsAvailableForValue.Text);
 
             //Load in Availabe Points
             strValue += Convert.ToInt32(xDoc.Descendants("FamilyMembers").Elements(ProcessData.skillMember).Descendants("Strength").Descendants("ProfessionPoints").First().Value);
@@ -1068,12 +1150,13 @@ namespace Sheltered_2_SE
 
             //Get All Members
             var members = xDoc.Descendants("FamilyMembers").Elements().Where(p => p.Name.LocalName.StartsWith("Member_"));
+
             //Load in skills
             //Strength
             if (skillType == "strength")
             {
                 skillPageStr.Select();
-                
+
                 for (int i = 0; i < Convert.ToInt32(skillsAmount); i++)
                 {
                     List<Skills> strSkills = xDoc
@@ -1099,14 +1182,17 @@ namespace Sheltered_2_SE
                                 if (imageName.Tag.ToString() == "0")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 2];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                                 else if (imageName.Tag.ToString() == "1")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 3];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                                 else if (imageName.Tag.ToString() == "2")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 5];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                             }
                         }
@@ -1142,14 +1228,17 @@ namespace Sheltered_2_SE
                                 if (imageName.Tag.ToString() == "0")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 2];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                                 else if (imageName.Tag.ToString() == "1")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 3];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                                 else if (imageName.Tag.ToString() == "2")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 5];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                             }
                         }
@@ -1185,14 +1274,17 @@ namespace Sheltered_2_SE
                                 if (imageName.Tag.ToString() == "0")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 2];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                                 else if (imageName.Tag.ToString() == "1")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 3];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                                 else if (imageName.Tag.ToString() == "2")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 5];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                             }
                         }
@@ -1228,14 +1320,17 @@ namespace Sheltered_2_SE
                                 if (imageName.Tag.ToString() == "0")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 2];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                                 else if (imageName.Tag.ToString() == "1")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 3];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                                 else if (imageName.Tag.ToString() == "2")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 5];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                             }
                         }
@@ -1271,14 +1366,17 @@ namespace Sheltered_2_SE
                                 if (imageName.Tag.ToString() == "0")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 2];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                                 else if (imageName.Tag.ToString() == "1")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 3];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                                 else if (imageName.Tag.ToString() == "2")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 5];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                             }
                         }
@@ -1314,14 +1412,17 @@ namespace Sheltered_2_SE
                                 if (imageName.Tag.ToString() == "0")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 2];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                                 else if (imageName.Tag.ToString() == "1")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 3];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                                 else if (imageName.Tag.ToString() == "2")
                                 {
                                     imageName.Image = skillLevelIcons.Images[Convert.ToInt32(skill.SkillLevel) + 5];
+                                    imageName.AccessibleName = skill.SkillLevel;
                                 }
                             }
                         }
@@ -1477,6 +1578,415 @@ namespace Sheltered_2_SE
         private void tabControlSkills_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadSkills();
+        }
+
+        private void btnSaveCharacterSkills_Click(object sender, EventArgs e)
+        {
+            var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+            var tabPagesList = new List<TabPage> { skillPageStr, skillPageDex, skillPageInt, skillPageCha, skillPagePer, skillPageFor };
+            List<PictureBox> skillList = new List<PictureBox>();
+            List<Skills> newSkillList = new List<Skills>();
+            foreach (var tabPage in tabPagesList)
+            {
+                skillList = tabPage.Controls.OfType<PictureBox>()
+                   .Where(p => p.Name.Contains("SkillLevel"))
+                   .ToList();
+                foreach (var pictureBox in skillList)
+                {
+                    newSkillList.Add(new Skills { Type = tabPage.Name, SkillKey = pictureBox.AccessibleDescription, SkillLevel = pictureBox.AccessibleName });
+                }
+            }
+
+
+            int skillAmount = 0;
+            string firstName = txbFirstname.Text;
+            string lastName = txbLastname.Text;
+            var memberNr = xDoc.Descendants("FamilyMembers").Descendants().Where(x => x.Value.Contains(firstName) && x.Value.Contains(lastName)).AncestorsAndSelf().FirstOrDefault().Name;
+
+            //Save Strength Skills
+            List<Skills> strSkillList = new List<Skills>(newSkillList)
+                .Where(x => x.Type
+                .Contains("Str") && Convert.ToInt32(x.SkillLevel) > 0)
+                .ToList();
+
+            int skillsAdded = 0;
+            int skillChecked = 0;
+            int attributeValue = Convert.ToInt32(xDoc.Descendants(memberNr).Descendants("Profession").Descendants("strengthSkills").First().Attribute("size").Value);
+            foreach (var skill in strSkillList)
+            {
+                skillAmount = strSkillList.Count();
+                if (attributeValue > 0)
+                {
+                    if(skillChecked < attributeValue)
+                    {
+
+                        if(xDoc.Descendants(memberNr).Descendants("strengthSkills").Descendants("i" + skillChecked).Descendants("skillKey").FirstOrDefault().Value == skill.SkillKey)
+                        {
+                            xDoc.Descendants(memberNr).Descendants("strengthSkills").Descendants("i" + skillChecked).Descendants("skillLevel").FirstOrDefault().Value = skill.SkillLevel;
+                            skillsAdded++;
+                        }                        
+                        skillChecked++;
+                    }
+                    else
+                    {
+                        xDoc.Descendants(memberNr).Descendants("StrengthSkills").Descendants("i" + (attributeValue + skillsAdded - 1 )).FirstOrDefault().AddAfterSelf(
+                            new XElement("i" + (attributeValue + skillsAdded),
+                            new XElement("skillKey", skill.SkillKey),
+                            new XElement("skillLevel", skill.SkillLevel),
+                            new XElement("accuracyLevel", "0"),
+                            new XElement("damageLevel", "0"),
+                            new XElement("staminaLevel", "0"),
+                            new XElement("chanceLevel", "0")
+                            ));
+                        skillsAdded++;
+                    }
+                }
+                else
+                {
+                    xDoc.Descendants(memberNr).Descendants("StrengthSkills").Descendants("i" + skillsAdded).FirstOrDefault().AddAfterSelf(
+                        new XElement("i" + skillsAdded,
+                        new XElement("skillKey", skill.SkillKey),
+                        new XElement("skillLevel", skill.SkillLevel),
+                        new XElement("accuracyLevel", "0"),
+                        new XElement("damageLevel", "0"),
+                        new XElement("staminaLevel", "0"),
+                        new XElement("chanceLevel", "0")
+                        ));
+                    skillsAdded++;
+                }
+            }
+            var newAttribute = xDoc.Descendants(memberNr).Descendants("Profession").Descendants("strengthSkills").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Count();
+            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("strengthSkills").First().Attribute("size").Value = newAttribute.ToString(); 
+            //save Available Points           
+            xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Strength").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailableStrValue.Text;
+            //Add Points Spent Tiers
+            xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Strength").Descendants("pointsSpent_tierOne").FirstOrDefault().Value = skillAmount.ToString();
+
+
+
+            //Save Dexterity Skills
+            List<Skills> dexSkillList = new List<Skills>(newSkillList)
+                .Where(x => x.Type
+                .Contains("Dex") && Convert.ToInt32(x.SkillLevel) > 0)
+                .ToList();
+
+            skillsAdded = 0;
+            skillChecked = 0;
+
+            attributeValue = Convert.ToInt32(xDoc.Descendants(memberNr).Descendants("Profession").Descendants("dexteritySkills").First().Attribute("size").Value);
+            foreach (var skill in dexSkillList)
+            {
+                skillAmount = dexSkillList.Count();
+                if (attributeValue > 0)
+                {
+                    if (skillChecked < attributeValue)
+                    {
+
+                        if (xDoc.Descendants(memberNr).Descendants("dexteritySkills").Descendants("i" + skillChecked).Descendants("skillKey").FirstOrDefault().Value == skill.SkillKey)
+                        {
+                            xDoc.Descendants(memberNr).Descendants("dexteritySkills").Descendants("i" + skillChecked).Descendants("skillLevel").FirstOrDefault().Value = skill.SkillLevel;
+                            skillsAdded++;
+                        }
+                        skillChecked++;
+                    }
+                    else
+                    {
+                        xDoc.Descendants(memberNr).Descendants("dexteritySkills").Descendants("i" + (attributeValue + skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
+                            new XElement("i" + (attributeValue + skillsAdded),
+                            new XElement("skillKey", skill.SkillKey),
+                            new XElement("skillLevel", skill.SkillLevel),
+                            new XElement("accuracyLevel", "0"),
+                            new XElement("damageLevel", "0"),
+                            new XElement("staminaLevel", "0"),
+                            new XElement("chanceLevel", "0")
+                            ));
+                        skillsAdded++;
+                    }
+                }
+                else
+                {
+                    xDoc.Descendants(memberNr).Descendants("dexteritySkills").Descendants("i" + skillsAdded).FirstOrDefault().AddAfterSelf(
+                        new XElement("i" + skillsAdded,
+                        new XElement("skillKey", skill.SkillKey),
+                        new XElement("skillLevel", skill.SkillLevel),
+                        new XElement("accuracyLevel", "0"),
+                        new XElement("damageLevel", "0"),
+                        new XElement("staminaLevel", "0"),
+                        new XElement("chanceLevel", "0")
+                        ));
+                    skillsAdded++;
+                }
+            }
+            newAttribute = xDoc.Descendants(memberNr).Descendants("Profession").Descendants("dexteritySkills").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Count();
+            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("dexteritySkills").First().Attribute("size").Value = newAttribute.ToString();
+            //save Available Points           
+            xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Dexterity").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailableDexValue.Text;
+            //Add Points Spent Tiers
+            xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Dexterity").Descendants("pointsSpent_tierOne").FirstOrDefault().Value = skillAmount.ToString();
+           
+            //Save Intelligence Skills
+            List<Skills> intSkillList = new List<Skills>(newSkillList)
+                .Where(x => x.Type
+                .Contains("Int") && Convert.ToInt32(x.SkillLevel) > 0)
+                .ToList();
+
+            skillsAdded = 0;
+            skillChecked = 0;
+
+            attributeValue = Convert.ToInt32(xDoc.Descendants(memberNr).Descendants("Profession").Descendants("intelligenceSkills").First().Attribute("size").Value);
+            foreach (var skill in intSkillList)
+            {
+                skillAmount = intSkillList.Count();
+                if (attributeValue > 0)
+                {
+                    if (skillChecked < attributeValue)
+                    {
+
+                        if (xDoc.Descendants(memberNr).Descendants("intelligenceSkills").Descendants("i" + skillChecked).Descendants("skillKey").FirstOrDefault().Value == skill.SkillKey)
+                        {
+                            xDoc.Descendants(memberNr).Descendants("intelligenceSkills").Descendants("i" + skillChecked).Descendants("skillLevel").FirstOrDefault().Value = skill.SkillLevel;
+                            skillsAdded++;
+                        }
+                        skillChecked++;
+                    }
+                    else
+                    {
+                        xDoc.Descendants(memberNr).Descendants("intelligenceSkills").Descendants("i" + (attributeValue + skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
+                            new XElement("i" + (attributeValue + skillsAdded),
+                            new XElement("skillKey", skill.SkillKey),
+                            new XElement("skillLevel", skill.SkillLevel),
+                            new XElement("accuracyLevel", "0"),
+                            new XElement("damageLevel", "0"),
+                            new XElement("staminaLevel", "0"),
+                            new XElement("chanceLevel", "0")
+                            ));
+                        skillsAdded++;
+                    }
+                }
+                else
+                {
+                    xDoc.Descendants(memberNr).Descendants("intelligenceSkills").Descendants("i" + skillsAdded).FirstOrDefault().AddAfterSelf(
+                        new XElement("i" + skillsAdded,
+                        new XElement("skillKey", skill.SkillKey),
+                        new XElement("skillLevel", skill.SkillLevel),
+                        new XElement("accuracyLevel", "0"),
+                        new XElement("damageLevel", "0"),
+                        new XElement("staminaLevel", "0"),
+                        new XElement("chanceLevel", "0")
+                        ));
+                    skillsAdded++;
+                }
+            }
+            newAttribute = xDoc.Descendants(memberNr).Descendants("Profession").Descendants("intelligenceSkills").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Count();
+            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("intelligenceSkills").First().Attribute("size").Value = newAttribute.ToString();
+            //save Available Points           
+            xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Intelligence").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailableIntValue.Text;
+            //Add Points Spent Tiers
+            xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Intelligence").Descendants("pointsSpent_tierOne").FirstOrDefault().Value = skillAmount.ToString();
+
+            //Save Charisma Skills
+            List<Skills> chaSkillList = new List<Skills>(newSkillList)
+                .Where(x => x.Type
+                .Contains("Cha") && Convert.ToInt32(x.SkillLevel) > 0)
+                .ToList();
+
+            skillsAdded = 0;
+            skillChecked = 0;
+
+            attributeValue = Convert.ToInt32(xDoc.Descendants(memberNr).Descendants("Profession").Descendants("charismaSkills").First().Attribute("size").Value);
+            foreach (var skill in chaSkillList)
+            {
+                skillAmount = chaSkillList.Count();
+                if (attributeValue > 0)
+                {
+                    if (skillChecked < attributeValue)
+                    {
+
+                        if (xDoc.Descendants(memberNr).Descendants("charismaSkills").Descendants("i" + skillChecked).Descendants("skillKey").FirstOrDefault().Value == skill.SkillKey)
+                        {
+                            xDoc.Descendants(memberNr).Descendants("charismaSkills").Descendants("i" + skillChecked).Descendants("skillLevel").FirstOrDefault().Value = skill.SkillLevel;
+                            skillsAdded++;
+                        }
+                        skillChecked++;
+                    }
+                    else
+                    {
+                        xDoc.Descendants(memberNr).Descendants("charismaSkills").Descendants("i" + (attributeValue + skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
+                            new XElement("i" + (attributeValue + skillsAdded),
+                            new XElement("skillKey", skill.SkillKey),
+                            new XElement("skillLevel", skill.SkillLevel),
+                            new XElement("accuracyLevel", "0"),
+                            new XElement("damageLevel", "0"),
+                            new XElement("staminaLevel", "0"),
+                            new XElement("chanceLevel", "0")
+                            ));
+                        skillsAdded++;
+                    }
+                }
+                else
+                {
+                    xDoc.Descendants(memberNr).Descendants("charismaSkills").Descendants("i" + skillsAdded).FirstOrDefault().AddAfterSelf(
+                        new XElement("i" + skillsAdded,
+                        new XElement("skillKey", skill.SkillKey),
+                        new XElement("skillLevel", skill.SkillLevel),
+                        new XElement("accuracyLevel", "0"),
+                        new XElement("damageLevel", "0"),
+                        new XElement("staminaLevel", "0"),
+                        new XElement("chanceLevel", "0")
+                        ));
+                    skillsAdded++;
+                }
+            }
+            newAttribute = xDoc.Descendants(memberNr).Descendants("Profession").Descendants("charismaSkills").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Count();
+            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("charismaSkills").First().Attribute("size").Value = newAttribute.ToString();
+            //save Available Points           
+            xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Charisma").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailableChaValue.Text;
+            //Add Points Spent Tiers
+            xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Charisma").Descendants("pointsSpent_tierOne").FirstOrDefault().Value = skillAmount.ToString();
+
+            //Save Perception Skills
+            List<Skills> perSkillList = new List<Skills>(newSkillList)
+                .Where(x => x.Type
+                .Contains("Per") && Convert.ToInt32(x.SkillLevel) > 0)
+                .ToList();
+
+            skillsAdded = 0;
+            skillChecked = 0;
+
+            attributeValue = Convert.ToInt32(xDoc.Descendants(memberNr).Descendants("Profession").Descendants("perceptionSkills").First().Attribute("size").Value);
+            foreach (var skill in perSkillList)
+            {
+                skillAmount = perSkillList.Count();
+                if (attributeValue > 0)
+                {
+                    if (skillChecked < attributeValue)
+                    {
+
+                        if (xDoc.Descendants(memberNr).Descendants("perceptionSkills").Descendants("i" + skillChecked).Descendants("skillKey").FirstOrDefault().Value == skill.SkillKey)
+                        {
+                            xDoc.Descendants(memberNr).Descendants("perceptionSkills").Descendants("i" + skillChecked).Descendants("skillLevel").FirstOrDefault().Value = skill.SkillLevel;
+                            skillsAdded++;
+                        }
+                        skillChecked++;
+                    }
+                    else
+                    {
+                        xDoc.Descendants(memberNr).Descendants("perceptionSkills").Descendants("i" + (attributeValue + skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
+                            new XElement("i" + (attributeValue + skillsAdded),
+                            new XElement("skillKey", skill.SkillKey),
+                            new XElement("skillLevel", skill.SkillLevel),
+                            new XElement("accuracyLevel", "0"),
+                            new XElement("damageLevel", "0"),
+                            new XElement("staminaLevel", "0"),
+                            new XElement("chanceLevel", "0")
+                            ));
+                        skillsAdded++;
+                    }
+                }
+                else
+                {
+                    xDoc.Descendants(memberNr).Descendants("perceptionSkills").Descendants("i" + skillsAdded).FirstOrDefault().AddAfterSelf(
+                        new XElement("i" + skillsAdded,
+                        new XElement("skillKey", skill.SkillKey),
+                        new XElement("skillLevel", skill.SkillLevel),
+                        new XElement("accuracyLevel", "0"),
+                        new XElement("damageLevel", "0"),
+                        new XElement("staminaLevel", "0"),
+                        new XElement("chanceLevel", "0")
+                        ));
+                    skillsAdded++;
+                }
+            }
+            newAttribute = xDoc.Descendants(memberNr).Descendants("Profession").Descendants("perceptionSkills").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Count();
+            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("perceptionSkills").First().Attribute("size").Value = newAttribute.ToString();
+            //save Available Points           
+            xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Perception").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailablePerValue.Text;
+            //Add Points Spent Tiers
+            xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Perception").Descendants("pointsSpent_tierOne").FirstOrDefault().Value = skillAmount.ToString();
+            //Save Fortitude Skills
+            List<Skills> forSkillList = new List<Skills>(newSkillList)
+                .Where(x => x.Type
+                .Contains("For") && Convert.ToInt32(x.SkillLevel) > 0)
+                .ToList();
+
+            skillsAdded = 0;
+            skillChecked = 0;
+
+            attributeValue = Convert.ToInt32(xDoc.Descendants(memberNr).Descendants("Profession").Descendants("fortitudeSkills").First().Attribute("size").Value);
+            foreach (var skill in forSkillList)
+            {
+                skillAmount = forSkillList.Count();
+                if (attributeValue > 0)
+                {
+                    if (skillChecked < attributeValue)
+                    {
+
+                        if (xDoc.Descendants(memberNr).Descendants("fortitudeSkills").Descendants("i" + skillChecked).Descendants("skillKey").FirstOrDefault().Value == skill.SkillKey)
+                        {
+                            xDoc.Descendants(memberNr).Descendants("fortitudeSkills").Descendants("i" + skillChecked).Descendants("skillLevel").FirstOrDefault().Value = skill.SkillLevel;
+                            skillsAdded++;
+                        }
+                        skillChecked++;
+                    }
+                    else
+                    {
+                        xDoc.Descendants(memberNr).Descendants("fortitudeSkills").Descendants("i" + (attributeValue + skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
+                            new XElement("i" + (attributeValue + skillsAdded),
+                            new XElement("skillKey", skill.SkillKey),
+                            new XElement("skillLevel", skill.SkillLevel),
+                            new XElement("accuracyLevel", "0"),
+                            new XElement("damageLevel", "0"),
+                            new XElement("staminaLevel", "0"),
+                            new XElement("chanceLevel", "0")
+                            ));
+                        skillsAdded++;
+                    }
+                }
+                else
+                {
+                    xDoc.Descendants(memberNr).Descendants("fortitudeSkills").Descendants("i" + skillsAdded).FirstOrDefault().AddAfterSelf(
+                        new XElement("i" + skillsAdded,
+                        new XElement("skillKey", skill.SkillKey),
+                        new XElement("skillLevel", skill.SkillLevel),
+                        new XElement("accuracyLevel", "0"),
+                        new XElement("damageLevel", "0"),
+                        new XElement("staminaLevel", "0"),
+                        new XElement("chanceLevel", "0")
+                        ));
+                    skillsAdded++;
+                }
+            }
+            newAttribute = xDoc.Descendants(memberNr).Descendants("Profession").Descendants("fortitudeSkills").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Count();
+            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("fortitudeSkills").First().Attribute("size").Value = newAttribute.ToString();
+            //save Available Points           
+            xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Fortitude").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailableForValue.Text;
+            //Add Points Spent Tiers
+            xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Fortitude").Descendants("pointsSpent_tierOne").FirstOrDefault().Value = skillAmount.ToString();
+            
+            xDoc.Save(ProcessFile.tempFilePath);
+            MessageBox.Show("Character skills saved successfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
+
+        }
+
+        private void Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+
+            var tabPagesList = new List<TabPage> { skillPageStr, skillPageDex, skillPageInt, skillPageCha, skillPagePer, skillPageFor };
+
+            List<PictureBox> skillList = new List<PictureBox>();
+            foreach (var tabPage in tabPagesList)
+            {
+                skillList = tabPage.Controls.OfType<PictureBox>()
+                   .Where(p => p.Name.Contains("Skill") && !p.Name.Contains("Level"))
+                   .ToList();
+                foreach (var pictureBox in skillList)
+                {
+                    pictureBox.MouseClick -= PictureBoxClick;
+                }
+            }
+
+            Application.Exit();
         }
     }
 }

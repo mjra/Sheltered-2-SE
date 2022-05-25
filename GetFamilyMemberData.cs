@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace Sheltered_2_SE
 {
-
 
     class GetSkillPoints
     {
@@ -21,6 +21,8 @@ namespace Sheltered_2_SE
         public int FortitudeLevelBefore { get; set; }
 
         public static List<GetSkillPoints> _getSkillPoints;
+        public static List<GetSkillPoints> _getPictureBox;        
+
     }
 
     class NewSkillPoints
@@ -79,6 +81,7 @@ namespace Sheltered_2_SE
 
     class Skills
     {
+        public string Type { get; set; }   
         public string SkillKey { get; set; }
         public string SkillLevel { get; set; }
 
@@ -218,12 +221,6 @@ namespace Sheltered_2_SE
                 SkillLevel = aSkillLevel
             });
             return true;
-        }
-
-        static void SkillAdd(string[] args)
-        {
-            var skillList = new SkillList();
-            skillList.AddSkill("15", "1");
         }
 
     }

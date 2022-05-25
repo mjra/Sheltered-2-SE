@@ -475,6 +475,21 @@ namespace Sheltered_2_SE
         {
             ShelterDesigner_Load(null, EventArgs.Empty);
         }
+
+        private void ShelterDesigner_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            for (int i = 0; i <= 80; i++)
+            {
+                var pBName = "i" + i;
+                foreach (Control pB in pnlShelterDesigner.Controls.OfType<PictureBox>())
+                {
+                    if (pB.Name == pBName)
+                    {
+                        pB.Click -= PictureBoxClick;
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -23,6 +23,7 @@ namespace Sheltered_2_SE
         public static string skillName = "";
         public static string selectedFirstName = "";
         public static string selectedLastname = "";
+        public static int pos = 0;
         
 
         //Load in FamilyMemberData

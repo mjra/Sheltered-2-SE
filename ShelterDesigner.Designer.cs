@@ -1674,6 +1674,7 @@
             this.Controls.Add(this.pbxPlasterRoomSelected);
             this.Name = "ShelterDesigner";
             this.Text = "ShelterDesigner";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ShelterDesigner_FormClosed);
             this.Load += new System.EventHandler(this.ShelterDesigner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxTiledRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveRoom)).EndInit();
