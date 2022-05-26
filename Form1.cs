@@ -62,6 +62,7 @@ namespace Sheltered_2_SE
             characterSkillsTab.Font = bebas;
             lblSkillsCharacterName.Font = bebas16;
             btnSaveCharacterSkills.Font = bebas;
+            btnMaxAllSkills.Font = bebas;
             skillPageStr.Font = bebas;
             skillPageDex.Font = bebas;
             skillPageInt.Font = bebas;
@@ -973,6 +974,8 @@ namespace Sheltered_2_SE
         {
             // Read in User Skill Values into List
             tabControlSkills.Visible = true;
+            btnMaxAllSkills.Visible=true;
+            btnSaveCharacterSkills.Visible = true;
 
             var doc = XDocument.Load(ProcessFile.tempFilePath);
 
@@ -990,6 +993,8 @@ namespace Sheltered_2_SE
                     FortitudeLevelNew = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Fortitude").Descendants("level").FirstOrDefault().Value),
 
                 }).ToList();
+
+            
 
             //Get available Points
 
@@ -1597,53 +1602,67 @@ namespace Sheltered_2_SE
                 }
             }
 
+            List<GetFamilyMemberData> getNames =
+                xDoc.Descendants("FamilyMembers").Descendants().Where(x => x.Name.LocalName.StartsWith("Member_"))
+                    .Select(p => new GetFamilyMemberData()
+                    {
+                        FirstName = p.DescendantsAndSelf("firstName").FirstOrDefault().Value,
+                        LastName = p.DescendantsAndSelf("lastName").FirstOrDefault().Value
 
+                    }).ToList();
+            string firstName = "";
+            string lastName = "";
+            foreach (var name in getNames)
+            {
+                if(name.FirstName + " " + name.LastName == cbxSkillsCharacterSelect.SelectedItem.ToString())
+                {
+                    firstName = name.FirstName;
+                    lastName = name.LastName;
+                }
+            }          
+
+            //string firstName = "";
+            
             int skillAmount = 0;
-            string firstName = txbFirstname.Text;
-            string lastName = txbLastname.Text;
+
             var memberNr = xDoc.Descendants("FamilyMembers").Descendants().Where(x => x.Value.Contains(firstName) && x.Value.Contains(lastName)).AncestorsAndSelf().FirstOrDefault().Name;
 
             //Save Strength Skills
+
             List<Skills> strSkillList = new List<Skills>(newSkillList)
-                .Where(x => x.Type
-                .Contains("Str") && Convert.ToInt32(x.SkillLevel) > 0)
-                .ToList();
+             .Where(x => x.Type
+             .Contains("Str") && Convert.ToInt32(x.SkillLevel) > 0)
+             .ToList();
 
             int skillsAdded = 0;
-            int skillChecked = 0;
             int attributeValue = Convert.ToInt32(xDoc.Descendants(memberNr).Descendants("Profession").Descendants("strengthSkills").First().Attribute("size").Value);
             foreach (var skill in strSkillList)
             {
                 skillAmount = strSkillList.Count();
                 if (attributeValue > 0)
+                {  
+                    for (int i = 0; i < attributeValue; i++)
+                    {
+                        xDoc.Descendants(memberNr).Descendants("strengthSkills").Descendants("i"+ i).Remove();
+                    }
+                    attributeValue = 0;                    
+                }
+                if(skillsAdded == 0)
                 {
-                    if(skillChecked < attributeValue)
-                    {
-
-                        if(xDoc.Descendants(memberNr).Descendants("strengthSkills").Descendants("i" + skillChecked).Descendants("skillKey").FirstOrDefault().Value == skill.SkillKey)
-                        {
-                            xDoc.Descendants(memberNr).Descendants("strengthSkills").Descendants("i" + skillChecked).Descendants("skillLevel").FirstOrDefault().Value = skill.SkillLevel;
-                            skillsAdded++;
-                        }                        
-                        skillChecked++;
-                    }
-                    else
-                    {
-                        xDoc.Descendants(memberNr).Descendants("StrengthSkills").Descendants("i" + (attributeValue + skillsAdded - 1 )).FirstOrDefault().AddAfterSelf(
-                            new XElement("i" + (attributeValue + skillsAdded),
-                            new XElement("skillKey", skill.SkillKey),
-                            new XElement("skillLevel", skill.SkillLevel),
-                            new XElement("accuracyLevel", "0"),
-                            new XElement("damageLevel", "0"),
-                            new XElement("staminaLevel", "0"),
-                            new XElement("chanceLevel", "0")
-                            ));
-                        skillsAdded++;
-                    }
+                    xDoc.Descendants(memberNr).Descendants("StrengthSkills").Descendants("strengthSkills").FirstOrDefault().Add(
+                        new XElement("i" + skillsAdded,
+                        new XElement("skillKey", skill.SkillKey),
+                        new XElement("skillLevel", skill.SkillLevel),
+                        new XElement("accuracyLevel", "0"),
+                        new XElement("damageLevel", "0"),
+                        new XElement("staminaLevel", "0"),
+                        new XElement("chanceLevel", "0")
+                        ));
+                    skillsAdded++;
                 }
                 else
                 {
-                    xDoc.Descendants(memberNr).Descendants("StrengthSkills").Descendants("i" + skillsAdded).FirstOrDefault().AddAfterSelf(
+                    xDoc.Descendants(memberNr).Descendants("strengthSkills").Descendants("i" + (skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
                         new XElement("i" + skillsAdded,
                         new XElement("skillKey", skill.SkillKey),
                         new XElement("skillLevel", skill.SkillLevel),
@@ -1655,14 +1674,11 @@ namespace Sheltered_2_SE
                     skillsAdded++;
                 }
             }
-            var newAttribute = xDoc.Descendants(memberNr).Descendants("Profession").Descendants("strengthSkills").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Count();
-            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("strengthSkills").First().Attribute("size").Value = newAttribute.ToString(); 
+            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("strengthSkills").First().Attribute("size").Value = skillsAdded.ToString();
             //save Available Points           
             xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Strength").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailableStrValue.Text;
             //Add Points Spent Tiers
             xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Strength").Descendants("pointsSpent_tierOne").FirstOrDefault().Value = skillAmount.ToString();
-
-
 
             //Save Dexterity Skills
             List<Skills> dexSkillList = new List<Skills>(newSkillList)
@@ -1671,41 +1687,34 @@ namespace Sheltered_2_SE
                 .ToList();
 
             skillsAdded = 0;
-            skillChecked = 0;
-
             attributeValue = Convert.ToInt32(xDoc.Descendants(memberNr).Descendants("Profession").Descendants("dexteritySkills").First().Attribute("size").Value);
             foreach (var skill in dexSkillList)
             {
                 skillAmount = dexSkillList.Count();
                 if (attributeValue > 0)
                 {
-                    if (skillChecked < attributeValue)
+                    for (int i = 0; i < attributeValue; i++)
                     {
-
-                        if (xDoc.Descendants(memberNr).Descendants("dexteritySkills").Descendants("i" + skillChecked).Descendants("skillKey").FirstOrDefault().Value == skill.SkillKey)
-                        {
-                            xDoc.Descendants(memberNr).Descendants("dexteritySkills").Descendants("i" + skillChecked).Descendants("skillLevel").FirstOrDefault().Value = skill.SkillLevel;
-                            skillsAdded++;
-                        }
-                        skillChecked++;
+                        xDoc.Descendants(memberNr).Descendants("dexteritySkills").Descendants("i" + i).Remove();
                     }
-                    else
-                    {
-                        xDoc.Descendants(memberNr).Descendants("dexteritySkills").Descendants("i" + (attributeValue + skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
-                            new XElement("i" + (attributeValue + skillsAdded),
-                            new XElement("skillKey", skill.SkillKey),
-                            new XElement("skillLevel", skill.SkillLevel),
-                            new XElement("accuracyLevel", "0"),
-                            new XElement("damageLevel", "0"),
-                            new XElement("staminaLevel", "0"),
-                            new XElement("chanceLevel", "0")
-                            ));
-                        skillsAdded++;
-                    }
+                    attributeValue = 0;
+                }
+                if (skillsAdded == 0)
+                {
+                    xDoc.Descendants(memberNr).Descendants("DexteritySkills").Descendants("dexteritySkills").FirstOrDefault().Add(
+                        new XElement("i" + skillsAdded,
+                        new XElement("skillKey", skill.SkillKey),
+                        new XElement("skillLevel", skill.SkillLevel),
+                        new XElement("accuracyLevel", "0"),
+                        new XElement("damageLevel", "0"),
+                        new XElement("staminaLevel", "0"),
+                        new XElement("chanceLevel", "0")
+                        ));
+                    skillsAdded++;
                 }
                 else
                 {
-                    xDoc.Descendants(memberNr).Descendants("dexteritySkills").Descendants("i" + skillsAdded).FirstOrDefault().AddAfterSelf(
+                    xDoc.Descendants(memberNr).Descendants("dexteritySkills").Descendants("i" + (skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
                         new XElement("i" + skillsAdded,
                         new XElement("skillKey", skill.SkillKey),
                         new XElement("skillLevel", skill.SkillLevel),
@@ -1717,13 +1726,12 @@ namespace Sheltered_2_SE
                     skillsAdded++;
                 }
             }
-            newAttribute = xDoc.Descendants(memberNr).Descendants("Profession").Descendants("dexteritySkills").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Count();
-            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("dexteritySkills").First().Attribute("size").Value = newAttribute.ToString();
+            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("dexteritySkills").First().Attribute("size").Value = skillsAdded.ToString();
             //save Available Points           
             xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Dexterity").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailableDexValue.Text;
             //Add Points Spent Tiers
             xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Dexterity").Descendants("pointsSpent_tierOne").FirstOrDefault().Value = skillAmount.ToString();
-           
+
             //Save Intelligence Skills
             List<Skills> intSkillList = new List<Skills>(newSkillList)
                 .Where(x => x.Type
@@ -1731,41 +1739,34 @@ namespace Sheltered_2_SE
                 .ToList();
 
             skillsAdded = 0;
-            skillChecked = 0;
-
             attributeValue = Convert.ToInt32(xDoc.Descendants(memberNr).Descendants("Profession").Descendants("intelligenceSkills").First().Attribute("size").Value);
             foreach (var skill in intSkillList)
             {
                 skillAmount = intSkillList.Count();
                 if (attributeValue > 0)
                 {
-                    if (skillChecked < attributeValue)
+                    for (int i = 0; i < attributeValue; i++)
                     {
-
-                        if (xDoc.Descendants(memberNr).Descendants("intelligenceSkills").Descendants("i" + skillChecked).Descendants("skillKey").FirstOrDefault().Value == skill.SkillKey)
-                        {
-                            xDoc.Descendants(memberNr).Descendants("intelligenceSkills").Descendants("i" + skillChecked).Descendants("skillLevel").FirstOrDefault().Value = skill.SkillLevel;
-                            skillsAdded++;
-                        }
-                        skillChecked++;
+                        xDoc.Descendants(memberNr).Descendants("intelligenceSkills").Descendants("i" + i).Remove();
                     }
-                    else
-                    {
-                        xDoc.Descendants(memberNr).Descendants("intelligenceSkills").Descendants("i" + (attributeValue + skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
-                            new XElement("i" + (attributeValue + skillsAdded),
-                            new XElement("skillKey", skill.SkillKey),
-                            new XElement("skillLevel", skill.SkillLevel),
-                            new XElement("accuracyLevel", "0"),
-                            new XElement("damageLevel", "0"),
-                            new XElement("staminaLevel", "0"),
-                            new XElement("chanceLevel", "0")
-                            ));
-                        skillsAdded++;
-                    }
+                    attributeValue = 0;
+                }
+                if (skillsAdded == 0)
+                {
+                    xDoc.Descendants(memberNr).Descendants("IntelligenceSkills").Descendants("intelligenceSkills").FirstOrDefault().Add(
+                        new XElement("i" + skillsAdded,
+                        new XElement("skillKey", skill.SkillKey),
+                        new XElement("skillLevel", skill.SkillLevel),
+                        new XElement("accuracyLevel", "0"),
+                        new XElement("damageLevel", "0"),
+                        new XElement("staminaLevel", "0"),
+                        new XElement("chanceLevel", "0")
+                        ));
+                    skillsAdded++;
                 }
                 else
                 {
-                    xDoc.Descendants(memberNr).Descendants("intelligenceSkills").Descendants("i" + skillsAdded).FirstOrDefault().AddAfterSelf(
+                    xDoc.Descendants(memberNr).Descendants("intelligenceSkills").Descendants("i" + (skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
                         new XElement("i" + skillsAdded,
                         new XElement("skillKey", skill.SkillKey),
                         new XElement("skillLevel", skill.SkillLevel),
@@ -1777,8 +1778,7 @@ namespace Sheltered_2_SE
                     skillsAdded++;
                 }
             }
-            newAttribute = xDoc.Descendants(memberNr).Descendants("Profession").Descendants("intelligenceSkills").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Count();
-            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("intelligenceSkills").First().Attribute("size").Value = newAttribute.ToString();
+            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("intelligenceSkills").First().Attribute("size").Value = skillsAdded.ToString();
             //save Available Points           
             xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Intelligence").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailableIntValue.Text;
             //Add Points Spent Tiers
@@ -1791,41 +1791,34 @@ namespace Sheltered_2_SE
                 .ToList();
 
             skillsAdded = 0;
-            skillChecked = 0;
-
             attributeValue = Convert.ToInt32(xDoc.Descendants(memberNr).Descendants("Profession").Descendants("charismaSkills").First().Attribute("size").Value);
             foreach (var skill in chaSkillList)
             {
                 skillAmount = chaSkillList.Count();
                 if (attributeValue > 0)
                 {
-                    if (skillChecked < attributeValue)
+                    for (int i = 0; i < attributeValue; i++)
                     {
-
-                        if (xDoc.Descendants(memberNr).Descendants("charismaSkills").Descendants("i" + skillChecked).Descendants("skillKey").FirstOrDefault().Value == skill.SkillKey)
-                        {
-                            xDoc.Descendants(memberNr).Descendants("charismaSkills").Descendants("i" + skillChecked).Descendants("skillLevel").FirstOrDefault().Value = skill.SkillLevel;
-                            skillsAdded++;
-                        }
-                        skillChecked++;
+                        xDoc.Descendants(memberNr).Descendants("charismaSkills").Descendants("i" + i).Remove();
                     }
-                    else
-                    {
-                        xDoc.Descendants(memberNr).Descendants("charismaSkills").Descendants("i" + (attributeValue + skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
-                            new XElement("i" + (attributeValue + skillsAdded),
-                            new XElement("skillKey", skill.SkillKey),
-                            new XElement("skillLevel", skill.SkillLevel),
-                            new XElement("accuracyLevel", "0"),
-                            new XElement("damageLevel", "0"),
-                            new XElement("staminaLevel", "0"),
-                            new XElement("chanceLevel", "0")
-                            ));
-                        skillsAdded++;
-                    }
+                    attributeValue = 0;
+                }
+                if (skillsAdded == 0)
+                {
+                    xDoc.Descendants(memberNr).Descendants("CharismaSkills").Descendants("charismaSkills").FirstOrDefault().Add(
+                        new XElement("i" + skillsAdded,
+                        new XElement("skillKey", skill.SkillKey),
+                        new XElement("skillLevel", skill.SkillLevel),
+                        new XElement("accuracyLevel", "0"),
+                        new XElement("damageLevel", "0"),
+                        new XElement("staminaLevel", "0"),
+                        new XElement("chanceLevel", "0")
+                        ));
+                    skillsAdded++;
                 }
                 else
                 {
-                    xDoc.Descendants(memberNr).Descendants("charismaSkills").Descendants("i" + skillsAdded).FirstOrDefault().AddAfterSelf(
+                    xDoc.Descendants(memberNr).Descendants("charismaSkills").Descendants("i" + (skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
                         new XElement("i" + skillsAdded,
                         new XElement("skillKey", skill.SkillKey),
                         new XElement("skillLevel", skill.SkillLevel),
@@ -1837,8 +1830,7 @@ namespace Sheltered_2_SE
                     skillsAdded++;
                 }
             }
-            newAttribute = xDoc.Descendants(memberNr).Descendants("Profession").Descendants("charismaSkills").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Count();
-            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("charismaSkills").First().Attribute("size").Value = newAttribute.ToString();
+            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("charismaSkills").First().Attribute("size").Value = skillsAdded.ToString();
             //save Available Points           
             xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Charisma").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailableChaValue.Text;
             //Add Points Spent Tiers
@@ -1851,41 +1843,21 @@ namespace Sheltered_2_SE
                 .ToList();
 
             skillsAdded = 0;
-            skillChecked = 0;
-
             attributeValue = Convert.ToInt32(xDoc.Descendants(memberNr).Descendants("Profession").Descendants("perceptionSkills").First().Attribute("size").Value);
             foreach (var skill in perSkillList)
             {
                 skillAmount = perSkillList.Count();
                 if (attributeValue > 0)
                 {
-                    if (skillChecked < attributeValue)
+                    for (int i = 0; i < attributeValue; i++)
                     {
-
-                        if (xDoc.Descendants(memberNr).Descendants("perceptionSkills").Descendants("i" + skillChecked).Descendants("skillKey").FirstOrDefault().Value == skill.SkillKey)
-                        {
-                            xDoc.Descendants(memberNr).Descendants("perceptionSkills").Descendants("i" + skillChecked).Descendants("skillLevel").FirstOrDefault().Value = skill.SkillLevel;
-                            skillsAdded++;
-                        }
-                        skillChecked++;
+                        xDoc.Descendants(memberNr).Descendants("perceptionSkills").Descendants("i" + i).Remove();
                     }
-                    else
-                    {
-                        xDoc.Descendants(memberNr).Descendants("perceptionSkills").Descendants("i" + (attributeValue + skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
-                            new XElement("i" + (attributeValue + skillsAdded),
-                            new XElement("skillKey", skill.SkillKey),
-                            new XElement("skillLevel", skill.SkillLevel),
-                            new XElement("accuracyLevel", "0"),
-                            new XElement("damageLevel", "0"),
-                            new XElement("staminaLevel", "0"),
-                            new XElement("chanceLevel", "0")
-                            ));
-                        skillsAdded++;
-                    }
+                    attributeValue = 0;
                 }
-                else
+                if (skillsAdded == 0)
                 {
-                    xDoc.Descendants(memberNr).Descendants("perceptionSkills").Descendants("i" + skillsAdded).FirstOrDefault().AddAfterSelf(
+                    xDoc.Descendants(memberNr).Descendants("PerceptionSkills").Descendants("perceptionSkills").FirstOrDefault().Add(
                         new XElement("i" + skillsAdded,
                         new XElement("skillKey", skill.SkillKey),
                         new XElement("skillLevel", skill.SkillLevel),
@@ -1896,9 +1868,21 @@ namespace Sheltered_2_SE
                         ));
                     skillsAdded++;
                 }
-            }
-            newAttribute = xDoc.Descendants(memberNr).Descendants("Profession").Descendants("perceptionSkills").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Count();
-            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("perceptionSkills").First().Attribute("size").Value = newAttribute.ToString();
+                else
+                {
+                    xDoc.Descendants(memberNr).Descendants("perceptionSkills").Descendants("i" + (skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
+                        new XElement("i" + skillsAdded,
+                        new XElement("skillKey", skill.SkillKey),
+                        new XElement("skillLevel", skill.SkillLevel),
+                        new XElement("accuracyLevel", "0"),
+                        new XElement("damageLevel", "0"),
+                        new XElement("staminaLevel", "0"),
+                        new XElement("chanceLevel", "0")
+                        ));
+                    skillsAdded++;
+                }
+            }            
+            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("perceptionSkills").First().Attribute("size").Value = skillsAdded.ToString();
             //save Available Points           
             xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Perception").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailablePerValue.Text;
             //Add Points Spent Tiers
@@ -1910,41 +1894,21 @@ namespace Sheltered_2_SE
                 .ToList();
 
             skillsAdded = 0;
-            skillChecked = 0;
-
             attributeValue = Convert.ToInt32(xDoc.Descendants(memberNr).Descendants("Profession").Descendants("fortitudeSkills").First().Attribute("size").Value);
             foreach (var skill in forSkillList)
             {
                 skillAmount = forSkillList.Count();
                 if (attributeValue > 0)
                 {
-                    if (skillChecked < attributeValue)
+                    for (int i = 0; i < attributeValue; i++)
                     {
-
-                        if (xDoc.Descendants(memberNr).Descendants("fortitudeSkills").Descendants("i" + skillChecked).Descendants("skillKey").FirstOrDefault().Value == skill.SkillKey)
-                        {
-                            xDoc.Descendants(memberNr).Descendants("fortitudeSkills").Descendants("i" + skillChecked).Descendants("skillLevel").FirstOrDefault().Value = skill.SkillLevel;
-                            skillsAdded++;
-                        }
-                        skillChecked++;
+                        xDoc.Descendants(memberNr).Descendants("fortitudeSkills").Descendants("i" + i).Remove();
                     }
-                    else
-                    {
-                        xDoc.Descendants(memberNr).Descendants("fortitudeSkills").Descendants("i" + (attributeValue + skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
-                            new XElement("i" + (attributeValue + skillsAdded),
-                            new XElement("skillKey", skill.SkillKey),
-                            new XElement("skillLevel", skill.SkillLevel),
-                            new XElement("accuracyLevel", "0"),
-                            new XElement("damageLevel", "0"),
-                            new XElement("staminaLevel", "0"),
-                            new XElement("chanceLevel", "0")
-                            ));
-                        skillsAdded++;
-                    }
+                    attributeValue = 0;
                 }
-                else
+                if (skillsAdded == 0)
                 {
-                    xDoc.Descendants(memberNr).Descendants("fortitudeSkills").Descendants("i" + skillsAdded).FirstOrDefault().AddAfterSelf(
+                    xDoc.Descendants(memberNr).Descendants("FortitudeSkills").Descendants("fortitudeSkills").FirstOrDefault().Add(
                         new XElement("i" + skillsAdded,
                         new XElement("skillKey", skill.SkillKey),
                         new XElement("skillLevel", skill.SkillLevel),
@@ -1955,17 +1919,33 @@ namespace Sheltered_2_SE
                         ));
                     skillsAdded++;
                 }
-            }
-            newAttribute = xDoc.Descendants(memberNr).Descendants("Profession").Descendants("fortitudeSkills").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Count();
-            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("fortitudeSkills").First().Attribute("size").Value = newAttribute.ToString();
+                else
+                {
+                    xDoc.Descendants(memberNr).Descendants("fortitudeSkills").Descendants("i" + (skillsAdded - 1)).FirstOrDefault().AddAfterSelf(
+                        new XElement("i" + skillsAdded,
+                        new XElement("skillKey", skill.SkillKey),
+                        new XElement("skillLevel", skill.SkillLevel),
+                        new XElement("accuracyLevel", "0"),
+                        new XElement("damageLevel", "0"),
+                        new XElement("staminaLevel", "0"),
+                        new XElement("chanceLevel", "0")
+                        ));
+                    skillsAdded++;
+                }
+            }            
+            xDoc.Descendants(memberNr).Descendants("Profession").Descendants("fortitudeSkills").First().Attribute("size").Value = skillsAdded.ToString();
             //save Available Points           
             xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Fortitude").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailableForValue.Text;
             //Add Points Spent Tiers
             xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Fortitude").Descendants("pointsSpent_tierOne").FirstOrDefault().Value = skillAmount.ToString();
-            
-            xDoc.Save(ProcessFile.tempFilePath);
-            MessageBox.Show("Character skills saved successfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
 
+            xDoc.Save(ProcessFile.tempFilePath);
+
+            if (ProcessData.ignore == false)
+            {
+                MessageBox.Show("Character skills saved successfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");                
+            }
+            ProcessData.ignore = false;
         }
 
         private void Form_FormClosing(object sender, FormClosingEventArgs e)
@@ -1987,6 +1967,53 @@ namespace Sheltered_2_SE
             }
 
             Application.Exit();
+        }
+
+        private void btnMaxAllSkills_Click(object sender, EventArgs e)
+        {
+            var tabPagesList = new List<TabPage> { skillPageStr, skillPageDex, skillPageInt, skillPageCha, skillPagePer, skillPageFor };
+            List<PictureBox>skillList = new List<PictureBox>();
+            List<Skills> newSkillList = new List<Skills>();
+            foreach (var tabPage in tabPagesList)
+            {
+                skillList = tabPage.Controls.OfType<PictureBox>()
+                   .Where(p => p.Name.Contains("SkillLevel"))
+                   .ToList();
+                foreach (var pictureBox in skillList)
+                {
+                    var name = pictureBox.Name;
+                   if(pictureBox.Tag.ToString() == "0")
+                    {
+                        
+                        pictureBox.AccessibleName = "1";
+                        pictureBox.Image = skillLevelIcons.Images[3];                      
+
+                    }
+                    else if (pictureBox.Tag.ToString() == "1")
+                    {
+                        pictureBox.AccessibleName = "2";
+                        pictureBox.Image = skillLevelIcons.Images[5];
+
+                    }
+                    else if (pictureBox.Tag.ToString() == "2")
+                    {
+                        pictureBox.AccessibleName = "3";
+                        pictureBox.Image = skillLevelIcons.Images[8];
+                    }
+                }
+            }
+            ProcessData.ignore = true;
+            lblPointsAvailableStrValue.Text = "0";
+            lblPointsAvailableDexValue.Text = "0";
+            lblPointsAvailableIntValue.Text = "0";
+            lblPointsAvailableChaValue.Text = "0";
+            lblPointsAvailablePerValue.Text = "0";
+            lblPointsAvailableForValue.Text = "0";
+            btnSaveCharacterSkills.PerformClick();  
+            
+
+
+
         }
     }
 }

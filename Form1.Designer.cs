@@ -94,6 +94,7 @@ namespace Sheltered_2_SE
             this.cBInteracting = new System.Windows.Forms.CheckBox();
             this.pbxWarning = new System.Windows.Forms.PictureBox();
             this.characterSkillsTab = new System.Windows.Forms.TabPage();
+            this.btnSaveCharacterSkills = new System.Windows.Forms.Button();
             this.tabControlSkills = new System.Windows.Forms.TabControl();
             this.skillPageStr = new System.Windows.Forms.TabPage();
             this.lblPointsAvailableStrValue = new System.Windows.Forms.Label();
@@ -407,7 +408,7 @@ namespace Sheltered_2_SE
             this.skillIcons = new System.Windows.Forms.ImageList(this.components);
             this.skillLevelIcons = new System.Windows.Forms.ImageList(this.components);
             this.AvailablePointsIcon = new System.Windows.Forms.ImageList(this.components);
-            this.btnSaveCharacterSkills = new System.Windows.Forms.Button();
+            this.btnMaxAllSkills = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.characterStatsTab.SuspendLayout();
@@ -1178,6 +1179,7 @@ namespace Sheltered_2_SE
             // characterSkillsTab
             // 
             this.characterSkillsTab.BackColor = System.Drawing.Color.LightGray;
+            this.characterSkillsTab.Controls.Add(this.btnMaxAllSkills);
             this.characterSkillsTab.Controls.Add(this.btnSaveCharacterSkills);
             this.characterSkillsTab.Controls.Add(this.tabControlSkills);
             this.characterSkillsTab.Controls.Add(this.lblSkillsCharacterName);
@@ -1188,6 +1190,17 @@ namespace Sheltered_2_SE
             this.characterSkillsTab.Size = new System.Drawing.Size(659, 556);
             this.characterSkillsTab.TabIndex = 1;
             this.characterSkillsTab.Text = "Character Skills";
+            // 
+            // btnSaveCharacterSkills
+            // 
+            this.btnSaveCharacterSkills.Location = new System.Drawing.Point(239, 507);
+            this.btnSaveCharacterSkills.Name = "btnSaveCharacterSkills";
+            this.btnSaveCharacterSkills.Size = new System.Drawing.Size(184, 26);
+            this.btnSaveCharacterSkills.TabIndex = 12;
+            this.btnSaveCharacterSkills.Text = "Save Character Skills";
+            this.btnSaveCharacterSkills.UseVisualStyleBackColor = true;
+            this.btnSaveCharacterSkills.Visible = false;
+            this.btnSaveCharacterSkills.Click += new System.EventHandler(this.btnSaveCharacterSkills_Click);
             // 
             // tabControlSkills
             // 
@@ -4005,7 +4018,7 @@ namespace Sheltered_2_SE
             // lblSkillsCharacterName
             // 
             this.lblSkillsCharacterName.AutoSize = true;
-            this.lblSkillsCharacterName.Location = new System.Drawing.Point(194, 6);
+            this.lblSkillsCharacterName.Location = new System.Drawing.Point(257, 10);
             this.lblSkillsCharacterName.Name = "lblSkillsCharacterName";
             this.lblSkillsCharacterName.Size = new System.Drawing.Size(84, 13);
             this.lblSkillsCharacterName.TabIndex = 10;
@@ -4840,6 +4853,7 @@ namespace Sheltered_2_SE
             this.button3.TabIndex = 12;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
@@ -5010,15 +5024,16 @@ namespace Sheltered_2_SE
             this.AvailablePointsIcon.Images.SetKeyName(4, "AvailableSkillsPer.png");
             this.AvailablePointsIcon.Images.SetKeyName(5, "AvailableSkillsFor.png");
             // 
-            // btnSaveCharacterSkills
+            // btnMaxAllSkills
             // 
-            this.btnSaveCharacterSkills.Location = new System.Drawing.Point(239, 507);
-            this.btnSaveCharacterSkills.Name = "btnSaveCharacterSkills";
-            this.btnSaveCharacterSkills.Size = new System.Drawing.Size(184, 26);
-            this.btnSaveCharacterSkills.TabIndex = 12;
-            this.btnSaveCharacterSkills.Text = "Save Character Skills";
-            this.btnSaveCharacterSkills.UseVisualStyleBackColor = true;
-            this.btnSaveCharacterSkills.Click += new System.EventHandler(this.btnSaveCharacterSkills_Click);
+            this.btnMaxAllSkills.Location = new System.Drawing.Point(528, 401);
+            this.btnMaxAllSkills.Name = "btnMaxAllSkills";
+            this.btnMaxAllSkills.Size = new System.Drawing.Size(103, 28);
+            this.btnMaxAllSkills.TabIndex = 13;
+            this.btnMaxAllSkills.Text = "Max all Skills";
+            this.btnMaxAllSkills.UseVisualStyleBackColor = true;
+            this.btnMaxAllSkills.Visible = false;
+            this.btnMaxAllSkills.Click += new System.EventHandler(this.btnMaxAllSkills_Click);
             // 
             // Form1
             // 
@@ -5642,6 +5657,7 @@ namespace Sheltered_2_SE
         public System.Windows.Forms.Label lblPointsAvailablePerValue;
         public System.Windows.Forms.Label lblPointsAvailableForValue;
         private System.Windows.Forms.Button btnSaveCharacterSkills;
+        private System.Windows.Forms.Button btnMaxAllSkills;
     }
 }
 

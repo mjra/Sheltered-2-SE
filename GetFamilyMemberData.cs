@@ -21,8 +21,6 @@ namespace Sheltered_2_SE
         public int FortitudeLevelBefore { get; set; }
 
         public static List<GetSkillPoints> _getSkillPoints;
-        public static List<GetSkillPoints> _getPictureBox;        
-
     }
 
     class NewSkillPoints
@@ -35,8 +33,6 @@ namespace Sheltered_2_SE
         public int CharismaLevelNew { get; set; }
         public int PerceptionLevelNew { get; set; }
         public int FortitudeLevelNew { get; set; }
-
-        public static List<GetSkillPoints> _newSkillPoints;
     }
 
     class LoadNames
