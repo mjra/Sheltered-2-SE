@@ -223,6 +223,26 @@ namespace Sheltered_2_SE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eoLx_shopbanner {
+            get {
+                object obj = ResourceManager.GetObject("eoLx_shopbanner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eoLxLogo {
+            get {
+                object obj = ResourceManager.GetObject("eoLxLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Floor {
             get {
                 object obj = ResourceManager.GetObject("Floor", resourceCulture);

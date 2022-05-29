@@ -25,7 +25,9 @@ namespace Sheltered_2_SE
         public static string selectedLastName = "";
         public static int pos = 0;
         public static bool ignore = false;
-        
+        public static string selectedSection = string.Empty;
+        public static string petSpecies = "Unknown";
+
 
         //Load in FamilyMemberData
         public static List<GetFamilyMemberData> FamilyMembersList()
@@ -36,9 +38,11 @@ namespace Sheltered_2_SE
                .Elements().Where(e => e.Name.LocalName.StartsWith("Member_"))
                .Select(p => GetDataForMember(p))
                .ToList();
+
+
         }
 
-        private static GetFamilyMemberData GetDataForMember(XElement p)
+    private static GetFamilyMemberData GetDataForMember(XElement p)
         {
             var f = new GetFamilyMemberData
             {

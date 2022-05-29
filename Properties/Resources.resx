@@ -151,17 +151,26 @@
   <data name="DoorTopLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DoorTopLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Floor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Floor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AvailableSkillsStr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AvailableSkillsStr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="garage_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\garage_left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Floor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Floor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AvailableSkillsInt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AvailableSkillsInt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="garage_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\garage_right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PlasterWallLeftPillar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PlasterWallLeftPillar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -180,6 +189,9 @@
   </data>
   <data name="StoneWall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StoneWall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BebasNeue_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BebasNeue_Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="DirtWallRightPillar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DirtWallRightPillar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,6 +220,9 @@
   <data name="BorderRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BorderRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BebasNeue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BebasNeue.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="ShelterDoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ShelterDoor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,19 +232,10 @@
   <data name="TextBackgroundMedium" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TextBackgroundMedium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cell" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eoLx_shopbanner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eoLx_shopbanner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="garage_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\garage_left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="garage_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\garage_right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BebasNeue_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BebasNeue_Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="BebasNeue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BebasNeue.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="eoLxLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eoLxLogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

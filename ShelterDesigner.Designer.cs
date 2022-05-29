@@ -146,7 +146,6 @@
             this.lblRules3 = new System.Windows.Forms.Label();
             this.lblRules4 = new System.Windows.Forms.Label();
             this.lblRules5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxTiledRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRemoveRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDirtRoom)).BeginInit();
@@ -1629,23 +1628,11 @@
             this.lblRules5.TabIndex = 181;
             this.lblRules5.Text = "Don\'t";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1370, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 183;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // ShelterDesigner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1455, 836);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblRules4);
             this.Controls.Add(this.lblRules5);
             this.Controls.Add(this.lblRules3);
@@ -1897,7 +1884,6 @@
         private System.Windows.Forms.PictureBox pbxPlasterRoomSelected;
         private System.Windows.Forms.Button SaveLayout;
         private System.Windows.Forms.PictureBox i45;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Label lblDesignerText;
         public System.Windows.Forms.Label lblRules1;
         public System.Windows.Forms.Label lblRules2;

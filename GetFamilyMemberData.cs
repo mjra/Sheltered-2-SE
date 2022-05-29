@@ -23,6 +23,12 @@ namespace Sheltered_2_SE
         public static List<GetSkillPoints> _getSkillPoints;
     }
 
+   
+        
+        
+
+    }
+
     class NewSkillPoints
     {
         public string FirstName { get; set; }
@@ -223,4 +229,4 @@ namespace Sheltered_2_SE
 
 
 
-}
+

@@ -17,6 +17,7 @@ using System.Xml.XPath;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Reflection;
+using System.Threading;
 
 namespace Sheltered_2_SE
 {
@@ -38,6 +39,7 @@ namespace Sheltered_2_SE
 
             InitializeComponent();
 
+
             byte[] fontData = Properties.Resources.BebasNeue_Regular;
             IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
             System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
@@ -50,7 +52,6 @@ namespace Sheltered_2_SE
             bebas10 = new Font(pfc.Families[0], 10.0F);
             bebas16 = new Font(pfc.Families[0], 16.0F);
             bebas30 = new Font(pfc.Families[0], 30.0F);
-
 
 
             //read in embeded font 
@@ -89,10 +90,9 @@ namespace Sheltered_2_SE
             lblForTier3.Font = bebas16;
 
             petsTab.Font = bebas;
-            lblPetsToBeAdded.Font = bebas30;
 
             deseasesTab.Font = bebas;
-            lblDeseasesToBeAdded.Font = bebas30;
+            lblDeseasesCharacterName.Font = bebas16;
 
             unlockingTab.Font = bebas;
             cbxDraftingTableTier2.Font = bebas10;
@@ -151,7 +151,54 @@ namespace Sheltered_2_SE
 
 
             tabControlMain.Visible = false;
+        }
 
+        private void InitializeBindings()
+        {
+
+            //petsBindingSource.DataSource = List<Pets>;
+            InitializePet();
+
+
+        }
+
+        private void InitializePet()
+        {
+
+            //Load in DogSkillImages
+
+
+            foreach (PictureBox pB in pnlDogSkills.Controls.OfType<PictureBox>())
+            {
+                for (int i = 0; i < 18; i++)
+                {
+                    var imageNr = pB.Name.Remove(0, 16);
+                    if (imageNr == i.ToString())
+                    {
+                        pB.Image = DogSkillImageList2.Images[i];
+                    }
+                }
+            }
+
+
+
+
+
+            //Check Pet Type
+
+            if (ProcessFile.tempFilePath != "")
+            {
+                var doc = XElement.Load(ProcessFile.tempFilePath);
+                var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+                var checkPetCount = xDoc.Descendants("root").Descendants().Where(x => x.Name.LocalName.StartsWith("Pet_")).Count();
+
+
+            List<Pets> pets = PetImport.GetPets();
+            var bindingSource = new BindingSource(pets, null);
+            cbxPetSelect.DataSource = pets;
+            cbxPetSelect.DisplayMember = "Name";               
+               
+            }
         }
 
         private void GetClick()
@@ -350,8 +397,7 @@ namespace Sheltered_2_SE
                 decodedData = processFile.LoadFile(openSaveFile.FileName);
                 if (decodedData != string.Empty)
                 {
-                    // Open Save and output to Textbox
-                    Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
+                    // Open Save and output to Textbox                    
 
                 }
                 else
@@ -375,28 +421,43 @@ namespace Sheltered_2_SE
                     ProcessData.familyMemberCount++;
                 }
             }
-            tabControlMain.Visible = true;
+
 
 
             //Set Values of Character for available Points
-            var doc = XElement.Load(ProcessFile.tempFilePath);
+            if (ProcessFile.tempFilePath != "")
+            {
+                var doc = XElement.Load(ProcessFile.tempFilePath);
 
-            List<GetSkillPoints> skillPoints = doc.Descendants("FamilyMembers").Descendants().Where(x => x.Name.LocalName.StartsWith("Member_"))
-                .Select(p => new GetSkillPoints()
-                {
-                    FirstName = p.DescendantsAndSelf("firstName").FirstOrDefault().Value,
-                    LastName = p.DescendantsAndSelf("lastName").FirstOrDefault().Value,
-                    StrengthLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Strength").Descendants("level").FirstOrDefault().Value),
-                    DexterityLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Dexterity").Descendants("level").FirstOrDefault().Value),
-                    IntelligenceLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Intelligence").Descendants("level").FirstOrDefault().Value),
-                    CharismaLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Charisma").Descendants("level").FirstOrDefault().Value),
-                    PerceptionLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Perception").Descendants("level").FirstOrDefault().Value),
-                    FortitudeLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Fortitude").Descendants("level").FirstOrDefault().Value),
 
-                }).ToList();
+                List<GetSkillPoints> skillPoints = doc.Descendants("FamilyMembers").Descendants().Where(x => x.Name.LocalName.StartsWith("Member_"))
+                    .Select(p => new GetSkillPoints()
+                    {
+                        FirstName = p.DescendantsAndSelf("firstName").FirstOrDefault().Value,
+                        LastName = p.DescendantsAndSelf("lastName").FirstOrDefault().Value,
+                        StrengthLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Strength").Descendants("level").FirstOrDefault().Value),
+                        DexterityLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Dexterity").Descendants("level").FirstOrDefault().Value),
+                        IntelligenceLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Intelligence").Descendants("level").FirstOrDefault().Value),
+                        CharismaLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Charisma").Descendants("level").FirstOrDefault().Value),
+                        PerceptionLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Perception").Descendants("level").FirstOrDefault().Value),
+                        FortitudeLevelBefore = Convert.ToInt32(p.Descendants("BaseStats").Descendants("Fortitude").Descendants("level").FirstOrDefault().Value),
 
-            GetSkillPoints._getSkillPoints = skillPoints;
+                    }).ToList();
 
+                GetSkillPoints._getSkillPoints = skillPoints;
+                tabControlMain.Visible = true;
+            }
+
+            //Initialize bindings        
+
+
+            InitializeBindings();
+
+        }
+
+        public void NoPet()
+        {
+            cbxPetSelect.Text = "No Pet Found";
         }
 
         public void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -421,15 +482,6 @@ namespace Sheltered_2_SE
             }
         }
 
-        private void removeFogOfWarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         public void cbxCharacterSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -624,6 +676,7 @@ namespace Sheltered_2_SE
         {
             lblAnimHashValue.Text = "-541223289";
             lblAnimTimeValue.Text = "0,05509559";
+            cBInteractingWithObj.Checked = false;
         }
 
         static void gotoSite(string url)
@@ -669,7 +722,7 @@ namespace Sheltered_2_SE
                 if (decodedData != string.Empty)
                 {
                     // Open Save and output to Textbox
-                    Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
+                    //Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
 
                 }
                 else
@@ -721,7 +774,7 @@ namespace Sheltered_2_SE
                 decodedData = processFile.LoadFile(openSaveFile.FileName);
                 if (decodedData != string.Empty)
                 {
-                    Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
+                    //Output.Text = File.ReadAllText(ProcessFile.tempFilePath);
                 }
                 else
                 {   // Retry
@@ -762,6 +815,40 @@ namespace Sheltered_2_SE
         {
             Output.Text = "";
 
+            XDocument doc = XDocument.Load(ProcessFile.tempFilePath);
+            //XElement root = doc.Root;
+            XElement root = doc.Descendants("FamilyMembers").FirstOrDefault();
+            TreeNode newNode = new TreeNode();
+            newNode.Text = root.Name.LocalName;
+            treeView1.Nodes.Add(newNode);
+            int level = 1;
+            AddRecursive(root, newNode, level);
+
+            treeView1.ExpandAll();
+
+        }
+
+        public void AddRecursive(XElement element, TreeNode parent, int level)
+        {
+            int MAX_LEVEL = 6;
+
+            foreach (XElement child in element.Elements())
+            {
+                TreeNode newNode = new TreeNode();
+
+                newNode.Text = child.Name.LocalName;
+                newNode.Tag = child.Value;
+                parent.Nodes.Add(newNode);
+                if (level < MAX_LEVEL)
+                {
+                    AddRecursive(child, newNode, level + 1);
+                }
+            }
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            Output.Text = treeView1.SelectedNode.Tag.ToString();
         }
 
         private void LoadSkillImages()
@@ -848,7 +935,8 @@ namespace Sheltered_2_SE
             }
             if (tabControlMain.SelectedIndex == 3)
             {
-
+                cbxDeseasesCharacterSelect.Items.AddRange(cbxCharacterSelect.Items.Cast<Object>().ToArray());
+                lblDeseasesCharacterName.Text = cbxSkillsCharacterSelect.Text;
             }
             if (tabControlMain.SelectedIndex == 4)
             {
@@ -974,7 +1062,7 @@ namespace Sheltered_2_SE
         {
             // Read in User Skill Values into List
             tabControlSkills.Visible = true;
-            btnMaxAllSkills.Visible=true;
+            btnMaxAllSkills.Visible = true;
             btnSaveCharacterSkills.Visible = true;
 
             var doc = XDocument.Load(ProcessFile.tempFilePath);
@@ -994,7 +1082,7 @@ namespace Sheltered_2_SE
 
                 }).ToList();
 
-            
+
 
             //Get available Points
 
@@ -1614,15 +1702,15 @@ namespace Sheltered_2_SE
             string lastName = "";
             foreach (var name in getNames)
             {
-                if(name.FirstName + " " + name.LastName == cbxSkillsCharacterSelect.SelectedItem.ToString())
+                if (name.FirstName + " " + name.LastName == cbxSkillsCharacterSelect.SelectedItem.ToString())
                 {
                     firstName = name.FirstName;
                     lastName = name.LastName;
                 }
-            }          
+            }
 
             //string firstName = "";
-            
+
             int skillAmount = 0;
 
             var memberNr = xDoc.Descendants("FamilyMembers").Descendants().Where(x => x.Value.Contains(firstName) && x.Value.Contains(lastName)).AncestorsAndSelf().FirstOrDefault().Name;
@@ -1640,14 +1728,14 @@ namespace Sheltered_2_SE
             {
                 skillAmount = strSkillList.Count();
                 if (attributeValue > 0)
-                {  
+                {
                     for (int i = 0; i < attributeValue; i++)
                     {
-                        xDoc.Descendants(memberNr).Descendants("strengthSkills").Descendants("i"+ i).Remove();
+                        xDoc.Descendants(memberNr).Descendants("strengthSkills").Descendants("i" + i).Remove();
                     }
-                    attributeValue = 0;                    
+                    attributeValue = 0;
                 }
-                if(skillsAdded == 0)
+                if (skillsAdded == 0)
                 {
                     xDoc.Descendants(memberNr).Descendants("StrengthSkills").Descendants("strengthSkills").FirstOrDefault().Add(
                         new XElement("i" + skillsAdded,
@@ -1881,7 +1969,7 @@ namespace Sheltered_2_SE
                         ));
                     skillsAdded++;
                 }
-            }            
+            }
             xDoc.Descendants(memberNr).Descendants("Profession").Descendants("perceptionSkills").First().Attribute("size").Value = skillsAdded.ToString();
             //save Available Points           
             xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Perception").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailablePerValue.Text;
@@ -1932,7 +2020,7 @@ namespace Sheltered_2_SE
                         ));
                     skillsAdded++;
                 }
-            }            
+            }
             xDoc.Descendants(memberNr).Descendants("Profession").Descendants("fortitudeSkills").First().Attribute("size").Value = skillsAdded.ToString();
             //save Available Points           
             xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Fortitude").Descendants("ProfessionPoints").FirstOrDefault().Value = lblPointsAvailableForValue.Text;
@@ -1940,10 +2028,9 @@ namespace Sheltered_2_SE
             xDoc.Descendants(memberNr).Descendants("BaseStats").Descendants("Fortitude").Descendants("pointsSpent_tierOne").FirstOrDefault().Value = skillAmount.ToString();
 
             xDoc.Save(ProcessFile.tempFilePath);
-
             if (ProcessData.ignore == false)
             {
-                MessageBox.Show("Character skills saved successfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");                
+                MessageBox.Show("Character skills saved successfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
             }
             ProcessData.ignore = false;
         }
@@ -1972,7 +2059,7 @@ namespace Sheltered_2_SE
         private void btnMaxAllSkills_Click(object sender, EventArgs e)
         {
             var tabPagesList = new List<TabPage> { skillPageStr, skillPageDex, skillPageInt, skillPageCha, skillPagePer, skillPageFor };
-            List<PictureBox>skillList = new List<PictureBox>();
+            List<PictureBox> skillList = new List<PictureBox>();
             List<Skills> newSkillList = new List<Skills>();
             foreach (var tabPage in tabPagesList)
             {
@@ -1982,11 +2069,11 @@ namespace Sheltered_2_SE
                 foreach (var pictureBox in skillList)
                 {
                     var name = pictureBox.Name;
-                   if(pictureBox.Tag.ToString() == "0")
+                    if (pictureBox.Tag.ToString() == "0")
                     {
-                        
+
                         pictureBox.AccessibleName = "1";
-                        pictureBox.Image = skillLevelIcons.Images[3];                      
+                        pictureBox.Image = skillLevelIcons.Images[3];
 
                     }
                     else if (pictureBox.Tag.ToString() == "1")
@@ -2009,8 +2096,423 @@ namespace Sheltered_2_SE
             lblPointsAvailableChaValue.Text = "0";
             lblPointsAvailablePerValue.Text = "0";
             lblPointsAvailableForValue.Text = "0";
-            btnSaveCharacterSkills.PerformClick();  
-            
+            btnSaveCharacterSkills.PerformClick();
+        }
+
+        private void cbxDeseasesCharacterSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var firstName = cbxDeseasesCharacterSelect.Text.ToString();
+            var lastName = "";
+
+            List<GetFamilyMemberData> familyMembers = ProcessData.FamilyMembersList();
+
+            foreach (GetFamilyMemberData member in familyMembers)
+            {
+                if (member.FirstName + " " + member.LastName == firstName)
+                {
+                    firstName = member.FirstName;
+                    lastName = member.LastName;
+                }
+            }
+
+            lblDeseasesCharacterName.Text = firstName + " " + lastName;
+
+            var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+            var memberNr = xDoc.Descendants("FamilyMembers").Descendants().Where(x => x.Value.Contains(firstName) && x.Value.Contains(lastName)).AncestorsAndSelf().FirstOrDefault().Name;
+
+            //Read in Illnesses
+            var radiationPoisoningActive = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("RadiationPoisoning").Descendants("active").First().Value;
+            if (radiationPoisoningActive == "True")
+            {
+                cbRadiationPoisening.Checked = true;
+            }
+            else cbRadiationPoisening.Checked = false;
+
+            var malnourishment = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Malnourishment").Descendants("active").First().Value;
+            if (malnourishment == "True")
+            {
+                cbMalnourishment.Checked = true;
+            }
+            else cbMalnourishment.Checked = false;
+
+            var infection = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Infection").Descendants("active").First().Value;
+            if (infection == "True")
+            {
+                cbInfection.Checked = true;
+            }
+            else cbInfection.Checked = false;
+
+            var foodPoisoning = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("FoodPoisoning").Descendants("active").First().Value;
+            if (foodPoisoning == "True")
+            {
+                cbFoodPoisoning.Checked = true;
+            }
+            else cbFoodPoisoning.Checked = false;
+
+            var bleeding = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Bleeding").Descendants("active").First().Value;
+            if (bleeding == "True")
+            {
+                cbBleeding.Checked = true;
+            }
+            else cbBleeding.Checked = false;
+
+            var weakHeart = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("WeakHeart").Descendants("active").First().Value;
+            if (weakHeart == "True")
+            {
+                cbWeakHeart.Checked = true;
+            }
+            else cbWeakHeart.Checked = false;
+
+            var dehydration = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Dehydration").Descendants("active").First().Value;
+            if (dehydration == "True")
+            {
+                cbDehydration.Checked = true;
+            }
+            else cbDehydration.Checked = false;
+
+            var hypothermia = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Hypothermia").Descendants("active").First().Value;
+            if (hypothermia == "True")
+            {
+                cbHypothermia.Checked = true;
+            }
+            else cbHypothermia.Checked = false;
+
+            var heatExhaustion = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("HeatExhaustion").Descendants("active").First().Value;
+            if (heatExhaustion == "True")
+            {
+                cbHeatExhaustion.Checked = true;
+            }
+            else cbHeatExhaustion.Checked = false;
+
+            var plague = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Plague").Descendants("active").First().Value;
+            if (plague == "True")
+            {
+                cbPlague.Checked = true;
+            }
+            else cbPlague.Checked = false;
+
+            var brokenArmLeft = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("BrokenArm").Descendants("active").First().Value;
+            if (brokenArmLeft == "True")
+            {
+                cbBrokenArmLeft.Checked = true;
+            }
+            else cbBrokenArmLeft.Checked = false;
+
+            var brokenArmRight = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("BrokenArmarm2").Descendants("active").First().Value;
+            if (brokenArmRight == "True")
+            {
+                cbBrokenArmRight.Checked = true;
+            }
+            else cbBrokenArmRight.Checked = false;
+
+            var brokenLegLeft = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("BrokenLeg").Descendants("active").First().Value;
+            if (brokenLegLeft == "True")
+            {
+                cbBrokenLegLeft.Checked = true;
+            }
+            else cbBrokenLegLeft.Checked = false;
+
+            var brokenLegRight = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("BrokenLegleg2").Descendants("active").First().Value;
+            if (brokenLegRight == "True")
+            {
+                cbBrokenLegRight.Checked = true;
+            }
+            else cbBrokenLegRight.Checked = false;
+
+            //var radiationPoisoningRadiation = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("RadiationPoisoning").Descendants("radiation").First().Value;
+            //var radiationPoisoningDamageTime = xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("RadiationPoisoning").Descendants("radiation").First().Value;
+
+
+
+        }
+        private void btnCureAll_Click(object sender, EventArgs e)
+        {
+            var firstName = cbxDeseasesCharacterSelect.Text.ToString();
+            var lastName = "";
+
+            List<GetFamilyMemberData> familyMembers = ProcessData.FamilyMembersList();
+
+            foreach (GetFamilyMemberData member in familyMembers)
+            {
+                if (member.FirstName + " " + member.LastName == firstName)
+                {
+                    firstName = member.FirstName;
+                    lastName = member.LastName;
+                }
+            }
+
+            lblDeseasesCharacterName.Text = firstName + " " + lastName;
+
+            var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+            var memberNr = xDoc.Descendants("FamilyMembers").Descendants().Where(x => x.Value.Contains(firstName) && x.Value.Contains(lastName)).AncestorsAndSelf().FirstOrDefault().Name;
+
+            //Radiation Poisoning
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("RadiationPoisoning").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("RadiationPoisoning").Descendants("radiation").First().Value = "0";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("RadiationPoisoning").Descendants("active").First().Value = "-4813.727";
+
+            //Malnourishment
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Malnourishment").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Malnourishment").Descendants("hungry").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Malnourishment").Descendants("hungrySince").First().Value = "-4813.727";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Malnourishment").Descendants("damageTime").First().Value = "-4813.727";
+
+            //Infection
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Infection").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Infection").Descendants("immuneUntil").First().Value = "-4813.727";
+
+            //FoodPoisoning
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("FoodPoisoning").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("FoodPoisoning").Descendants("active_timer").First().Value = "0";
+
+            //Bleeding
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Bleeding").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Bleeding").Descendants("damageTime").First().Value = "-4813.727";
+
+            //Suffocating
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Suffocating").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Suffocating").Descendants("damageTime").First().Value = "-4813.727";
+
+            //WeakHeart
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("WeakHeart").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("WeakHeart").Descendants("timeUntilCured").First().Value = "-4813.727";
+
+            //Dehydration
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Dehydration").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Dehydration").Descendants("thirsty").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Dehydration").Descendants("thirstySince").First().Value = "-4813.727";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Dehydration").Descendants("damageTime").First().Value = "-4813.727";
+
+            //Hypothermia
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Hypothermia").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Hypothermia").Descendants("cold").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Hypothermia").Descendants("coldSince").First().Value = "-4813.727";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Hypothermia").Descendants("warmSince").First().Value = "-4813.727";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Hypothermia").Descendants("damageTime").First().Value = "-4813.727";
+
+            //HeatExhaustion
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("HeatExhaustion").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("HeatExhaustion").Descendants("hot").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("HeatExhaustion").Descendants("hotSince").First().Value = "-4813.727";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("HeatExhaustion").Descendants("coldSince").First().Value = "-4813.727";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("HeatExhaustion").Descendants("damageTime").First().Value = "-4813.727";
+
+            //Plague
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Plague").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Plague").Descendants("plagueBuildUp").First().Value = "0";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Plague").Descendants("immunityBuildUp").First().Value = "0";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Plague").Descendants("antibioticTimer").First().Value = "-624.2998";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Plague").Descendants("immunityTimer").First().Value = "-624.2998";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Plague").Descendants("checkTimer").First().Value = "71.18488";
+
+            //Broken Limbs
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("BrokenArm").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("BrokenArmarm2").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("BrokenLeg").Descendants("active").First().Value = "False";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("BrokenLegleg2").Descendants("active").First().Value = "False";
+            foreach (CheckBox cB in pnlDeseases.Controls.OfType<CheckBox>())
+            {
+                cB.Checked = false;
+            }
+            xDoc.Save(ProcessFile.tempFilePath);
+            MessageBox.Show("Character Deseases&Infestation saved successfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
+        }
+
+        string[] messages = {
+    "Releasing rat poison",
+    "Releasing rat poison .",
+    "Releasing rat poison ..",
+    "Releasing rat poison ...",
+    "Releasing rat poison",
+    "Releasing rat poison .",
+    "Releasing rat poison ..",
+    "Releasing rat poison ...",
+    "Watching rats die",
+    "Watching rats die .",
+    "Watching rats die ..",
+    "Watching rats die ...",
+    "Watching rats die",
+    "Watching rats die .",
+    "Watching rats die ..",
+    "Watching rats die ...",
+    "Cleaning shelter from dead rats",
+    "Cleaning shelter from dead rats .",
+    "Cleaning shelter from dead rats ..",
+    "Cleaning shelter from dead rats ...",
+    "Cleaning shelter from dead rats",
+    "Cleaning shelter from dead rats .",
+    "Cleaning shelter from dead rats ..",
+    "Cleaning shelter from dead rats ...",
+    "Rat infestation cleared",
+    "Rat infestation cleared !",
+    "Rat infestation cleared !!",
+    "Rat infestation cleared !!!",
+    "Rat infestation cleared",
+    "Rat infestation cleared !",
+    "Rat infestation cleared !!",
+    "Rat infestation cleared !!!",
+    "",
+    ""
+};
+
+        int turn = 0;
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+
+            label2.Text = messages[turn++];
+            turn %= messages.Length;
+            if (turn == 33)
+            {
+                timer1.Stop();
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void btnRemoveInfestation_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+            var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+
+            //Remove Rats
+            xDoc.Descendants("root").Descendants().Where(x => x.Name.LocalName.StartsWith("Pest_")).Remove();
+            //Remove nests
+            xDoc.Descendants("root").Descendants("PestManager").Descendants("pests").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Remove();
+            //Remove proof of existence
+            xDoc.Descendants("root").Descendants("PestManager").Descendants("pests").FirstOrDefault().Attribute("size").Value = "0";
+            //Clean Shelter
+            xDoc.Descendants("root").Descendants("EffectsManager").Descendants("spawned_effects").Descendants().Where(x => x.Name.LocalName.StartsWith("i")).Remove();
+            //Finalize cleaning
+            xDoc.Descendants("root").Descendants("EffectsManager").Descendants("spawned_effects").FirstOrDefault().Attribute("size").Value = "0";
+
+            xDoc.Save(ProcessFile.tempFilePath);
+        }
+
+        private void tbPetColorPicker_Scroll(object sender, EventArgs e)
+        {
+            int petImageIndex = 0;
+            Console.WriteLine(ProcessData.petSpecies);
+            if (ProcessData.petSpecies == "Dog")
+            {
+                tbPetColorPicker.Maximum = 4;
+                petImageIndex = tbPetColorPicker.Value;
+                pbxPetImage.BackgroundImage = DogImages.Images[petImageIndex];
+            }
+            else if (ProcessData.petSpecies == "Cat")
+            {
+                tbPetColorPicker.Maximum = 5;
+                petImageIndex = tbPetColorPicker.Value;
+                pbxPetImage.BackgroundImage = CatImages.Images[petImageIndex];
+            }
+
+
+        }
+
+        private void cbxPetSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var checkId = ((Pets)cbxPetSelect.SelectedItem).PetId.Remove(0,4);
+            var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+            var species = xDoc.Descendants("PetManager").Descendants().Where(x=>x.Name.LocalName.StartsWith("i"))
+                .Where(x=>x.Elements("uniqueId").FirstOrDefault().Value == checkId)?.Elements("petSpecies")?.FirstOrDefault()?.Value;
+            if (species == "0")
+            {
+                ProcessData.petSpecies = "Dog";
+            }else if (species == "1")
+            {
+                ProcessData.petSpecies = "Cat";
+            }
+
+            txbPetName.Text = ((Pets)cbxPetSelect.SelectedItem).Name;
+            txbPetAge.Text = ((Pets)cbxPetSelect.SelectedItem).Age;
+            txbPetHealth.Text = ((Pets)cbxPetSelect.SelectedItem).Health;
+
+            if (ProcessData.petSpecies == "Cat")
+            {
+                pnlDogSkills.Visible = false;
+                pnlCatStats.Visible = true;
+                txbPreyDriveLevel.Text = ((Pets)cbxPetSelect.SelectedItem).PreyDriveLevel;
+                txbPreyDriveCap.Text = ((Pets)cbxPetSelect.SelectedItem).PreyDriveCap;
+                txbScavengingLevel.Text = ((Pets)cbxPetSelect.SelectedItem).ScavengingLevel;
+                txbScavengingCap.Text = ((Pets)cbxPetSelect.SelectedItem).ScavengingCap;
+                txbAffectionLevel.Text = ((Pets)cbxPetSelect.SelectedItem).AffectionLevel;
+                txbAffectionCap.Text = ((Pets)cbxPetSelect.SelectedItem).AffectionCap;
+            }
+            else if (ProcessData.petSpecies == "Dog")
+            {
+                pnlDogSkills.Visible = true;
+                pnlCatStats.Visible = false;
+                lblDogSkillsShelterAvailablePoints.Text = ((Pets)cbxPetSelect.SelectedItem).ShelterPoints;
+                lblDogSkillsCombatAvailablePoints.Text = ((Pets)cbxPetSelect.SelectedItem).CombatPoints;
+                lblDogSkillsUtilityAvailablePoints.Text = ((Pets)cbxPetSelect.SelectedItem).UtilityPoints;
+
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill1 == "True") { pbxDogSkillsShelter1.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsShelter1.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill2 == "True") { pbxDogSkillsShelter2.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsShelter2.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill3 == "True") { pbxDogSkillsShelter3.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsShelter3.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill4 == "True") { pbxDogSkillsShelter4.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsShelter4.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill5 == "True") { pbxDogSkillsShelter5.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsShelter5.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill6 == "True") { pbxDogSkillsShelter6.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsShelter6.Image = DogSkillImageList.Images[0];
+
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill1 == "True") { pbxDogSkillsCombat1.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsCombat1.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill2 == "True") { pbxDogSkillsCombat2.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsCombat2.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill3 == "True") { pbxDogSkillsCombat3.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsCombat3.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill4 == "True") { pbxDogSkillsCombat4.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsCombat4.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill5 == "True") { pbxDogSkillsCombat5.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsCombat5.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill6 == "True") { pbxDogSkillsCombat6.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsCombat6.Image = DogSkillImageList.Images[0];
+
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill1 == "True") { pbxDogSkillsUtility1.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsUtility1.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill2 == "True") { pbxDogSkillsUtility2.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsUtility2.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill3 == "True") { pbxDogSkillsUtility3.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsUtility3.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill4 == "True") { pbxDogSkillsUtility4.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsUtility4.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill5 == "True") { pbxDogSkillsUtility5.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsUtility5.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill6 == "True") { pbxDogSkillsUtility6.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsUtility6.Image = DogSkillImageList.Images[0];
+
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill1 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining1 == "150") { pbxDogSkillsShelter1.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill1 == "False") { pbxDogSkillsShelter1.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsShelter1.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill2 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining2 == "150") { pbxDogSkillsShelter2.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill2 == "False") { pbxDogSkillsShelter2.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsShelter1.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill3 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining3 == "300") { pbxDogSkillsShelter3.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill3 == "False") { pbxDogSkillsShelter3.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsShelter3.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill4 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining4 == "300") { pbxDogSkillsShelter4.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill4 == "False") { pbxDogSkillsShelter4.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsShelter4.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill5 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining5 == "600") { pbxDogSkillsShelter5.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill5 == "False") { pbxDogSkillsShelter5.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsShelter5.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill6 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining6 == "600") { pbxDogSkillsShelter6.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill6 == "False") { pbxDogSkillsShelter6.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsShelter6.Image = DogSkillImageList.Images[1];
+
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill1 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining1 == "150") { pbxDogSkillsCombat1.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill1 == "False") { pbxDogSkillsCombat1.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsCombat1.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill2 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining2 == "150") { pbxDogSkillsCombat2.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill2 == "False") { pbxDogSkillsCombat2.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsCombat2.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill3 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining3 == "300") { pbxDogSkillsCombat3.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill3 == "False") { pbxDogSkillsCombat3.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsCombat3.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill4 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining4 == "300") { pbxDogSkillsCombat4.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill4 == "False") { pbxDogSkillsCombat4.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsCombat4.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill5 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining5 == "600") { pbxDogSkillsCombat5.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill5 == "False") { pbxDogSkillsCombat5.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsCombat5.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill6 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining6 == "600") { pbxDogSkillsCombat6.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill6 == "False") { pbxDogSkillsCombat6.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsCombat6.Image = DogSkillImageList.Images[1];
+
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill1 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining1 == "150") { pbxDogSkillsUtility1.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill1 == "False") { pbxDogSkillsUtility1.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsUtility1.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill2 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining2 == "150") { pbxDogSkillsUtility2.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill2 == "False") { pbxDogSkillsUtility2.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsUtility2.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill3 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining3 == "300") { pbxDogSkillsUtility3.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill3 == "False") { pbxDogSkillsUtility3.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsUtility3.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill4 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining4 == "300") { pbxDogSkillsUtility4.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill4 == "False") { pbxDogSkillsUtility4.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsUtility4.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill5 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining5 == "600") { pbxDogSkillsUtility5.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill5 == "False") { pbxDogSkillsUtility5.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsUtility5.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill6 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining6 == "600") { pbxDogSkillsUtility6.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill6 == "False") { pbxDogSkillsUtility6.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsUtility6.Image = DogSkillImageList.Images[1];
+            }     
+        }
+
+        private void specialThanksToToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            // Create a new instance of the Form
+            Credits creditsForm = new Credits();
+
+            // Show the form
+
+            creditsForm.Show();
+            creditsForm.Activate();
+
+
+        }
+
+        private void btnSavePet_Click(object sender, EventArgs e)
+        {
+
 
 
 
