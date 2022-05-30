@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle("Sheltered 2 SE")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Savegame Editor for the Game Sheltered 2")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("eoLithix Network - coded by mJrA")]
 [assembly: AssemblyProduct("Sheltered 2 SE")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]

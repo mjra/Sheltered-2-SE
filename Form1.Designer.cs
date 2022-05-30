@@ -331,25 +331,14 @@ namespace Sheltered_2_SE
             this.cbxSkillsCharacterSelect = new System.Windows.Forms.ComboBox();
             this.petsTab = new System.Windows.Forms.TabPage();
             this.pnlDogSkills = new System.Windows.Forms.Panel();
-            this.pbxDogSkillsUtility6 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsUtility5 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsUtility2 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsUtility1 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsUtility4 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsUtility3 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsCombat6 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsCombat5 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsCombat2 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsCombat1 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsCombat4 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsCombat3 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsShelter6 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsShelter5 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsShelter2 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsShelter1 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsShelter4 = new System.Windows.Forms.PictureBox();
-            this.pbxDogSkillsShelter3 = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.UtilityMinus = new System.Windows.Forms.PictureBox();
+            this.UtilityPlus = new System.Windows.Forms.PictureBox();
+            this.CombatMinus = new System.Windows.Forms.PictureBox();
+            this.CombatPlus = new System.Windows.Forms.PictureBox();
+            this.ShelterMinus = new System.Windows.Forms.PictureBox();
+            this.ShelterPlus = new System.Windows.Forms.PictureBox();
+            this.btnMaxDogSkills = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.pbxDogSkillImage17 = new System.Windows.Forms.PictureBox();
             this.pbxDogSkillImage15 = new System.Windows.Forms.PictureBox();
             this.pbxDogSkillImage13 = new System.Windows.Forms.PictureBox();
@@ -368,30 +357,54 @@ namespace Sheltered_2_SE
             this.pbxDogSkillImage4 = new System.Windows.Forms.PictureBox();
             this.pbxDogSkillImage2 = new System.Windows.Forms.PictureBox();
             this.pbxDogSkillImage0 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pbxDogSkillLevel17 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel16 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel13 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel12 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel15 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel14 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel11 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel10 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel7 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel6 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel9 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel8 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel5 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel4 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel1 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel0 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel3 = new System.Windows.Forms.PictureBox();
+            this.pbxDogSkillLevel2 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblDogSkillsUtility = new System.Windows.Forms.Label();
             this.lblDogSkillsCombat = new System.Windows.Forms.Label();
             this.lblDogSkillsShelter = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblDogSkills = new System.Windows.Forms.Label();
+            this.lblDogSkillsShelterAvailablePoints = new System.Windows.Forms.Label();
+            this.lblDogSkillsUtilityAvailablePoints = new System.Windows.Forms.Label();
+            this.lblDogSkillsCombatAvailablePoints = new System.Windows.Forms.Label();
             this.pnlCatStats = new System.Windows.Forms.Panel();
             this.txbAffectionCap = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblAffection = new System.Windows.Forms.Label();
             this.txbAffectionLevel = new System.Windows.Forms.TextBox();
             this.txbScavengingCap = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblScavenging = new System.Windows.Forms.Label();
             this.txbScavengingLevel = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblPetCap = new System.Windows.Forms.Label();
             this.txbPreyDriveCap = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblPreyDrive = new System.Windows.Forms.Label();
+            this.lblCatStats = new System.Windows.Forms.Label();
+            this.lblPetLevel = new System.Windows.Forms.Label();
             this.txbPreyDriveLevel = new System.Windows.Forms.TextBox();
+            this.btnSavePet = new System.Windows.Forms.Button();
             this.lblPetName = new System.Windows.Forms.Label();
             this.tbPetColorPicker = new System.Windows.Forms.TrackBar();
             this.label5 = new System.Windows.Forms.Label();
             this.txbPetHealth = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblPetAge = new System.Windows.Forms.Label();
             this.txbPetAge = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblPetName1 = new System.Windows.Forms.Label();
             this.txbPetName = new System.Windows.Forms.TextBox();
             this.cbxPetSelect = new System.Windows.Forms.ComboBox();
             this.lblColorPicker = new System.Windows.Forms.Label();
@@ -415,7 +428,7 @@ namespace Sheltered_2_SE
             this.cbFoodPoisoning = new System.Windows.Forms.CheckBox();
             this.cbInfection = new System.Windows.Forms.CheckBox();
             this.cbMalnourishment = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblIllnesses = new System.Windows.Forms.Label();
             this.cbRadiationPoisening = new System.Windows.Forms.CheckBox();
             this.lblDeseasesCharacterName = new System.Windows.Forms.Label();
             this.cbxDeseasesCharacterSelect = new System.Windows.Forms.ComboBox();
@@ -501,16 +514,12 @@ namespace Sheltered_2_SE
             this.DogImages = new System.Windows.Forms.ImageList(this.components);
             this.CatImages = new System.Windows.Forms.ImageList(this.components);
             this.DogSkillImageList = new System.Windows.Forms.ImageList(this.components);
-            this.label15 = new System.Windows.Forms.Label();
-            this.lblDogSkillsShelterAvailablePoints = new System.Windows.Forms.Label();
-            this.lblDogSkillsCombatAvailablePoints = new System.Windows.Forms.Label();
-            this.lblDogSkillsUtilityAvailablePoints = new System.Windows.Forms.Label();
-            this.btnSavePet = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.DogSkillImageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnPetUnstuck = new System.Windows.Forms.Button();
+            this.cbPetInteracting = new System.Windows.Forms.CheckBox();
+            this.btnLoadXmlTree = new System.Windows.Forms.Button();
+            this.rbXmlFull = new System.Windows.Forms.RadioButton();
+            this.rbXmlMembers = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.characterStatsTab.SuspendLayout();
@@ -717,24 +726,12 @@ namespace Sheltered_2_SE
             ((System.ComponentModel.ISupportInitialize)(this.pbxForSkill1)).BeginInit();
             this.petsTab.SuspendLayout();
             this.pnlDogSkills.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsUtility6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsUtility5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsUtility2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsUtility1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsUtility4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsUtility3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsCombat6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsCombat5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsCombat2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsCombat1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsCombat4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsCombat3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsShelter6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsShelter5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsShelter2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsShelter1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsShelter4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsShelter3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UtilityMinus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UtilityPlus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CombatMinus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CombatPlus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShelterMinus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShelterPlus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillImage17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillImage15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillImage13)).BeginInit();
@@ -753,6 +750,24 @@ namespace Sheltered_2_SE
             ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillImage4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillImage2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillImage0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel2)).BeginInit();
             this.pnlCatStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbPetColorPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPetImage)).BeginInit();
@@ -827,6 +842,7 @@ namespace Sheltered_2_SE
             this.helpStripMenuItem.Name = "helpStripMenuItem";
             this.helpStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpStripMenuItem.Text = "Help";
+            this.helpStripMenuItem.Visible = false;
             // 
             // editToolStripMenuItem
             // 
@@ -1186,6 +1202,7 @@ namespace Sheltered_2_SE
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(667, 620);
             this.tabControlMain.TabIndex = 37;
+            this.tabControlMain.Visible = false;
             this.tabControlMain.SelectedIndexChanged += new System.EventHandler(this.tabControlMain_SelectedIndexChanged);
             // 
             // characterStatsTab
@@ -4204,16 +4221,18 @@ namespace Sheltered_2_SE
             // 
             // petsTab
             // 
-            this.petsTab.Controls.Add(this.pnlCatStats);
-            this.petsTab.Controls.Add(this.btnSavePet);
             this.petsTab.Controls.Add(this.pnlDogSkills);
+            this.petsTab.Controls.Add(this.pnlCatStats);
+            this.petsTab.Controls.Add(this.cbPetInteracting);
+            this.petsTab.Controls.Add(this.btnPetUnstuck);
+            this.petsTab.Controls.Add(this.btnSavePet);
             this.petsTab.Controls.Add(this.lblPetName);
             this.petsTab.Controls.Add(this.tbPetColorPicker);
             this.petsTab.Controls.Add(this.label5);
             this.petsTab.Controls.Add(this.txbPetHealth);
-            this.petsTab.Controls.Add(this.label4);
+            this.petsTab.Controls.Add(this.lblPetAge);
             this.petsTab.Controls.Add(this.txbPetAge);
-            this.petsTab.Controls.Add(this.label3);
+            this.petsTab.Controls.Add(this.lblPetName1);
             this.petsTab.Controls.Add(this.txbPetName);
             this.petsTab.Controls.Add(this.cbxPetSelect);
             this.petsTab.Controls.Add(this.lblColorPicker);
@@ -4229,9 +4248,13 @@ namespace Sheltered_2_SE
             // 
             this.pnlDogSkills.BackColor = System.Drawing.Color.Transparent;
             this.pnlDogSkills.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlDogSkills.Controls.Add(this.button6);
-            this.pnlDogSkills.Controls.Add(this.button5);
-            this.pnlDogSkills.Controls.Add(this.button4);
+            this.pnlDogSkills.Controls.Add(this.UtilityMinus);
+            this.pnlDogSkills.Controls.Add(this.UtilityPlus);
+            this.pnlDogSkills.Controls.Add(this.CombatMinus);
+            this.pnlDogSkills.Controls.Add(this.CombatPlus);
+            this.pnlDogSkills.Controls.Add(this.ShelterMinus);
+            this.pnlDogSkills.Controls.Add(this.ShelterPlus);
+            this.pnlDogSkills.Controls.Add(this.btnMaxDogSkills);
             this.pnlDogSkills.Controls.Add(this.label13);
             this.pnlDogSkills.Controls.Add(this.pbxDogSkillImage17);
             this.pnlDogSkills.Controls.Add(this.pbxDogSkillImage15);
@@ -4252,29 +4275,29 @@ namespace Sheltered_2_SE
             this.pnlDogSkills.Controls.Add(this.pbxDogSkillImage2);
             this.pnlDogSkills.Controls.Add(this.pbxDogSkillImage0);
             this.pnlDogSkills.Controls.Add(this.label15);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsUtility6);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsUtility5);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsUtility2);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsUtility1);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsUtility4);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsUtility3);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsCombat6);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsCombat5);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsCombat2);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsCombat1);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsCombat4);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsCombat3);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsShelter6);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsShelter5);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsShelter2);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsShelter1);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsShelter4);
-            this.pnlDogSkills.Controls.Add(this.pbxDogSkillsShelter3);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel17);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel16);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel13);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel12);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel15);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel14);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel11);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel10);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel7);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel6);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel9);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel8);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel5);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel4);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel1);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel0);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel3);
+            this.pnlDogSkills.Controls.Add(this.pbxDogSkillLevel2);
             this.pnlDogSkills.Controls.Add(this.label12);
             this.pnlDogSkills.Controls.Add(this.lblDogSkillsUtility);
             this.pnlDogSkills.Controls.Add(this.lblDogSkillsCombat);
             this.pnlDogSkills.Controls.Add(this.lblDogSkillsShelter);
-            this.pnlDogSkills.Controls.Add(this.label16);
+            this.pnlDogSkills.Controls.Add(this.lblDogSkills);
             this.pnlDogSkills.Controls.Add(this.lblDogSkillsShelterAvailablePoints);
             this.pnlDogSkills.Controls.Add(this.lblDogSkillsUtilityAvailablePoints);
             this.pnlDogSkills.Controls.Add(this.lblDogSkillsCombatAvailablePoints);
@@ -4283,150 +4306,442 @@ namespace Sheltered_2_SE
             this.pnlDogSkills.Size = new System.Drawing.Size(631, 296);
             this.pnlDogSkills.TabIndex = 33;
             this.pnlDogSkills.Visible = false;
+            this.pnlDogSkills.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDogSkills_Paint);
             // 
-            // pbxDogSkillsUtility6
+            // UtilityMinus
             // 
-            this.pbxDogSkillsUtility6.Location = new System.Drawing.Point(487, 263);
-            this.pbxDogSkillsUtility6.Name = "pbxDogSkillsUtility6";
-            this.pbxDogSkillsUtility6.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsUtility6.TabIndex = 68;
-            this.pbxDogSkillsUtility6.TabStop = false;
+            this.UtilityMinus.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.minus;
+            this.UtilityMinus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UtilityMinus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UtilityMinus.Location = new System.Drawing.Point(482, 78);
+            this.UtilityMinus.Name = "UtilityMinus";
+            this.UtilityMinus.Size = new System.Drawing.Size(15, 15);
+            this.UtilityMinus.TabIndex = 85;
+            this.UtilityMinus.TabStop = false;
+            this.UtilityMinus.Visible = false;
+            this.UtilityMinus.Click += new System.EventHandler(this.UtilityMinus_Click);
             // 
-            // pbxDogSkillsUtility5
+            // UtilityPlus
             // 
-            this.pbxDogSkillsUtility5.Location = new System.Drawing.Point(433, 263);
-            this.pbxDogSkillsUtility5.Name = "pbxDogSkillsUtility5";
-            this.pbxDogSkillsUtility5.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsUtility5.TabIndex = 69;
-            this.pbxDogSkillsUtility5.TabStop = false;
+            this.UtilityPlus.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.plus;
+            this.UtilityPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UtilityPlus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UtilityPlus.Location = new System.Drawing.Point(442, 78);
+            this.UtilityPlus.Name = "UtilityPlus";
+            this.UtilityPlus.Size = new System.Drawing.Size(15, 15);
+            this.UtilityPlus.TabIndex = 84;
+            this.UtilityPlus.TabStop = false;
+            this.UtilityPlus.Visible = false;
+            this.UtilityPlus.Click += new System.EventHandler(this.UtilityPlus_Click);
             // 
-            // pbxDogSkillsUtility2
+            // CombatMinus
             // 
-            this.pbxDogSkillsUtility2.Location = new System.Drawing.Point(487, 139);
-            this.pbxDogSkillsUtility2.Name = "pbxDogSkillsUtility2";
-            this.pbxDogSkillsUtility2.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsUtility2.TabIndex = 66;
-            this.pbxDogSkillsUtility2.TabStop = false;
+            this.CombatMinus.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.minus;
+            this.CombatMinus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CombatMinus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CombatMinus.Location = new System.Drawing.Point(309, 78);
+            this.CombatMinus.Name = "CombatMinus";
+            this.CombatMinus.Size = new System.Drawing.Size(15, 15);
+            this.CombatMinus.TabIndex = 83;
+            this.CombatMinus.TabStop = false;
+            this.CombatMinus.Visible = false;
+            this.CombatMinus.Click += new System.EventHandler(this.CombatMinus_Click);
             // 
-            // pbxDogSkillsUtility1
+            // CombatPlus
             // 
-            this.pbxDogSkillsUtility1.Location = new System.Drawing.Point(433, 139);
-            this.pbxDogSkillsUtility1.Name = "pbxDogSkillsUtility1";
-            this.pbxDogSkillsUtility1.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsUtility1.TabIndex = 67;
-            this.pbxDogSkillsUtility1.TabStop = false;
+            this.CombatPlus.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.plus;
+            this.CombatPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CombatPlus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CombatPlus.Location = new System.Drawing.Point(269, 78);
+            this.CombatPlus.Name = "CombatPlus";
+            this.CombatPlus.Size = new System.Drawing.Size(15, 15);
+            this.CombatPlus.TabIndex = 82;
+            this.CombatPlus.TabStop = false;
+            this.CombatPlus.Visible = false;
+            this.CombatPlus.Click += new System.EventHandler(this.CombatPlus_Click);
             // 
-            // pbxDogSkillsUtility4
+            // ShelterMinus
             // 
-            this.pbxDogSkillsUtility4.Location = new System.Drawing.Point(487, 201);
-            this.pbxDogSkillsUtility4.Name = "pbxDogSkillsUtility4";
-            this.pbxDogSkillsUtility4.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsUtility4.TabIndex = 64;
-            this.pbxDogSkillsUtility4.TabStop = false;
+            this.ShelterMinus.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.minus;
+            this.ShelterMinus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ShelterMinus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ShelterMinus.Location = new System.Drawing.Point(140, 78);
+            this.ShelterMinus.Name = "ShelterMinus";
+            this.ShelterMinus.Size = new System.Drawing.Size(15, 15);
+            this.ShelterMinus.TabIndex = 81;
+            this.ShelterMinus.TabStop = false;
+            this.ShelterMinus.Visible = false;
+            this.ShelterMinus.Click += new System.EventHandler(this.ShelterMinus_Click);
             // 
-            // pbxDogSkillsUtility3
+            // ShelterPlus
             // 
-            this.pbxDogSkillsUtility3.Location = new System.Drawing.Point(433, 201);
-            this.pbxDogSkillsUtility3.Name = "pbxDogSkillsUtility3";
-            this.pbxDogSkillsUtility3.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsUtility3.TabIndex = 65;
-            this.pbxDogSkillsUtility3.TabStop = false;
+            this.ShelterPlus.BackgroundImage = global::Sheltered_2_SE.Properties.Resources.plus;
+            this.ShelterPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ShelterPlus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ShelterPlus.Location = new System.Drawing.Point(100, 78);
+            this.ShelterPlus.Name = "ShelterPlus";
+            this.ShelterPlus.Size = new System.Drawing.Size(15, 15);
+            this.ShelterPlus.TabIndex = 80;
+            this.ShelterPlus.TabStop = false;
+            this.ShelterPlus.Visible = false;
+            this.ShelterPlus.Click += new System.EventHandler(this.ShelterPlus_Click);
             // 
-            // pbxDogSkillsCombat6
+            // btnMaxDogSkills
             // 
-            this.pbxDogSkillsCombat6.Location = new System.Drawing.Point(315, 263);
-            this.pbxDogSkillsCombat6.Name = "pbxDogSkillsCombat6";
-            this.pbxDogSkillsCombat6.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsCombat6.TabIndex = 62;
-            this.pbxDogSkillsCombat6.TabStop = false;
+            this.btnMaxDogSkills.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaxDogSkills.Location = new System.Drawing.Point(3, 3);
+            this.btnMaxDogSkills.Name = "btnMaxDogSkills";
+            this.btnMaxDogSkills.Size = new System.Drawing.Size(87, 23);
+            this.btnMaxDogSkills.TabIndex = 79;
+            this.btnMaxDogSkills.Text = "Max DogSkills";
+            this.btnMaxDogSkills.UseVisualStyleBackColor = true;
+            this.btnMaxDogSkills.Click += new System.EventHandler(this.btnMaxDogSkills_Click);
             // 
-            // pbxDogSkillsCombat5
+            // label13
             // 
-            this.pbxDogSkillsCombat5.Location = new System.Drawing.Point(261, 263);
-            this.pbxDogSkillsCombat5.Name = "pbxDogSkillsCombat5";
-            this.pbxDogSkillsCombat5.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsCombat5.TabIndex = 63;
-            this.pbxDogSkillsCombat5.TabStop = false;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Bebas Neue", 8F);
+            this.label13.Location = new System.Drawing.Point(435, 63);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 14);
+            this.label13.TabIndex = 75;
+            this.label13.Text = "Available points:";
+            this.label13.Visible = false;
             // 
-            // pbxDogSkillsCombat2
+            // pbxDogSkillImage17
             // 
-            this.pbxDogSkillsCombat2.Location = new System.Drawing.Point(315, 139);
-            this.pbxDogSkillsCombat2.Name = "pbxDogSkillsCombat2";
-            this.pbxDogSkillsCombat2.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsCombat2.TabIndex = 60;
-            this.pbxDogSkillsCombat2.TabStop = false;
+            this.pbxDogSkillImage17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage17.Location = new System.Drawing.Point(477, 224);
+            this.pbxDogSkillImage17.Name = "pbxDogSkillImage17";
+            this.pbxDogSkillImage17.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage17.TabIndex = 51;
+            this.pbxDogSkillImage17.TabStop = false;
             // 
-            // pbxDogSkillsCombat1
+            // pbxDogSkillImage15
             // 
-            this.pbxDogSkillsCombat1.Location = new System.Drawing.Point(261, 139);
-            this.pbxDogSkillsCombat1.Name = "pbxDogSkillsCombat1";
-            this.pbxDogSkillsCombat1.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsCombat1.TabIndex = 61;
-            this.pbxDogSkillsCombat1.TabStop = false;
+            this.pbxDogSkillImage15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage15.Location = new System.Drawing.Point(477, 162);
+            this.pbxDogSkillImage15.Name = "pbxDogSkillImage15";
+            this.pbxDogSkillImage15.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage15.TabIndex = 50;
+            this.pbxDogSkillImage15.TabStop = false;
             // 
-            // pbxDogSkillsCombat4
+            // pbxDogSkillImage13
             // 
-            this.pbxDogSkillsCombat4.Location = new System.Drawing.Point(315, 201);
-            this.pbxDogSkillsCombat4.Name = "pbxDogSkillsCombat4";
-            this.pbxDogSkillsCombat4.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsCombat4.TabIndex = 58;
-            this.pbxDogSkillsCombat4.TabStop = false;
+            this.pbxDogSkillImage13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage13.Location = new System.Drawing.Point(477, 100);
+            this.pbxDogSkillImage13.Name = "pbxDogSkillImage13";
+            this.pbxDogSkillImage13.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage13.TabIndex = 49;
+            this.pbxDogSkillImage13.TabStop = false;
             // 
-            // pbxDogSkillsCombat3
+            // pbxDogSkillImage16
             // 
-            this.pbxDogSkillsCombat3.Location = new System.Drawing.Point(261, 201);
-            this.pbxDogSkillsCombat3.Name = "pbxDogSkillsCombat3";
-            this.pbxDogSkillsCombat3.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsCombat3.TabIndex = 59;
-            this.pbxDogSkillsCombat3.TabStop = false;
+            this.pbxDogSkillImage16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage16.Location = new System.Drawing.Point(423, 224);
+            this.pbxDogSkillImage16.Name = "pbxDogSkillImage16";
+            this.pbxDogSkillImage16.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage16.TabIndex = 48;
+            this.pbxDogSkillImage16.TabStop = false;
             // 
-            // pbxDogSkillsShelter6
+            // pbxDogSkillImage14
             // 
-            this.pbxDogSkillsShelter6.Location = new System.Drawing.Point(144, 263);
-            this.pbxDogSkillsShelter6.Name = "pbxDogSkillsShelter6";
-            this.pbxDogSkillsShelter6.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsShelter6.TabIndex = 56;
-            this.pbxDogSkillsShelter6.TabStop = false;
+            this.pbxDogSkillImage14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage14.Location = new System.Drawing.Point(423, 162);
+            this.pbxDogSkillImage14.Name = "pbxDogSkillImage14";
+            this.pbxDogSkillImage14.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage14.TabIndex = 47;
+            this.pbxDogSkillImage14.TabStop = false;
             // 
-            // pbxDogSkillsShelter5
+            // pbxDogSkillImage12
             // 
-            this.pbxDogSkillsShelter5.Location = new System.Drawing.Point(90, 263);
-            this.pbxDogSkillsShelter5.Name = "pbxDogSkillsShelter5";
-            this.pbxDogSkillsShelter5.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsShelter5.TabIndex = 57;
-            this.pbxDogSkillsShelter5.TabStop = false;
+            this.pbxDogSkillImage12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage12.Location = new System.Drawing.Point(423, 100);
+            this.pbxDogSkillImage12.Name = "pbxDogSkillImage12";
+            this.pbxDogSkillImage12.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage12.TabIndex = 46;
+            this.pbxDogSkillImage12.TabStop = false;
             // 
-            // pbxDogSkillsShelter2
+            // pbxDogSkillImage11
             // 
-            this.pbxDogSkillsShelter2.Location = new System.Drawing.Point(144, 139);
-            this.pbxDogSkillsShelter2.Name = "pbxDogSkillsShelter2";
-            this.pbxDogSkillsShelter2.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsShelter2.TabIndex = 54;
-            this.pbxDogSkillsShelter2.TabStop = false;
+            this.pbxDogSkillImage11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage11.Location = new System.Drawing.Point(305, 224);
+            this.pbxDogSkillImage11.Name = "pbxDogSkillImage11";
+            this.pbxDogSkillImage11.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage11.TabIndex = 45;
+            this.pbxDogSkillImage11.TabStop = false;
             // 
-            // pbxDogSkillsShelter1
+            // pbxDogSkillImage9
             // 
-            this.pbxDogSkillsShelter1.Location = new System.Drawing.Point(90, 139);
-            this.pbxDogSkillsShelter1.Name = "pbxDogSkillsShelter1";
-            this.pbxDogSkillsShelter1.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsShelter1.TabIndex = 55;
-            this.pbxDogSkillsShelter1.TabStop = false;
+            this.pbxDogSkillImage9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage9.Location = new System.Drawing.Point(305, 162);
+            this.pbxDogSkillImage9.Name = "pbxDogSkillImage9";
+            this.pbxDogSkillImage9.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage9.TabIndex = 44;
+            this.pbxDogSkillImage9.TabStop = false;
             // 
-            // pbxDogSkillsShelter4
+            // pbxDogSkillImage7
             // 
-            this.pbxDogSkillsShelter4.Location = new System.Drawing.Point(144, 201);
-            this.pbxDogSkillsShelter4.Name = "pbxDogSkillsShelter4";
-            this.pbxDogSkillsShelter4.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsShelter4.TabIndex = 53;
-            this.pbxDogSkillsShelter4.TabStop = false;
+            this.pbxDogSkillImage7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage7.Location = new System.Drawing.Point(305, 100);
+            this.pbxDogSkillImage7.Name = "pbxDogSkillImage7";
+            this.pbxDogSkillImage7.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage7.TabIndex = 43;
+            this.pbxDogSkillImage7.TabStop = false;
             // 
-            // pbxDogSkillsShelter3
+            // pbxDogSkillImage10
             // 
-            this.pbxDogSkillsShelter3.Location = new System.Drawing.Point(90, 201);
-            this.pbxDogSkillsShelter3.Name = "pbxDogSkillsShelter3";
-            this.pbxDogSkillsShelter3.Size = new System.Drawing.Size(20, 20);
-            this.pbxDogSkillsShelter3.TabIndex = 53;
-            this.pbxDogSkillsShelter3.TabStop = false;
+            this.pbxDogSkillImage10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage10.Location = new System.Drawing.Point(251, 224);
+            this.pbxDogSkillImage10.Name = "pbxDogSkillImage10";
+            this.pbxDogSkillImage10.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage10.TabIndex = 42;
+            this.pbxDogSkillImage10.TabStop = false;
+            // 
+            // pbxDogSkillImage8
+            // 
+            this.pbxDogSkillImage8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage8.Location = new System.Drawing.Point(251, 162);
+            this.pbxDogSkillImage8.Name = "pbxDogSkillImage8";
+            this.pbxDogSkillImage8.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage8.TabIndex = 41;
+            this.pbxDogSkillImage8.TabStop = false;
+            // 
+            // pbxDogSkillImage6
+            // 
+            this.pbxDogSkillImage6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage6.Location = new System.Drawing.Point(251, 100);
+            this.pbxDogSkillImage6.Name = "pbxDogSkillImage6";
+            this.pbxDogSkillImage6.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage6.TabIndex = 40;
+            this.pbxDogSkillImage6.TabStop = false;
+            // 
+            // pbxDogSkillImage5
+            // 
+            this.pbxDogSkillImage5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage5.Location = new System.Drawing.Point(134, 224);
+            this.pbxDogSkillImage5.Name = "pbxDogSkillImage5";
+            this.pbxDogSkillImage5.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage5.TabIndex = 39;
+            this.pbxDogSkillImage5.TabStop = false;
+            // 
+            // pbxDogSkillImage3
+            // 
+            this.pbxDogSkillImage3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage3.Location = new System.Drawing.Point(134, 162);
+            this.pbxDogSkillImage3.Name = "pbxDogSkillImage3";
+            this.pbxDogSkillImage3.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage3.TabIndex = 38;
+            this.pbxDogSkillImage3.TabStop = false;
+            // 
+            // pbxDogSkillImage1
+            // 
+            this.pbxDogSkillImage1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage1.Location = new System.Drawing.Point(134, 100);
+            this.pbxDogSkillImage1.Name = "pbxDogSkillImage1";
+            this.pbxDogSkillImage1.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage1.TabIndex = 37;
+            this.pbxDogSkillImage1.TabStop = false;
+            // 
+            // pbxDogSkillImage4
+            // 
+            this.pbxDogSkillImage4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage4.Location = new System.Drawing.Point(80, 224);
+            this.pbxDogSkillImage4.Name = "pbxDogSkillImage4";
+            this.pbxDogSkillImage4.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage4.TabIndex = 36;
+            this.pbxDogSkillImage4.TabStop = false;
+            // 
+            // pbxDogSkillImage2
+            // 
+            this.pbxDogSkillImage2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage2.Location = new System.Drawing.Point(80, 162);
+            this.pbxDogSkillImage2.Name = "pbxDogSkillImage2";
+            this.pbxDogSkillImage2.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage2.TabIndex = 34;
+            this.pbxDogSkillImage2.TabStop = false;
+            // 
+            // pbxDogSkillImage0
+            // 
+            this.pbxDogSkillImage0.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxDogSkillImage0.Location = new System.Drawing.Point(80, 100);
+            this.pbxDogSkillImage0.Name = "pbxDogSkillImage0";
+            this.pbxDogSkillImage0.Size = new System.Drawing.Size(40, 40);
+            this.pbxDogSkillImage0.TabIndex = 32;
+            this.pbxDogSkillImage0.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Bebas Neue", 8F);
+            this.label15.Location = new System.Drawing.Point(266, 63);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(68, 14);
+            this.label15.TabIndex = 70;
+            this.label15.Text = "Available points:";
+            this.label15.Visible = false;
+            // 
+            // pbxDogSkillLevel17
+            // 
+            this.pbxDogSkillLevel17.Location = new System.Drawing.Point(487, 263);
+            this.pbxDogSkillLevel17.Name = "pbxDogSkillLevel17";
+            this.pbxDogSkillLevel17.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel17.TabIndex = 68;
+            this.pbxDogSkillLevel17.TabStop = false;
+            this.pbxDogSkillLevel17.Tag = "0";
+            // 
+            // pbxDogSkillLevel16
+            // 
+            this.pbxDogSkillLevel16.Location = new System.Drawing.Point(433, 263);
+            this.pbxDogSkillLevel16.Name = "pbxDogSkillLevel16";
+            this.pbxDogSkillLevel16.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel16.TabIndex = 69;
+            this.pbxDogSkillLevel16.TabStop = false;
+            this.pbxDogSkillLevel16.Tag = "0";
+            // 
+            // pbxDogSkillLevel13
+            // 
+            this.pbxDogSkillLevel13.Location = new System.Drawing.Point(487, 139);
+            this.pbxDogSkillLevel13.Name = "pbxDogSkillLevel13";
+            this.pbxDogSkillLevel13.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel13.TabIndex = 66;
+            this.pbxDogSkillLevel13.TabStop = false;
+            this.pbxDogSkillLevel13.Tag = "0";
+            // 
+            // pbxDogSkillLevel12
+            // 
+            this.pbxDogSkillLevel12.Location = new System.Drawing.Point(433, 139);
+            this.pbxDogSkillLevel12.Name = "pbxDogSkillLevel12";
+            this.pbxDogSkillLevel12.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel12.TabIndex = 67;
+            this.pbxDogSkillLevel12.TabStop = false;
+            this.pbxDogSkillLevel12.Tag = "0";
+            // 
+            // pbxDogSkillLevel15
+            // 
+            this.pbxDogSkillLevel15.Location = new System.Drawing.Point(487, 201);
+            this.pbxDogSkillLevel15.Name = "pbxDogSkillLevel15";
+            this.pbxDogSkillLevel15.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel15.TabIndex = 64;
+            this.pbxDogSkillLevel15.TabStop = false;
+            this.pbxDogSkillLevel15.Tag = "0";
+            // 
+            // pbxDogSkillLevel14
+            // 
+            this.pbxDogSkillLevel14.Location = new System.Drawing.Point(433, 201);
+            this.pbxDogSkillLevel14.Name = "pbxDogSkillLevel14";
+            this.pbxDogSkillLevel14.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel14.TabIndex = 65;
+            this.pbxDogSkillLevel14.TabStop = false;
+            this.pbxDogSkillLevel14.Tag = "0";
+            // 
+            // pbxDogSkillLevel11
+            // 
+            this.pbxDogSkillLevel11.Location = new System.Drawing.Point(315, 263);
+            this.pbxDogSkillLevel11.Name = "pbxDogSkillLevel11";
+            this.pbxDogSkillLevel11.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel11.TabIndex = 62;
+            this.pbxDogSkillLevel11.TabStop = false;
+            this.pbxDogSkillLevel11.Tag = "0";
+            // 
+            // pbxDogSkillLevel10
+            // 
+            this.pbxDogSkillLevel10.Location = new System.Drawing.Point(261, 263);
+            this.pbxDogSkillLevel10.Name = "pbxDogSkillLevel10";
+            this.pbxDogSkillLevel10.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel10.TabIndex = 63;
+            this.pbxDogSkillLevel10.TabStop = false;
+            this.pbxDogSkillLevel10.Tag = "0";
+            // 
+            // pbxDogSkillLevel7
+            // 
+            this.pbxDogSkillLevel7.Location = new System.Drawing.Point(315, 139);
+            this.pbxDogSkillLevel7.Name = "pbxDogSkillLevel7";
+            this.pbxDogSkillLevel7.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel7.TabIndex = 60;
+            this.pbxDogSkillLevel7.TabStop = false;
+            this.pbxDogSkillLevel7.Tag = "0";
+            // 
+            // pbxDogSkillLevel6
+            // 
+            this.pbxDogSkillLevel6.Location = new System.Drawing.Point(261, 139);
+            this.pbxDogSkillLevel6.Name = "pbxDogSkillLevel6";
+            this.pbxDogSkillLevel6.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel6.TabIndex = 61;
+            this.pbxDogSkillLevel6.TabStop = false;
+            this.pbxDogSkillLevel6.Tag = "0";
+            // 
+            // pbxDogSkillLevel9
+            // 
+            this.pbxDogSkillLevel9.Location = new System.Drawing.Point(315, 201);
+            this.pbxDogSkillLevel9.Name = "pbxDogSkillLevel9";
+            this.pbxDogSkillLevel9.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel9.TabIndex = 58;
+            this.pbxDogSkillLevel9.TabStop = false;
+            this.pbxDogSkillLevel9.Tag = "0";
+            // 
+            // pbxDogSkillLevel8
+            // 
+            this.pbxDogSkillLevel8.Location = new System.Drawing.Point(261, 201);
+            this.pbxDogSkillLevel8.Name = "pbxDogSkillLevel8";
+            this.pbxDogSkillLevel8.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel8.TabIndex = 59;
+            this.pbxDogSkillLevel8.TabStop = false;
+            this.pbxDogSkillLevel8.Tag = "0";
+            // 
+            // pbxDogSkillLevel5
+            // 
+            this.pbxDogSkillLevel5.Location = new System.Drawing.Point(144, 263);
+            this.pbxDogSkillLevel5.Name = "pbxDogSkillLevel5";
+            this.pbxDogSkillLevel5.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel5.TabIndex = 56;
+            this.pbxDogSkillLevel5.TabStop = false;
+            this.pbxDogSkillLevel5.Tag = "0";
+            // 
+            // pbxDogSkillLevel4
+            // 
+            this.pbxDogSkillLevel4.Location = new System.Drawing.Point(90, 263);
+            this.pbxDogSkillLevel4.Name = "pbxDogSkillLevel4";
+            this.pbxDogSkillLevel4.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel4.TabIndex = 57;
+            this.pbxDogSkillLevel4.TabStop = false;
+            this.pbxDogSkillLevel4.Tag = "0";
+            // 
+            // pbxDogSkillLevel1
+            // 
+            this.pbxDogSkillLevel1.Location = new System.Drawing.Point(144, 139);
+            this.pbxDogSkillLevel1.Name = "pbxDogSkillLevel1";
+            this.pbxDogSkillLevel1.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel1.TabIndex = 54;
+            this.pbxDogSkillLevel1.TabStop = false;
+            this.pbxDogSkillLevel1.Tag = "0";
+            // 
+            // pbxDogSkillLevel0
+            // 
+            this.pbxDogSkillLevel0.Location = new System.Drawing.Point(90, 139);
+            this.pbxDogSkillLevel0.Name = "pbxDogSkillLevel0";
+            this.pbxDogSkillLevel0.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel0.TabIndex = 55;
+            this.pbxDogSkillLevel0.TabStop = false;
+            this.pbxDogSkillLevel0.Tag = "0";
+            // 
+            // pbxDogSkillLevel3
+            // 
+            this.pbxDogSkillLevel3.Location = new System.Drawing.Point(144, 201);
+            this.pbxDogSkillLevel3.Name = "pbxDogSkillLevel3";
+            this.pbxDogSkillLevel3.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel3.TabIndex = 53;
+            this.pbxDogSkillLevel3.TabStop = false;
+            this.pbxDogSkillLevel3.Tag = "0";
+            // 
+            // pbxDogSkillLevel2
+            // 
+            this.pbxDogSkillLevel2.Location = new System.Drawing.Point(90, 201);
+            this.pbxDogSkillLevel2.Name = "pbxDogSkillLevel2";
+            this.pbxDogSkillLevel2.Size = new System.Drawing.Size(20, 20);
+            this.pbxDogSkillLevel2.TabIndex = 53;
+            this.pbxDogSkillLevel2.TabStop = false;
+            this.pbxDogSkillLevel2.Tag = "0";
             // 
             // label12
             // 
@@ -4437,156 +4752,13 @@ namespace Sheltered_2_SE
             this.label12.Size = new System.Drawing.Size(68, 14);
             this.label12.TabIndex = 52;
             this.label12.Text = "Available points:";
-            // 
-            // pbxDogSkillImage17
-            // 
-            this.pbxDogSkillImage17.Location = new System.Drawing.Point(477, 224);
-            this.pbxDogSkillImage17.Name = "pbxDogSkillImage17";
-            this.pbxDogSkillImage17.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage17.TabIndex = 51;
-            this.pbxDogSkillImage17.TabStop = false;
-            // 
-            // pbxDogSkillImage15
-            // 
-            this.pbxDogSkillImage15.Location = new System.Drawing.Point(477, 162);
-            this.pbxDogSkillImage15.Name = "pbxDogSkillImage15";
-            this.pbxDogSkillImage15.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage15.TabIndex = 50;
-            this.pbxDogSkillImage15.TabStop = false;
-            // 
-            // pbxDogSkillImage13
-            // 
-            this.pbxDogSkillImage13.Location = new System.Drawing.Point(477, 100);
-            this.pbxDogSkillImage13.Name = "pbxDogSkillImage13";
-            this.pbxDogSkillImage13.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage13.TabIndex = 49;
-            this.pbxDogSkillImage13.TabStop = false;
-            // 
-            // pbxDogSkillImage16
-            // 
-            this.pbxDogSkillImage16.Location = new System.Drawing.Point(423, 224);
-            this.pbxDogSkillImage16.Name = "pbxDogSkillImage16";
-            this.pbxDogSkillImage16.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage16.TabIndex = 48;
-            this.pbxDogSkillImage16.TabStop = false;
-            // 
-            // pbxDogSkillImage14
-            // 
-            this.pbxDogSkillImage14.Location = new System.Drawing.Point(423, 162);
-            this.pbxDogSkillImage14.Name = "pbxDogSkillImage14";
-            this.pbxDogSkillImage14.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage14.TabIndex = 47;
-            this.pbxDogSkillImage14.TabStop = false;
-            // 
-            // pbxDogSkillImage12
-            // 
-            this.pbxDogSkillImage12.Location = new System.Drawing.Point(423, 100);
-            this.pbxDogSkillImage12.Name = "pbxDogSkillImage12";
-            this.pbxDogSkillImage12.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage12.TabIndex = 46;
-            this.pbxDogSkillImage12.TabStop = false;
-            // 
-            // pbxDogSkillImage11
-            // 
-            this.pbxDogSkillImage11.Location = new System.Drawing.Point(305, 224);
-            this.pbxDogSkillImage11.Name = "pbxDogSkillImage11";
-            this.pbxDogSkillImage11.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage11.TabIndex = 45;
-            this.pbxDogSkillImage11.TabStop = false;
-            // 
-            // pbxDogSkillImage9
-            // 
-            this.pbxDogSkillImage9.Location = new System.Drawing.Point(305, 162);
-            this.pbxDogSkillImage9.Name = "pbxDogSkillImage9";
-            this.pbxDogSkillImage9.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage9.TabIndex = 44;
-            this.pbxDogSkillImage9.TabStop = false;
-            // 
-            // pbxDogSkillImage7
-            // 
-            this.pbxDogSkillImage7.Location = new System.Drawing.Point(305, 100);
-            this.pbxDogSkillImage7.Name = "pbxDogSkillImage7";
-            this.pbxDogSkillImage7.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage7.TabIndex = 43;
-            this.pbxDogSkillImage7.TabStop = false;
-            // 
-            // pbxDogSkillImage10
-            // 
-            this.pbxDogSkillImage10.Location = new System.Drawing.Point(251, 224);
-            this.pbxDogSkillImage10.Name = "pbxDogSkillImage10";
-            this.pbxDogSkillImage10.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage10.TabIndex = 42;
-            this.pbxDogSkillImage10.TabStop = false;
-            // 
-            // pbxDogSkillImage8
-            // 
-            this.pbxDogSkillImage8.Location = new System.Drawing.Point(251, 162);
-            this.pbxDogSkillImage8.Name = "pbxDogSkillImage8";
-            this.pbxDogSkillImage8.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage8.TabIndex = 41;
-            this.pbxDogSkillImage8.TabStop = false;
-            // 
-            // pbxDogSkillImage6
-            // 
-            this.pbxDogSkillImage6.Location = new System.Drawing.Point(251, 100);
-            this.pbxDogSkillImage6.Name = "pbxDogSkillImage6";
-            this.pbxDogSkillImage6.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage6.TabIndex = 40;
-            this.pbxDogSkillImage6.TabStop = false;
-            // 
-            // pbxDogSkillImage5
-            // 
-            this.pbxDogSkillImage5.Location = new System.Drawing.Point(134, 224);
-            this.pbxDogSkillImage5.Name = "pbxDogSkillImage5";
-            this.pbxDogSkillImage5.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage5.TabIndex = 39;
-            this.pbxDogSkillImage5.TabStop = false;
-            // 
-            // pbxDogSkillImage3
-            // 
-            this.pbxDogSkillImage3.Location = new System.Drawing.Point(134, 162);
-            this.pbxDogSkillImage3.Name = "pbxDogSkillImage3";
-            this.pbxDogSkillImage3.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage3.TabIndex = 38;
-            this.pbxDogSkillImage3.TabStop = false;
-            // 
-            // pbxDogSkillImage1
-            // 
-            this.pbxDogSkillImage1.Location = new System.Drawing.Point(134, 100);
-            this.pbxDogSkillImage1.Name = "pbxDogSkillImage1";
-            this.pbxDogSkillImage1.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage1.TabIndex = 37;
-            this.pbxDogSkillImage1.TabStop = false;
-            // 
-            // pbxDogSkillImage4
-            // 
-            this.pbxDogSkillImage4.Location = new System.Drawing.Point(80, 224);
-            this.pbxDogSkillImage4.Name = "pbxDogSkillImage4";
-            this.pbxDogSkillImage4.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage4.TabIndex = 36;
-            this.pbxDogSkillImage4.TabStop = false;
-            // 
-            // pbxDogSkillImage2
-            // 
-            this.pbxDogSkillImage2.Location = new System.Drawing.Point(80, 162);
-            this.pbxDogSkillImage2.Name = "pbxDogSkillImage2";
-            this.pbxDogSkillImage2.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage2.TabIndex = 34;
-            this.pbxDogSkillImage2.TabStop = false;
-            // 
-            // pbxDogSkillImage0
-            // 
-            this.pbxDogSkillImage0.Location = new System.Drawing.Point(80, 100);
-            this.pbxDogSkillImage0.Name = "pbxDogSkillImage0";
-            this.pbxDogSkillImage0.Size = new System.Drawing.Size(40, 40);
-            this.pbxDogSkillImage0.TabIndex = 32;
-            this.pbxDogSkillImage0.TabStop = false;
+            this.label12.Visible = false;
             // 
             // lblDogSkillsUtility
             // 
             this.lblDogSkillsUtility.AutoSize = true;
             this.lblDogSkillsUtility.Font = new System.Drawing.Font("Bebas Neue", 16F);
-            this.lblDogSkillsUtility.Location = new System.Drawing.Point(440, 42);
+            this.lblDogSkillsUtility.Location = new System.Drawing.Point(440, 62);
             this.lblDogSkillsUtility.Name = "lblDogSkillsUtility";
             this.lblDogSkillsUtility.Size = new System.Drawing.Size(63, 29);
             this.lblDogSkillsUtility.TabIndex = 31;
@@ -4596,7 +4768,7 @@ namespace Sheltered_2_SE
             // 
             this.lblDogSkillsCombat.AutoSize = true;
             this.lblDogSkillsCombat.Font = new System.Drawing.Font("Bebas Neue", 16F);
-            this.lblDogSkillsCombat.Location = new System.Drawing.Point(267, 42);
+            this.lblDogSkillsCombat.Location = new System.Drawing.Point(267, 62);
             this.lblDogSkillsCombat.Name = "lblDogSkillsCombat";
             this.lblDogSkillsCombat.Size = new System.Drawing.Size(67, 29);
             this.lblDogSkillsCombat.TabIndex = 28;
@@ -4606,37 +4778,70 @@ namespace Sheltered_2_SE
             // 
             this.lblDogSkillsShelter.AutoSize = true;
             this.lblDogSkillsShelter.Font = new System.Drawing.Font("Bebas Neue", 16F);
-            this.lblDogSkillsShelter.Location = new System.Drawing.Point(93, 42);
+            this.lblDogSkillsShelter.Location = new System.Drawing.Point(93, 62);
             this.lblDogSkillsShelter.Name = "lblDogSkillsShelter";
             this.lblDogSkillsShelter.Size = new System.Drawing.Size(69, 29);
             this.lblDogSkillsShelter.TabIndex = 24;
             this.lblDogSkillsShelter.Text = "Shelter";
             // 
-            // label16
+            // lblDogSkills
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Bebas Neue", 16F);
-            this.label16.Location = new System.Drawing.Point(255, 1);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(89, 29);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "Dog Skills";
+            this.lblDogSkills.AutoSize = true;
+            this.lblDogSkills.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblDogSkills.Location = new System.Drawing.Point(255, 1);
+            this.lblDogSkills.Name = "lblDogSkills";
+            this.lblDogSkills.Size = new System.Drawing.Size(89, 29);
+            this.lblDogSkills.TabIndex = 23;
+            this.lblDogSkills.Text = "Dog Skills";
+            // 
+            // lblDogSkillsShelterAvailablePoints
+            // 
+            this.lblDogSkillsShelterAvailablePoints.AutoSize = true;
+            this.lblDogSkillsShelterAvailablePoints.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblDogSkillsShelterAvailablePoints.Location = new System.Drawing.Point(118, 73);
+            this.lblDogSkillsShelterAvailablePoints.Name = "lblDogSkillsShelterAvailablePoints";
+            this.lblDogSkillsShelterAvailablePoints.Size = new System.Drawing.Size(22, 29);
+            this.lblDogSkillsShelterAvailablePoints.TabIndex = 72;
+            this.lblDogSkillsShelterAvailablePoints.Text = "0";
+            this.lblDogSkillsShelterAvailablePoints.Visible = false;
+            // 
+            // lblDogSkillsUtilityAvailablePoints
+            // 
+            this.lblDogSkillsUtilityAvailablePoints.AutoSize = true;
+            this.lblDogSkillsUtilityAvailablePoints.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblDogSkillsUtilityAvailablePoints.Location = new System.Drawing.Point(459, 73);
+            this.lblDogSkillsUtilityAvailablePoints.Name = "lblDogSkillsUtilityAvailablePoints";
+            this.lblDogSkillsUtilityAvailablePoints.Size = new System.Drawing.Size(22, 29);
+            this.lblDogSkillsUtilityAvailablePoints.TabIndex = 74;
+            this.lblDogSkillsUtilityAvailablePoints.Text = "0";
+            this.lblDogSkillsUtilityAvailablePoints.Visible = false;
+            // 
+            // lblDogSkillsCombatAvailablePoints
+            // 
+            this.lblDogSkillsCombatAvailablePoints.AutoSize = true;
+            this.lblDogSkillsCombatAvailablePoints.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblDogSkillsCombatAvailablePoints.Location = new System.Drawing.Point(287, 73);
+            this.lblDogSkillsCombatAvailablePoints.Name = "lblDogSkillsCombatAvailablePoints";
+            this.lblDogSkillsCombatAvailablePoints.Size = new System.Drawing.Size(22, 29);
+            this.lblDogSkillsCombatAvailablePoints.TabIndex = 73;
+            this.lblDogSkillsCombatAvailablePoints.Text = "0";
+            this.lblDogSkillsCombatAvailablePoints.Visible = false;
             // 
             // pnlCatStats
             // 
             this.pnlCatStats.BackColor = System.Drawing.Color.Transparent;
             this.pnlCatStats.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlCatStats.Controls.Add(this.txbAffectionCap);
-            this.pnlCatStats.Controls.Add(this.label11);
+            this.pnlCatStats.Controls.Add(this.lblAffection);
             this.pnlCatStats.Controls.Add(this.txbAffectionLevel);
             this.pnlCatStats.Controls.Add(this.txbScavengingCap);
-            this.pnlCatStats.Controls.Add(this.label10);
+            this.pnlCatStats.Controls.Add(this.lblScavenging);
             this.pnlCatStats.Controls.Add(this.txbScavengingLevel);
-            this.pnlCatStats.Controls.Add(this.label9);
+            this.pnlCatStats.Controls.Add(this.lblPetCap);
             this.pnlCatStats.Controls.Add(this.txbPreyDriveCap);
-            this.pnlCatStats.Controls.Add(this.label8);
-            this.pnlCatStats.Controls.Add(this.label7);
-            this.pnlCatStats.Controls.Add(this.label6);
+            this.pnlCatStats.Controls.Add(this.lblPreyDrive);
+            this.pnlCatStats.Controls.Add(this.lblCatStats);
+            this.pnlCatStats.Controls.Add(this.lblPetLevel);
             this.pnlCatStats.Controls.Add(this.txbPreyDriveLevel);
             this.pnlCatStats.Location = new System.Drawing.Point(14, 267);
             this.pnlCatStats.Name = "pnlCatStats";
@@ -4645,105 +4850,116 @@ namespace Sheltered_2_SE
             // 
             // txbAffectionCap
             // 
-            this.txbAffectionCap.Location = new System.Drawing.Point(231, 120);
+            this.txbAffectionCap.Location = new System.Drawing.Point(234, 120);
             this.txbAffectionCap.Name = "txbAffectionCap";
             this.txbAffectionCap.Size = new System.Drawing.Size(50, 20);
             this.txbAffectionCap.TabIndex = 32;
             // 
-            // label11
+            // lblAffection
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bebas Neue", 12F);
-            this.label11.Location = new System.Drawing.Point(226, 71);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 21);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Affection";
+            this.lblAffection.AutoSize = true;
+            this.lblAffection.Font = new System.Drawing.Font("Bebas Neue", 12F);
+            this.lblAffection.Location = new System.Drawing.Point(229, 71);
+            this.lblAffection.Name = "lblAffection";
+            this.lblAffection.Size = new System.Drawing.Size(62, 21);
+            this.lblAffection.TabIndex = 31;
+            this.lblAffection.Text = "Affection";
             // 
             // txbAffectionLevel
             // 
-            this.txbAffectionLevel.Location = new System.Drawing.Point(231, 94);
+            this.txbAffectionLevel.Location = new System.Drawing.Point(234, 94);
             this.txbAffectionLevel.Name = "txbAffectionLevel";
             this.txbAffectionLevel.Size = new System.Drawing.Size(50, 20);
             this.txbAffectionLevel.TabIndex = 30;
             // 
             // txbScavengingCap
             // 
-            this.txbScavengingCap.Location = new System.Drawing.Point(160, 120);
+            this.txbScavengingCap.Location = new System.Drawing.Point(163, 120);
             this.txbScavengingCap.Name = "txbScavengingCap";
             this.txbScavengingCap.Size = new System.Drawing.Size(50, 20);
             this.txbScavengingCap.TabIndex = 29;
             // 
-            // label10
+            // lblScavenging
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Bebas Neue", 12F);
-            this.label10.Location = new System.Drawing.Point(150, 71);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 21);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Scavenging";
+            this.lblScavenging.AutoSize = true;
+            this.lblScavenging.Font = new System.Drawing.Font("Bebas Neue", 12F);
+            this.lblScavenging.Location = new System.Drawing.Point(153, 71);
+            this.lblScavenging.Name = "lblScavenging";
+            this.lblScavenging.Size = new System.Drawing.Size(69, 21);
+            this.lblScavenging.TabIndex = 28;
+            this.lblScavenging.Text = "Scavenging";
             // 
             // txbScavengingLevel
             // 
-            this.txbScavengingLevel.Location = new System.Drawing.Point(160, 94);
+            this.txbScavengingLevel.Location = new System.Drawing.Point(163, 94);
             this.txbScavengingLevel.Name = "txbScavengingLevel";
             this.txbScavengingLevel.Size = new System.Drawing.Size(50, 20);
             this.txbScavengingLevel.TabIndex = 27;
             // 
-            // label9
+            // lblPetCap
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.label9.Location = new System.Drawing.Point(50, 121);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 18);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Cap";
+            this.lblPetCap.AutoSize = true;
+            this.lblPetCap.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.lblPetCap.Location = new System.Drawing.Point(50, 121);
+            this.lblPetCap.Name = "lblPetCap";
+            this.lblPetCap.Size = new System.Drawing.Size(24, 18);
+            this.lblPetCap.TabIndex = 26;
+            this.lblPetCap.Text = "Cap";
             // 
             // txbPreyDriveCap
             // 
-            this.txbPreyDriveCap.Location = new System.Drawing.Point(89, 120);
+            this.txbPreyDriveCap.Location = new System.Drawing.Point(92, 120);
             this.txbPreyDriveCap.Name = "txbPreyDriveCap";
             this.txbPreyDriveCap.Size = new System.Drawing.Size(50, 20);
             this.txbPreyDriveCap.TabIndex = 25;
             // 
-            // label8
+            // lblPreyDrive
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bebas Neue", 12F);
-            this.label8.Location = new System.Drawing.Point(82, 71);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 21);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Prey Drive";
+            this.lblPreyDrive.AutoSize = true;
+            this.lblPreyDrive.Font = new System.Drawing.Font("Bebas Neue", 12F);
+            this.lblPreyDrive.Location = new System.Drawing.Point(85, 71);
+            this.lblPreyDrive.Name = "lblPreyDrive";
+            this.lblPreyDrive.Size = new System.Drawing.Size(65, 21);
+            this.lblPreyDrive.TabIndex = 24;
+            this.lblPreyDrive.Text = "Prey Drive";
             // 
-            // label7
+            // lblCatStats
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bebas Neue", 16F);
-            this.label7.Location = new System.Drawing.Point(279, 1);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 29);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Cat Stats";
+            this.lblCatStats.AutoSize = true;
+            this.lblCatStats.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblCatStats.Location = new System.Drawing.Point(279, 1);
+            this.lblCatStats.Name = "lblCatStats";
+            this.lblCatStats.Size = new System.Drawing.Size(80, 29);
+            this.lblCatStats.TabIndex = 23;
+            this.lblCatStats.Text = "Cat Stats";
             // 
-            // label6
+            // lblPetLevel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.label6.Location = new System.Drawing.Point(50, 95);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 18);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Level";
+            this.lblPetLevel.AutoSize = true;
+            this.lblPetLevel.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.lblPetLevel.Location = new System.Drawing.Point(50, 95);
+            this.lblPetLevel.Name = "lblPetLevel";
+            this.lblPetLevel.Size = new System.Drawing.Size(33, 18);
+            this.lblPetLevel.TabIndex = 17;
+            this.lblPetLevel.Text = "Level";
             // 
             // txbPreyDriveLevel
             // 
-            this.txbPreyDriveLevel.Location = new System.Drawing.Point(89, 94);
+            this.txbPreyDriveLevel.Location = new System.Drawing.Point(92, 94);
             this.txbPreyDriveLevel.Name = "txbPreyDriveLevel";
             this.txbPreyDriveLevel.Size = new System.Drawing.Size(50, 20);
             this.txbPreyDriveLevel.TabIndex = 16;
+            // 
+            // btnSavePet
+            // 
+            this.btnSavePet.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSavePet.Location = new System.Drawing.Point(282, 561);
+            this.btnSavePet.Name = "btnSavePet";
+            this.btnSavePet.Size = new System.Drawing.Size(94, 25);
+            this.btnSavePet.TabIndex = 34;
+            this.btnSavePet.Text = "Save Pet";
+            this.btnSavePet.UseVisualStyleBackColor = true;
+            this.btnSavePet.Click += new System.EventHandler(this.btnSavePet_Click);
             // 
             // lblPetName
             // 
@@ -4774,6 +4990,7 @@ namespace Sheltered_2_SE
             this.label5.Size = new System.Drawing.Size(43, 18);
             this.label5.TabIndex = 15;
             this.label5.Text = "Health:";
+            this.label5.Visible = false;
             // 
             // txbPetHealth
             // 
@@ -4781,16 +4998,17 @@ namespace Sheltered_2_SE
             this.txbPetHealth.Name = "txbPetHealth";
             this.txbPetHealth.Size = new System.Drawing.Size(41, 20);
             this.txbPetHealth.TabIndex = 14;
+            this.txbPetHealth.Visible = false;
             // 
-            // label4
+            // lblPetAge
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.label4.Location = new System.Drawing.Point(31, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 18);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Age:";
+            this.lblPetAge.AutoSize = true;
+            this.lblPetAge.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.lblPetAge.Location = new System.Drawing.Point(31, 94);
+            this.lblPetAge.Name = "lblPetAge";
+            this.lblPetAge.Size = new System.Drawing.Size(27, 18);
+            this.lblPetAge.TabIndex = 13;
+            this.lblPetAge.Text = "Age:";
             // 
             // txbPetAge
             // 
@@ -4799,15 +5017,15 @@ namespace Sheltered_2_SE
             this.txbPetAge.Size = new System.Drawing.Size(41, 20);
             this.txbPetAge.TabIndex = 12;
             // 
-            // label3
+            // lblPetName1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.label3.Location = new System.Drawing.Point(31, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 18);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Name:";
+            this.lblPetName1.AutoSize = true;
+            this.lblPetName1.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.lblPetName1.Location = new System.Drawing.Point(31, 63);
+            this.lblPetName1.Name = "lblPetName1";
+            this.lblPetName1.Size = new System.Drawing.Size(36, 18);
+            this.lblPetName1.TabIndex = 11;
+            this.lblPetName1.Text = "Name:";
             // 
             // txbPetName
             // 
@@ -4878,7 +5096,7 @@ namespace Sheltered_2_SE
             this.pnlDeseases.Controls.Add(this.cbFoodPoisoning);
             this.pnlDeseases.Controls.Add(this.cbInfection);
             this.pnlDeseases.Controls.Add(this.cbMalnourishment);
-            this.pnlDeseases.Controls.Add(this.label1);
+            this.pnlDeseases.Controls.Add(this.lblIllnesses);
             this.pnlDeseases.Controls.Add(this.cbRadiationPoisening);
             this.pnlDeseases.Location = new System.Drawing.Point(7, 57);
             this.pnlDeseases.Name = "pnlDeseases";
@@ -5098,15 +5316,15 @@ namespace Sheltered_2_SE
             this.cbMalnourishment.Text = "Malnourishment";
             this.cbMalnourishment.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblIllnesses
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Illnesses";
+            this.lblIllnesses.AutoSize = true;
+            this.lblIllnesses.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIllnesses.Location = new System.Drawing.Point(14, 22);
+            this.lblIllnesses.Name = "lblIllnesses";
+            this.lblIllnesses.Size = new System.Drawing.Size(62, 21);
+            this.lblIllnesses.TabIndex = 1;
+            this.lblIllnesses.Text = "Illnesses";
             // 
             // cbRadiationPoisening
             // 
@@ -6132,67 +6350,6 @@ namespace Sheltered_2_SE
             this.DogSkillImageList.Images.SetKeyName(1, "DogSkillUnlock2.png");
             this.DogSkillImageList.Images.SetKeyName(2, "DogSkillUnlock3.png");
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Bebas Neue", 8F);
-            this.label15.Location = new System.Drawing.Point(266, 63);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(68, 14);
-            this.label15.TabIndex = 70;
-            this.label15.Text = "Available points:";
-            // 
-            // lblDogSkillsShelterAvailablePoints
-            // 
-            this.lblDogSkillsShelterAvailablePoints.AutoSize = true;
-            this.lblDogSkillsShelterAvailablePoints.Font = new System.Drawing.Font("Bebas Neue", 16F);
-            this.lblDogSkillsShelterAvailablePoints.Location = new System.Drawing.Point(116, 73);
-            this.lblDogSkillsShelterAvailablePoints.Name = "lblDogSkillsShelterAvailablePoints";
-            this.lblDogSkillsShelterAvailablePoints.Size = new System.Drawing.Size(22, 29);
-            this.lblDogSkillsShelterAvailablePoints.TabIndex = 72;
-            this.lblDogSkillsShelterAvailablePoints.Text = "0";
-            // 
-            // lblDogSkillsCombatAvailablePoints
-            // 
-            this.lblDogSkillsCombatAvailablePoints.AutoSize = true;
-            this.lblDogSkillsCombatAvailablePoints.Font = new System.Drawing.Font("Bebas Neue", 16F);
-            this.lblDogSkillsCombatAvailablePoints.Location = new System.Drawing.Point(287, 73);
-            this.lblDogSkillsCombatAvailablePoints.Name = "lblDogSkillsCombatAvailablePoints";
-            this.lblDogSkillsCombatAvailablePoints.Size = new System.Drawing.Size(22, 29);
-            this.lblDogSkillsCombatAvailablePoints.TabIndex = 73;
-            this.lblDogSkillsCombatAvailablePoints.Text = "0";
-            // 
-            // lblDogSkillsUtilityAvailablePoints
-            // 
-            this.lblDogSkillsUtilityAvailablePoints.AutoSize = true;
-            this.lblDogSkillsUtilityAvailablePoints.Font = new System.Drawing.Font("Bebas Neue", 16F);
-            this.lblDogSkillsUtilityAvailablePoints.Location = new System.Drawing.Point(459, 73);
-            this.lblDogSkillsUtilityAvailablePoints.Name = "lblDogSkillsUtilityAvailablePoints";
-            this.lblDogSkillsUtilityAvailablePoints.Size = new System.Drawing.Size(22, 29);
-            this.lblDogSkillsUtilityAvailablePoints.TabIndex = 74;
-            this.lblDogSkillsUtilityAvailablePoints.Text = "0";
-            // 
-            // btnSavePet
-            // 
-            this.btnSavePet.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSavePet.Location = new System.Drawing.Point(282, 561);
-            this.btnSavePet.Name = "btnSavePet";
-            this.btnSavePet.Size = new System.Drawing.Size(94, 25);
-            this.btnSavePet.TabIndex = 34;
-            this.btnSavePet.Text = "Save Pet";
-            this.btnSavePet.UseVisualStyleBackColor = true;
-            this.btnSavePet.Click += new System.EventHandler(this.btnSavePet_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bebas Neue", 8F);
-            this.label13.Location = new System.Drawing.Point(435, 63);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 14);
-            this.label13.TabIndex = 75;
-            this.label13.Text = "Available points:";
-            // 
             // DogSkillImageList2
             // 
             this.DogSkillImageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("DogSkillImageList2.ImageStream")));
@@ -6216,47 +6373,72 @@ namespace Sheltered_2_SE
             this.DogSkillImageList2.Images.SetKeyName(16, "Utility5.png");
             this.DogSkillImageList2.Images.SetKeyName(17, "Utility6.png");
             // 
-            // button4
+            // btnPetUnstuck
             // 
-            this.button4.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button4.Location = new System.Drawing.Point(160, 57);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(21, 21);
-            this.button4.TabIndex = 76;
-            this.button4.Text = "+";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnPetUnstuck.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.btnPetUnstuck.Location = new System.Drawing.Point(24, 211);
+            this.btnPetUnstuck.Name = "btnPetUnstuck";
+            this.btnPetUnstuck.Size = new System.Drawing.Size(75, 23);
+            this.btnPetUnstuck.TabIndex = 35;
+            this.btnPetUnstuck.Text = "Pet Unstuck";
+            this.btnPetUnstuck.UseVisualStyleBackColor = true;
+            this.btnPetUnstuck.Click += new System.EventHandler(this.btnPetUnstuck_Click);
             // 
-            // button5
+            // cbPetInteracting
             // 
-            this.button5.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button5.Location = new System.Drawing.Point(332, 57);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(21, 21);
-            this.button5.TabIndex = 77;
-            this.button5.Text = "+";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button5.UseVisualStyleBackColor = true;
+            this.cbPetInteracting.AutoSize = true;
+            this.cbPetInteracting.Location = new System.Drawing.Point(24, 174);
+            this.cbPetInteracting.Name = "cbPetInteracting";
+            this.cbPetInteracting.Size = new System.Drawing.Size(76, 17);
+            this.cbPetInteracting.TabIndex = 36;
+            this.cbPetInteracting.Text = "Interacting";
+            this.cbPetInteracting.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnLoadXmlTree
             // 
-            this.button6.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button6.Location = new System.Drawing.Point(501, 57);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(21, 21);
-            this.button6.TabIndex = 78;
-            this.button6.Text = "+";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnLoadXmlTree.Location = new System.Drawing.Point(14, 668);
+            this.btnLoadXmlTree.Name = "btnLoadXmlTree";
+            this.btnLoadXmlTree.Size = new System.Drawing.Size(95, 23);
+            this.btnLoadXmlTree.TabIndex = 45;
+            this.btnLoadXmlTree.Text = "Load XML Tree";
+            this.btnLoadXmlTree.UseVisualStyleBackColor = true;
+            this.btnLoadXmlTree.Visible = false;
+            this.btnLoadXmlTree.Click += new System.EventHandler(this.btnLoadXmlTree_Click);
+            // 
+            // rbXmlFull
+            // 
+            this.rbXmlFull.AutoSize = true;
+            this.rbXmlFull.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.rbXmlFull.Checked = true;
+            this.rbXmlFull.Location = new System.Drawing.Point(115, 668);
+            this.rbXmlFull.Name = "rbXmlFull";
+            this.rbXmlFull.Size = new System.Drawing.Size(27, 30);
+            this.rbXmlFull.TabIndex = 46;
+            this.rbXmlFull.TabStop = true;
+            this.rbXmlFull.Text = "Full";
+            this.rbXmlFull.UseVisualStyleBackColor = true;
+            this.rbXmlFull.Visible = false;
+            // 
+            // rbXmlMembers
+            // 
+            this.rbXmlMembers.AutoSize = true;
+            this.rbXmlMembers.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.rbXmlMembers.Location = new System.Drawing.Point(140, 668);
+            this.rbXmlMembers.Name = "rbXmlMembers";
+            this.rbXmlMembers.Size = new System.Drawing.Size(54, 30);
+            this.rbXmlMembers.TabIndex = 47;
+            this.rbXmlMembers.Text = "Members";
+            this.rbXmlMembers.UseVisualStyleBackColor = true;
+            this.rbXmlMembers.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(989, 702);
+            this.Controls.Add(this.rbXmlMembers);
+            this.Controls.Add(this.rbXmlFull);
+            this.Controls.Add(this.btnLoadXmlTree);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.lblDebugCharacter);
@@ -6487,24 +6669,12 @@ namespace Sheltered_2_SE
             this.petsTab.PerformLayout();
             this.pnlDogSkills.ResumeLayout(false);
             this.pnlDogSkills.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsUtility6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsUtility5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsUtility2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsUtility1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsUtility4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsUtility3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsCombat6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsCombat5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsCombat2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsCombat1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsCombat4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsCombat3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsShelter6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsShelter5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsShelter2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsShelter1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsShelter4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillsShelter3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UtilityMinus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UtilityPlus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CombatMinus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CombatPlus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShelterMinus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShelterPlus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillImage17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillImage15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillImage13)).EndInit();
@@ -6523,6 +6693,24 @@ namespace Sheltered_2_SE
             ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillImage4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillImage2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillImage0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDogSkillLevel2)).EndInit();
             this.pnlCatStats.ResumeLayout(false);
             this.pnlCatStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbPetColorPicker)).EndInit();
@@ -6922,7 +7110,7 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.Label lblDeseasesCharacterName;
         private System.Windows.Forms.ComboBox cbxDeseasesCharacterSelect;
         private System.Windows.Forms.Panel pnlDeseases;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIllnesses;
         private System.Windows.Forms.CheckBox cbRadiationPoisening;
         private System.Windows.Forms.Button btnRemoveInfestation;
         private System.Windows.Forms.Button btnCureAll;
@@ -6943,20 +7131,20 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.ComboBox cbxPetSelect;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPetLevel;
         private System.Windows.Forms.TextBox txbPreyDriveLevel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txbPetHealth;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblPetAge;
         private System.Windows.Forms.TextBox txbPetAge;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblPetName1;
         private System.Windows.Forms.TextBox txbPetName;
         private System.Windows.Forms.TrackBar tbPetColorPicker;
         private System.Windows.Forms.PictureBox pbxPetImage;
         private System.Windows.Forms.ImageList DogImages;
         private System.Windows.Forms.ImageList CatImages;
         private System.Windows.Forms.Panel pnlCatStats;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblCatStats;
         private System.Windows.Forms.Label lblPetName;
         private System.Windows.Forms.Label lblColorPicker;
         private System.Windows.Forms.Panel pnlDogSkills;
@@ -6981,36 +7169,36 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.Label lblDogSkillsUtility;
         private System.Windows.Forms.Label lblDogSkillsCombat;
         private System.Windows.Forms.Label lblDogSkillsShelter;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblDogSkills;
         private System.Windows.Forms.TextBox txbAffectionCap;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblAffection;
         private System.Windows.Forms.TextBox txbAffectionLevel;
         private System.Windows.Forms.TextBox txbScavengingCap;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblScavenging;
         private System.Windows.Forms.TextBox txbScavengingLevel;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblPetCap;
         private System.Windows.Forms.TextBox txbPreyDriveCap;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblPreyDrive;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ToolStripMenuItem specialThanksToToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pbxDogSkillsUtility6;
-        private System.Windows.Forms.PictureBox pbxDogSkillsUtility5;
-        private System.Windows.Forms.PictureBox pbxDogSkillsUtility2;
-        private System.Windows.Forms.PictureBox pbxDogSkillsUtility1;
-        private System.Windows.Forms.PictureBox pbxDogSkillsUtility4;
-        private System.Windows.Forms.PictureBox pbxDogSkillsUtility3;
-        private System.Windows.Forms.PictureBox pbxDogSkillsCombat6;
-        private System.Windows.Forms.PictureBox pbxDogSkillsCombat5;
-        private System.Windows.Forms.PictureBox pbxDogSkillsCombat2;
-        private System.Windows.Forms.PictureBox pbxDogSkillsCombat1;
-        private System.Windows.Forms.PictureBox pbxDogSkillsCombat4;
-        private System.Windows.Forms.PictureBox pbxDogSkillsCombat3;
-        private System.Windows.Forms.PictureBox pbxDogSkillsShelter6;
-        private System.Windows.Forms.PictureBox pbxDogSkillsShelter5;
-        private System.Windows.Forms.PictureBox pbxDogSkillsShelter2;
-        private System.Windows.Forms.PictureBox pbxDogSkillsShelter1;
-        private System.Windows.Forms.PictureBox pbxDogSkillsShelter4;
-        private System.Windows.Forms.PictureBox pbxDogSkillsShelter3;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel17;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel16;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel13;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel12;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel15;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel14;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel11;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel10;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel7;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel6;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel9;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel8;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel5;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel4;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel1;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel0;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel3;
+        private System.Windows.Forms.PictureBox pbxDogSkillLevel2;
         public System.Windows.Forms.ImageList DogSkillImageList;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblDogSkillsShelterAvailablePoints;
@@ -7019,9 +7207,18 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.Button btnSavePet;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ImageList DogSkillImageList2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnMaxDogSkills;
+        private System.Windows.Forms.PictureBox ShelterMinus;
+        private System.Windows.Forms.PictureBox ShelterPlus;
+        private System.Windows.Forms.PictureBox UtilityMinus;
+        private System.Windows.Forms.PictureBox UtilityPlus;
+        private System.Windows.Forms.PictureBox CombatMinus;
+        private System.Windows.Forms.PictureBox CombatPlus;
+        private System.Windows.Forms.Button btnPetUnstuck;
+        private System.Windows.Forms.CheckBox cbPetInteracting;
+        private System.Windows.Forms.Button btnLoadXmlTree;
+        private System.Windows.Forms.RadioButton rbXmlFull;
+        private System.Windows.Forms.RadioButton rbXmlMembers;
     }
 }
 

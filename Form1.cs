@@ -55,6 +55,7 @@ namespace Sheltered_2_SE
 
 
             //read in embeded font 
+            btnLoadXmlTree.Font = bebas10;
             tabControlMain.Font = bebas;
             characterStatsTab.Font = bebas;
             lblCharacterStats.Font = bebas16;
@@ -90,9 +91,36 @@ namespace Sheltered_2_SE
             lblForTier3.Font = bebas16;
 
             petsTab.Font = bebas;
+            cbxPetSelect.Font = bebas;
+            lblPetName.Font = bebas16;
+            lblColorPicker.Font = bebas16;
+            btnMaxDogSkills.Font = bebas10;
+            lblPetAge.Font = bebas10;
+            lblPetName1.Font = bebas10;
+            cbPetInteracting.Font = bebas10;
+            btnSavePet.Font = bebas10;
+            lblDogSkillsShelter.Font = bebas16;
+            lblDogSkillsCombat.Font = bebas16;
+            lblDogSkillsUtility.Font = bebas16;
+            lblDogSkills.Font = bebas16;
+            lblPreyDrive.Font = bebas;
+            lblScavenging.Font = bebas;
+            lblAffection.Font = bebas;
+            lblPetLevel.Font = bebas;
+            lblPetCap.Font = bebas;
+            lblCatStats.Font = bebas16;
 
             deseasesTab.Font = bebas;
             lblDeseasesCharacterName.Font = bebas16;
+            lblIllnesses.Font = bebas;
+            foreach (CheckBox cB in pnlDeseases.Controls.OfType<CheckBox>())
+            {
+                cB.Font = bebas10;
+            }
+            lblDeseasesCharacterName.Font = bebas16;
+            cbxDeseasesCharacterSelect.Font = bebas;
+            btnCureAll.Font = bebas10;
+            btnRemoveInfestation.Font = bebas10;            
 
             unlockingTab.Font = bebas;
             cbxDraftingTableTier2.Font = bebas10;
@@ -161,27 +189,29 @@ namespace Sheltered_2_SE
 
 
         }
-
+        
         private void InitializePet()
         {
 
             //Load in DogSkillImages
-
-
             foreach (PictureBox pB in pnlDogSkills.Controls.OfType<PictureBox>())
             {
-                for (int i = 0; i < 18; i++)
+                if (pB.Name.StartsWith("pbx"))
                 {
-                    var imageNr = pB.Name.Remove(0, 16);
-                    if (imageNr == i.ToString())
+                    for (int i = 0; i < 18; i++)
                     {
-                        pB.Image = DogSkillImageList2.Images[i];
+                        var imageNr = pB.Name.Remove(0, 16);
+                        if (imageNr == i.ToString())
+                        {
+                            pB.Image = DogSkillImageList2.Images[i];
+                        }
                     }
                 }
+
             }
 
-
-
+            //LoadPetName
+            lblPetName.Text = "";
 
 
             //Check Pet Type
@@ -191,14 +221,18 @@ namespace Sheltered_2_SE
                 var doc = XElement.Load(ProcessFile.tempFilePath);
                 var xDoc = XDocument.Load(ProcessFile.tempFilePath);
                 var checkPetCount = xDoc.Descendants("root").Descendants().Where(x => x.Name.LocalName.StartsWith("Pet_")).Count();
-
-
-            List<Pets> pets = PetImport.GetPets();
-            var bindingSource = new BindingSource(pets, null);
-            cbxPetSelect.DataSource = pets;
-            cbxPetSelect.DisplayMember = "Name";               
-               
+                List<Pets> pets = PetImport.GetPets();
+                var bindingSource = new BindingSource(pets, null);
+                cbxPetSelect.DataSource = pets;
+                cbxPetSelect.DisplayMember = "Name";
+                
             }
+        }
+
+        private void RefreshCombobox()
+        {
+            List<Pets> pets = PetImport.GetPets();
+            cbxPetSelect.DataSource = pets;
         }
 
         private void GetClick()
@@ -446,6 +480,9 @@ namespace Sheltered_2_SE
 
                 GetSkillPoints._getSkillPoints = skillPoints;
                 tabControlMain.Visible = true;
+                btnLoadXmlTree.Visible = true;
+                rbXmlFull.Visible = true;
+                rbXmlMembers.Visible = true;
             }
 
             //Initialize bindings        
@@ -453,12 +490,23 @@ namespace Sheltered_2_SE
 
             InitializeBindings();
 
+            //Initialize DogSkillClicks
+            InitializeDogSkillClicks();
+
+
         }
 
-        public void NoPet()
+        private void InitializeDogSkillClicks()
         {
-            cbxPetSelect.Text = "No Pet Found";
+            foreach (PictureBox pB in pnlDogSkills.Controls.OfType<PictureBox>())
+            {
+                if (pB.Name.StartsWith("pbxDogSkillImage"))
+                {
+                    pB.MouseClick += DogSkillClick;
+                }
+            }
         }
+
 
         public void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -815,16 +863,7 @@ namespace Sheltered_2_SE
         {
             Output.Text = "";
 
-            XDocument doc = XDocument.Load(ProcessFile.tempFilePath);
-            //XElement root = doc.Root;
-            XElement root = doc.Descendants("FamilyMembers").FirstOrDefault();
-            TreeNode newNode = new TreeNode();
-            newNode.Text = root.Name.LocalName;
-            treeView1.Nodes.Add(newNode);
-            int level = 1;
-            AddRecursive(root, newNode, level);
 
-            treeView1.ExpandAll();
 
         }
 
@@ -2416,18 +2455,65 @@ namespace Sheltered_2_SE
 
         private void cbxPetSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            var checkId = ((Pets)cbxPetSelect.SelectedItem).PetId.Remove(0,4);
+            var checkId = ((Pets)cbxPetSelect.SelectedItem).PetId.Remove(0, 4);
             var xDoc = XDocument.Load(ProcessFile.tempFilePath);
-            var species = xDoc.Descendants("PetManager").Descendants().Where(x=>x.Name.LocalName.StartsWith("i"))
-                .Where(x=>x.Elements("uniqueId").FirstOrDefault().Value == checkId)?.Elements("petSpecies")?.FirstOrDefault()?.Value;
+            var species = xDoc.Descendants("PetManager").Descendants().Where(x => x.Name.LocalName.StartsWith("i"))
+                .Where(x => x.Elements("uniqueId").FirstOrDefault().Value == checkId)?.Elements("petSpecies")?.FirstOrDefault()?.Value;
             if (species == "0")
             {
                 ProcessData.petSpecies = "Dog";
-            }else if (species == "1")
+            }
+            else if (species == "1")
             {
                 ProcessData.petSpecies = "Cat";
             }
+
+            //Debugstart
+            //Console.WriteLine("Name " + ((Pets)cbxPetSelect.SelectedItem).Name);
+            //Console.WriteLine("Age " + ((Pets)cbxPetSelect.SelectedItem).Age);
+            //Console.WriteLine("Health " + ((Pets)cbxPetSelect.SelectedItem).Health);
+            //Console.WriteLine("ShelterSkill1 " + ((Pets)cbxPetSelect.SelectedItem).ShelterSkill1);
+            //Console.WriteLine("ShelterSkill2 " + ((Pets)cbxPetSelect.SelectedItem).ShelterSkill2);
+            //Console.WriteLine("ShelterSkill3 " + ((Pets)cbxPetSelect.SelectedItem).ShelterSkill3);
+            //Console.WriteLine("ShelterSkill4 " + ((Pets)cbxPetSelect.SelectedItem).ShelterSkill4);
+            //Console.WriteLine("ShelterSkill5 " + ((Pets)cbxPetSelect.SelectedItem).ShelterSkill5);
+            //Console.WriteLine("ShelterSkill6 " + ((Pets)cbxPetSelect.SelectedItem).ShelterSkill6);
+            //Console.WriteLine("CombatSkill1 " + ((Pets)cbxPetSelect.SelectedItem).CombatSkill1);
+            //Console.WriteLine("CombatSkill2 " + ((Pets)cbxPetSelect.SelectedItem).CombatSkill2);
+            //Console.WriteLine("CombatSkill3 " + ((Pets)cbxPetSelect.SelectedItem).CombatSkill3);
+            //Console.WriteLine("CombatSkill4 " + ((Pets)cbxPetSelect.SelectedItem).CombatSkill4);
+            //Console.WriteLine("CombatSkill5 " + ((Pets)cbxPetSelect.SelectedItem).CombatSkill5);
+            //Console.WriteLine("CombatSkill6 " + ((Pets)cbxPetSelect.SelectedItem).CombatSkill6);
+            //Console.WriteLine("UtilitySkill1 " + ((Pets)cbxPetSelect.SelectedItem).UtilitySkill1);
+            //Console.WriteLine("UtilitySkill2 " + ((Pets)cbxPetSelect.SelectedItem).UtilitySkill2);
+            //Console.WriteLine("UtilitySkill3 " + ((Pets)cbxPetSelect.SelectedItem).UtilitySkill3);
+            //Console.WriteLine("UtilitySkill4 " + ((Pets)cbxPetSelect.SelectedItem).UtilitySkill4);
+            //Console.WriteLine("UtilitySkill5 " + ((Pets)cbxPetSelect.SelectedItem).UtilitySkill5);
+            //Console.WriteLine("UtilitySkill6 " + ((Pets)cbxPetSelect.SelectedItem).UtilitySkill6);
+
+            //Console.WriteLine("ShelterSkillTraining1 " + ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining1);
+            //Console.WriteLine("ShelterSkillTraining2 " + ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining2);
+            //Console.WriteLine("ShelterSkillTraining3 " + ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining3);
+            //Console.WriteLine("ShelterSkillTraining4 " + ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining4);
+            //Console.WriteLine("ShelterSkillTraining5 " + ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining5);
+            //Console.WriteLine("ShelterSkillTraining6 " + ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining6);
+            //Console.WriteLine("CombatSkillTraining1 " + ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining1);
+            //Console.WriteLine("CombatSkillTraining2 " + ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining2);
+            //Console.WriteLine("CombatSkillTraining3 " + ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining3);
+            //Console.WriteLine("CombatSkillTraining4 " + ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining4);
+            //Console.WriteLine("CombatSkillTraining5 " + ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining5);
+            //Console.WriteLine("CombatSkillTraining6 " + ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining6);
+            //Console.WriteLine("UtilitySkillTraining1 " + ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining1);
+            //Console.WriteLine("UtilitySkillTraining2 " + ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining2);
+            //Console.WriteLine("UtilitySkillTraining3 " + ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining3);
+            //Console.WriteLine("UtilitySkillTraining4 " + ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining4);
+            //Console.WriteLine("UtilitySkillTraining5 " + ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining5);
+            //Console.WriteLine("UtilitySkillTraining6 " + ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining6);
+            //Console.WriteLine("--------------");
+
+            //Debugend
+
+            lblPetName.Text = ((Pets)cbxPetSelect.SelectedItem).Name;
 
             txbPetName.Text = ((Pets)cbxPetSelect.SelectedItem).Name;
             txbPetAge.Text = ((Pets)cbxPetSelect.SelectedItem).Age;
@@ -2451,49 +2537,49 @@ namespace Sheltered_2_SE
                 lblDogSkillsShelterAvailablePoints.Text = ((Pets)cbxPetSelect.SelectedItem).ShelterPoints;
                 lblDogSkillsCombatAvailablePoints.Text = ((Pets)cbxPetSelect.SelectedItem).CombatPoints;
                 lblDogSkillsUtilityAvailablePoints.Text = ((Pets)cbxPetSelect.SelectedItem).UtilityPoints;
+        
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill1 == "True") { pbxDogSkillLevel0.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel0.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill2 == "True") { pbxDogSkillLevel1.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel1.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill3 == "True") { pbxDogSkillLevel2.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel2.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill4 == "True") { pbxDogSkillLevel3.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel3.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill5 == "True") { pbxDogSkillLevel4.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel4.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill6 == "True") { pbxDogSkillLevel5.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel5.Image = DogSkillImageList.Images[0];
 
-                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill1 == "True") { pbxDogSkillsShelter1.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsShelter1.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill2 == "True") { pbxDogSkillsShelter2.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsShelter2.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill3 == "True") { pbxDogSkillsShelter3.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsShelter3.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill4 == "True") { pbxDogSkillsShelter4.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsShelter4.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill5 == "True") { pbxDogSkillsShelter5.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsShelter5.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill6 == "True") { pbxDogSkillsShelter6.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsShelter6.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill1 == "True") { pbxDogSkillLevel6.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel6.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill2 == "True") { pbxDogSkillLevel7.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel7.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill3 == "True") { pbxDogSkillLevel8.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel8.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill4 == "True") { pbxDogSkillLevel9.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel9.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill5 == "True") { pbxDogSkillLevel10.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel10.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill6 == "True") { pbxDogSkillLevel11.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel11.Image = DogSkillImageList.Images[0];
 
-                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill1 == "True") { pbxDogSkillsCombat1.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsCombat1.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill2 == "True") { pbxDogSkillsCombat2.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsCombat2.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill3 == "True") { pbxDogSkillsCombat3.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsCombat3.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill4 == "True") { pbxDogSkillsCombat4.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsCombat4.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill5 == "True") { pbxDogSkillsCombat5.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsCombat5.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill6 == "True") { pbxDogSkillsCombat6.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsCombat6.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill1 == "True") { pbxDogSkillLevel12.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel12.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill2 == "True") { pbxDogSkillLevel13.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel13.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill3 == "True") { pbxDogSkillLevel14.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel14.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill4 == "True") { pbxDogSkillLevel15.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel15.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill5 == "True") { pbxDogSkillLevel16.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel16.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill6 == "True") { pbxDogSkillLevel17.Image = DogSkillImageList.Images[1]; } else pbxDogSkillLevel17.Image = DogSkillImageList.Images[0];
 
-                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill1 == "True") { pbxDogSkillsUtility1.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsUtility1.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill2 == "True") { pbxDogSkillsUtility2.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsUtility2.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill3 == "True") { pbxDogSkillsUtility3.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsUtility3.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill4 == "True") { pbxDogSkillsUtility4.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsUtility4.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill5 == "True") { pbxDogSkillsUtility5.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsUtility5.Image = DogSkillImageList.Images[0];
-                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill6 == "True") { pbxDogSkillsUtility6.Image = DogSkillImageList.Images[1]; } else pbxDogSkillsUtility6.Image = DogSkillImageList.Images[0];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill1 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining1 == "150") { pbxDogSkillLevel0.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill1 == "False") { pbxDogSkillLevel0.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel0.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill2 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining2 == "150") { pbxDogSkillLevel1.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill2 == "False") { pbxDogSkillLevel1.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel1.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill3 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining3 == "300") { pbxDogSkillLevel2.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill3 == "False") { pbxDogSkillLevel2.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel2.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill4 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining4 == "300") { pbxDogSkillLevel3.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill4 == "False") { pbxDogSkillLevel3.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel3.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill5 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining5 == "600") { pbxDogSkillLevel4.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill5 == "False") { pbxDogSkillLevel4.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel4.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill6 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining6 == "600") { pbxDogSkillLevel5.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill6 == "False") { pbxDogSkillLevel5.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel5.Image = DogSkillImageList.Images[1];
 
-                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill1 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining1 == "150") { pbxDogSkillsShelter1.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill1 == "False") { pbxDogSkillsShelter1.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsShelter1.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill2 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining2 == "150") { pbxDogSkillsShelter2.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill2 == "False") { pbxDogSkillsShelter2.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsShelter1.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill3 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining3 == "300") { pbxDogSkillsShelter3.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill3 == "False") { pbxDogSkillsShelter3.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsShelter3.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill4 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining4 == "300") { pbxDogSkillsShelter4.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill4 == "False") { pbxDogSkillsShelter4.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsShelter4.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill5 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining5 == "600") { pbxDogSkillsShelter5.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill5 == "False") { pbxDogSkillsShelter5.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsShelter5.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill6 == "True" && ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining6 == "600") { pbxDogSkillsShelter6.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).ShelterSkill6 == "False") { pbxDogSkillsShelter6.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsShelter6.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill1 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining1 == "150") { pbxDogSkillLevel6.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill1 == "False") { pbxDogSkillLevel6.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel6.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill2 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining2 == "150") { pbxDogSkillLevel7.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill2 == "False") { pbxDogSkillLevel7.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel7.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill3 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining3 == "300") { pbxDogSkillLevel8.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill3 == "False") { pbxDogSkillLevel8.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel8.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill4 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining4 == "300") { pbxDogSkillLevel9.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill4 == "False") { pbxDogSkillLevel9.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel9.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill5 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining5 == "600") { pbxDogSkillLevel10.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill5 == "False") { pbxDogSkillLevel10.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel10.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill6 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining6 == "600") { pbxDogSkillLevel11.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill6 == "False") { pbxDogSkillLevel11.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel11.Image = DogSkillImageList.Images[1];
 
-                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill1 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining1 == "150") { pbxDogSkillsCombat1.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill1 == "False") { pbxDogSkillsCombat1.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsCombat1.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill2 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining2 == "150") { pbxDogSkillsCombat2.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill2 == "False") { pbxDogSkillsCombat2.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsCombat2.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill3 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining3 == "300") { pbxDogSkillsCombat3.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill3 == "False") { pbxDogSkillsCombat3.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsCombat3.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill4 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining4 == "300") { pbxDogSkillsCombat4.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill4 == "False") { pbxDogSkillsCombat4.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsCombat4.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill5 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining5 == "600") { pbxDogSkillsCombat5.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill5 == "False") { pbxDogSkillsCombat5.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsCombat5.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).CombatSkill6 == "True" && ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining6 == "600") { pbxDogSkillsCombat6.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).CombatSkill6 == "False") { pbxDogSkillsCombat6.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsCombat6.Image = DogSkillImageList.Images[1];
-
-                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill1 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining1 == "150") { pbxDogSkillsUtility1.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill1 == "False") { pbxDogSkillsUtility1.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsUtility1.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill2 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining2 == "150") { pbxDogSkillsUtility2.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill2 == "False") { pbxDogSkillsUtility2.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsUtility2.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill3 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining3 == "300") { pbxDogSkillsUtility3.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill3 == "False") { pbxDogSkillsUtility3.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsUtility3.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill4 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining4 == "300") { pbxDogSkillsUtility4.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill4 == "False") { pbxDogSkillsUtility4.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsUtility4.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill5 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining5 == "600") { pbxDogSkillsUtility5.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill5 == "False") { pbxDogSkillsUtility5.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsUtility5.Image = DogSkillImageList.Images[1];
-                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill6 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining6 == "600") { pbxDogSkillsUtility6.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill6 == "False") { pbxDogSkillsUtility6.Image = DogSkillImageList.Images[0]; } else pbxDogSkillsUtility6.Image = DogSkillImageList.Images[1];
-            }     
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill1 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining1 == "150") { pbxDogSkillLevel12.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill1 == "False") { pbxDogSkillLevel12.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel12.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill2 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining2 == "150") { pbxDogSkillLevel13.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill2 == "False") { pbxDogSkillLevel13.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel13.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill3 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining3 == "300") { pbxDogSkillLevel14.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill3 == "False") { pbxDogSkillLevel14.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel14.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill4 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining4 == "300") { pbxDogSkillLevel15.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill4 == "False") { pbxDogSkillLevel15.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel15.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill5 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining5 == "600") { pbxDogSkillLevel16.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill5 == "False") { pbxDogSkillLevel16.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel16.Image = DogSkillImageList.Images[1];
+                if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill6 == "True" && ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining6 == "600") { pbxDogSkillLevel17.Image = DogSkillImageList.Images[2]; } else if (((Pets)cbxPetSelect.SelectedItem).UtilitySkill6 == "False") { pbxDogSkillLevel17.Image = DogSkillImageList.Images[0]; } else pbxDogSkillLevel17.Image = DogSkillImageList.Images[1];
+            }
         }
 
         private void specialThanksToToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2512,10 +2598,309 @@ namespace Sheltered_2_SE
 
         private void btnSavePet_Click(object sender, EventArgs e)
         {
+            if (ProcessData.petSpecies == "Cat")
+            {
+                ((Pets)cbxPetSelect.SelectedItem).Name = txbPetName.Text;
+                ((Pets)cbxPetSelect.SelectedItem).Age = txbPetAge.Text;
+                ((Pets)cbxPetSelect.SelectedItem).Health = txbPetHealth.Text;
+                ((Pets)cbxPetSelect.SelectedItem).AppearanceIndex = tbPetColorPicker.Value.ToString();
+                ((Pets)cbxPetSelect.SelectedItem).PreyDriveLevel = txbPreyDriveLevel.Text;
+                ((Pets)cbxPetSelect.SelectedItem).PreyDriveCap = txbPreyDriveCap.Text;
+                ((Pets)cbxPetSelect.SelectedItem).ScavengingLevel = txbScavengingLevel.Text;
+                ((Pets)cbxPetSelect.SelectedItem).ScavengingCap = txbScavengingCap.Text;
+                ((Pets)cbxPetSelect.SelectedItem).AffectionLevel = txbAffectionLevel.Text;
+                ((Pets)cbxPetSelect.SelectedItem).AffectionCap = txbAffectionCap.Text;
 
+                var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("name").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).Name;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("age").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).Age;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("health").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).Health;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Apperance_").Descendants("appearanceIndex").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).AppearanceIndex;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("PreyDrive").Descendants("level").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).PreyDriveLevel;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("PreyDrive").Descendants("levelCap").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).PreyDriveCap;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Scavenging").Descendants("level").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ScavengingLevel;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Scavenging").Descendants("levelCap").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ScavengingCap;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Affection").Descendants("level").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).AffectionLevel;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Affection").Descendants("levelCap").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).AffectionCap;
+              
+                xDoc.Save(ProcessFile.tempFilePath);
+                MessageBox.Show("Cat saved successfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
+                RefreshCombobox();
+            }
+            else if (ProcessData.petSpecies == "Dog")
+            {
+                ((Pets)cbxPetSelect.SelectedItem).Name = txbPetName.Text;
+                ((Pets)cbxPetSelect.SelectedItem).Age = txbPetAge.Text;
+                ((Pets)cbxPetSelect.SelectedItem).Health = txbPetHealth.Text;
+                ((Pets)cbxPetSelect.SelectedItem).AppearanceIndex = tbPetColorPicker.Value.ToString();                
 
+                var xDoc = XDocument.Load(ProcessFile.tempFilePath);
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("name").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).Name;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("age").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).Age;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("health").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).Health;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Apperance_").Descendants("appearanceIndex").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).AppearanceIndex;
+                //ShelterSkills
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("shelterSkills").Descendants("i3").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ShelterSkill1;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("shelterSkills").Descendants("i3").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining1;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("shelterSkills").Descendants("i5").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ShelterSkill2;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("shelterSkills").Descendants("i5").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining2;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("shelterSkills").Descendants("i0").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ShelterSkill3;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("shelterSkills").Descendants("i0").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining3;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("shelterSkills").Descendants("i1").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ShelterSkill4;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("shelterSkills").Descendants("i1").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining4;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("shelterSkills").Descendants("i2").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ShelterSkill5;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("shelterSkills").Descendants("i2").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining5;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("shelterSkills").Descendants("i4").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ShelterSkill6;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("shelterSkills").Descendants("i4").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining6;
+                //CombatSkills
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("combatSkills").Descendants("i1").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).CombatSkill1;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("combatSkills").Descendants("i1").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining1;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("combatSkills").Descendants("i2").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).CombatSkill2;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("combatSkills").Descendants("i2").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining2;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("combatSkills").Descendants("i0").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).CombatSkill3;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("combatSkills").Descendants("i0").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining3;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("combatSkills").Descendants("i3").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).CombatSkill4;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("combatSkills").Descendants("i3").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining4;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("combatSkills").Descendants("i4").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).CombatSkill5;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("combatSkills").Descendants("i4").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining5;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("combatSkills").Descendants("i5").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).CombatSkill6;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("combatSkills").Descendants("i5").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining6;
+                //UtilitySkills
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("utilitySkills").Descendants("i4").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).UtilitySkill1;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("utilitySkills").Descendants("i4").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining1;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("utilitySkills").Descendants("i0").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).UtilitySkill2;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("utilitySkills").Descendants("i0").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining2;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("utilitySkills").Descendants("i5").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).UtilitySkill3;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("utilitySkills").Descendants("i5").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining3;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("utilitySkills").Descendants("i3").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).UtilitySkill4;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("utilitySkills").Descendants("i3").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining4;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("utilitySkills").Descendants("i1").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).UtilitySkill5;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("utilitySkills").Descendants("i1").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining5;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("utilitySkills").Descendants("i2").Descendants("purchased").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).UtilitySkill6;
+                xDoc.Descendants(((Pets)cbxPetSelect.SelectedItem).PetId).Descendants("Dog_Skills").Descendants("utilitySkills").Descendants("i2").Descendants("currentTrainingTime").FirstOrDefault().Value = ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining6;
 
+                
+                xDoc.Save(ProcessFile.tempFilePath);
+                MessageBox.Show("Dog saved successfully." + "\n" + "--------------------------------" + "\n" + "\n" + "\n" + "***** IMPORTANT *****" + "\n" + "You still need to save the Savegame!");
+                RefreshCombobox();
+            }            
+        }
 
+        int skillLevel = 0;
+        private void DogSkillClick(object sender, MouseEventArgs e)
+        {
+
+            var picBoxName = ((PictureBox)sender).Name.Remove(0, 16).Insert(0, "pbxDogSkillLevel");       
+            
+
+            foreach (PictureBox pB in pnlDogSkills.Controls.OfType<PictureBox>())
+            {
+                if (pB.Name == picBoxName)
+                {
+                    if (pB.Tag.ToString() == "0")
+                    {
+                        skillLevel = 0;
+                    }
+                    else if (pB.Tag.ToString() == "1")
+                    {
+                        skillLevel = 1;
+                    }
+                    else if (pB.Tag.ToString() == "2")
+                    {
+                        skillLevel = 2;
+                    }
+                    switch (e.Button)
+                    {
+                        case MouseButtons.Right:
+                            {
+                                if (skillLevel == 1)
+                                {
+                                    pB.Image = DogSkillImageList.Images[0];
+                                    skillLevel = 0;
+                                    pB.Tag = "0";
+                                }
+                                else if (skillLevel == 2)
+                                {
+                                    pB.Image = DogSkillImageList.Images[1];
+                                    skillLevel = 1;
+                                    pB.Tag = "1";
+                                }
+                            }
+                            break;
+                    }
+                    switch (e.Button)
+                    {
+                        case MouseButtons.Left:
+                            {
+                                if (skillLevel == 0)
+                                {
+                                    pB.Image = DogSkillImageList.Images[1];
+                                    skillLevel = 1;
+                                    pB.Tag = "1";
+                                }
+                                else if (skillLevel == 1)
+                                {
+                                    if (pB.Name == "pbxDogSkillLevel13")
+                                    {
+                                        ((Pets)cbxPetSelect.SelectedItem).SaddleBagTrained = "True";
+                                    }
+                                    pB.Image = DogSkillImageList.Images[2];
+                                    skillLevel = 2;
+                                    pB.Tag = "2";
+                                }
+                            }
+                            break;
+                    }
+
+                }
+            }
+        }
+
+        private void pnlDogSkills_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        int shelterAdd = 0;
+        int combatAdd = 0;
+        int utilityAdd = 0;
+        private void PointsInitialize()
+        {
+            shelterAdd = Convert.ToInt32(lblDogSkillsShelterAvailablePoints.Text);
+            combatAdd = Convert.ToInt32(lblDogSkillsCombatAvailablePoints.Text);
+            utilityAdd = Convert.ToInt32(lblDogSkillsUtilityAvailablePoints.Text);
+        }
+        private void ShelterPlus_Click(object sender, EventArgs e)
+        {
+            PointsInitialize();
+            if (shelterAdd < 6)
+            {
+                shelterAdd++;
+            }
+            lblDogSkillsShelterAvailablePoints.Text = shelterAdd.ToString();
+        }
+
+        private void ShelterMinus_Click(object sender, EventArgs e)
+        {
+            PointsInitialize();
+            if (shelterAdd > 0)
+            {
+                shelterAdd--;
+            }
+            lblDogSkillsShelterAvailablePoints.Text = shelterAdd.ToString();
+        }
+
+        private void CombatPlus_Click(object sender, EventArgs e)
+        {
+            PointsInitialize();
+            if (shelterAdd < 6)
+            {
+                combatAdd++;
+            }
+            lblDogSkillsCombatAvailablePoints.Text = combatAdd.ToString();
+        }
+
+        private void CombatMinus_Click(object sender, EventArgs e)
+        {
+            PointsInitialize();
+            if (shelterAdd > 0)
+            {
+                combatAdd--;
+            }
+            lblDogSkillsCombatAvailablePoints.Text = combatAdd.ToString();
+        }
+
+        private void UtilityPlus_Click(object sender, EventArgs e)
+        {
+            PointsInitialize();
+            if (shelterAdd < 6)
+            {
+                utilityAdd++;
+            }
+            lblDogSkillsUtilityAvailablePoints.Text = utilityAdd.ToString();
+        }
+
+        private void UtilityMinus_Click(object sender, EventArgs e)
+        {
+            PointsInitialize();
+            if (shelterAdd > 0)
+            {
+                utilityAdd--;
+            }
+            lblDogSkillsUtilityAvailablePoints.Text = utilityAdd.ToString();
+        }
+
+        private void btnMaxDogSkills_Click(object sender, EventArgs e)
+        {
+            ((Pets)cbxPetSelect.SelectedItem).ShelterSkill1 = "True"; ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining1 = "150";
+            ((Pets)cbxPetSelect.SelectedItem).ShelterSkill2 = "True"; ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining2 = "150";
+            ((Pets)cbxPetSelect.SelectedItem).ShelterSkill3 = "True"; ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining3 = "300";
+            ((Pets)cbxPetSelect.SelectedItem).ShelterSkill4 = "True"; ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining4 = "300";
+            ((Pets)cbxPetSelect.SelectedItem).ShelterSkill5 = "True"; ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining5 = "600";
+            ((Pets)cbxPetSelect.SelectedItem).ShelterSkill6 = "True"; ((Pets)cbxPetSelect.SelectedItem).ShelterSkillTraining6 = "600";
+
+            ((Pets)cbxPetSelect.SelectedItem).CombatSkill1 = "True"; ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining1 = "150";
+            ((Pets)cbxPetSelect.SelectedItem).CombatSkill2 = "True"; ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining2 = "150";
+            ((Pets)cbxPetSelect.SelectedItem).CombatSkill3 = "True"; ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining3 = "300";
+            ((Pets)cbxPetSelect.SelectedItem).CombatSkill4 = "True"; ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining4 = "300";
+            ((Pets)cbxPetSelect.SelectedItem).CombatSkill5 = "True"; ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining5 = "600";
+            ((Pets)cbxPetSelect.SelectedItem).CombatSkill6 = "True"; ((Pets)cbxPetSelect.SelectedItem).CombatSkillTraining6 = "600";
+
+            ((Pets)cbxPetSelect.SelectedItem).UtilitySkill1 = "True"; ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining1 = "150";
+            ((Pets)cbxPetSelect.SelectedItem).UtilitySkill2 = "True"; ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining2 = "150";
+            ((Pets)cbxPetSelect.SelectedItem).UtilitySkill3 = "True"; ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining3 = "300";
+            ((Pets)cbxPetSelect.SelectedItem).UtilitySkill4 = "True"; ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining4 = "300";
+            ((Pets)cbxPetSelect.SelectedItem).UtilitySkill5 = "True"; ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining5 = "600";
+            ((Pets)cbxPetSelect.SelectedItem).UtilitySkill6 = "True"; ((Pets)cbxPetSelect.SelectedItem).UtilitySkillTraining6 = "600";
+
+            ((Pets)cbxPetSelect.SelectedItem).SaddleBagTrained = "True";
+
+            lblDogSkillsShelterAvailablePoints.Text = "0";
+            ((Pets)cbxPetSelect.SelectedItem).ShelterPoints = "0";
+            lblDogSkillsCombatAvailablePoints.Text = "0";
+            ((Pets)cbxPetSelect.SelectedItem).CombatPoints = "0";
+            lblDogSkillsUtilityAvailablePoints.Text = "0";
+            ((Pets)cbxPetSelect.SelectedItem).UtilityPoints = "0";
+
+            foreach (PictureBox pB in pnlDogSkills.Controls.OfType<PictureBox>())
+            {
+                if (pB.Name.StartsWith("pbxDogSkillLevel"))
+                {
+                    pB.Image = DogSkillImageList.Images[2];
+                    pB.Tag = "2";
+                }
+            }
+        }
+
+        private void btnPetUnstuck_Click(object sender, EventArgs e)
+        {
+            ((Pets)cbxPetSelect.SelectedItem).Interacting = "False";
+            ((Pets)cbxPetSelect.SelectedItem).AnimHash = "-541223289";
+            ((Pets)cbxPetSelect.SelectedItem).AnimTime = "0,05509559";
+            cbPetInteracting.Checked = false;
+
+            MessageBox.Show("- Animation of "+ ((Pets)cbxPetSelect.SelectedItem).Name + " resetted..."+"\n"+"- Interaction of " + ((Pets)cbxPetSelect.SelectedItem).Name + " canceled..." + "\n" + "\n" + ((Pets)cbxPetSelect.SelectedItem).Name + " should be free again...");
+
+        }
+
+        private void btnLoadXmlTree_Click(object sender, EventArgs e)
+        {
+            var filter = "root";
+
+            if(rbXmlFull.Checked == false)
+            {
+                filter = "FamilyMembers";
+            }
+
+            XDocument doc = XDocument.Load(ProcessFile.tempFilePath);
+            //XElement root = doc.Root;
+            XElement root = doc.Descendants(filter).FirstOrDefault();
+            TreeNode newNode = new TreeNode();
+            newNode.Text = root.Name.LocalName;
+            treeView1.Nodes.Add(newNode);
+            int level = 1;
+            AddRecursive(root, newNode, level);
+
+            treeView1.ExpandAll();
         }
     }
 }

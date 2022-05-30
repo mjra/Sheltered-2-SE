@@ -110,7 +110,6 @@
     <Compile Include="ShelterDesigner.Designer.cs">
       <DependentUpon>ShelterDesigner.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShelterDesignerProcessing.cs" />
     <Compile Include="ShelterLayout.cs" />
     <Compile Include="SkillPage.cs">
       <SubType>Form</SubType>
@@ -269,6 +268,8 @@
   <ItemGroup>
     <None Include="Resources\eoLx_shopbanner.png" />
     <None Include="Resources\eoLxLogo.jpg" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\plus.png" />
     <Content Include="sheltered_2_se_icon_J28_12.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

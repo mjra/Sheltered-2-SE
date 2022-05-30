@@ -26,6 +26,7 @@ namespace Sheltered_2_SE
         public string ScavengingCap { get; set; }
         public string AffectionLevel { get; set; }
         public string AffectionCap { get; set; }
+        public string SaddleBagTrained { get; set; }
         public string ShelterPoints { get; set; }
         public string ShelterSkill1 { get; set; }
         public string ShelterSkill2 { get; set; }
@@ -81,7 +82,7 @@ namespace Sheltered_2_SE
     {
         public static List<Pets> GetPets()
         {
-       
+            
                 return XDocument.Load(ProcessFile.tempFilePath)
                     .Element("root")
                     .Elements().Where(e => e.Name.LocalName.StartsWith("Pet_"))
@@ -102,6 +103,7 @@ namespace Sheltered_2_SE
                 Interacting = p?.Element("interacting")?.Value,
                 AnimHash = p?.Element("animHash")?.Value,
                 AnimTime = p?.Element("animTime")?.Value,
+                //Cat
                 AppearanceIndex = p?.Element("Apperance_")?.Element("appearanceIndex")?.Value,
                 PreyDriveLevel = p?.Element("PreyDrive")?.Element("level")?.Value,
                 PreyDriveCap = p?.Element("PreyDrive")?.Element("levelCap")?.Value,
@@ -109,6 +111,8 @@ namespace Sheltered_2_SE
                 ScavengingCap = p?.Element("Scavenging")?.Element("levelCap")?.Value,
                 AffectionLevel = p?.Element("Affection")?.Element("level")?.Value,
                 AffectionCap = p?.Element("Affection")?.Element("levelCap")?.Value,
+                //Dog
+                SaddleBagTrained = p?.Element("Apperance_")?.Element("saddlebagTrained")?.Value,
                 //ShelterSkills
                 ShelterPoints = p?.Element("Dog_Skills")?.Element("shelterPoints")?.Value,
                 ShelterSkill1 = p?.Element("Dog_Skills")?.Element("shelterSkills")?.Element("i3")?.Element("purchased")?.Value,
