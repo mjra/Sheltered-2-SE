@@ -397,6 +397,8 @@ namespace Sheltered_2_SE
             this.lblCatStats = new System.Windows.Forms.Label();
             this.lblPetLevel = new System.Windows.Forms.Label();
             this.txbPreyDriveLevel = new System.Windows.Forms.TextBox();
+            this.cbPetInteracting = new System.Windows.Forms.CheckBox();
+            this.btnPetUnstuck = new System.Windows.Forms.Button();
             this.btnSavePet = new System.Windows.Forms.Button();
             this.lblPetName = new System.Windows.Forms.Label();
             this.tbPetColorPicker = new System.Windows.Forms.TrackBar();
@@ -515,8 +517,6 @@ namespace Sheltered_2_SE
             this.CatImages = new System.Windows.Forms.ImageList(this.components);
             this.DogSkillImageList = new System.Windows.Forms.ImageList(this.components);
             this.DogSkillImageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.btnPetUnstuck = new System.Windows.Forms.Button();
-            this.cbPetInteracting = new System.Windows.Forms.CheckBox();
             this.btnLoadXmlTree = new System.Windows.Forms.Button();
             this.rbXmlFull = new System.Windows.Forms.RadioButton();
             this.rbXmlMembers = new System.Windows.Forms.RadioButton();
@@ -803,14 +803,14 @@ namespace Sheltered_2_SE
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -826,14 +826,14 @@ namespace Sheltered_2_SE
             // decryptSaveOnlyToolStripMenuItem
             // 
             this.decryptSaveOnlyToolStripMenuItem.Name = "decryptSaveOnlyToolStripMenuItem";
-            this.decryptSaveOnlyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.decryptSaveOnlyToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.decryptSaveOnlyToolStripMenuItem.Text = "Decrypt Save only";
             this.decryptSaveOnlyToolStripMenuItem.Click += new System.EventHandler(this.decryptSaveOnlyToolStripMenuItem_Click);
             // 
             // encryptSaveOnlyToolStripMenuItem
             // 
             this.encryptSaveOnlyToolStripMenuItem.Name = "encryptSaveOnlyToolStripMenuItem";
-            this.encryptSaveOnlyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.encryptSaveOnlyToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.encryptSaveOnlyToolStripMenuItem.Text = "Encrypt Save only";
             this.encryptSaveOnlyToolStripMenuItem.Click += new System.EventHandler(this.encryptSaveOnlyToolStripMenuItem_Click);
             // 
@@ -868,7 +868,8 @@ namespace Sheltered_2_SE
             this.version01ToolStripMenuItem.Enabled = false;
             this.version01ToolStripMenuItem.Name = "version01ToolStripMenuItem";
             this.version01ToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.version01ToolStripMenuItem.Text = "Sheltered 2 SE Version 0.50";
+            this.version01ToolStripMenuItem.Text = "Sheltered 2 SE Version 0.51";
+            this.version01ToolStripMenuItem.Click += new System.EventHandler(this.version01ToolStripMenuItem_Click);
             // 
             // specialThanksToToolStripMenuItem
             // 
@@ -4388,7 +4389,7 @@ namespace Sheltered_2_SE
             // 
             // btnMaxDogSkills
             // 
-            this.btnMaxDogSkills.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaxDogSkills.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaxDogSkills.Location = new System.Drawing.Point(3, 3);
             this.btnMaxDogSkills.Name = "btnMaxDogSkills";
             this.btnMaxDogSkills.Size = new System.Drawing.Size(87, 23);
@@ -4400,10 +4401,10 @@ namespace Sheltered_2_SE
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bebas Neue", 8F);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.label13.Location = new System.Drawing.Point(435, 63);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 14);
+            this.label13.Size = new System.Drawing.Size(84, 13);
             this.label13.TabIndex = 75;
             this.label13.Text = "Available points:";
             this.label13.Visible = false;
@@ -4573,10 +4574,10 @@ namespace Sheltered_2_SE
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Bebas Neue", 8F);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.label15.Location = new System.Drawing.Point(266, 63);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(68, 14);
+            this.label15.Size = new System.Drawing.Size(84, 13);
             this.label15.TabIndex = 70;
             this.label15.Text = "Available points:";
             this.label15.Visible = false;
@@ -4746,10 +4747,10 @@ namespace Sheltered_2_SE
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Bebas Neue", 8F);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.label12.Location = new System.Drawing.Point(94, 63);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 14);
+            this.label12.Size = new System.Drawing.Size(84, 13);
             this.label12.TabIndex = 52;
             this.label12.Text = "Available points:";
             this.label12.Visible = false;
@@ -4757,50 +4758,50 @@ namespace Sheltered_2_SE
             // lblDogSkillsUtility
             // 
             this.lblDogSkillsUtility.AutoSize = true;
-            this.lblDogSkillsUtility.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblDogSkillsUtility.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblDogSkillsUtility.Location = new System.Drawing.Point(440, 62);
             this.lblDogSkillsUtility.Name = "lblDogSkillsUtility";
-            this.lblDogSkillsUtility.Size = new System.Drawing.Size(63, 29);
+            this.lblDogSkillsUtility.Size = new System.Drawing.Size(66, 26);
             this.lblDogSkillsUtility.TabIndex = 31;
             this.lblDogSkillsUtility.Text = "Utility";
             // 
             // lblDogSkillsCombat
             // 
             this.lblDogSkillsCombat.AutoSize = true;
-            this.lblDogSkillsCombat.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblDogSkillsCombat.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblDogSkillsCombat.Location = new System.Drawing.Point(267, 62);
             this.lblDogSkillsCombat.Name = "lblDogSkillsCombat";
-            this.lblDogSkillsCombat.Size = new System.Drawing.Size(67, 29);
+            this.lblDogSkillsCombat.Size = new System.Drawing.Size(89, 26);
             this.lblDogSkillsCombat.TabIndex = 28;
             this.lblDogSkillsCombat.Text = "Combat";
             // 
             // lblDogSkillsShelter
             // 
             this.lblDogSkillsShelter.AutoSize = true;
-            this.lblDogSkillsShelter.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblDogSkillsShelter.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblDogSkillsShelter.Location = new System.Drawing.Point(93, 62);
             this.lblDogSkillsShelter.Name = "lblDogSkillsShelter";
-            this.lblDogSkillsShelter.Size = new System.Drawing.Size(69, 29);
+            this.lblDogSkillsShelter.Size = new System.Drawing.Size(81, 26);
             this.lblDogSkillsShelter.TabIndex = 24;
             this.lblDogSkillsShelter.Text = "Shelter";
             // 
             // lblDogSkills
             // 
             this.lblDogSkills.AutoSize = true;
-            this.lblDogSkills.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblDogSkills.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblDogSkills.Location = new System.Drawing.Point(255, 1);
             this.lblDogSkills.Name = "lblDogSkills";
-            this.lblDogSkills.Size = new System.Drawing.Size(89, 29);
+            this.lblDogSkills.Size = new System.Drawing.Size(110, 26);
             this.lblDogSkills.TabIndex = 23;
             this.lblDogSkills.Text = "Dog Skills";
             // 
             // lblDogSkillsShelterAvailablePoints
             // 
             this.lblDogSkillsShelterAvailablePoints.AutoSize = true;
-            this.lblDogSkillsShelterAvailablePoints.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblDogSkillsShelterAvailablePoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblDogSkillsShelterAvailablePoints.Location = new System.Drawing.Point(118, 73);
             this.lblDogSkillsShelterAvailablePoints.Name = "lblDogSkillsShelterAvailablePoints";
-            this.lblDogSkillsShelterAvailablePoints.Size = new System.Drawing.Size(22, 29);
+            this.lblDogSkillsShelterAvailablePoints.Size = new System.Drawing.Size(24, 26);
             this.lblDogSkillsShelterAvailablePoints.TabIndex = 72;
             this.lblDogSkillsShelterAvailablePoints.Text = "0";
             this.lblDogSkillsShelterAvailablePoints.Visible = false;
@@ -4808,10 +4809,10 @@ namespace Sheltered_2_SE
             // lblDogSkillsUtilityAvailablePoints
             // 
             this.lblDogSkillsUtilityAvailablePoints.AutoSize = true;
-            this.lblDogSkillsUtilityAvailablePoints.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblDogSkillsUtilityAvailablePoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblDogSkillsUtilityAvailablePoints.Location = new System.Drawing.Point(459, 73);
             this.lblDogSkillsUtilityAvailablePoints.Name = "lblDogSkillsUtilityAvailablePoints";
-            this.lblDogSkillsUtilityAvailablePoints.Size = new System.Drawing.Size(22, 29);
+            this.lblDogSkillsUtilityAvailablePoints.Size = new System.Drawing.Size(24, 26);
             this.lblDogSkillsUtilityAvailablePoints.TabIndex = 74;
             this.lblDogSkillsUtilityAvailablePoints.Text = "0";
             this.lblDogSkillsUtilityAvailablePoints.Visible = false;
@@ -4819,10 +4820,10 @@ namespace Sheltered_2_SE
             // lblDogSkillsCombatAvailablePoints
             // 
             this.lblDogSkillsCombatAvailablePoints.AutoSize = true;
-            this.lblDogSkillsCombatAvailablePoints.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblDogSkillsCombatAvailablePoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblDogSkillsCombatAvailablePoints.Location = new System.Drawing.Point(287, 73);
             this.lblDogSkillsCombatAvailablePoints.Name = "lblDogSkillsCombatAvailablePoints";
-            this.lblDogSkillsCombatAvailablePoints.Size = new System.Drawing.Size(22, 29);
+            this.lblDogSkillsCombatAvailablePoints.Size = new System.Drawing.Size(24, 26);
             this.lblDogSkillsCombatAvailablePoints.TabIndex = 73;
             this.lblDogSkillsCombatAvailablePoints.Text = "0";
             this.lblDogSkillsCombatAvailablePoints.Visible = false;
@@ -4858,10 +4859,10 @@ namespace Sheltered_2_SE
             // lblAffection
             // 
             this.lblAffection.AutoSize = true;
-            this.lblAffection.Font = new System.Drawing.Font("Bebas Neue", 12F);
+            this.lblAffection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblAffection.Location = new System.Drawing.Point(229, 71);
             this.lblAffection.Name = "lblAffection";
-            this.lblAffection.Size = new System.Drawing.Size(62, 21);
+            this.lblAffection.Size = new System.Drawing.Size(73, 20);
             this.lblAffection.TabIndex = 31;
             this.lblAffection.Text = "Affection";
             // 
@@ -4882,10 +4883,10 @@ namespace Sheltered_2_SE
             // lblScavenging
             // 
             this.lblScavenging.AutoSize = true;
-            this.lblScavenging.Font = new System.Drawing.Font("Bebas Neue", 12F);
+            this.lblScavenging.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblScavenging.Location = new System.Drawing.Point(153, 71);
             this.lblScavenging.Name = "lblScavenging";
-            this.lblScavenging.Size = new System.Drawing.Size(69, 21);
+            this.lblScavenging.Size = new System.Drawing.Size(92, 20);
             this.lblScavenging.TabIndex = 28;
             this.lblScavenging.Text = "Scavenging";
             // 
@@ -4899,10 +4900,10 @@ namespace Sheltered_2_SE
             // lblPetCap
             // 
             this.lblPetCap.AutoSize = true;
-            this.lblPetCap.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.lblPetCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblPetCap.Location = new System.Drawing.Point(50, 121);
             this.lblPetCap.Name = "lblPetCap";
-            this.lblPetCap.Size = new System.Drawing.Size(24, 18);
+            this.lblPetCap.Size = new System.Drawing.Size(33, 17);
             this.lblPetCap.TabIndex = 26;
             this.lblPetCap.Text = "Cap";
             // 
@@ -4916,30 +4917,30 @@ namespace Sheltered_2_SE
             // lblPreyDrive
             // 
             this.lblPreyDrive.AutoSize = true;
-            this.lblPreyDrive.Font = new System.Drawing.Font("Bebas Neue", 12F);
+            this.lblPreyDrive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblPreyDrive.Location = new System.Drawing.Point(85, 71);
             this.lblPreyDrive.Name = "lblPreyDrive";
-            this.lblPreyDrive.Size = new System.Drawing.Size(65, 21);
+            this.lblPreyDrive.Size = new System.Drawing.Size(80, 20);
             this.lblPreyDrive.TabIndex = 24;
             this.lblPreyDrive.Text = "Prey Drive";
             // 
             // lblCatStats
             // 
             this.lblCatStats.AutoSize = true;
-            this.lblCatStats.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblCatStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblCatStats.Location = new System.Drawing.Point(279, 1);
             this.lblCatStats.Name = "lblCatStats";
-            this.lblCatStats.Size = new System.Drawing.Size(80, 29);
+            this.lblCatStats.Size = new System.Drawing.Size(102, 26);
             this.lblCatStats.TabIndex = 23;
             this.lblCatStats.Text = "Cat Stats";
             // 
             // lblPetLevel
             // 
             this.lblPetLevel.AutoSize = true;
-            this.lblPetLevel.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.lblPetLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblPetLevel.Location = new System.Drawing.Point(50, 95);
             this.lblPetLevel.Name = "lblPetLevel";
-            this.lblPetLevel.Size = new System.Drawing.Size(33, 18);
+            this.lblPetLevel.Size = new System.Drawing.Size(42, 17);
             this.lblPetLevel.TabIndex = 17;
             this.lblPetLevel.Text = "Level";
             // 
@@ -4950,9 +4951,30 @@ namespace Sheltered_2_SE
             this.txbPreyDriveLevel.Size = new System.Drawing.Size(50, 20);
             this.txbPreyDriveLevel.TabIndex = 16;
             // 
+            // cbPetInteracting
+            // 
+            this.cbPetInteracting.AutoSize = true;
+            this.cbPetInteracting.Location = new System.Drawing.Point(24, 174);
+            this.cbPetInteracting.Name = "cbPetInteracting";
+            this.cbPetInteracting.Size = new System.Drawing.Size(76, 17);
+            this.cbPetInteracting.TabIndex = 36;
+            this.cbPetInteracting.Text = "Interacting";
+            this.cbPetInteracting.UseVisualStyleBackColor = true;
+            // 
+            // btnPetUnstuck
+            // 
+            this.btnPetUnstuck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnPetUnstuck.Location = new System.Drawing.Point(24, 211);
+            this.btnPetUnstuck.Name = "btnPetUnstuck";
+            this.btnPetUnstuck.Size = new System.Drawing.Size(75, 23);
+            this.btnPetUnstuck.TabIndex = 35;
+            this.btnPetUnstuck.Text = "Pet Unstuck";
+            this.btnPetUnstuck.UseVisualStyleBackColor = true;
+            this.btnPetUnstuck.Click += new System.EventHandler(this.btnPetUnstuck_Click);
+            // 
             // btnSavePet
             // 
-            this.btnSavePet.Font = new System.Drawing.Font("Bebas Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSavePet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSavePet.Location = new System.Drawing.Point(282, 561);
             this.btnSavePet.Name = "btnSavePet";
             this.btnSavePet.Size = new System.Drawing.Size(94, 25);
@@ -4964,10 +4986,10 @@ namespace Sheltered_2_SE
             // lblPetName
             // 
             this.lblPetName.AutoSize = true;
-            this.lblPetName.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblPetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblPetName.Location = new System.Drawing.Point(278, 3);
             this.lblPetName.Name = "lblPetName";
-            this.lblPetName.Size = new System.Drawing.Size(75, 29);
+            this.lblPetName.Size = new System.Drawing.Size(104, 26);
             this.lblPetName.TabIndex = 20;
             this.lblPetName.Text = "PetName";
             // 
@@ -4984,10 +5006,10 @@ namespace Sheltered_2_SE
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.Location = new System.Drawing.Point(31, 126);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 18);
+            this.label5.Size = new System.Drawing.Size(53, 17);
             this.label5.TabIndex = 15;
             this.label5.Text = "Health:";
             this.label5.Visible = false;
@@ -5003,10 +5025,10 @@ namespace Sheltered_2_SE
             // lblPetAge
             // 
             this.lblPetAge.AutoSize = true;
-            this.lblPetAge.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.lblPetAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblPetAge.Location = new System.Drawing.Point(31, 94);
             this.lblPetAge.Name = "lblPetAge";
-            this.lblPetAge.Size = new System.Drawing.Size(27, 18);
+            this.lblPetAge.Size = new System.Drawing.Size(37, 17);
             this.lblPetAge.TabIndex = 13;
             this.lblPetAge.Text = "Age:";
             // 
@@ -5020,10 +5042,10 @@ namespace Sheltered_2_SE
             // lblPetName1
             // 
             this.lblPetName1.AutoSize = true;
-            this.lblPetName1.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.lblPetName1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblPetName1.Location = new System.Drawing.Point(31, 63);
             this.lblPetName1.Name = "lblPetName1";
-            this.lblPetName1.Size = new System.Drawing.Size(36, 18);
+            this.lblPetName1.Size = new System.Drawing.Size(49, 17);
             this.lblPetName1.TabIndex = 11;
             this.lblPetName1.Text = "Name:";
             // 
@@ -5048,10 +5070,10 @@ namespace Sheltered_2_SE
             // lblColorPicker
             // 
             this.lblColorPicker.AutoSize = true;
-            this.lblColorPicker.Font = new System.Drawing.Font("Bebas Neue", 16F);
+            this.lblColorPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblColorPicker.Location = new System.Drawing.Point(436, 28);
             this.lblColorPicker.Name = "lblColorPicker";
-            this.lblColorPicker.Size = new System.Drawing.Size(117, 29);
+            this.lblColorPicker.Size = new System.Drawing.Size(150, 26);
             this.lblColorPicker.TabIndex = 21;
             this.lblColorPicker.Text = "Pet Fur Picker";
             // 
@@ -5106,15 +5128,15 @@ namespace Sheltered_2_SE
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bebas Neue", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(377, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 27);
+            this.label2.Size = new System.Drawing.Size(0, 25);
             this.label2.TabIndex = 45;
             // 
             // btnRemoveInfestation
             // 
-            this.btnRemoveInfestation.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.btnRemoveInfestation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnRemoveInfestation.Location = new System.Drawing.Point(384, 187);
             this.btnRemoveInfestation.Name = "btnRemoveInfestation";
             this.btnRemoveInfestation.Size = new System.Drawing.Size(115, 23);
@@ -5125,7 +5147,7 @@ namespace Sheltered_2_SE
             // 
             // btnCureAll
             // 
-            this.btnCureAll.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.btnCureAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCureAll.Location = new System.Drawing.Point(81, 187);
             this.btnCureAll.Name = "btnCureAll";
             this.btnCureAll.Size = new System.Drawing.Size(75, 23);
@@ -5138,11 +5160,11 @@ namespace Sheltered_2_SE
             // 
             this.cbHeatExhaustion.AutoSize = true;
             this.cbHeatExhaustion.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbHeatExhaustion.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbHeatExhaustion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbHeatExhaustion.Location = new System.Drawing.Point(143, 143);
             this.cbHeatExhaustion.Name = "cbHeatExhaustion";
             this.cbHeatExhaustion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbHeatExhaustion.Size = new System.Drawing.Size(102, 22);
+            this.cbHeatExhaustion.Size = new System.Drawing.Size(126, 21);
             this.cbHeatExhaustion.TabIndex = 10;
             this.cbHeatExhaustion.Text = "HeatExhaustion";
             this.cbHeatExhaustion.UseVisualStyleBackColor = true;
@@ -5151,11 +5173,11 @@ namespace Sheltered_2_SE
             // 
             this.cbHypothermia.AutoSize = true;
             this.cbHypothermia.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbHypothermia.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbHypothermia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbHypothermia.Location = new System.Drawing.Point(143, 127);
             this.cbHypothermia.Name = "cbHypothermia";
             this.cbHypothermia.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbHypothermia.Size = new System.Drawing.Size(89, 22);
+            this.cbHypothermia.Size = new System.Drawing.Size(107, 21);
             this.cbHypothermia.TabIndex = 9;
             this.cbHypothermia.Text = "Hypothermia";
             this.cbHypothermia.UseVisualStyleBackColor = true;
@@ -5164,11 +5186,11 @@ namespace Sheltered_2_SE
             // 
             this.cbDehydration.AutoSize = true;
             this.cbDehydration.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbDehydration.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbDehydration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbDehydration.Location = new System.Drawing.Point(143, 110);
             this.cbDehydration.Name = "cbDehydration";
             this.cbDehydration.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbDehydration.Size = new System.Drawing.Size(87, 22);
+            this.cbDehydration.Size = new System.Drawing.Size(104, 21);
             this.cbDehydration.TabIndex = 8;
             this.cbDehydration.Text = "Dehydration";
             this.cbDehydration.UseVisualStyleBackColor = true;
@@ -5177,11 +5199,11 @@ namespace Sheltered_2_SE
             // 
             this.cbBrokenLegLeft.AutoSize = true;
             this.cbBrokenLegLeft.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbBrokenLegLeft.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbBrokenLegLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbBrokenLegLeft.Location = new System.Drawing.Point(143, 94);
             this.cbBrokenLegLeft.Name = "cbBrokenLegLeft";
             this.cbBrokenLegLeft.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbBrokenLegLeft.Size = new System.Drawing.Size(106, 22);
+            this.cbBrokenLegLeft.Size = new System.Drawing.Size(137, 21);
             this.cbBrokenLegLeft.TabIndex = 15;
             this.cbBrokenLegLeft.Text = "Broken Leg Right";
             this.cbBrokenLegLeft.UseVisualStyleBackColor = true;
@@ -5190,11 +5212,11 @@ namespace Sheltered_2_SE
             // 
             this.cbPlague.AutoSize = true;
             this.cbPlague.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbPlague.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbPlague.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbPlague.Location = new System.Drawing.Point(18, 159);
             this.cbPlague.Name = "cbPlague";
             this.cbPlague.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbPlague.Size = new System.Drawing.Size(59, 22);
+            this.cbPlague.Size = new System.Drawing.Size(71, 21);
             this.cbPlague.TabIndex = 11;
             this.cbPlague.Text = "Plague";
             this.cbPlague.UseVisualStyleBackColor = true;
@@ -5203,11 +5225,11 @@ namespace Sheltered_2_SE
             // 
             this.cbBrokenLegRight.AutoSize = true;
             this.cbBrokenLegRight.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbBrokenLegRight.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbBrokenLegRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbBrokenLegRight.Location = new System.Drawing.Point(143, 78);
             this.cbBrokenLegRight.Name = "cbBrokenLegRight";
             this.cbBrokenLegRight.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbBrokenLegRight.Size = new System.Drawing.Size(101, 22);
+            this.cbBrokenLegRight.Size = new System.Drawing.Size(129, 21);
             this.cbBrokenLegRight.TabIndex = 14;
             this.cbBrokenLegRight.Text = "Broken Leg LEft";
             this.cbBrokenLegRight.UseVisualStyleBackColor = true;
@@ -5216,11 +5238,11 @@ namespace Sheltered_2_SE
             // 
             this.cbBrokenArmLeft.AutoSize = true;
             this.cbBrokenArmLeft.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbBrokenArmLeft.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbBrokenArmLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbBrokenArmLeft.Location = new System.Drawing.Point(143, 62);
             this.cbBrokenArmLeft.Name = "cbBrokenArmLeft";
             this.cbBrokenArmLeft.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbBrokenArmLeft.Size = new System.Drawing.Size(106, 22);
+            this.cbBrokenArmLeft.Size = new System.Drawing.Size(129, 21);
             this.cbBrokenArmLeft.TabIndex = 13;
             this.cbBrokenArmLeft.Text = "Broken Arm Left";
             this.cbBrokenArmLeft.UseVisualStyleBackColor = true;
@@ -5229,11 +5251,11 @@ namespace Sheltered_2_SE
             // 
             this.cbBrokenArmRight.AutoSize = true;
             this.cbBrokenArmRight.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbBrokenArmRight.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbBrokenArmRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbBrokenArmRight.Location = new System.Drawing.Point(143, 46);
             this.cbBrokenArmRight.Name = "cbBrokenArmRight";
             this.cbBrokenArmRight.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbBrokenArmRight.Size = new System.Drawing.Size(111, 22);
+            this.cbBrokenArmRight.Size = new System.Drawing.Size(138, 21);
             this.cbBrokenArmRight.TabIndex = 12;
             this.cbBrokenArmRight.Text = "Broken Arm Right";
             this.cbBrokenArmRight.UseVisualStyleBackColor = true;
@@ -5242,11 +5264,11 @@ namespace Sheltered_2_SE
             // 
             this.cbWeakHeart.AutoSize = true;
             this.cbWeakHeart.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbWeakHeart.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbWeakHeart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbWeakHeart.Location = new System.Drawing.Point(18, 143);
             this.cbWeakHeart.Name = "cbWeakHeart";
             this.cbWeakHeart.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbWeakHeart.Size = new System.Drawing.Size(80, 22);
+            this.cbWeakHeart.Size = new System.Drawing.Size(98, 21);
             this.cbWeakHeart.TabIndex = 7;
             this.cbWeakHeart.Text = "WeakHeart";
             this.cbWeakHeart.UseVisualStyleBackColor = true;
@@ -5255,11 +5277,11 @@ namespace Sheltered_2_SE
             // 
             this.cbSuffocating.AutoSize = true;
             this.cbSuffocating.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbSuffocating.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbSuffocating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbSuffocating.Location = new System.Drawing.Point(18, 127);
             this.cbSuffocating.Name = "cbSuffocating";
             this.cbSuffocating.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbSuffocating.Size = new System.Drawing.Size(83, 22);
+            this.cbSuffocating.Size = new System.Drawing.Size(98, 21);
             this.cbSuffocating.TabIndex = 6;
             this.cbSuffocating.Text = "Suffocating";
             this.cbSuffocating.UseVisualStyleBackColor = true;
@@ -5268,11 +5290,11 @@ namespace Sheltered_2_SE
             // 
             this.cbBleeding.AutoSize = true;
             this.cbBleeding.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbBleeding.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbBleeding.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbBleeding.Location = new System.Drawing.Point(18, 111);
             this.cbBleeding.Name = "cbBleeding";
             this.cbBleeding.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbBleeding.Size = new System.Drawing.Size(68, 22);
+            this.cbBleeding.Size = new System.Drawing.Size(82, 21);
             this.cbBleeding.TabIndex = 5;
             this.cbBleeding.Text = "Bleeding";
             this.cbBleeding.UseVisualStyleBackColor = true;
@@ -5281,11 +5303,11 @@ namespace Sheltered_2_SE
             // 
             this.cbFoodPoisoning.AutoSize = true;
             this.cbFoodPoisoning.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbFoodPoisoning.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbFoodPoisoning.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbFoodPoisoning.Location = new System.Drawing.Point(18, 94);
             this.cbFoodPoisoning.Name = "cbFoodPoisoning";
             this.cbFoodPoisoning.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbFoodPoisoning.Size = new System.Drawing.Size(97, 22);
+            this.cbFoodPoisoning.Size = new System.Drawing.Size(125, 21);
             this.cbFoodPoisoning.TabIndex = 4;
             this.cbFoodPoisoning.Text = "Food Poisoning";
             this.cbFoodPoisoning.UseVisualStyleBackColor = true;
@@ -5294,11 +5316,11 @@ namespace Sheltered_2_SE
             // 
             this.cbInfection.AutoSize = true;
             this.cbInfection.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbInfection.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbInfection.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbInfection.Location = new System.Drawing.Point(18, 78);
             this.cbInfection.Name = "cbInfection";
             this.cbInfection.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbInfection.Size = new System.Drawing.Size(71, 22);
+            this.cbInfection.Size = new System.Drawing.Size(80, 21);
             this.cbInfection.TabIndex = 3;
             this.cbInfection.Text = "Infection";
             this.cbInfection.UseVisualStyleBackColor = true;
@@ -5307,11 +5329,11 @@ namespace Sheltered_2_SE
             // 
             this.cbMalnourishment.AutoSize = true;
             this.cbMalnourishment.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbMalnourishment.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbMalnourishment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbMalnourishment.Location = new System.Drawing.Point(18, 62);
             this.cbMalnourishment.Name = "cbMalnourishment";
             this.cbMalnourishment.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbMalnourishment.Size = new System.Drawing.Size(108, 22);
+            this.cbMalnourishment.Size = new System.Drawing.Size(127, 21);
             this.cbMalnourishment.TabIndex = 2;
             this.cbMalnourishment.Text = "Malnourishment";
             this.cbMalnourishment.UseVisualStyleBackColor = true;
@@ -5319,10 +5341,10 @@ namespace Sheltered_2_SE
             // lblIllnesses
             // 
             this.lblIllnesses.AutoSize = true;
-            this.lblIllnesses.Font = new System.Drawing.Font("Bebas Neue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIllnesses.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIllnesses.Location = new System.Drawing.Point(14, 22);
             this.lblIllnesses.Name = "lblIllnesses";
-            this.lblIllnesses.Size = new System.Drawing.Size(62, 21);
+            this.lblIllnesses.Size = new System.Drawing.Size(71, 20);
             this.lblIllnesses.TabIndex = 1;
             this.lblIllnesses.Text = "Illnesses";
             // 
@@ -5330,11 +5352,11 @@ namespace Sheltered_2_SE
             // 
             this.cbRadiationPoisening.AutoSize = true;
             this.cbRadiationPoisening.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cbRadiationPoisening.Font = new System.Drawing.Font("Bebas Neue", 10F);
+            this.cbRadiationPoisening.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbRadiationPoisening.Location = new System.Drawing.Point(18, 46);
             this.cbRadiationPoisening.Name = "cbRadiationPoisening";
             this.cbRadiationPoisening.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbRadiationPoisening.Size = new System.Drawing.Size(119, 22);
+            this.cbRadiationPoisening.Size = new System.Drawing.Size(153, 21);
             this.cbRadiationPoisening.TabIndex = 0;
             this.cbRadiationPoisening.Text = "Radiation Poisening";
             this.cbRadiationPoisening.UseVisualStyleBackColor = true;
@@ -6168,7 +6190,7 @@ namespace Sheltered_2_SE
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(69, 13);
             this.lblVersion.TabIndex = 40;
-            this.lblVersion.Text = "Version: 0.50";
+            this.lblVersion.Text = "Version: 0.51";
             // 
             // lblDebugCharacter
             // 
@@ -6372,27 +6394,6 @@ namespace Sheltered_2_SE
             this.DogSkillImageList2.Images.SetKeyName(15, "Utility4.png");
             this.DogSkillImageList2.Images.SetKeyName(16, "Utility5.png");
             this.DogSkillImageList2.Images.SetKeyName(17, "Utility6.png");
-            // 
-            // btnPetUnstuck
-            // 
-            this.btnPetUnstuck.Font = new System.Drawing.Font("Bebas Neue", 10F);
-            this.btnPetUnstuck.Location = new System.Drawing.Point(24, 211);
-            this.btnPetUnstuck.Name = "btnPetUnstuck";
-            this.btnPetUnstuck.Size = new System.Drawing.Size(75, 23);
-            this.btnPetUnstuck.TabIndex = 35;
-            this.btnPetUnstuck.Text = "Pet Unstuck";
-            this.btnPetUnstuck.UseVisualStyleBackColor = true;
-            this.btnPetUnstuck.Click += new System.EventHandler(this.btnPetUnstuck_Click);
-            // 
-            // cbPetInteracting
-            // 
-            this.cbPetInteracting.AutoSize = true;
-            this.cbPetInteracting.Location = new System.Drawing.Point(24, 174);
-            this.cbPetInteracting.Name = "cbPetInteracting";
-            this.cbPetInteracting.Size = new System.Drawing.Size(76, 17);
-            this.cbPetInteracting.TabIndex = 36;
-            this.cbPetInteracting.Text = "Interacting";
-            this.cbPetInteracting.UseVisualStyleBackColor = true;
             // 
             // btnLoadXmlTree
             // 
