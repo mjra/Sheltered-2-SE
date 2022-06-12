@@ -520,6 +520,7 @@ namespace Sheltered_2_SE
             this.btnLoadXmlTree = new System.Windows.Forms.Button();
             this.rbXmlFull = new System.Windows.Forms.RadioButton();
             this.rbXmlMembers = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.characterStatsTab.SuspendLayout();
@@ -868,7 +869,7 @@ namespace Sheltered_2_SE
             this.version01ToolStripMenuItem.Enabled = false;
             this.version01ToolStripMenuItem.Name = "version01ToolStripMenuItem";
             this.version01ToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.version01ToolStripMenuItem.Text = "Sheltered 2 SE Version 0.51";
+            this.version01ToolStripMenuItem.Text = "Sheltered 2 SE Version 0.52";
             this.version01ToolStripMenuItem.Click += new System.EventHandler(this.version01ToolStripMenuItem_Click);
             // 
             // specialThanksToToolStripMenuItem
@@ -5101,6 +5102,7 @@ namespace Sheltered_2_SE
             // 
             // pnlDeseases
             // 
+            this.pnlDeseases.Controls.Add(this.label1);
             this.pnlDeseases.Controls.Add(this.label2);
             this.pnlDeseases.Controls.Add(this.btnRemoveInfestation);
             this.pnlDeseases.Controls.Add(this.btnCureAll);
@@ -5147,6 +5149,7 @@ namespace Sheltered_2_SE
             // 
             // btnCureAll
             // 
+            this.btnCureAll.Enabled = false;
             this.btnCureAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCureAll.Location = new System.Drawing.Point(81, 187);
             this.btnCureAll.Name = "btnCureAll";
@@ -6190,7 +6193,7 @@ namespace Sheltered_2_SE
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(69, 13);
             this.lblVersion.TabIndex = 40;
-            this.lblVersion.Text = "Version: 0.51";
+            this.lblVersion.Text = "Version: 0.52";
             // 
             // lblDebugCharacter
             // 
@@ -6431,6 +6434,16 @@ namespace Sheltered_2_SE
             this.rbXmlMembers.Text = "Members";
             this.rbXmlMembers.UseVisualStyleBackColor = true;
             this.rbXmlMembers.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Crimson;
+            this.label1.Location = new System.Drawing.Point(233, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "currently bugged, sry";
             // 
             // Form1
             // 
@@ -7220,6 +7233,7 @@ namespace Sheltered_2_SE
         private System.Windows.Forms.Button btnLoadXmlTree;
         private System.Windows.Forms.RadioButton rbXmlFull;
         private System.Windows.Forms.RadioButton rbXmlMembers;
+        private System.Windows.Forms.Label label1;
     }
 }
 

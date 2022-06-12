@@ -2288,7 +2288,7 @@ namespace Sheltered_2_SE
             //Radiation Poisoning
             xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("RadiationPoisoning").Descendants("active").First().Value = "False";
             xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("RadiationPoisoning").Descendants("radiation").First().Value = "0";
-            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("RadiationPoisoning").Descendants("active").First().Value = "-4813.727";
+            xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("RadiationPoisoning").Descendants("damageTime").First().Value = "-4813.727";
 
             //Malnourishment
             xDoc.Descendants("FamilyMembers").Descendants(memberNr).Descendants("Illnesses").Descendants("Malnourishment").Descendants("active").First().Value = "False";
